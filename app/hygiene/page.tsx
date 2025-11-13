@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Droplets, Shower, Tooth, Hand, CheckCircle, XCircle, RotateCcw, Sparkles } from 'lucide-react'
+import type { DragEvent as ReactDragEvent } from 'react'
+import { CheckCircle, XCircle, RotateCcw, Sparkles } from 'lucide-react'
 import { safeLocalStorage } from '@/utils/storage'
 
 type RoutineItem = {
@@ -296,7 +297,7 @@ export default function HygienePage() {
                 {gameCategories.map((category) => (
                   <motion.div
                     key={category.id}
-                    onDrop={(e) => {
+                    onDrop={(e: ReactDragEvent<HTMLDivElement>) => {
                       e.preventDefault()
                       const itemId = e.dataTransfer.getData('text/plain')
                       if (itemId) {
@@ -346,7 +347,7 @@ export default function HygienePage() {
                       <motion.div
                         key={item.id}
                         draggable={!gameSubmitted}
-                        onDragStart={(e) => {
+                        onDragStartCapture={(e: ReactDragEvent<HTMLDivElement>) => {
                           if (!gameSubmitted) {
                             e.dataTransfer.setData('text/plain', item.id)
                           }
