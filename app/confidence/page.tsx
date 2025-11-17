@@ -2,7 +2,23 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Heart, Target, CheckCircle, Circle, Star, ThumbsUp, ThumbsDown, RotateCcw, Sparkles, TrendingUp, XCircle } from 'lucide-react'
+import {
+  Heart,
+  Target,
+  CheckCircle,
+  Circle,
+  Star,
+  ThumbsUp,
+  ThumbsDown,
+  RotateCcw,
+  Sparkles,
+  TrendingUp,
+  XCircle,
+  Lightbulb,
+  PenLine,
+  Moon,
+  Apple
+} from 'lucide-react'
 import { safeLocalStorage } from '@/utils/storage'
 import { format } from 'date-fns'
 
@@ -22,6 +38,42 @@ type LikeItem = {
   category: 'like' | 'not-like'
 }
 
+type BodyImageActivity = {
+  id: string
+  question: string
+  image: string
+  focus: string
+  description: string
+}
+
+type EmotionOption = {
+  id: string
+  label: string
+  color: string
+  description: string
+}
+
+type WorksheetPart = {
+  id: string
+  title: string
+  description: string
+  prompts: string[]
+  accent: string
+}
+
+type QuizOption = {
+  id: string
+  text: string
+  isCorrect: boolean
+}
+
+type QuizQuestion = {
+  id: string
+  question: string
+  options: QuizOption[]
+  support: string
+}
+
 export default function ConfidencePage() {
   const [activeTab, setActiveTab] = useState<'habits' | 'game'>('habits')
   const [currentHabit, setCurrentHabit] = useState<Habit | null>(null)
@@ -29,6 +81,15 @@ export default function ConfidencePage() {
   const [gameItems, setGameItems] = useState<LikeItem[]>([])
   const [gameAnswers, setGameAnswers] = useState<{ [key: string]: 'like' | 'not-like' }>({})
   const [gameSubmitted, setGameSubmitted] = useState(false)
+  const [emotionSelections, setEmotionSelections] = useState<Record<string, string>>({})
+  const [activityInfoVisible, setActivityInfoVisible] = useState<Record<string, boolean>>({})
+  const [activeWorksheetPart, setActiveWorksheetPart] = useState<string>('part1')
+  const [worksheetResponses, setWorksheetResponses] = useState<Record<string, string[]>>({})
+  const [quizIndex, setQuizIndex] = useState(0)
+  const [quizAnswered, setQuizAnswered] = useState(false)
+  const [quizSelected, setQuizSelected] = useState<string | null>(null)
+  const [quizScore, setQuizScore] = useState(0)
+  const [quizCompleted, setQuizCompleted] = useState(false)
 
   const availableHabits: Habit[] = [
     {
@@ -96,6 +157,145 @@ export default function ConfidencePage() {
     { id: 'isolation', name: 'Isolating from Others', icon: '🚪', category: 'not-like' },
   ]
 
+  const bodyImageActivities: BodyImageActivity[] = [
+    {
+      id: 'q1',
+      question: 'Q1: How does this person holding themselves gently make you feel about caring for your body?',
+      image: '/confidence/q1.svg',
+      focus: 'Self-compassion & noticing body cues',
+      description: 'The illustration shows someone giving themselves a hug, a reminder that bodies deserve kindness even on tough days.'
+    },
+    {
+      id: 'q2',
+      question: 'Q2: When you see a cozy reading corner, what emotions show up in your body?',
+      image: '/confidence/q2.svg',
+      focus: 'Quiet moments & calming routines',
+      description: 'A peaceful space for reading or drawing can help muscles relax and lets kids tune into what their body likes.'
+    },
+    {
+      id: 'q3',
+      question: 'Q3: Looking at a glowing screen late at night, what feeling do you notice?',
+      image: '/confidence/q3.svg',
+      focus: 'Screen breaks & sleepy signals',
+      description: 'Night screens can keep the brain buzzing—naming emotions helps decide when bodies need rest.'
+    },
+    {
+      id: 'q4',
+      question: 'Q4: Watching someone try a balance pose, which emotion rises for you?',
+      image: '/confidence/q4.svg',
+      focus: 'Movement & playful stretching',
+      description: 'Even wobbly moments strengthen body trust. Parents can spotlight effort instead of perfection.'
+    },
+    {
+      id: 'q5',
+      question: 'Q5: Seeing sweat after exercise, what do you feel about your hard-working body?',
+      image: '/confidence/q5.svg',
+      focus: 'Effort, cooling down & body signals',
+      description: 'Sweat shows effort! Talking about it keeps the focus on strength, not appearance.'
+    }
+  ]
+
+  const emotionOptions: EmotionOption[] = [
+    { id: 'proud', label: 'Proud', color: 'from-amber-200 to-amber-400 text-amber-900', description: 'Warm glow in my chest' },
+    { id: 'calm', label: 'Calm', color: 'from-sky-200 to-sky-400 text-sky-900', description: 'Slow, steady breaths' },
+    { id: 'curious', label: 'Curious', color: 'from-violet-200 to-violet-400 text-violet-900', description: 'I want to learn more' },
+    { id: 'anxious', label: 'Anxious', color: 'from-rose-300 to-red-500 text-white', description: 'Buzzy tummy feelings' },
+    { id: 'energized', label: 'Energized', color: 'from-emerald-200 to-emerald-400 text-emerald-900', description: 'Ready to move!' }
+  ]
+
+  const worksheetParts: WorksheetPart[] = [
+    {
+      id: 'part1',
+      title: 'Some things I am good at',
+      description: 'Spot everyday skills, no matter how small.',
+      prompts: ['I shine when I...', 'Friends notice I can...', 'I practiced and improved at...'],
+      accent: 'from-orange-100 to-amber-200'
+    },
+    {
+      id: 'part2',
+      title: 'Things my friends like about me',
+      description: 'Capture compliments and kind words.',
+      prompts: ['A friend once told me...', 'People smile because I...', 'I am a great friend when I...'],
+      accent: 'from-pink-100 to-rose-200'
+    },
+    {
+      id: 'part3',
+      title: 'Things I like about me',
+      description: 'Celebrate traits, quirks and style.',
+      prompts: ['I like my...', 'I feel happiest when...', 'A value I live by is...'],
+      accent: 'from-sky-100 to-blue-200'
+    },
+    {
+      id: 'part4',
+      title: 'Things my family love about me',
+      description: 'Remember encouraging words from home.',
+      prompts: ['My family cheers when I...', 'They say I am...', 'We laugh together about...'],
+      accent: 'from-emerald-100 to-green-200'
+    },
+    {
+      id: 'part5',
+      title: 'Things that I am proud of',
+      description: 'Honor wins, effort and progress.',
+      prompts: ['A proud moment was...', 'I kept going even when...', 'Next I want to celebrate...'],
+      accent: 'from-purple-100 to-violet-200'
+    },
+    {
+      id: 'part6',
+      title: 'One unique thing about me',
+      description: 'Every body has a special spark.',
+      prompts: ['Something that makes me unique...', 'People remember me for...', 'This part of me is growing...'],
+      accent: 'from-yellow-100 to-lime-200'
+    }
+  ]
+
+  const sleepNutritionQuiz: QuizQuestion[] = [
+    {
+      id: 'quiz1',
+      question: 'You stayed up late scrolling your phone. How might that affect your confidence during class tomorrow?',
+      options: [
+        { id: 'a', text: 'I might feel foggy and less ready to share ideas.', isCorrect: true },
+        { id: 'b', text: 'Losing sleep will make me extra energetic.', isCorrect: false }
+      ],
+      support: 'Rested brains remember details and manage emotions, which keeps confidence steady.'
+    },
+    {
+      id: 'quiz2',
+      question: 'Why does eating a colorful breakfast help you feel brave in PE or sports?',
+      options: [
+        { id: 'a', text: 'Balanced fuel gives muscles energy to jump, run and try.', isCorrect: true },
+        { id: 'b', text: 'Skipping breakfast makes me faster.', isCorrect: false }
+      ],
+      support: 'Carbs, protein and fruit send power to muscles so effort feels easier.'
+    },
+    {
+      id: 'quiz3',
+      question: 'How does a regular bedtime routine (stretch, journal, lights out) support self-acceptance?',
+      options: [
+        { id: 'a', text: 'Routines show my body I am worth care every night.', isCorrect: true },
+        { id: 'b', text: 'It makes bedtime more stressful.', isCorrect: false }
+      ],
+      support: 'Predictable habits calm the nervous system, so it is easier to speak kindly to yourself.'
+    },
+    {
+      id: 'quiz4',
+      question: 'After soccer you feel super thirsty. What choice keeps your mood steady for homework?',
+      options: [
+        { id: 'a', text: 'Drink water and grab a snack with protein + fruit.', isCorrect: true },
+        { id: 'b', text: 'Skip snacks because hunger will go away.', isCorrect: false }
+      ],
+      support: 'Protein repairs muscles and fruit refills energy, which stops cranky feelings.'
+    },
+    {
+      id: 'quiz5',
+      question: 'How can turning screens off 30 minutes before bed support lifestyle goals?',
+      options: [
+        { id: 'a', text: 'Blue light break lets melatonin flow so sleep feels deeper.', isCorrect: true },
+        { id: 'b', text: 'Screen glow makes me fall asleep faster.', isCorrect: false }
+      ],
+      support: 'Deep sleep heals muscles and skin, so body confidence grows from the inside out.'
+    }
+  ]
+
   // Load saved habits
   useEffect(() => {
     const saved = safeLocalStorage.getItem('confidence-habits')
@@ -133,6 +333,23 @@ export default function ConfidencePage() {
       setGameItems([...likeGameItems].sort(() => Math.random() - 0.5))
     }
   }, [])
+
+  useEffect(() => {
+    const storedWorksheet = safeLocalStorage.getItem('confidence-worksheet')
+    if (storedWorksheet) {
+      try {
+        setWorksheetResponses(JSON.parse(storedWorksheet))
+      } catch (error) {
+        console.warn('Unable to load worksheet notes', error)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (Object.keys(worksheetResponses).length > 0) {
+      safeLocalStorage.setItem('confidence-worksheet', JSON.stringify(worksheetResponses))
+    }
+  }, [worksheetResponses])
 
   const addHabit = (habit: Habit) => {
     if (habits.length >= 1) {
@@ -214,6 +431,55 @@ export default function ConfidencePage() {
     setGameItems([...likeGameItems].sort(() => Math.random() - 0.5))
     setGameAnswers({})
     setGameSubmitted(false)
+  }
+
+  const handleEmotionSelect = (activityId: string, emotionId: string) => {
+    setEmotionSelections({ ...emotionSelections, [activityId]: emotionId })
+  }
+
+  const toggleActivityInfo = (activityId: string) => {
+    setActivityInfoVisible({ ...activityInfoVisible, [activityId]: !activityInfoVisible[activityId] })
+  }
+
+  const handleWorksheetChange = (partId: string, promptIndex: number, value: string) => {
+    setWorksheetResponses(prev => {
+      const current = prev[partId] ? [...prev[partId]] : Array(worksheetParts.find(part => part.id === partId)?.prompts.length || 0).fill('')
+      current[promptIndex] = value
+      return { ...prev, [partId]: current }
+    })
+  }
+
+  const currentWorksheetPart = worksheetParts.find(part => part.id === activeWorksheetPart) || worksheetParts[0]
+
+  const currentQuiz = sleepNutritionQuiz[quizIndex]
+  const correctQuizOption = currentQuiz?.options.find(option => option.isCorrect)
+
+  const handleQuizAnswer = (optionId: string) => {
+    if (quizAnswered || !currentQuiz) return
+    setQuizSelected(optionId)
+    setQuizAnswered(true)
+    const selectedOption = currentQuiz.options.find(option => option.id === optionId)
+    if (selectedOption?.isCorrect) {
+      setQuizScore(prev => prev + 1)
+    }
+  }
+
+  const goToNextQuiz = () => {
+    if (quizIndex === sleepNutritionQuiz.length - 1) {
+      setQuizCompleted(true)
+    } else {
+      setQuizIndex(prev => prev + 1)
+    }
+    setQuizAnswered(false)
+    setQuizSelected(null)
+  }
+
+  const resetQuiz = () => {
+    setQuizIndex(0)
+    setQuizAnswered(false)
+    setQuizSelected(null)
+    setQuizScore(0)
+    setQuizCompleted(false)
   }
 
   return (
@@ -557,6 +823,208 @@ export default function ConfidencePage() {
           </p>
         </div>
       </motion.div>
+
+      {/* Positive Body Image Activities */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-12 glass-effect rounded-3xl p-6 md:p-10"
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div>
+            <p className="text-sm uppercase tracking-widest text-primary-500 font-semibold">Positive body image activities</p>
+            <h2 className="text-3xl font-bold text-gray-800">Emotion Thermometer Gallery</h2>
+            <p className="text-gray-600 mt-2">Look at each image, read the question, and tap the color that matches how you feel.</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-2xl px-4 py-3">
+            <Lightbulb className="w-8 h-8 text-amber-500" />
+            <p className="text-sm text-gray-700">Parents: Tap the tiny bulb on each card to read the focus of that question.</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {bodyImageActivities.map(activity => {
+            const selectedEmotion = emotionSelections[activity.id]
+            const emotionDetails = emotionOptions.find(option => option.id === selectedEmotion)
+            return (
+              <div key={activity.id} className="bg-white/70 rounded-3xl p-4 md:p-6 shadow-inner border border-white/40">
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500">{activity.question}</p>
+                  </div>
+                  <button
+                    onClick={() => toggleActivityInfo(activity.id)}
+                    className="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center hover:bg-amber-200 transition"
+                    aria-label="Show parent focus"
+                  >
+                    <Lightbulb className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="overflow-hidden rounded-2xl mb-4 border border-gray-100">
+                  <img src={activity.image} alt={activity.focus} className="w-full h-48 object-cover" />
+                </div>
+                {activityInfoVisible[activity.id] && (
+                  <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-4 mb-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-800">Focus: {activity.focus}</p>
+                    <p className="mt-1">{activity.description}</p>
+                  </div>
+                )}
+                <p className="text-sm text-gray-600 mb-3">Pick the emotion that feels closest right now.</p>
+                <div className="flex flex-wrap gap-3">
+                  {emotionOptions.map(option => (
+                    <motion.button
+                      key={option.id}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => handleEmotionSelect(activity.id, option.id)}
+                      className={`px-4 py-2 rounded-full font-semibold text-sm bg-gradient-to-r ${option.color} shadow-sm transition ${
+                        selectedEmotion === option.id ? 'ring-2 ring-offset-2 ring-gray-900/10' : 'opacity-90 hover:opacity-100'
+                      }`}
+                    >
+                      {option.label}
+                    </motion.button>
+                  ))}
+                </div>
+                {emotionDetails && (
+                  <div className={`mt-4 p-4 rounded-2xl bg-gradient-to-r ${emotionDetails.color}`}>
+                    <p className="text-sm font-semibold">A: {emotionDetails.label}</p>
+                    <p className="text-xs opacity-80">{emotionDetails.description}</p>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </motion.section>
+
+      {/* What I Like About Me Worksheet */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-12 glass-effect rounded-3xl p-6 md:p-10"
+      >
+        <div className="flex flex-col gap-2 mb-6">
+          <p className="text-sm uppercase tracking-widest text-secondary-500 font-semibold">What I like about me worksheet</p>
+          <h2 className="text-3xl font-bold text-gray-800">Six-Part Self-Love Journal</h2>
+          <p className="text-gray-600">Tap a part to focus on it, then answer the prompts inside each colorful box.</p>
+        </div>
+        <div className="flex gap-3 overflow-x-auto pb-4">
+          {worksheetParts.map(part => (
+            <button
+              key={part.id}
+              onClick={() => setActiveWorksheetPart(part.id)}
+              className={`px-4 py-3 rounded-2xl text-left min-w-[180px] transition border ${
+                activeWorksheetPart === part.id
+                  ? 'bg-gradient-to-r from-secondary-100 to-secondary-200 border-secondary-300 text-secondary-900'
+                  : 'bg-white border-gray-200 text-gray-600'
+              }`}
+            >
+              <p className="text-xs uppercase tracking-widest font-semibold">Part {part.id.replace('part', '')}</p>
+              <p className="text-base font-bold">{part.title}</p>
+            </button>
+          ))}
+        </div>
+        <div className="mt-6 bg-white rounded-3xl p-6 shadow-inner border border-white/50">
+          <div className={`rounded-2xl p-6 bg-gradient-to-r ${currentWorksheetPart.accent} mb-6`}>
+            <div className="flex items-center gap-3 mb-2">
+              <PenLine className="w-6 h-6 text-gray-700" />
+              <h3 className="text-2xl font-bold text-gray-800">{currentWorksheetPart.title}</h3>
+            </div>
+            <p className="text-gray-700">{currentWorksheetPart.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {currentWorksheetPart.prompts.map((prompt, index) => (
+              <label key={`${currentWorksheetPart.id}-${index}`} className="flex flex-col gap-2">
+                <span className="text-sm font-semibold text-gray-600">{prompt}</span>
+                <textarea
+                  value={worksheetResponses[currentWorksheetPart.id]?.[index] || ''}
+                  onChange={(event) => handleWorksheetChange(currentWorksheetPart.id, index, event.target.value)}
+                  className="min-h-[100px] rounded-2xl border border-gray-200 p-3 focus:ring-2 focus:ring-secondary-400 focus:border-transparent"
+                  placeholder="Write a few words here..."
+                />
+              </label>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Sleep & Nutrition Impact Quiz */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-12 glass-effect rounded-3xl p-6 md:p-10"
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div>
+            <p className="text-sm uppercase tracking-widest text-rose-500 font-semibold">Sleep & nutrition impact quizzes</p>
+            <h2 className="text-3xl font-bold text-gray-800">Confidence Boost Pop Quiz</h2>
+            <p className="text-gray-600">Answer each question. Once you choose, the red answer and the italic idea will appear before you move on.</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gradient-to-r from-rose-100 to-orange-100 rounded-2xl px-4 py-3">
+            <Moon className="w-6 h-6 text-rose-500" />
+            <Apple className="w-6 h-6 text-emerald-500" />
+            <p className="text-sm text-gray-700">Sleep + food choices shape moods, focus and self-acceptance.</p>
+          </div>
+        </div>
+        {!quizCompleted && currentQuiz && (
+          <div className="bg-white rounded-3xl p-6 border border-white/60 shadow-inner">
+            <p className="text-sm font-semibold text-gray-500">Question {quizIndex + 1} of {sleepNutritionQuiz.length}</p>
+            <h3 className="text-2xl font-bold text-gray-800 mt-2">{currentQuiz.question}</h3>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {currentQuiz.options.map(option => (
+                <button
+                  key={option.id}
+                  disabled={quizAnswered}
+                  onClick={() => handleQuizAnswer(option.id)}
+                  className={`rounded-2xl border-2 p-4 text-left transition font-semibold ${
+                    quizAnswered
+                      ? option.isCorrect
+                        ? 'border-red-500 bg-red-50 text-red-600'
+                        : quizSelected === option.id
+                          ? 'border-gray-300 bg-gray-50 text-gray-500'
+                          : 'border-gray-200 bg-white text-gray-700'
+                      : 'border-gray-200 hover:border-primary-300 hover:bg-primary-50 text-gray-700'
+                  }`}
+                >
+                  {option.text}
+                </button>
+              ))}
+            </div>
+            {quizAnswered && correctQuizOption && (
+              <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-red-50 to-rose-100 border border-red-200">
+                <p className="text-red-600 font-bold">
+                  A: {correctQuizOption.text}
+                  <span className="text-gray-700 italic font-normal ml-2">({currentQuiz.support})</span>
+                </p>
+              </div>
+            )}
+            {quizAnswered && (
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={goToNextQuiz}
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold"
+                >
+                  {quizIndex === sleepNutritionQuiz.length - 1 ? 'See my results' : 'Next question'}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+        {quizCompleted && (
+          <div className="bg-white rounded-3xl p-6 border border-white/60 shadow-inner text-center">
+            <div className="text-5xl mb-4">🌙🍎</div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">You answered {quizScore} / {sleepNutritionQuiz.length} questions!</h3>
+            <p className="text-gray-600 mb-6">Keep practicing healthy routines to boost your mood and confidence every day.</p>
+            <button
+              onClick={resetQuiz}
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold"
+            >
+              Try the quiz again
+            </button>
+          </div>
+        )}
+      </motion.section>
     </div>
   )
 }

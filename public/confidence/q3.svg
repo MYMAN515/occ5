@@ -1,0 +1,15 @@
+<svg width="512" height="360" viewBox="0 0 512 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="360" rx="32" fill="url(#nightGradient)"/>
+  <circle cx="360" cy="80" r="28" fill="#fcd34d"/>
+  <rect x="150" y="90" width="210" height="150" rx="20" fill="#0ea5e9" stroke="#bae6fd" stroke-width="6"/>
+  <rect x="190" y="150" width="130" height="70" rx="14" fill="#f1f5f9"/>
+  <text x="256" y="320" text-anchor="middle" font-size="30" font-family="'Baloo 2', 'Comic Sans MS', cursive" fill="#e0f2fe">
+    Q3 · Night Screens
+  </text>
+</svg>
