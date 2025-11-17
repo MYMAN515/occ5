@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Heart, Target, CheckCircle, Circle, Star, ThumbsUp, ThumbsDown, RotateCcw, Sparkles, TrendingUp, XCircle } from 'lucide-react'
+import Image from 'next/image'
+import { Heart, Target, CheckCircle, Circle, Star, ThumbsUp, ThumbsDown, RotateCcw, Sparkles, TrendingUp, XCircle, Lightbulb } from 'lucide-react'
 import { safeLocalStorage } from '@/utils/storage'
 import { format } from 'date-fns'
 
@@ -22,6 +23,20 @@ type LikeItem = {
   category: 'like' | 'not-like'
 }
 
+type PositiveActivity = {
+  id: string
+  prompt: string
+  image: string
+  note: string
+}
+
+type EmotionOption = {
+  id: string
+  label: string
+  baseClasses: string
+  activeClasses: string
+}
+
 export default function ConfidencePage() {
   const [activeTab, setActiveTab] = useState<'habits' | 'game'>('habits')
   const [currentHabit, setCurrentHabit] = useState<Habit | null>(null)
@@ -29,6 +44,8 @@ export default function ConfidencePage() {
   const [gameItems, setGameItems] = useState<LikeItem[]>([])
   const [gameAnswers, setGameAnswers] = useState<{ [key: string]: 'like' | 'not-like' }>({})
   const [gameSubmitted, setGameSubmitted] = useState(false)
+  const [bodyActivityResponses, setBodyActivityResponses] = useState<Record<string, string>>({})
+  const [openNotes, setOpenNotes] = useState<Record<string, boolean>>({})
 
   const availableHabits: Habit[] = [
     {
@@ -96,6 +113,72 @@ export default function ConfidencePage() {
     { id: 'isolation', name: 'Isolating from Others', icon: '🚪', category: 'not-like' },
   ]
 
+  const positiveBodyActivities: PositiveActivity[] = [
+    {
+      id: 'mirror-moment',
+      image: '/confidence/positive-body/mirror-moment.svg',
+      prompt: 'When you look in the mirror before heading out, which emotion fits how you feel about your body today?',
+      note: 'Focus on appreciating what your body can do (smile, move, express) rather than only how it looks.'
+    },
+    {
+      id: 'movement-celebration',
+      image: '/confidence/positive-body/movement-celebration.svg',
+      prompt: 'After finishing your favorite dance, sport, or stretch break, how does your body feel?',
+      note: 'Celebrate the strength, balance, or energy you noticed during movement instead of judging performance.'
+    },
+    {
+      id: 'mindful-snack',
+      image: '/confidence/positive-body/mindful-snack.svg',
+      prompt: 'While choosing a snack, what emotion shows up as you fuel your body?',
+      note: 'Think about nourishment, satisfaction, and listening to hunger cues instead of rules about “good” or “bad” foods.'
+    },
+    {
+      id: 'kind-words',
+      image: '/confidence/positive-body/kind-words.svg',
+      prompt: 'When a friend compliments you, what feeling pops up inside?',
+      note: 'Practice receiving kind words with curiosity and gratitude rather than brushing them off.'
+    },
+    {
+      id: 'rest-checkin',
+      image: '/confidence/positive-body/rest-checkin.svg',
+      prompt: 'At bedtime, what emotion tells you how your body feels about rest today?',
+      note: 'Notice when your body is asking for rest, stretch breaks, or cozy comfort so you can respond with care.'
+    }
+  ]
+
+  const emotionOptions: EmotionOption[] = [
+    {
+      id: 'anxious',
+      label: 'Anxious',
+      baseClasses: 'border-red-200 text-red-600 bg-white',
+      activeClasses: 'bg-red-500 text-white border-red-500'
+    },
+    {
+      id: 'neutral',
+      label: 'Neutral',
+      baseClasses: 'border-gray-200 text-gray-700 bg-white',
+      activeClasses: 'bg-gray-700 text-white border-gray-700'
+    },
+    {
+      id: 'curious',
+      label: 'Curious',
+      baseClasses: 'border-amber-200 text-amber-600 bg-white',
+      activeClasses: 'bg-amber-500 text-white border-amber-500'
+    },
+    {
+      id: 'proud',
+      label: 'Proud',
+      baseClasses: 'border-emerald-200 text-emerald-600 bg-white',
+      activeClasses: 'bg-emerald-500 text-white border-emerald-500'
+    },
+    {
+      id: 'calm',
+      label: 'Calm',
+      baseClasses: 'border-blue-200 text-blue-600 bg-white',
+      activeClasses: 'bg-blue-500 text-white border-blue-500'
+    }
+  ]
+
   // Load saved habits
   useEffect(() => {
     const saved = safeLocalStorage.getItem('confidence-habits')
@@ -133,6 +216,21 @@ export default function ConfidencePage() {
       setGameItems([...likeGameItems].sort(() => Math.random() - 0.5))
     }
   }, [])
+
+  useEffect(() => {
+    const savedResponses = safeLocalStorage.getItem('confidence-positive-body-emotions')
+    if (savedResponses) {
+      try {
+        setBodyActivityResponses(JSON.parse(savedResponses))
+      } catch (error) {
+        console.warn('Unable to parse positive body image responses', error)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    safeLocalStorage.setItem('confidence-positive-body-emotions', JSON.stringify(bodyActivityResponses))
+  }, [bodyActivityResponses])
 
   const addHabit = (habit: Habit) => {
     if (habits.length >= 1) {
@@ -194,6 +292,25 @@ export default function ConfidencePage() {
   const handleGameAnswer = (itemId: string, answer: 'like' | 'not-like') => {
     if (gameSubmitted) return
     setGameAnswers({ ...gameAnswers, [itemId]: answer })
+  }
+
+  const handleEmotionSelect = (activityId: string, emotionId: string) => {
+    setBodyActivityResponses(prev => {
+      const next = { ...prev }
+      if (prev[activityId] === emotionId) {
+        delete next[activityId]
+      } else {
+        next[activityId] = emotionId
+      }
+      return next
+    })
+  }
+
+  const toggleNoteVisibility = (activityId: string) => {
+    setOpenNotes(prev => ({
+      ...prev,
+      [activityId]: !prev[activityId]
+    }))
   }
 
   const handleGameSubmit = () => {
@@ -528,6 +645,83 @@ export default function ConfidencePage() {
                 </motion.div>
               )}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="glass-effect rounded-3xl p-6 md:p-8"
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-800">Positive Body Image Activities</h3>
+                  <p className="text-gray-600">
+                    Match the emotion that fits each moment and tap the light bulb to remember what to focus on.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {positiveBodyActivities.map((activity) => (
+                  <div key={activity.id} className="rounded-2xl border border-gray-100 shadow-sm p-5 bg-white/80">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="relative w-24 h-24 flex-shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-primary-50 to-secondary-50">
+                        <Image
+                          src={activity.image}
+                          alt={activity.prompt}
+                          fill
+                          sizes="96px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <p className="text-gray-800 font-medium">{activity.prompt}</p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {emotionOptions.map((option) => {
+                        const isActive = bodyActivityResponses[activity.id] === option.id
+                        return (
+                          <button
+                            key={option.id}
+                            onClick={() => handleEmotionSelect(activity.id, option.id)}
+                            className={`px-4 py-2 rounded-full border text-sm font-semibold transition-colors ${
+                              isActive ? option.activeClasses : option.baseClasses
+                            }`}
+                          >
+                            {option.label}
+                          </button>
+                        )
+                      })}
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm text-gray-500">
+                        {bodyActivityResponses[activity.id]
+                          ? `You picked: ${emotionOptions.find(opt => opt.id === bodyActivityResponses[activity.id])?.label}`
+                          : 'Pick the emotion that fits best'}
+                      </p>
+                      <button
+                        onClick={() => toggleNoteVisibility(activity.id)}
+                        className={`inline-flex items-center gap-2 px-3 py-2 rounded-full text-sm font-semibold transition-colors ${
+                          openNotes[activity.id]
+                            ? 'bg-amber-500 text-white shadow-lg'
+                            : 'bg-amber-100 text-amber-700 hover:bg-amber-200'
+                        }`}
+                      >
+                        <Lightbulb className="w-4 h-4" />
+                        {openNotes[activity.id] ? 'Hide Focus' : 'Show Focus'}
+                      </button>
+                    </div>
+
+                    {openNotes[activity.id] && (
+                      <div className="mt-4 rounded-xl bg-amber-50 border border-amber-100 p-4 text-sm text-amber-800">
+                        {activity.note}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
