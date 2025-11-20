@@ -2,13 +2,10 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { Heart, Brain, Sparkles, Smile, Cloud, Zap, Play, CheckCircle, XCircle, BookOpen, Video } from 'lucide-react'
+import { Heart, Brain, Sparkles, Smile, Cloud, Zap, Play, Video } from 'lucide-react'
 
 export default function ChangesPage() {
   const [activeTab, setActiveTab] = useState<'physical' | 'emotional' | 'comics' | 'video'>('physical')
-  const [showQuiz, setShowQuiz] = useState(false)
-  const [quizAnswers, setQuizAnswers] = useState<{ [key: number]: string }>({})
-  const [quizSubmitted, setQuizSubmitted] = useState(false)
 
   const physicalChanges = [
     {
@@ -121,43 +118,6 @@ export default function ChangesPage() {
     }
   ]
 
-  const quizQuestions = [
-    {
-      question: "When does puberty typically start?",
-      options: ["Ages 5-7", "Ages 8-14", "Ages 15-18", "Ages 20+"],
-      correct: "Ages 8-14"
-    },
-    {
-      question: "What is a common physical change during puberty?",
-      options: ["Getting shorter", "Growth spurts", "Losing hair", "No changes"],
-      correct: "Growth spurts"
-    },
-    {
-      question: "Mood swings during puberty are:",
-      options: ["Abnormal", "Normal and common", "A sign of illness", "Rare"],
-      correct: "Normal and common"
-    },
-    {
-      question: "Everyone goes through puberty:",
-      options: ["At the exact same time", "At different times", "Only boys", "Only girls"],
-      correct: "At different times"
-    }
-  ]
-
-  const handleQuizSubmit = () => {
-    setQuizSubmitted(true)
-  }
-
-  const getQuizScore = () => {
-    let correct = 0
-    quizQuestions.forEach((q, index) => {
-      if (quizAnswers[index] === q.correct) {
-        correct++
-      }
-    })
-    return { correct, total: quizQuestions.length }
-  }
-
   const activeChanges = activeTab === 'physical' ? physicalChanges : activeTab === 'emotional' ? emotionalChanges : []
 
   return (
@@ -185,7 +145,7 @@ export default function ChangesPage() {
       >
         <div className="glass-effect rounded-full p-2 inline-flex gap-2 flex-wrap justify-center">
           <button
-            onClick={() => { setActiveTab('physical'); setShowQuiz(false); setQuizSubmitted(false); setQuizAnswers({}) }}
+            onClick={() => setActiveTab('physical')}
             className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base ${
               activeTab === 'physical'
                 ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
@@ -195,7 +155,7 @@ export default function ChangesPage() {
             💪 Physical
           </button>
           <button
-            onClick={() => { setActiveTab('emotional'); setShowQuiz(false); setQuizSubmitted(false); setQuizAnswers({}) }}
+            onClick={() => setActiveTab('emotional')}
             className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base ${
               activeTab === 'emotional'
                 ? 'bg-gradient-to-r from-secondary-500 to-secondary-600 text-white shadow-lg'
@@ -205,7 +165,7 @@ export default function ChangesPage() {
             💭 Emotional
           </button>
           <button
-            onClick={() => { setActiveTab('comics'); setShowQuiz(false); setQuizSubmitted(false); setQuizAnswers({}) }}
+            onClick={() => setActiveTab('comics')}
             className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base ${
               activeTab === 'comics'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
@@ -215,7 +175,7 @@ export default function ChangesPage() {
             📚 Comics
           </button>
           <button
-            onClick={() => { setActiveTab('video'); setShowQuiz(false); setQuizSubmitted(false); setQuizAnswers({}) }}
+            onClick={() => setActiveTab('video')}
             className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base ${
               activeTab === 'video'
                 ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
@@ -294,126 +254,6 @@ export default function ChangesPage() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Quiz Section */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="glass-effect rounded-3xl p-6 md:p-8"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
-                  <BookOpen className="w-8 h-8 text-primary-600" />
-                  Test Your Understanding
-                </h3>
-                {!showQuiz && (
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setShowQuiz(true)}
-                    className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold"
-                  >
-                    Start Quiz
-                  </motion.button>
-                )}
-              </div>
-
-              {showQuiz && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="space-y-6"
-                >
-                  {quizQuestions.map((q, index) => (
-                    <div key={index} className="bg-white rounded-2xl p-6">
-                      <h4 className="font-bold text-lg mb-4 text-gray-800">{index + 1}. {q.question}</h4>
-                      <div className="space-y-3">
-                        {q.options.map((option) => (
-                          <motion.button
-                            key={option}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={() => {
-                              if (!quizSubmitted) {
-                                setQuizAnswers({ ...quizAnswers, [index]: option })
-                              }
-                            }}
-                            className={`w-full text-left p-4 rounded-xl transition-all ${
-                              quizAnswers[index] === option
-                                ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
-                                : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
-                            } ${
-                              quizSubmitted && option === q.correct
-                                ? 'ring-2 ring-green-500'
-                                : ''
-                            } ${
-                              quizSubmitted && quizAnswers[index] === option && option !== q.correct
-                                ? 'bg-red-100 text-red-700'
-                                : ''
-                            }`}
-                            disabled={quizSubmitted}
-                          >
-                            <div className="flex items-center justify-between">
-                              <span>{option}</span>
-                              {quizSubmitted && option === q.correct && (
-                                <CheckCircle className="w-5 h-5 text-green-600" />
-                              )}
-                              {quizSubmitted && quizAnswers[index] === option && option !== q.correct && (
-                                <XCircle className="w-5 h-5 text-red-600" />
-                              )}
-                            </div>
-                          </motion.button>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-
-                  {!quizSubmitted ? (
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={handleQuizSubmit}
-                      disabled={Object.keys(quizAnswers).length !== quizQuestions.length}
-                      className={`w-full py-4 rounded-xl font-semibold text-lg ${
-                        Object.keys(quizAnswers).length === quizQuestions.length
-                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                      }`}
-                    >
-                      Submit Answers
-                    </motion.button>
-                  ) : (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 text-center"
-                    >
-                      <div className="text-4xl mb-4">🎉</div>
-                      <h4 className="text-2xl font-bold mb-2 text-gray-800">
-                        You got {getQuizScore().correct} out of {getQuizScore().total} correct!
-                      </h4>
-                      <p className="text-gray-600 mb-4">
-                        {getQuizScore().correct === getQuizScore().total
-                          ? "Perfect score! You're a puberty expert! 🌟"
-                          : "Great job! Keep learning! 💪"}
-                      </p>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => {
-                          setShowQuiz(false)
-                          setQuizSubmitted(false)
-                          setQuizAnswers({})
-                        }}
-                        className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold"
-                      >
-                        Try Again
-                      </motion.button>
-                    </motion.div>
-                  )}
-                </motion.div>
-              )}
-            </motion.div>
           </motion.div>
         ) : activeTab === 'video' ? (
           <motion.div

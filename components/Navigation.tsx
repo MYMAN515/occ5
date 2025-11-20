@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Users } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Users, Brain } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -17,6 +17,7 @@ export default function Navigation() {
   const links = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
     { href: '/activities', label: 'Activities', icon: <Activity className="w-4 h-4" /> },
+    { href: '/quiz', label: 'Quiz', icon: <Brain className="w-4 h-4" /> },
     { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" /> },
     { href: '/body-guide', label: 'Changes & Body', icon: <Heart className="w-4 h-4" /> },
     { href: '/resources', label: 'Resources', icon: <BookOpen className="w-4 h-4" /> },

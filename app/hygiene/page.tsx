@@ -91,14 +91,17 @@ export default function HygienePage() {
     setDraggedItem(itemId)
   }
 
-  const handleDrop = (category: 'morning' | 'afternoon' | 'evening') => {
-    if (!draggedItem) return
-
-    const item = availableRoutineItems.find(i => i.id === draggedItem)
+  const addRoutineItem = (itemId: string, category: 'morning' | 'afternoon' | 'evening') => {
+    const item = availableRoutineItems.find(i => i.id === itemId)
     if (item && !routineItems.find(r => r.id === item.id)) {
       setRoutineItems([...routineItems, { ...item, category }])
     }
     setDraggedItem(null)
+  }
+
+  const handleDrop = (category: 'morning' | 'afternoon' | 'evening') => {
+    if (!draggedItem) return
+    addRoutineItem(draggedItem, category)
   }
 
   const removeRoutineItem = (id: string) => {
@@ -106,6 +109,11 @@ export default function HygienePage() {
   }
 
   const handleGameDrop = (itemId: string, category: string) => {
+    if (gameSubmitted) return
+    setGameAnswers({ ...gameAnswers, [itemId]: category })
+  }
+
+  const handleGameQuickAssign = (itemId: string, category: string) => {
     if (gameSubmitted) return
     setGameAnswers({ ...gameAnswers, [itemId]: category })
   }
@@ -190,7 +198,9 @@ export default function HygienePage() {
             {/* Available Items */}
             <div className="glass-effect rounded-3xl p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Available Activities</h3>
-              <p className="text-gray-600 mb-4">Drag items to build your routine!</p>
+              <p className="text-gray-600 mb-4">
+                Drag items to build your routine or tap a quick add button for phone-friendly play.
+              </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {availableRoutineItems
                   .filter(item => !routineItems.find(r => r.id === item.id))
@@ -205,6 +215,21 @@ export default function HygienePage() {
                     >
                       <div className="text-4xl mb-2">{item.icon}</div>
                       <p className="text-sm font-medium text-gray-700">{item.name}</p>
+                      <div className="flex justify-center gap-1 mt-3 text-xs text-gray-600">
+                        {[
+                          { id: 'morning', label: '🌅' },
+                          { id: 'afternoon', label: '☀️' },
+                          { id: 'evening', label: '🌙' }
+                        ].map((time) => (
+                          <button
+                            key={time.id}
+                            onClick={() => addRoutineItem(item.id, time.id as 'morning' | 'afternoon' | 'evening')}
+                            className="bg-white/70 border border-gray-200 rounded-full px-2 py-1 hover:border-primary-200 transition"
+                          >
+                            {time.label}
+                          </button>
+                        ))}
+                      </div>
                     </motion.div>
                   ))}
               </div>
@@ -289,7 +314,7 @@ export default function HygienePage() {
             <div className="glass-effect rounded-3xl p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Categorize Hygiene Items</h3>
               <p className="text-gray-600 mb-6">
-                Drag each item to its correct category! Match the hygiene tools with where they're used.
+                Drag each item to its correct category or tap a shortcut button—perfect for phones! Match the hygiene tools with where they're used.
               </p>
 
               {/* Categories */}
@@ -360,6 +385,18 @@ export default function HygienePage() {
                       >
                         <div className="text-4xl mb-2">{item.icon}</div>
                         <p className="text-sm font-medium text-gray-700">{item.name}</p>
+                        <div className="flex justify-center gap-2 mt-3 text-xs">
+                          {gameCategories.map((category) => (
+                            <button
+                              key={category.id}
+                              onClick={() => handleGameQuickAssign(item.id, category.id)}
+                              className="bg-white/70 border border-gray-200 rounded-full px-2 py-1 hover:border-primary-200 transition"
+                              disabled={gameSubmitted}
+                            >
+                              {category.icon}
+                            </button>
+                          ))}
+                        </div>
                       </motion.div>
                     ))}
                 </div>
