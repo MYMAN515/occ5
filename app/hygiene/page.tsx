@@ -23,6 +23,7 @@ type HygieneItem = {
 export default function HygienePage() {
   const [activeTab, setActiveTab] = useState<'builder' | 'game'>('builder')
   const [routineItems, setRoutineItems] = useState<RoutineItem[]>([])
+  const [quickAddTime, setQuickAddTime] = useState<'morning' | 'afternoon' | 'evening'>('morning')
   const [draggedItem, setDraggedItem] = useState<string | null>(null)
   const [gameItems, setGameItems] = useState<HygieneItem[]>([])
   const [gameAnswers, setGameAnswers] = useState<{ [key: string]: string }>({})
@@ -101,6 +102,13 @@ export default function HygienePage() {
     setDraggedItem(null)
   }
 
+  const handleQuickAdd = (itemId: string) => {
+    const item = availableRoutineItems.find(i => i.id === itemId)
+    if (item && !routineItems.find(r => r.id === item.id)) {
+      setRoutineItems([...routineItems, { ...item, category: quickAddTime }])
+    }
+  }
+
   const removeRoutineItem = (id: string) => {
     setRoutineItems(routineItems.filter(item => item.id !== id))
   }
@@ -142,7 +150,7 @@ export default function HygienePage() {
           Hygiene & Self-Care Routines
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Build your daily hygiene routine and learn about self-care! 🧼✨
+          Build your daily hygiene routine and learn about self-care! Drag on desktop or tap on phones. 🧼✨
         </p>
       </motion.div>
 
@@ -190,7 +198,24 @@ export default function HygienePage() {
             {/* Available Items */}
             <div className="glass-effect rounded-3xl p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Available Activities</h3>
-              <p className="text-gray-600 mb-4">Drag items to build your routine!</p>
+              <p className="text-gray-600 mb-4">Drag items to build your routine or tap to place them.</p>
+              <div className="flex flex-wrap gap-2 mb-4 items-center text-sm">
+                <span className="font-semibold text-gray-700">Tap-to-add target:</span>
+                {(['morning', 'afternoon', 'evening'] as const).map((time) => (
+                  <button
+                    key={time}
+                    onClick={() => setQuickAddTime(time)}
+                    className={`px-3 py-1 rounded-full border ${
+                      quickAddTime === time
+                        ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white border-transparent shadow'
+                        : 'bg-white text-gray-700 border-gray-200'
+                    }`}
+                  >
+                    {time === 'morning' ? '🌅 Morning' : time === 'afternoon' ? '☀️ Afternoon' : '🌙 Evening'}
+                  </button>
+                ))}
+                <span className="text-gray-500">(Perfect for phones — tap a card to drop it here!)</span>
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {availableRoutineItems
                   .filter(item => !routineItems.find(r => r.id === item.id))
@@ -199,6 +224,7 @@ export default function HygienePage() {
                       key={item.id}
                       draggable
                       onDragStart={() => handleDragStart(item.id)}
+                      onClick={() => handleQuickAdd(item.id)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-4 text-center cursor-grab active:cursor-grabbing"
@@ -289,7 +315,7 @@ export default function HygienePage() {
             <div className="glass-effect rounded-3xl p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Categorize Hygiene Items</h3>
               <p className="text-gray-600 mb-6">
-                Drag each item to its correct category! Match the hygiene tools with where they're used.
+                Drag or tap each item to its correct category! Match the hygiene tools with where they're used, even on phones.
               </p>
 
               {/* Categories */}
@@ -339,7 +365,7 @@ export default function HygienePage() {
 
               {/* Items to Drag */}
               <div className="mb-6">
-                <h4 className="font-bold text-lg mb-4 text-gray-800">Drag these items to the correct category:</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-800">Drag or tap these items to the correct category:</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                   {hygieneGameItems
                     .filter(item => !gameAnswers[item.id])
@@ -360,6 +386,20 @@ export default function HygienePage() {
                       >
                         <div className="text-4xl mb-2">{item.icon}</div>
                         <p className="text-sm font-medium text-gray-700">{item.name}</p>
+                        {!gameSubmitted && (
+                          <div className="flex flex-wrap gap-2 mt-3 text-xs justify-center">
+                            <span className="font-semibold text-gray-700">Tap to place:</span>
+                            {gameCategories.map((category) => (
+                              <button
+                                key={category.id}
+                                onClick={() => handleGameDrop(item.id, category.id)}
+                                className="px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700 hover:border-primary-300"
+                              >
+                                {category.icon} {category.name}
+                              </button>
+                            ))}
+                          </div>
+                        )}
                       </motion.div>
                     ))}
                 </div>
