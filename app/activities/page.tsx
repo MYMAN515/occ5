@@ -60,11 +60,11 @@ export default function ActivitiesPage() {
     },
     {
       id: 'quiz',
-      title: 'Quick Quiz',
-      description: 'Test your knowledge about puberty',
+      title: 'Quiz Adventures',
+      description: 'Silly, smiley quizzes that make learning fun',
       icon: <Brain className="w-8 h-8" />,
       color: 'from-green-400 to-emerald-500',
-      href: '/changes',
+      href: '/quiz',
       emoji: '🧠'
     }
   ]
