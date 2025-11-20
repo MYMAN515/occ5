@@ -57,15 +57,6 @@ export default function ActivitiesPage() {
       color: 'from-yellow-400 to-orange-500',
       href: '/confidence',
       emoji: '⭐'
-    },
-    {
-      id: 'quiz',
-      title: 'Quick Quiz',
-      description: 'Test your knowledge about puberty',
-      icon: <Brain className="w-8 h-8" />,
-      color: 'from-green-400 to-emerald-500',
-      href: '/changes',
-      emoji: '🧠'
     }
   ]
 
