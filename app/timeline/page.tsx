@@ -80,7 +80,7 @@ export default function TimelinePage() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
           Timeline Matching Game
         </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-balance">
           Match each change to before or after puberty begins! 🎯
         </p>
       </motion.div>
@@ -92,18 +92,18 @@ export default function TimelinePage() {
         transition={{ delay: 0.2 }}
         className="glass-effect rounded-2xl p-6 mb-8 max-w-2xl mx-auto"
       >
-        <div className="flex justify-around items-center text-center">
-          <div>
+        <div className="flex flex-col sm:flex-row justify-around items-center text-center gap-4">
+          <div className="w-full sm:w-auto">
             <p className="text-gray-600 font-medium mb-1">Score</p>
             <p className="text-3xl font-bold text-primary-600">{score}/{items.length}</p>
           </div>
-          <div className="h-12 w-px bg-gray-300"></div>
-          <div>
+          <div className="h-px w-full bg-gray-200 sm:h-12 sm:w-px sm:bg-gray-300"></div>
+          <div className="w-full sm:w-auto">
             <p className="text-gray-600 font-medium mb-1">Attempts</p>
             <p className="text-3xl font-bold text-secondary-600">{attempts}</p>
           </div>
-          <div className="h-12 w-px bg-gray-300"></div>
-          <div>
+          <div className="h-px w-full bg-gray-200 sm:h-12 sm:w-px sm:bg-gray-300"></div>
+          <div className="w-full sm:w-auto">
             <p className="text-gray-600 font-medium mb-1">Accuracy</p>
             <p className="text-3xl font-bold text-green-600">
               {attempts > 0 ? Math.round((score / attempts) * 100) : 0}%
@@ -147,8 +147,8 @@ export default function TimelinePage() {
           transition={{ delay: 0.3 }}
           className="text-center mb-8"
         >
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-effect rounded-2xl p-4">
-            {selectedItem 
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-effect rounded-2xl p-4 text-balance">
+            {selectedItem
               ? '👆 Now click either "Before Puberty" or "After Puberty" below!'
               : '👇 Click on a card below, then choose when it happens!'}
           </p>
@@ -168,7 +168,7 @@ export default function TimelinePage() {
             whileTap={{ scale: 0.95 }}
             onClick={() => handleStageClick('before')}
             disabled={!selectedItem}
-            className={`flex-1 py-6 rounded-2xl font-bold text-xl transition-all ${
+            className={`flex-1 py-6 rounded-2xl font-bold text-xl transition-all w-full ${
               selectedItem
                 ? 'bg-gradient-to-r from-blue-400 to-cyan-500 text-white shadow-lg cursor-pointer'
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -181,7 +181,7 @@ export default function TimelinePage() {
             whileTap={{ scale: 0.95 }}
             onClick={() => handleStageClick('after')}
             disabled={!selectedItem}
-            className={`flex-1 py-6 rounded-2xl font-bold text-xl transition-all ${
+            className={`flex-1 py-6 rounded-2xl font-bold text-xl transition-all w-full ${
               selectedItem
                 ? 'bg-gradient-to-r from-purple-400 to-pink-500 text-white shadow-lg cursor-pointer'
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed'

@@ -98,13 +98,13 @@ export default function Home() {
             {t('home.tagline')}
           </div>
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2.5, repeat: Infinity }}
           >
             {t('home.title')}
           </motion.h1>
-          <p className="text-lg text-gray-700 max-w-xl">{t('home.subtitle')}</p>
+          <p className="text-base sm:text-lg text-gray-700 max-w-xl text-balance">{t('home.subtitle')}</p>
 
           <div className={`flex flex-wrap gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <Link href="#quick-links" className="w-full sm:w-auto">
@@ -165,10 +165,12 @@ export default function Home() {
         <div className="flex items-center justify-between mb-4">
           <div className="space-y-1">
             <p className="text-sm font-semibold text-primary-700">Quick links</p>
-            <h2 className="text-2xl font-bold text-gray-900">Quick links crafted for small screens—tap a card to jump right in.</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-balance">
+              Quick links crafted for small screens—tap a card to jump right in.
+            </h2>
           </div>
         </div>
-        <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'text-right' : ''}`}>
+        <div className={`grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'text-right' : ''}`}>
           {quickLinks.map((item) => {
             const CardContent = (
               <motion.div
@@ -178,8 +180,8 @@ export default function Home() {
               >
                 <span className="text-3xl" role="img" aria-label={item.label}>{item.icon}</span>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">{item.label}</p>
-                  <p className="text-sm text-gray-600">{item.helper}</p>
+                  <p className="text-base sm:text-lg font-semibold text-gray-900 text-balance">{item.label}</p>
+                  <p className="text-sm text-gray-600 text-balance">{item.helper}</p>
                 </div>
               </motion.div>
             )

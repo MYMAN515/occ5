@@ -132,13 +132,15 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
       {gameState === 'intro' && (
         <>
           <Heart className="w-16 h-16 mx-auto mb-4 text-pink-500" aria-hidden />
-          <h2 className="text-3xl font-bold mb-3 text-gray-800">{t('games.memory.title')}</h2>
-          <p className="text-gray-600 mb-6">{t('games.memory.instructions')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-800 text-balance">
+            {t('games.memory.title')}
+          </h2>
+          <p className="text-gray-600 mb-6 text-base sm:text-lg text-balance">{t('games.memory.instructions')}</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={startGame}
-            className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-3 rounded-full font-semibold"
+            className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
           </motion.button>
@@ -147,14 +149,14 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
 
       {gameState === 'playing' && (
         <>
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
             <div className="relative">
-              <h3 className="text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
               <ScoreSparkle show={showSparkle} label={t('games.aria.sparkle')} />
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">✕</button>
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700 self-end sm:self-auto">✕</button>
           </div>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index) || matchedCards.includes(index)
               return (
@@ -180,14 +182,16 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
       {gameState === 'finished' && (
         <>
           <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-500" />
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.congratulations')}</h2>
-          <p className="text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
-          <div className="flex gap-3 justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-balance">
+            {t('games.congratulations')}
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
+          <div className="flex gap-3 justify-center flex-wrap">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={startGame}
-              className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold"
+              className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.playAgain')}
             </motion.button>
@@ -195,7 +199,7 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onClose}
-              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold"
+              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.close')}
             </motion.button>
@@ -268,13 +272,13 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
       {gameState === 'intro' && (
         <>
           <Target className="w-16 h-16 mx-auto mb-4 text-blue-500" aria-hidden />
-          <h2 className="text-3xl font-bold mb-3 text-gray-800">{t('games.quiz.title')}</h2>
-          <p className="text-gray-600 mb-6">{t('games.quiz.instructions')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-800 text-balance">{t('games.quiz.title')}</h2>
+          <p className="text-gray-600 mb-6 text-base sm:text-lg text-balance">{t('games.quiz.instructions')}</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setGameState('playing')}
-            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold"
+            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
           </motion.button>
@@ -283,16 +287,18 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
 
       {gameState === 'playing' && (
         <>
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800">
               {t('games.question')} {currentQuestion + 1}/{questions.length}
             </h3>
             <div className="relative">
-              <h3 className="text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
               <ScoreSparkle show={showSparkle} label={t('games.aria.sparkle')} />
             </div>
           </div>
-          <h3 className="text-2xl font-bold mb-8 text-gray-800">{questions[currentQuestion].question}</h3>
+          <h3 className="text-xl md:text-2xl font-bold mb-8 text-gray-800 text-balance">
+            {questions[currentQuestion].question}
+          </h3>
           <div className="space-y-3">
             {questions[currentQuestion].answers.map((answer, index) => (
               <motion.button
@@ -311,7 +317,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
                         : 'bg-white border border-gray-100 opacity-50'
                 }`}
               >
-                {answer}
+                <span className="block break-words text-base sm:text-lg">{answer}</span>
               </motion.button>
             ))}
           </div>
@@ -321,9 +327,9 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
       {gameState === 'finished' && (
         <>
           <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-500" />
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.quiz.complete')}</h2>
-          <p className="text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
-          <div className="flex gap-3 justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-balance">{t('games.quiz.complete')}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
+          <div className="flex gap-3 justify-center flex-wrap">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -333,7 +339,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
                 setCurrentQuestion(0)
                 setSelectedAnswer(null)
               }}
-              className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 rounded-full font-semibold"
+              className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.playAgain')}
             </motion.button>
@@ -341,7 +347,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onClose}
-              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold"
+              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.close')}
             </motion.button>
@@ -415,13 +421,13 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
       {gameState === 'intro' && (
         <>
           <Puzzle className="w-16 h-16 mx-auto mb-4 text-pink-500" />
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.matching.title')}</h2>
-          <p className="text-gray-600 mb-6">{t('games.matching.instructions')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-balance">{t('games.matching.title')}</h2>
+          <p className="text-gray-600 mb-6 text-base sm:text-lg text-balance">{t('games.matching.instructions')}</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setGameState('playing')}
-            className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-3 rounded-full font-semibold"
+            className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
           </motion.button>
@@ -430,14 +436,14 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
 
       {gameState === 'playing' && (
         <>
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
             <div className="relative">
-              <h3 className="text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
               <ScoreSparkle show={showSparkle} label={t('games.aria.sparkle')} />
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">✕</button>
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700 self-end sm:self-auto">✕</button>
           </div>
-          <p className="text-gray-600 mb-6">{t('games.matching.instruction')}</p>
+          <p className="text-gray-600 mb-6 text-base sm:text-lg text-balance">{t('games.matching.instruction')}</p>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-3">
               {pairs.map((pair) => (
@@ -453,7 +459,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
                   onClick={() => !matched.includes(pair.id) && handleLeftClick(pair.id)}
                   disabled={matched.includes(pair.id)}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className={`w-full p-4 rounded-xl font-medium transition-all ${
+                  className={`w-full p-4 rounded-xl font-medium transition-all text-left break-words ${
                     matched.includes(pair.id)
                       ? 'bg-green-500 text-white shadow-lg'
                       : selectedLeft === pair.id
@@ -479,7 +485,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
                   onClick={() => !matched.includes(pair.id) && handleRightClick(pair.id)}
                   disabled={matched.includes(pair.id)}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className={`w-full p-4 rounded-xl font-medium transition-all ${
+                  className={`w-full p-4 rounded-xl font-medium transition-all text-left break-words ${
                     matched.includes(pair.id)
                       ? 'bg-green-500 text-white shadow-lg'
                       : selectedLeft === pair.id
@@ -498,9 +504,9 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
       {gameState === 'finished' && (
         <>
           <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-500" />
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.matching.complete')}</h2>
-          <p className="text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
-          <div className="flex gap-3 justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-balance">{t('games.matching.complete')}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
+          <div className="flex gap-3 justify-center flex-wrap">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -510,7 +516,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
                 setMatched([])
                 setSelectedLeft(null)
               }}
-              className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-6 py-3 rounded-full font-semibold"
+              className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.playAgain')}
             </motion.button>
@@ -518,7 +524,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onClose}
-              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold"
+              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.close')}
             </motion.button>
@@ -560,13 +566,13 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
       {gameState === 'intro' && (
         <>
           <Brain className="w-16 h-16 mx-auto mb-4 text-purple-500" />
-          <h2 className="text-3xl font-bold mb-3 text-gray-800">{t('games.emotions.title')}</h2>
-          <p className="text-gray-600 mb-6">{t('games.emotions.instructions')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-800 text-balance">{t('games.emotions.title')}</h2>
+          <p className="text-gray-600 mb-6 text-base sm:text-lg text-balance">{t('games.emotions.instructions')}</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setGameState('playing')}
-            className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold"
+            className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
           </motion.button>
@@ -575,19 +581,19 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
 
       {gameState === 'playing' && (
         <>
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
             <div className="relative">
-              <h3 className="text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800" aria-live="polite">{t('games.score')}: {score}</h3>
               <ScoreSparkle show={showSparkle} label={t('games.aria.sparkle')} />
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">✕</button>
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700 self-end sm:self-auto">✕</button>
           </div>
-          <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8">
-            <div className="text-8xl mb-6" role="img" aria-label={emotions[currentEmotion].name}>
+          <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-6 sm:p-8 text-center">
+            <div className="text-6xl sm:text-8xl mb-6" role="img" aria-label={emotions[currentEmotion].name}>
               {emotions[currentEmotion].emoji}
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">{t('games.emotions.prompt')}</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 text-balance">{t('games.emotions.prompt')}</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {emotions.map((emotion, index) => (
                 <motion.button
                   key={emotion.name}
@@ -595,7 +601,7 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
                   whileTap={{ scale: 0.97 }}
                   onClick={() => handleEmotion(index === currentEmotion)}
                   disabled={index !== currentEmotion}
-                  className={`p-4 rounded-2xl font-semibold border ${
+                  className={`p-4 rounded-2xl font-semibold border w-full text-center break-words ${
                     index === currentEmotion
                       ? 'bg-white text-purple-700 border-purple-200 shadow-lg'
                       : 'bg-white/70 text-gray-400 border-gray-100 cursor-not-allowed'
@@ -613,9 +619,9 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
       {gameState === 'finished' && (
         <>
           <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-500" />
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.emotions.complete')}</h2>
-          <p className="text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
-          <div className="flex gap-3 justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-balance">{t('games.emotions.complete')}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-6">{t('games.yourScore')}: {score}</p>
+          <div className="flex gap-3 justify-center flex-wrap">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -624,7 +630,7 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
                 setScore(0)
                 setCurrentEmotion(0)
               }}
-              className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold"
+              className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.playAgain')}
             </motion.button>
@@ -632,7 +638,7 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onClose}
-              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold"
+              className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
               {t('games.close')}
             </motion.button>
