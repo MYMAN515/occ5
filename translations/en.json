@@ -6,7 +6,7 @@
     "diary": "Child's Diary",
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
-    "games": "Games & Activities",
+    "games": "Games",
     "parentGuide": "Parenting Tips",
     "quiz": "Quiz",
     "team": "Our Team",
@@ -255,7 +255,7 @@
       "title": "Quick Links",
       "parentGuide": "Parent Guide",
       "guidance": "Guidance",
-      "games": "Games & Activities",
+    "games": "Games",
       "diary": "Mood Diary"
     },
     "pwa": {
@@ -267,93 +267,95 @@
     "communityNote": "Made with 💙 to support families through puberty education"
   },
   "games": {
-    "title": "Interactive Games & Activities",
-    "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
+    "title": "Games Zone",
+    "subtitle": "Tap. Play. Smile.",
     "easy": "Easy",
-    "medium": "Medium",
-    "moreActivities": "More Activities Available",
-    "startGame": "Start Game",
-    "score": "Score",
-    "question": "Question",
-    "scenario": "Scenario",
-    "congratulations": "Congratulations!",
-    "wellDone": "Well Done!",
-    "quizComplete": "Quiz Complete!",
-    "yourScore": "Your Score",
-    "perfectScore": "Perfect! You matched everything!",
-    "playAgain": "Play Again",
+    "medium": "Tricky",
+    "moreActivities": "More Fun",
+    "startGame": "Play!",
+    "score": "Stars",
+    "question": "Q",
+    "scenario": "Scene",
+    "congratulations": "You Win!",
+    "wellDone": "Nice Work!",
+    "quizComplete": "Quiz Done!",
+    "yourScore": "Total",
+    "perfectScore": "All pairs!",
+    "playAgain": "Again",
     "close": "Close",
+    "progressLabel": "Colorful progress",
     "memory": {
-      "title": "Emotion Memory Game",
-      "description": "Match pairs of emotions while learning about feelings during puberty",
-      "instructions": "Find matching pairs of emotions. Remember where each emotion is and match them all to win!"
+      "title": "Emoji Match",
+      "description": "Flip cards • Find twins • Cheer big",
+      "instructions": ["Tap a card", "Spot the twin", "Clear the grid"],
+      "coveredCard": "Hidden emoji"
     },
     "quiz": {
-      "title": "Puberty Knowledge Quiz",
-      "description": "Test your understanding of puberty changes with fun quiz questions",
-      "instructions": "Answer questions about puberty. Choose the best answer for each question!",
+      "title": "Body Quiz",
+      "description": "Quick facts • Silly choices • Fast cheers",
+      "instructions": ["Read fast", "Drag an answer", "Get stars"],
       "q1": {
-        "question": "Which of these is a normal part of puberty?",
-        "a1": "Never feeling emotional",
-        "a2": "Stopping all physical growth",
-        "a3": "Staying exactly the same",
-        "a4": "Experiencing mood changes"
+        "question": "Normal change?",
+        "a1": "Always calm",
+        "a2": "No growth",
+        "a3": "Stay same",
+        "a4": "Mood swings"
       },
       "q2": {
-        "question": "What's important during puberty?",
-        "a1": "Good hygiene and self-care",
-        "a2": "Avoiding all exercise",
-        "a3": "Skipping meals",
-        "a4": "Staying up all night"
+        "question": "Best during puberty?",
+        "a1": "Clean body",
+        "a2": "No play",
+        "a3": "Skip meals",
+        "a4": "No sleep"
       },
       "q3": {
-        "question": "When you have questions about puberty, what should you do?",
-        "a1": "Keep them to yourself",
-        "a2": "Feel embarrassed",
-        "a3": "Talk to a trusted adult",
-        "a4": "Worry about it alone"
+        "question": "Have a question?",
+        "a1": "Hide it",
+        "a2": "Feel shame",
+        "a3": "Ask a grown-up",
+        "a4": "Stay quiet"
       }
     },
     "matching": {
-      "title": "Changes Matching Game",
-      "description": "Match puberty changes with helpful ways to handle them",
-      "instructions": "Connect each change on the left with the best way to handle it on the right!",
-      "instruction": "Click a card on the left, then find its match on the right!",
+      "title": "Change Match",
+      "description": "Match changes • Pick helps • Win stars",
+      "instructions": ["Tap a change", "Grab the helper", "Collect stars"],
+      "instruction": "Tap left, match right!",
       "pair1": {
-        "left": "Feeling Moody",
-        "right": "Talk to someone & exercise"
+        "left": "Moody",
+        "right": "Talk & move"
       },
       "pair2": {
-        "left": "Body Odor",
-        "right": "Use deodorant daily"
+        "left": "Body smell",
+        "right": "Use spray"
       },
       "pair3": {
-        "left": "Growing Taller",
-        "right": "Eat healthy & sleep well"
+        "left": "Get taller",
+        "right": "Eat & sleep"
       },
       "pair4": {
-        "left": "New Interests",
-        "right": "Explore & try new things"
+        "left": "New likes",
+        "right": "Try things"
       }
     },
     "emotions": {
-      "title": "Understanding Emotions",
-      "description": "Learn to identify and understand different emotions during puberty",
-      "instructions": "Read each scenario and choose how it would make you feel!",
-      "howWouldYouFeel": "How would you feel?",
+      "title": "Feel Finder",
+      "description": "Pick feelings • Read quick scenes",
+      "instructions": ["Read the scene", "Drag a feeling", "Win a star"],
+      "howWouldYouFeel": "Pick a feeling",
       "happy": "Happy",
       "angry": "Angry",
       "sad": "Sad",
-      "anxious": "Anxious",
+      "anxious": "Nervous",
       "proud": "Proud",
       "scenario1": {
-        "situation": "Your friend borrowed your favorite thing without asking."
+        "situation": "Friend took your toy"
       },
       "scenario2": {
-        "situation": "You worked really hard and got a great grade on your test!"
+        "situation": "Great grade today"
       },
       "scenario3": {
-        "situation": "You have to give a presentation in front of the whole class tomorrow."
+        "situation": "Big talk tomorrow"
       }
     }
   },
