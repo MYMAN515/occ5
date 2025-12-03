@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Smile, HeartHandshake, BookOpen, Library, Users, Brain, Sparkles, ChevronDown, Gamepad2 } from 'lucide-react'
+import { Menu, X, Home, HeartHandshake, BookOpen, Library, Users, Sparkles, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -31,12 +31,6 @@ export default function Navigation() {
   const pathname = usePathname()
   const { t } = useLanguage()
 
-  const childLinks: NavLink[] = [
-    { href: '/body-image-activities', label: t('nav.bodyImageActivities'), icon: <Smile className="w-4 h-4" />, description: t('bodyImage.subtitle') },
-    { href: '/what-i-like-about-me', label: t('nav.whatILike'), icon: <Sparkles className="w-4 h-4" />, description: t('whatILike.subtitle') },
-    { href: '/quizzes', label: t('nav.quizzes'), icon: <Brain className="w-4 h-4" />, description: t('quizzesPage.subtitle') }
-  ]
-
   const parentLinks: NavLink[] = [
     { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" />, description: t('home.features.parentGuide.description') },
     { href: '/body-guide', label: t('nav.developmentalChanges'), icon: <HeartHandshake className="w-4 h-4" />, description: t('home.features.bodyGuide.description') },
@@ -45,14 +39,6 @@ export default function Navigation() {
 
   const navItems: (NavGroup | NavLink)[] = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
-    {
-      href: '/games',
-      label: t('nav.games'),
-      icon: <Gamepad2 className="w-4 h-4" aria-hidden />,
-      description: t('games.subtitle'),
-      highlight: true
-    },
-    { id: 'children', label: t('nav.forChildren'), icon: <Smile className="w-4 h-4" />, items: childLinks },
     { id: 'parents', label: t('nav.forParents'), icon: <HeartHandshake className="w-4 h-4" />, items: parentLinks },
     { href: '/team', label: t('nav.about'), icon: <Users className="w-4 h-4" /> }
   ]
