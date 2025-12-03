@@ -9,7 +9,15 @@
     "games": "Permainan & Aktiviti",
     "parentGuide": "Petua Keibubapaan",
     "quiz": "Kuiz",
-    "team": "Pasukan Kami"
+    "team": "Pasukan Kami",
+    "forChildren": "Untuk Kanak-kanak",
+    "forParents": "Untuk Ibu Bapa",
+    "about": "Tentang Kami",
+    "bodyImageActivities": "Aktiviti Imej Badan",
+    "whatILike": "Apa Saya Suka Tentang Diri Saya",
+    "quizzes": "Kuiz",
+    "developmentalChanges": "Perubahan Perkembangan",
+    "resourceLibrary": "Pustaka Sumber"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -240,23 +248,9 @@
     }
   },
   "footer": {
-    "tagline": "Dihasilkan dengan kasih untuk keluarga yang melalui perubahan akil baligh",
-    "title": "Teman tenang untuk setiap fasa akil baligh",
-    "description": "Kami memadukan nasihat pakar, kepekaan budaya dan pembelajaran yang menyeronokkan supaya anda dan anak dapat membesar dengan yakin.",
-    "links": {
-      "title": "Terokai lebih banyak panduan",
-      "parentGuide": "Panduan ibu bapa",
-      "guidance": "Petua berasaskan bukti",
-      "games": "Permainan & aktiviti",
-      "diary": "Diari perasaan"
-    },
-    "pwa": {
-      "title": "Simpan aplikasi ke telefon anda",
-      "headline": "Gunakan seperti aplikasi asli",
-      "instructions": "Buka menu pelayar anda dan pilih 'Add to Home Screen' untuk akses walaupun di luar talian."
-    },
-    "rights": "© 2025 Parenting Hub – Dibina oleh pasukan Universiti Malaya untuk keluarga di mana-mana.",
-    "communityNote": "Semua kandungan tersedia dalam English, العربية dan Bahasa Melayu supaya setiap penjaga rasa dialu-alukan."
+    "title": "Menyokong Keluarga Melalui Akil Baligh",
+    "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
+    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
@@ -654,9 +648,245 @@
       "hygiene": "Kebersihan Diri"
     }
   },
-  "footer": {
-    "title": "Menyokong Keluarga Melalui Akil Baligh",
-    "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
-    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  "bodyImage": {
+    "title": "Aktiviti Imej Badan Positif",
+    "subtitle": "Lima soalan bergambar untuk membantu kanak-kanak menamakan perasaan dan bercakap tentang tubuh dengan lembut.",
+    "instruction": "Pilih perasaan untuk setiap gambar. Anda boleh tukar jawapan pada bila-bila masa.",
+    "parentLabel": "Fokus ibu bapa",
+    "parentButton": "Kenapa ia penting",
+    "progressLabel": "Soalan",
+    "next": "Soalan seterusnya",
+    "previous": "Sebelum",
+    "emotions": {
+      "proud": "Bangga",
+      "happy": "Gembira",
+      "calm": "Tenang / Okey",
+      "anxious": "Cemas",
+      "curious": "Ingin tahu",
+      "sad": "Sedikit sedih"
+    },
+    "questions": [
+      {
+        "title": "Melihat cermin",
+        "prompt": "Apa perasaan anda bila melihat kanak-kanak tersenyum lembut pada pantulan diri?",
+        "focus": "Ajak anak perhatikan kekuatan, bakat dan kebaikan—bukan rupa sahaja."
+      },
+      {
+        "title": "Mencuba sukan baharu",
+        "prompt": "Bagaimana perasaan anda melihat seseorang meneroka apa yang tubuhnya boleh lakukan?",
+        "focus": "Raikan usaha dan pergerakan lebih daripada kemenangan. Ini membina keyakinan tubuh."
+      },
+      {
+        "title": "Memilih pakaian selesa",
+        "prompt": "Apabila melihat kanak-kanak memilih pakaian yang selesa untuknya, perasaan apa yang sesuai?",
+        "focus": "Terangkan bahawa keselesaan dan ekspresi diri lebih penting daripada memuaskan orang lain."
+      },
+      {
+        "title": "Melukis potret diri",
+        "prompt": "Bagaimana perasaan anda tentang kanak-kanak yang melukis dirinya dengan warna ceria?",
+        "focus": "Galakkan ekspresi diri yang kreatif dan perhatikan keunikan mereka."
+      },
+      {
+        "title": "Regang dan bernafas",
+        "prompt": "Perasaan apa yang anda pilih melihat seseorang meregang, bernafas, dan berehat?",
+        "focus": "Kesyukuran pada tubuh bertambah bila digabungkan pergerakan dan pernafasan tenang."
+      }
+    ]
+  },
+  "whatILike": {
+    "title": "Apa Saya Suka Tentang Diri Saya",
+    "subtitle": "Ruang tenang untuk kanak-kanak menilai kekuatan, kebaikan, dan perkembangan diri.",
+    "helperCta": "Tekan mentol untuk idea",
+    "placeholder": "Tulis fikiran anda di sini...",
+    "saveMessage": "Nota anda kekal pada peranti ini supaya boleh kembali bila-bila masa.",
+    "restoreMessage": "Kami memuatkan jawapan terakhir anda.",
+    "reset": "Tetapkan semula semua",
+    "print": "Cetak atau eksport",
+    "sections": [
+      {
+        "id": "goodAt",
+        "title": "Perkara yang saya mahir",
+        "hint": "Fikirkan kemahiran, permainan atau hobi yang anda suka latihan."
+      },
+      {
+        "id": "friendsLike",
+        "title": "Perkara yang kawan suka tentang saya",
+        "hint": "Kata-kata baik yang anda ucapkan, cara anda mengajak atau mendengar."
+      },
+      {
+        "id": "iLike",
+        "title": "Perkara yang saya suka tentang diri saya",
+        "hint": "Mungkin rasa ingin tahu, humor, sabar, atau kreativiti anda."
+      },
+      {
+        "id": "familyLove",
+        "title": "Perkara yang keluarga saya sayang tentang saya",
+        "hint": "Saat anda membantu, berkongsi, atau membawa kegembiraan kepada keluarga."
+      },
+      {
+        "id": "proudOf",
+        "title": "Perkara yang saya banggakan",
+        "hint": "Masa anda berani, terus mencuba, atau belajar sesuatu yang baru."
+      },
+      {
+        "id": "unique",
+        "title": "Satu perkara unik tentang saya",
+        "hint": "Minat khas, bakat, pandangan, atau cara anda menyelesaikan masalah."
+      }
+    ]
+  },
+  "quizzesPage": {
+    "title": "Kuiz",
+    "subtitle": "Kuiz ringkas dan mesra yang mengajar satu idea pada satu masa. Cuba bersama anak atau biar mereka teroka sendiri.",
+    "tag": "Untuk kanak-kanak",
+    "pickerTitle": "Pilih kuiz untuk bermula",
+    "labels": {
+      "start": "Mula kuiz",
+      "continue": "Teruskan",
+      "next": "Soalan seterusnya",
+      "restart": "Ulang kuiz",
+      "selectOption": "Pilih satu jawapan",
+      "summary": "Keputusan anda",
+      "encouragement": "Terima kasih kerana belajar hari ini!"
+    },
+    "sleep": {
+      "title": "Kesan Tidur & Pemakanan",
+      "description": "Ketahui bagaimana rehat, makanan dan air menyokong emosi yang tenang dan tenaga stabil.",
+      "questions": [
+        {
+          "question": "Menggunakan telefon atau tablet sebelum tidur selalunya...",
+          "options": [
+            "Menyukarkan untuk tidur",
+            "Membantu tidur lebih cepat",
+            "Tidak memberi kesan pada tidur",
+            "Sentiasa merehatkan mata"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "Cahaya biru dan kandungan yang menarik boleh melambatkan tidur. Rehat sekejap tanpa skrin membantu otak tenang.",
+          "incorrectFeedback": "Skrin boleh mengejutkan otak. Rutin tenang membantu tidur datang lebih cepat.",
+          "icon": "📱"
+        },
+        {
+          "question": "Kebanyakan murid sekolah rasa terbaik dengan kira-kira...",
+          "options": [
+            "6-7 jam tidur",
+            "9-11 jam tidur",
+            "13-14 jam tidur",
+            "Hanya tidur siang"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Sekitar 9-11 jam membantu fokus, mood, dan pertumbuhan bagi kebanyakan kanak-kanak.",
+          "incorrectFeedback": "Badan membesar dan otak berehat dengan tidur malam yang cukup—biasanya sekitar 9-11 jam.",
+          "icon": "🛏️"
+        },
+        {
+          "question": "Snek ringan sebelum tidur boleh jadi...",
+          "options": [
+            "Minuman bergula",
+            "Burger berat",
+            "Susu suam atau pisang",
+            "Minuman tenaga"
+          ],
+          "correctIndex": 2,
+          "correctFeedback": "Snek ringan seperti susu suam atau pisang menenangkan. Makanan berat atau bergula boleh mengganggu tidur.",
+          "incorrectFeedback": "Cuba snek ringan yang menenangkan seperti susu suam atau pisang, bukan makanan berat atau bergula.",
+          "icon": "🍌"
+        },
+        {
+          "question": "Magnesium dan vitamin D boleh membantu...",
+          "options": [
+            "Menjaga otot tenang dan tulang kuat",
+            "Menjadikan skrin lebih selamat waktu malam",
+            "Mengganti semua buah dan sayur",
+            "Menghentikan rasa letih selamanya"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "Nutrien ini menyokong otot yang tenang, mood stabil, dan tulang kuat. Utamakan makanan, suplemen jika perlu.",
+          "incorrectFeedback": "Magnesium dan vitamin D membantu otot tenang dan tulang sihat—sayur hijau dan cahaya matahari berguna.",
+          "icon": "🌞"
+        },
+        {
+          "question": "Minum air sepanjang hari membantu anda...",
+          "options": [
+            "Fokus dan bertenaga",
+            "Berasa lebih lapar",
+            "Tidak perlu tidur",
+            "Tidak pernah perlukan snek"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "Hidrasi menjaga tenaga, fokus, dan mood stabil. Simpan botol air berhampiran.",
+          "incorrectFeedback": "Beberapa tegukan air sepanjang hari membantu badan dan otak kekal stabil dan fokus.",
+          "icon": "💧"
+        }
+      ],
+      "summary": {
+        "perfect": "Pilihan hebat untuk tidur dan sihat!",
+        "good": "Bagus mengenal pasti apa yang membantu badan berehat.",
+        "keepGoing": "Usaha baik—cuba lagi untuk belajar lebih banyak."
+      }
+    },
+    "puberty": {
+      "title": "Asas Baligh",
+      "description": "Peringatan mesra tentang perubahan tubuh, perasaan, dan penjagaan diri.",
+      "questions": [
+        {
+          "question": "Baligh boleh bermula pada usia berbeza, biasanya antara...",
+          "options": [
+            "Umur 5-7",
+            "Umur 8-14",
+            "Umur 18-20",
+            "Selepas universiti sahaja"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Setiap badan ada waktunya sendiri. Tidak mengapa bermula lebih awal atau lewat daripada kawan.",
+          "incorrectFeedback": "Kebanyakan kanak-kanak bermula sekitar umur 8-14, dan setiap masa adalah okey.",
+          "icon": "⏰"
+        },
+        {
+          "question": "Perubahan fizikal biasa ialah...",
+          "options": [
+            "Menjadi lebih rendah",
+            "Lonjakan tumbesaran",
+            "Hilang kening",
+            "Tiada perubahan"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Lonjakan tumbesaran adalah normal. Pakaian mungkin terasa pendek seketika!",
+          "incorrectFeedback": "Lonjakan tumbesaran berlaku kepada ramai kanak-kanak semasa baligh dan ia normal.",
+          "icon": "🦒"
+        },
+        {
+          "question": "Perubahan emosi atau mood semasa baligh adalah...",
+          "options": [
+            "Pelik dan jarang",
+            "Normal dan biasa",
+            "Tanda masalah",
+            "Mustahil"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Perasaan boleh seperti roller-coaster. Menamakan emosi dan berehat boleh membantu.",
+          "incorrectFeedback": "Perasaan besar adalah biasa semasa baligh. Berhenti seketika, bernafas dan bercakap membantu.",
+          "icon": "🎢"
+        },
+        {
+          "question": "Cara mudah mengurus bau badan baharu ialah...",
+          "options": [
+            "Tidak mandi",
+            "Guna deodoran dan mandi dengan kerap",
+            "Jauhkan diri dari kawan",
+            "Abaikan sahaja"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Mandi harian, pakaian bersih, dan deodoran membantu anda rasa selesa.",
+          "incorrectFeedback": "Pakaian bersih, mandi, dan deodoran membantu mengurus bau badan baharu.",
+          "icon": "🧼"
+        }
+      ],
+      "summary": {
+        "perfect": "Anda menjawab semua soalan dengan yakin!",
+        "good": "Bagus! Anda tahu banyak tentang membesar.",
+        "keepGoing": "Permulaan yang baik—cuba lagi untuk ingat lebih banyak."
+      }
+    }
   }
 }
