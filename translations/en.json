@@ -7,9 +7,17 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips",
+    "parentGuide": "Parent Guide",
     "quiz": "Quiz",
-    "team": "Our Team"
+    "team": "Our Team",
+    "forChildren": "For Children",
+    "forParents": "For Parents",
+    "bodyImage": "Body Image Activities",
+    "selfReflection": "What I Like About Me",
+    "quizzes": "Quizzes",
+    "developmental": "Developmental Changes",
+    "resources": "Resource Library",
+    "about": "About Us"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -672,5 +680,207 @@
     },
     "rights": "© 2025 Parenting Hub. All rights reserved.",
     "communityNote": "Made with 💙 to support families through puberty education"
+  },
+  "bodyImage": {
+    "badge": "5 feelings check-ins",
+    "title": "Positive Body Image Activities",
+    "subtitle": "Tap through the illustrated cards, choose how you feel, and let grown-ups see gentle coaching notes for each prompt.",
+    "features": {
+      "progress": "Numbered steps to stay on track",
+      "parent": "Lightbulb tips for caregivers",
+      "multilingual": "Ready for Arabic, English, and Malay"
+    },
+    "progressLabel": "Question {{current}} of {{total}}",
+    "altLabel": "Image focus",
+    "selectFeeling": "How does this picture make you feel?",
+    "parentTipLabel": "Parent focus",
+    "emotionSupport": "Every feeling is welcome—thanks for sharing!",
+    "prev": "Previous",
+    "next": "Next",
+    "reset": "Reset choices",
+    "emotions": {
+      "proud": { "label": "Proud", "emoji": "🌟", "color": "from-amber-500 via-orange-500 to-amber-400", "textColor": "text-amber-700" },
+      "happy": { "label": "Happy", "emoji": "😊", "color": "from-emerald-500 via-green-500 to-emerald-400", "textColor": "text-emerald-700" },
+      "curious": { "label": "Curious", "emoji": "🤔", "color": "from-sky-500 via-blue-500 to-sky-400", "textColor": "text-sky-700" },
+      "calm": { "label": "Calm", "emoji": "😌", "color": "from-purple-500 via-indigo-500 to-purple-400", "textColor": "text-purple-700" },
+      "anxious": { "label": "Anxious", "emoji": "😟", "color": "from-rose-500 via-pink-500 to-rose-400", "textColor": "text-rose-700" },
+      "brave": { "label": "Brave", "emoji": "🦁", "color": "from-teal-500 via-cyan-500 to-teal-400", "textColor": "text-teal-700" }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "title": "Trying a new sport for the first time",
+        "prompt": "Look at the child lacing up their shoes on the track. How would you feel before taking that first step?",
+        "focus": "Celebrate effort",
+        "tip": "Praise the courage to try, not the speed or score. Ask what support would make the new activity feel fun.",
+        "imageAlt": "Child on a running track", "badge": "Q1: Move & Play", "illustration": "👟"
+      },
+      {
+        "id": "q2",
+        "title": "Choosing clothes that feel like me",
+        "prompt": "The illustration shows a kid smiling in front of a mirror holding two outfits. What feeling pops up for you?",
+        "focus": "Body comfort",
+        "tip": "Remind your child that comfort and self-expression matter more than trends. Invite them to notice what feels good to wear.",
+        "imageAlt": "Child holding outfits in a mirror", "badge": "Q2: My Style", "illustration": "🪞"
+      },
+      {
+        "id": "q3",
+        "title": "Seeing friends of all shapes and sizes",
+        "prompt": "Friends are laughing together at the park. How do you feel when you see different bodies playing together?",
+        "focus": "Inclusivity",
+        "tip": "Name positive traits beyond looks—kindness, creativity, teamwork. Celebrate how bodies help us do things we love.",
+        "imageAlt": "Group of friends at the park", "badge": "Q3: Friends & Feelings", "illustration": "🌳"
+      },
+      {
+        "id": "q4",
+        "title": "Resting after a long day",
+        "prompt": "A cozy bedroom scene with a soft blanket and a sleepy kid. What feeling do you notice?",
+        "focus": "Listening to the body",
+        "tip": "Model rest as a healthy choice. Ask your child where in their body they feel tired or calm.",
+        "imageAlt": "Child resting under a blanket", "badge": "Q4: Quiet Moments", "illustration": "🛏️"
+      },
+      {
+        "id": "q5",
+        "title": "Trying a new food",
+        "prompt": "A colorful plate with veggies and rice. What emotion appears when you imagine tasting something new?",
+        "focus": "Curiosity over pressure",
+        "tip": "Offer gentle exposure and describe flavors. Remind your child they can take tiny bites or just smell first.",
+        "imageAlt": "Plate of colorful food", "badge": "Q5: Food Adventures", "illustration": "🥗"
+      }
+    ]
+  },
+  "selfReflection": {
+    "badge": "Celebrate your strengths",
+    "title": "What I Like About Me",
+    "subtitle": "Tap a tile to open a space for writing or doodling. Save progress locally, print it, or start over any time.",
+    "features": {
+      "save": "Saves in this browser",
+      "rtl": "RTL-ready for Arabic",
+      "print": "Printable keepsake"
+    },
+    "instructions": "Pick a card, share a few words, and see how many bright spots you can find!",
+    "reset": "Reset all",
+    "print": "Print / Export",
+    "promptLabel": "Write a few words here",
+    "placeholder": "Type your ideas or a quick doodle description...",
+    "prompts": [
+      { "id": "skills", "title": "Some things I'm good at", "helper": "Sports, art, coding, caring for pets", "icon": "🎯" },
+      { "id": "friends", "title": "Things my friends like about me", "helper": "Kindness, jokes, sharing", "icon": "🤝" },
+      { "id": "self", "title": "Things I like about me", "helper": "Personality, talents, style", "icon": "💖" },
+      { "id": "family", "title": "Things my family love about me", "helper": "Helpful moments, traditions", "icon": "🏡" },
+      { "id": "proud", "title": "Things that I'm proud of", "helper": "Goals you reached, brave moments", "icon": "🌟" },
+      { "id": "unique", "title": "One unique thing about me", "helper": "A quirk, passion, or ability", "icon": "🧩" }
+    ]
+  },
+  "quizzes": {
+    "badge": "Interactive learning",
+    "title": "Pick a quiz to explore",
+    "subtitle": "Short, colorful quizzes that teach healthy habits and body awareness without overwhelming young learners.",
+    "cards": {
+      "sleep": {
+        "title": "Sleep & Nutrition",
+        "description": "Learn how rest, food, and hydration power mood and growth.",
+        "tag1": "Gentle feedback",
+        "tag2": "One question at a time"
+      },
+      "puberty": {
+        "title": "Puberty Basics",
+        "description": "Test your knowledge about growing bodies and hygiene.",
+        "tag1": "Kid-friendly",
+        "tag2": "Confidence boost"
+      }
+    }
+  },
+  "sleepQuiz": {
+    "badge": "Well-being check",
+    "title": "Sleep and Nutrition Impact Quiz",
+    "subtitle": "Pick the best answer, see instant tips, and discover how sleep, food, and water keep your brain bright.",
+    "progress": "Question {{current}} of {{total}}",
+    "feedbackHint": "Every choice shows a gentle tip right away.",
+    "next": "Next question",
+    "finish": "See my results",
+    "restart": "Restart",
+    "review": "Review questions",
+    "results": {
+      "label": "Score",
+      "score": "{{score}} / {{total}} correct",
+      "message": "Great job! Keep exploring healthy routines together."
+    },
+    "questions": [
+      {
+        "id": "screen-time",
+        "icon": "📱",
+        "prompt": "How does screen time right before bed affect sleep?",
+        "note": "Bright screens can wake up the brain.",
+        "options": [
+          { "text": "It can make it harder to fall asleep", "correct": true, "feedback": "Yes! Blue light and excitement can delay sleep." },
+          { "text": "It always helps you sleep faster", "correct": false, "feedback": "Try a calm activity instead, like reading." },
+          { "text": "It has no impact at all", "correct": false, "feedback": "Most kids sleep better when screens are off early." }
+        ]
+      },
+      {
+        "id": "sleep-hours",
+        "icon": "🛌",
+        "prompt": "How many hours of sleep do most school-age kids need?",
+        "note": "Bodies grow and repair during sleep.",
+        "options": [
+          { "text": "9–11 hours", "correct": true, "feedback": "Right! Rest helps learning and mood." },
+          { "text": "4–5 hours", "correct": false, "feedback": "That is too little for a growing brain." },
+          { "text": "Only on weekends", "correct": false, "feedback": "Sleep is important every night." }
+        ]
+      },
+      {
+        "id": "late-food",
+        "icon": "🍫",
+        "prompt": "What kind of snack is best close to bedtime?",
+        "note": "Sugary snacks can wake up the body.",
+        "options": [
+          { "text": "A light snack like yogurt or bananas", "correct": true, "feedback": "Yes—light snacks are gentle on sleep." },
+          { "text": "Lots of candy and soda", "correct": false, "feedback": "Sugar and caffeine can make it harder to sleep." },
+          { "text": "Skipping food always", "correct": false, "feedback": "A hungry tummy can also disrupt rest." }
+        ]
+      },
+      {
+        "id": "vitamins",
+        "icon": "💪",
+        "prompt": "Which nutrients help muscles relax and bones stay strong?",
+        "note": "Think magnesium and vitamin D.",
+        "options": [
+          { "text": "Magnesium and vitamin D", "correct": true, "feedback": "Exactly! These support calm bodies and growth." },
+          { "text": "Only sugar", "correct": false, "feedback": "Balanced nutrients work best." },
+          { "text": "No food at all", "correct": false, "feedback": "Fuel is needed for healthy growth." }
+        ]
+      },
+      {
+        "id": "hydration",
+        "icon": "💧",
+        "prompt": "Why does drinking water through the day matter?",
+        "note": "Hydration helps focus and mood.",
+        "options": [
+          { "text": "It keeps energy and focus steady", "correct": true, "feedback": "Yes, water helps your body and brain work well." },
+          { "text": "It stops all feelings", "correct": false, "feedback": "Feelings are normal—water just keeps you balanced." },
+          { "text": "It makes you instantly sleepy", "correct": false, "feedback": "Water is for balance, not instant naps." }
+        ]
+      }
+    ]
+  },
+  "developmental": {
+    "badge": "Parent library",
+    "title": "Developmental Changes",
+    "subtitle": "Find simple guides about physical and emotional changes, plus activities to share with your child.",
+    "cards": {
+      "body": {
+        "title": "Body Guide",
+        "description": "Learn what shifts during puberty and how to explain it with care."
+      },
+      "timeline": {
+        "title": "Understanding milestones",
+        "description": "Read about the order and timing of common changes."
+      },
+      "activity": {
+        "title": "Timeline activity",
+        "description": "Play through the interactive timeline together."
+      }
+    }
   }
 }

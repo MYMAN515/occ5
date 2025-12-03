@@ -7,9 +7,17 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan",
+    "parentGuide": "Panduan Ibu Bapa",
     "quiz": "Kuiz",
-    "team": "Pasukan Kami"
+    "team": "Pasukan Kami",
+    "forChildren": "Untuk Kanak-kanak",
+    "forParents": "Untuk Ibu Bapa",
+    "bodyImage": "Aktiviti Imej Diri",
+    "selfReflection": "Apa Yang Saya Suka",
+    "quizzes": "Kuiz",
+    "developmental": "Perubahan Perkembangan",
+    "resources": "Perpustakaan Sumber",
+    "about": "Tentang Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -652,6 +660,114 @@
       "emotional": "Kesejahteraan Emosi",
       "social": "Kehidupan Sosial",
       "hygiene": "Kebersihan Diri"
+    }
+  },
+  "bodyImage": {
+    "badge": "5 semakan emosi",
+    "title": "Aktiviti Imej Diri Positif",
+    "subtitle": "Lihat kad bergambar, pilih perasaan anda, dan ibu bapa boleh membuka nota sokongan.",
+    "features": {
+      "progress": "Langkah bernombor",
+      "parent": "Tip lampu suluh untuk penjaga",
+      "multilingual": "Sedia untuk BM, Arab, Inggeris"
+    },
+    "progressLabel": "Soalan {{current}} daripada {{total}}",
+    "altLabel": "Fokus imej",
+    "selectFeeling": "Bagaimana perasaan anda dengan gambar ini?",
+    "parentTipLabel": "Fokus ibu bapa",
+    "emotionSupport": "Semua perasaan dialu-alukan!",
+    "prev": "Sebelumnya",
+    "next": "Seterusnya",
+    "reset": "Tetapkan semula",
+    "emotions": {
+      "proud": { "label": "Bangga", "emoji": "🌟", "color": "from-amber-500 via-orange-500 to-amber-400", "textColor": "text-amber-700" },
+      "happy": { "label": "Gembira", "emoji": "😊", "color": "from-emerald-500 via-green-500 to-emerald-400", "textColor": "text-emerald-700" },
+      "curious": { "label": "Ingin tahu", "emoji": "🤔", "color": "from-sky-500 via-blue-500 to-sky-400", "textColor": "text-sky-700" },
+      "calm": { "label": "Tenang", "emoji": "😌", "color": "from-purple-500 via-indigo-500 to-purple-400", "textColor": "text-purple-700" },
+      "anxious": { "label": "Cemas", "emoji": "😟", "color": "from-rose-500 via-pink-500 to-rose-400", "textColor": "text-rose-700" },
+      "brave": { "label": "Berani", "emoji": "🦁", "color": "from-teal-500 via-cyan-500 to-teal-400", "textColor": "text-teal-700" }
+    },
+    "questions": [
+      { "id": "q1", "title": "Cuba sukan baru", "prompt": "Anak mengikat kasut di trek. Apa yang anda rasa sebelum mula?", "focus": "Raikan usaha", "tip": "Puji keberanian, bukan laju. Tanya sokongan yang menjadikan aktiviti seronok.", "imageAlt": "Anak di trek", "badge": "S1: Bergerak", "illustration": "👟" },
+      { "id": "q2", "title": "Memilih pakaian yang selesa", "prompt": "Anak tersenyum di hadapan cermin dengan dua pilihan. Apa perasaan anda?", "focus": "Keselesaan badan", "tip": "Keselesaan lebih penting daripada trend. Bantu anak perasan apa yang selesa.", "imageAlt": "Anak dengan pakaian", "badge": "S2: Gaya saya", "illustration": "🪞" },
+      { "id": "q3", "title": "Melihat rakan pelbagai rupa", "prompt": "Rakan ketawa di taman. Bagaimana perasaan anda melihat badan berbeza bermain bersama?", "focus": "Inklusif", "tip": "Sebut sifat baik selain rupa—baik hati, kreatif. Badan membantu kita bermain.", "imageAlt": "Rakan di taman", "badge": "S3: Rakan", "illustration": "🌳" },
+      { "id": "q4", "title": "Berehat selepas hari panjang", "prompt": "Bilik selesa dengan selimut lembut. Apa perasaan anda?", "focus": "Dengar badan", "tip": "Tunjuk rehat sebagai pilihan sihat. Tanya di mana badan rasa letih atau tenang.", "imageAlt": "Anak berehat", "badge": "S4: Rehat", "illustration": "🛏️" },
+      { "id": "q5", "title": "Mencuba makanan baru", "prompt": "Pinggan berwarna-warni dengan sayur. Apa emosi muncul bila bayangkan rasa baru?", "focus": "Ingin tahu tanpa tekanan", "tip": "Tawarkan rasa kecil dan ceritakan rasa. Anak boleh cuba sedikit atau hidu dulu.", "imageAlt": "Pinggan makanan", "badge": "S5: Makanan", "illustration": "🥗" }
+    ]
+  },
+  "selfReflection": {
+    "badge": "Raikan kekuatan",
+    "title": "Apa Yang Saya Suka Tentang Diri",
+    "subtitle": "Tekan kad untuk membuka ruang menulis. Simpan secara tempatan atau cetak.",
+    "features": {
+      "save": "Simpan dalam pelayar",
+      "rtl": "Sedia RTL",
+      "print": "Boleh dicetak"
+    },
+    "instructions": "Pilih kad, tulis beberapa kata, dan lihat semua perkara hebat tentang anda!",
+    "reset": "Tetapkan semula semua",
+    "print": "Cetak / Eksport",
+    "promptLabel": "Tulis sedikit di sini",
+    "placeholder": "Tulis idea atau lakaran ringkas...",
+    "prompts": [
+      { "id": "skills", "title": "Perkara saya mahir", "helper": "Sukan, seni, kod, jaga haiwan", "icon": "🎯" },
+      { "id": "friends", "title": "Apa kawan suka tentang saya", "helper": "Baik hati, lucu, berkongsi", "icon": "🤝" },
+      { "id": "self", "title": "Apa saya suka tentang diri", "helper": "Peribadi, bakat, gaya", "icon": "💖" },
+      { "id": "family", "title": "Apa keluarga sayang", "helper": "Membantu, tradisi", "icon": "🏡" },
+      { "id": "proud", "title": "Saya bangga kerana", "helper": "Matlamat dicapai, saat berani", "icon": "🌟" },
+      { "id": "unique", "title": "Satu perkara unik", "helper": "Minat atau kebolehan khas", "icon": "🧩" }
+    ]
+  },
+  "quizzes": {
+    "badge": "Pembelajaran interaktif",
+    "title": "Pilih kuiz",
+    "subtitle": "Kuiz ringkas dan ceria tentang tabiat sihat dan perubahan badan.",
+    "cards": {
+      "sleep": {
+        "title": "Tidur & Pemakanan",
+        "description": "Ketahui bagaimana rehat, makanan, dan air menyokong mood dan pertumbuhan.",
+        "tag1": "Maklum balas lembut",
+        "tag2": "Satu soalan sekali"
+      },
+      "puberty": {
+        "title": "Asas Akil Baligh",
+        "description": "Uji pengetahuan tentang badan yang berubah dan kebersihan.",
+        "tag1": "Mesra kanak-kanak",
+        "tag2": "Bina keyakinan"
+      }
+    }
+  },
+  "sleepQuiz": {
+    "badge": "Semakan kesejahteraan",
+    "title": "Kuiz Kesan Tidur dan Pemakanan",
+    "subtitle": "Pilih jawapan terbaik, lihat maklum balas segera tentang tidur, makanan, dan air.",
+    "progress": "Soalan {{current}}/{{total}}",
+    "feedbackHint": "Setiap pilihan menunjukkan tip segera.",
+    "next": "Soalan seterusnya",
+    "finish": "Lihat keputusan",
+    "restart": "Mula semula",
+    "review": "Semak soalan",
+    "results": {
+      "label": "Skor",
+      "score": "{{score}} / {{total}} betul",
+      "message": "Kerja bagus! Teruskan bina rutin sihat bersama."
+    },
+    "questions": [
+      { "id": "screen-time", "icon": "📱", "prompt": "Bagaimana skrin sebelum tidur memberi kesan?", "note": "Cahaya boleh menyukarkan tidur.", "options": [ { "text": "Menjadikan sukar untuk tidur", "correct": true, "feedback": "Betul! Cahaya biru boleh melambatkan tidur." }, { "text": "Sentiasa membantu tidur cepat", "correct": false, "feedback": "Cuba aktiviti tenang seperti membaca." }, { "text": "Tiada kesan", "correct": false, "feedback": "Kebanyakan kanak-kanak tidur lebih lena tanpa skrin lewat." } ] },
+      { "id": "sleep-hours", "icon": "🛌", "prompt": "Berapa jam tidur yang diperlukan kebanyakan kanak-kanak sekolah?", "note": "Tidur membantu pembelajaran dan pertumbuhan.", "options": [ { "text": "9–11 jam", "correct": true, "feedback": "Ya! Rehat membantu mood dan fokus." }, { "text": "4–5 jam", "correct": false, "feedback": "Terlalu sedikit untuk otak yang membesar." }, { "text": "Hanya hujung minggu", "correct": false, "feedback": "Tidur penting setiap malam." } ] },
+      { "id": "late-food", "icon": "🍫", "prompt": "Snek terbaik sebelum tidur?", "note": "Gula boleh membuat badan aktif.", "options": [ { "text": "Snek ringan seperti yogurt atau pisang", "correct": true, "feedback": "Betul—ringan dan lembut pada tidur." }, { "text": "Banyak gula-gula dan soda", "correct": false, "feedback": "Gula dan kafein boleh ganggu tidur." }, { "text": "Jangan makan langsung", "correct": false, "feedback": "Perut lapar juga boleh mengganggu rehat." } ] },
+      { "id": "vitamins", "icon": "💪", "prompt": "Nutrien mana membantu otot dan tulang?", "note": "Fikir magnesium dan vitamin D.", "options": [ { "text": "Magnesium dan vitamin D", "correct": true, "feedback": "Tepat! Menyokong badan dan minda tenang." }, { "text": "Gula sahaja", "correct": false, "feedback": "Pemakanan seimbang adalah terbaik." }, { "text": "Tiada makanan langsung", "correct": false, "feedback": "Badan perlukan tenaga untuk membesar." } ] },
+      { "id": "hydration", "icon": "💧", "prompt": "Mengapa minum air sepanjang hari penting?", "note": "Hidrasi membantu fokus dan mood.", "options": [ { "text": "Kekalkan tenaga dan fokus", "correct": true, "feedback": "Ya, air membantu badan dan otak." }, { "text": "Hentikan semua emosi", "correct": false, "feedback": "Emosi normal—air hanya seimbang." }, { "text": "Terus buat anda mengantuk", "correct": false, "feedback": "Air untuk keseimbangan, bukan ubat tidur segera." } ] }
+    ]
+  },
+  "developmental": {
+    "badge": "Perpustakaan ibu bapa",
+    "title": "Perubahan Perkembangan",
+    "subtitle": "Cari panduan ringkas tentang perubahan fizikal dan emosi serta aktiviti bersama anak.",
+    "cards": {
+      "body": { "title": "Panduan Badan", "description": "Ketahui apa yang berubah dan cara menerangkannya dengan lembut." },
+      "timeline": { "title": "Memahami garis masa", "description": "Baca tentang turutan dan masa perubahan biasa." },
+      "activity": { "title": "Aktiviti garis masa", "description": "Mainkan aktiviti interaktif bersama." }
     }
   },
   "footer": {
