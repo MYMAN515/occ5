@@ -6,7 +6,7 @@
     "diary": "Child's Diary",
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
-    "games": "Games",
+    "games": "Games 🎮",
     "parentGuide": "Parenting Tips",
     "quiz": "Quiz",
     "team": "Our Team",
@@ -20,70 +20,50 @@
     "resourceLibrary": "Resource Library"
   },
   "home": {
-    "title": "Supporting Your Child Through Puberty",
-    "subtitle": "Your research-backed home base with conversation starters, daily routines, and emotional support so you can guide your child with calm confidence. 💙",
-    "forParents": "For Parents",
-    "forChildren": "For Your Child",
-    "startLearning": "Explore Parent Guide",
-    "myDiary": "View Activities",
-    "features": {
-      "title": "Explore every corner of Parenting Hub",
-      "subtitle": "Quick links crafted for small screens—tap a card to jump right in.",
-      "parentGuide": {
-        "title": "Comprehensive Parent Guide",
-        "description": "Step-by-step conversations, cultural sensitivity tips, and reassurance for every big question."
-      },
+    "title": "Grow Together with OCC5",
+    "subtitle": "Simple tools for kids and parents.",
+    "tagline": "Ready to play",
+    "heroButtons": {
+      "play": "Start games",
+      "parents": "Parent tips"
+    },
+    "heroCardTitle": "Play, learn, feel safe.",
+    "badges": {
+      "play": "Playful",
+      "safe": "Private"
+    },
+    "quickLinks": {
       "games": {
-        "title": "Interactive Games for Kids",
-        "description": "Co-play activities that turn tricky puberty lessons into playful learning moments."
+        "label": "Games",
+        "helper": "All games"
       },
-      "changes": {
-        "title": "Understanding Physical & Emotional Changes",
-        "description": "Detailed explanations of milestones plus how to respond with empathy and clarity."
+      "kids": {
+        "label": "For Kids",
+        "helper": "Play & learn"
       },
-      "timeline": {
-        "title": "Timeline Activity",
-        "description": "Interactive game for your child to learn about puberty stages"
+      "parents": {
+        "label": "For Parents",
+        "helper": "Tips & guides"
       },
-      "diary": {
-        "title": "Mood Diary for Your Child",
-        "description": "Guided prompts and affirmations to help your child process feelings safely."
-      },
-      "bodyGuide": {
-        "title": "Body Changes Guide",
-        "description": "Illustrated, age-appropriate explanations of how bodies grow and develop."
-      },
-      "aiChat": {
-        "title": "AI Parent Assistant",
-        "description": "Multilingual coach with ready-to-use advice for daily parenting moments."
+      "quizzes": {
+        "label": "Quizzes",
+        "helper": "Quick questions"
       }
     },
-    "support": {
-      "title": "What families receive inside Parenting Hub",
-      "description": "Every section is crafted with child psychologists, educators, and Malaysian cultural advisors so you can lean on trustworthy guidance any time of day.",
-      "pillars": {
-        "conversation": {
-          "title": "Gentle conversation starters",
-          "description": "Scripts and questions to help you open, continue, and revisit honest talks about growing up."
-        },
-        "trust": {
-          "title": "Safety and trust first",
-          "description": "Privacy-respecting tools, trauma-informed tips, and reminders to keep boundaries strong."
-        },
-        "routines": {
-          "title": "Daily wellbeing rhythms",
-          "description": "Checklists, routines, and ready-made family agreements for sleep, hygiene, and device time."
-        },
-        "community": {
-          "title": "Support for every family",
-          "description": "Content translated with care into العربية and Bahasa Melayu so everyone feels seen."
-        }
-      },
-      "note": "Switch between English, العربية, and Bahasa Melayu whenever you need—your progress stays with you."
+    "note": "Switch language anytime • Data stays on this device.",
+    "aria": {
+      "heroSparkles": "Playful highlight",
+      "heroFamily": "Parent and child illustration",
+      "badgePlay": "Play badge",
+      "badgeSafe": "Safe badge"
     },
-    "notAlone": {
-      "title": "You're Not Alone in This Journey 💙",
-      "content": "Puberty can feel unpredictable, yet you are already the steady anchor your child needs. Explore evidence-based advice, printable activities, and reflective prompts designed to keep communication open and loving—even on tough days. Take a breath, choose a section, and we'll walk through it together."
+    "features": {
+      "parentGuide": {
+        "description": "Quick tips for parents"
+      },
+      "bodyGuide": {
+        "description": "Body changes guide"
+      }
     }
   },
   "welcome": {
@@ -267,11 +247,14 @@
     "communityNote": "Made with 💙 to support families through puberty education"
   },
   "games": {
-    "title": "Play Zone",
-    "subtitle": "Tap a game!",
-    "easy": "Easy",
-    "medium": "Tricky",
-    "moreActivities": "More fun",
+    "title": "Games Hub",
+    "subtitle": "Pick & play.",
+    "tagline": "Fun starts here",
+    "swipe": "Swipe to scroll",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Tricky"
+    },
     "startGame": "Start",
     "score": "Score",
     "question": "Question",
@@ -304,6 +287,41 @@
       "emojiHug": "Hugging face",
       "emojiCool": "Cool face",
       "emojiLoved": "Loved face"
+    },
+    "rails": {
+      "feelings": "Feelings & Emotions",
+      "body": "Body & Changes",
+      "confidence": "Confidence Games"
+    },
+    "entries": {
+      "diary": {
+        "title": "Child's Diary",
+        "tag": "Write feelings"
+      },
+      "timeline": {
+        "title": "Timeline Game",
+        "tag": "Stages"
+      },
+      "hygiene": {
+        "title": "Hygiene",
+        "tag": "Daily care"
+      },
+      "superpower": {
+        "title": "I'm Good At",
+        "tag": "Strengths"
+      },
+      "tinyGoals": {
+        "title": "Tiny Goals",
+        "tag": "Build habits"
+      },
+      "kindWords": {
+        "title": "Kind Words",
+        "tag": "Feel kind"
+      },
+      "selfLove": {
+        "title": "My Superpowers",
+        "tag": "Self-love"
+      }
     },
     "memory": {
       "title": "Emoji Match",

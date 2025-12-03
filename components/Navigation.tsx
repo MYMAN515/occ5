@@ -81,7 +81,7 @@ export default function Navigation() {
           isActive(link.href)
             ? 'text-white'
             : link.highlight
-              ? 'text-purple-800 bg-purple-50 hover:bg-purple-100 border border-purple-100 shadow-sm'
+              ? 'text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-100 shadow-md ring-1 ring-purple-100 font-semibold'
               : 'text-gray-700 hover:text-blue-600'
         }`}
       >
