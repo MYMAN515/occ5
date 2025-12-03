@@ -1,38 +1,85 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import RegisterServiceWorker from './register-sw'
+import { GameModal, type GameType } from '@/components/games/GameModals'
+
+type QuickLink = {
+  icon: string
+  label: string
+  helper: string
+  href?: string
+  action?: () => void
+}
 
 export default function Home() {
   const { t, language } = useLanguage()
   const isRTL = language === 'ar'
+  const [selectedGame, setSelectedGame] = useState<GameType | null>(null)
 
-  const quickLinks = [
+  const quickLinks: QuickLink[] = [
     {
-      href: '/games',
-      icon: '🎮',
-      label: t('home.quickLinks.games.label'),
-      helper: t('home.quickLinks.games.helper'),
+      href: '/diary',
+      icon: '📔',
+      label: 'Mood Diary for Your Child',
+      helper: 'Track feelings together each day.',
     },
     {
-      href: '/body-image-activities',
+      href: '/hygiene',
+      icon: '🧼',
+      label: 'Hygiene & Self-Care',
+      helper: 'Build supportive daily routines.',
+    },
+    {
+      href: '/confidence',
+      icon: '🌟',
+      label: 'Confidence & Lifestyle',
+      helper: 'Grow habits that boost confidence.',
+    },
+    {
+      href: '/timeline',
+      icon: '⏳',
+      label: 'Timeline Game',
+      helper: 'Match changes before or after puberty.',
+    },
+    {
+      action: () => setSelectedGame('memory'),
+      icon: '🧠',
+      label: 'Emotion Memory Game',
+      helper: 'Match emotion pairs to practice feelings.',
+    },
+    {
+      action: () => setSelectedGame('quiz'),
+      icon: '📝',
+      label: 'Puberty Knowledge Quiz',
+      helper: 'Test what you know about growing up.',
+    },
+    {
+      action: () => setSelectedGame('matching'),
       icon: '🧩',
-      label: t('home.quickLinks.kids.label'),
-      helper: t('home.quickLinks.kids.helper'),
+      label: 'Changes Matching Game',
+      helper: 'Pair related puberty changes together.',
     },
     {
-      href: '/parent-guide',
-      icon: '👪',
-      label: t('home.quickLinks.parents.label'),
-      helper: t('home.quickLinks.parents.helper'),
+      action: () => setSelectedGame('emotions'),
+      icon: '🎈',
+      label: 'Understanding Emotions',
+      helper: 'Learn to identify and name feelings.',
+    },
+    {
+      href: '/what-i-like-about-me',
+      icon: '💫',
+      label: 'What I Like About Me',
+      helper: 'Celebrate strengths with uplifting prompts.',
     },
     {
       href: '/quizzes',
-      icon: '🧠',
-      label: t('home.quickLinks.quizzes.label'),
-      helper: t('home.quickLinks.quizzes.helper'),
+      icon: '❓',
+      label: 'Quizzes',
+      helper: 'Explore the Sleep & Nutrition Impact Quiz.',
     },
   ]
 
@@ -60,7 +107,7 @@ export default function Home() {
           <p className="text-lg text-gray-700 max-w-xl">{t('home.subtitle')}</p>
 
           <div className={`flex flex-wrap gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <Link href="/games" className="w-full sm:w-auto">
+            <Link href="#quick-links" className="w-full sm:w-auto">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -114,10 +161,16 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <section className="mt-12">
-        <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${isRTL ? 'text-right' : ''}`}>
-          {quickLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="group">
+      <section className="mt-12" id="quick-links">
+        <div className="flex items-center justify-between mb-4">
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-primary-700">Quick links</p>
+            <h2 className="text-2xl font-bold text-gray-900">Quick links crafted for small screens—tap a card to jump right in.</h2>
+          </div>
+        </div>
+        <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'text-right' : ''}`}>
+          {quickLinks.map((item) => {
+            const CardContent = (
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -129,10 +182,26 @@ export default function Home() {
                   <p className="text-sm text-gray-600">{item.helper}</p>
                 </div>
               </motion.div>
-            </Link>
-          ))}
+            )
+
+            if (item.href) {
+              return (
+                <Link key={item.label} href={item.href} className="group">
+                  {CardContent}
+                </Link>
+              )
+            }
+
+            return (
+              <button key={item.label} type="button" onClick={item.action} className="text-left">
+                {CardContent}
+              </button>
+            )
+          })}
         </div>
       </section>
+
+      <GameModal selectedGame={selectedGame} onClose={() => setSelectedGame(null)} />
     </main>
   )
 }

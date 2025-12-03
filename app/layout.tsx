@@ -3,7 +3,6 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import AIChat from '@/components/AIChat'
 import WelcomeCheck from '@/components/WelcomeCheck'
-import Footer from '@/components/Footer'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata: Metadata = {
@@ -45,7 +44,6 @@ export default function RootLayout({
               {children}
             </main>
             <AIChat />
-            <Footer />
           </WelcomeCheck>
         </LanguageProvider>
       </body>

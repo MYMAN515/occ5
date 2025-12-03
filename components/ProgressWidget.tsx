@@ -42,7 +42,7 @@ export default function ProgressWidget() {
           Your Progress
         </h3>
         <Link
-          href="/activities"
+          href="/#quick-links"
           className="text-sm text-blue-600 hover:text-blue-700 font-semibold"
         >
           View All →
@@ -94,7 +94,7 @@ export default function ProgressWidget() {
             : "Start exploring activities to track your progress!"}
         </p>
         <Link
-          href="/activities"
+          href="/#quick-links"
           className="block w-full text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2.5 rounded-xl font-semibold hover:shadow-lg transition-all"
         >
           Explore Activities

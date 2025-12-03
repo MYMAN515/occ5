@@ -8,7 +8,6 @@ const urlsToCache = [
   '/body-guide',
   '/guidance',
   '/parent-guide',
-  '/games',
   '/team',
   '/welcome',
   '/manifest.json',
