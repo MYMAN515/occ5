@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Smile, HeartHandshake, BookOpen, Library, Users, Brain, Sparkles, ChevronDown } from 'lucide-react'
+import { Menu, X, Home, Smile, HeartHandshake, BookOpen, Library, Users, Brain, Sparkles, ChevronDown, Gamepad2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -14,6 +14,7 @@ type NavLink = {
   label: string
   icon: ReactNode
   description?: string
+  highlight?: boolean
 }
 
 type NavGroup = {
@@ -44,6 +45,13 @@ export default function Navigation() {
 
   const navItems: (NavGroup | NavLink)[] = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
+    {
+      href: '/games',
+      label: t('nav.games'),
+      icon: <Gamepad2 className="w-5 h-5" aria-label={t('nav.games')} />,
+      description: t('games.subtitle'),
+      highlight: true
+    },
     { id: 'children', label: t('nav.forChildren'), icon: <Smile className="w-4 h-4" />, items: childLinks },
     { id: 'parents', label: t('nav.forParents'), icon: <HeartHandshake className="w-4 h-4" />, items: parentLinks },
     { href: '/team', label: t('nav.about'), icon: <Users className="w-4 h-4" /> }
@@ -69,7 +77,13 @@ export default function Navigation() {
       <motion.div
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.97 }}
-        className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${isActive(link.href) ? 'text-white' : 'text-gray-700 hover:text-blue-600'}`}
+        className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+          isActive(link.href)
+            ? 'text-white'
+            : link.highlight
+            ? 'text-blue-700 bg-blue-50 shadow-sm hover:shadow-md hover:shadow-blue-200'
+            : 'text-gray-700 hover:text-blue-600'
+        }`}
       >
         {isActive(link.href) && (
           <motion.div
@@ -79,7 +93,7 @@ export default function Navigation() {
           />
         )}
         <span className="relative z-10 flex items-center gap-2">
-          {link.icon}
+          <span aria-hidden="true">{link.icon}</span>
           <span className="font-medium text-sm whitespace-nowrap">{link.label}</span>
         </span>
       </motion.div>
@@ -277,9 +291,15 @@ export default function Navigation() {
                       key={linkItem.href}
                       href={linkItem.href}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive(linkItem.href) ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md shadow-blue-500/30' : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'}`}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                        isActive(linkItem.href)
+                          ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md shadow-blue-500/30'
+                          : linkItem.highlight
+                          ? 'text-blue-700 bg-blue-50 shadow-sm'
+                          : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'
+                      }`}
                     >
-                      {linkItem.icon}
+                      <span aria-hidden="true">{linkItem.icon}</span>
                       <span className="font-medium">{linkItem.label}</span>
                       {isActive(linkItem.href) && <span className="ml-auto w-2 h-2 bg-white rounded-full" />}
                     </Link>
