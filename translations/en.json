@@ -247,6 +247,16 @@
     "communityNote": "Made with 💙 to support families through puberty education"
   },
   "games": {
+    "hero": {
+      "badges": {
+        "fun": "Colorful & fun",
+        "stars": "Earn stars",
+        "swipe": "Swipe & tap",
+        "rtlReady": "RTL ready",
+        "quick": "Quick launch",
+        "pick": "Pick a game"
+      }
+    },
     "title": "Games Hub",
     "subtitle": "Pick & play.",
     "tagline": "Fun starts here",

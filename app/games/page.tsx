@@ -1,12 +1,115 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Gamepad2, Trophy, Target, Puzzle, Brain, Heart, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 type GameType = 'memory' | 'quiz' | 'matching' | 'emotions'
+
+type GameItem = {
+  id: string
+  title: string
+  icon: string
+  tag: string
+  href?: string
+  action?: () => void
+  aria?: string
+}
+
+function GameBubble({ item, accent, isRTL }: { item: GameItem; accent: string; isRTL: boolean }) {
+  const content = (
+    <motion.div
+      whileHover={{ scale: 1.05, rotate: isRTL ? -1 : 1 }}
+      whileTap={{ scale: 0.97 }}
+      className="group relative min-w-[180px] max-w-[220px] rounded-[26px] border border-white/60 bg-white/90 p-4 shadow-[0_14px_40px_-12px_rgba(15,23,42,0.35)] backdrop-blur"
+    >
+      <div className="absolute inset-0 rounded-[26px] bg-gradient-to-br from-white/40 to-white/5 opacity-80" aria-hidden />
+      <div className="relative flex flex-col items-center gap-3 text-center">
+        <div
+          className={`relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${accent} text-4xl text-white shadow-lg shadow-primary-500/30`}
+          role="img"
+          aria-label={item.aria || item.title}
+        >
+          <span className="drop-shadow-sm">{item.icon}</span>
+          <span className="absolute -right-1 -top-1 h-4 w-4 rounded-full bg-white/80 shadow-sm" aria-hidden />
+        </div>
+        <div className="space-y-1">
+          <p className="text-lg font-semibold text-slate-900">{item.title}</p>
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-900/5 px-3 py-1 text-[11px] font-semibold text-slate-700">
+            <Sparkles className="h-3 w-3 text-amber-500" aria-hidden />
+            {item.tag}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  )
+
+  if (item.href) {
+    return (
+      <Link href={item.href} className="snap-start focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 rounded-[26px]">
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={item.action}
+      className="snap-start focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 rounded-[26px]"
+    >
+      {content}
+    </button>
+  )
+}
+
+function RailSection({
+  rail,
+  isRTL,
+  swipeLabel,
+}: {
+  rail: { id: string; label: string; accent: string; glow: string; items: GameItem[] }
+  isRTL: boolean
+  swipeLabel: string
+}) {
+  return (
+    <section
+      key={rail.id}
+      className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 px-4 py-6 shadow-[0_20px_60px_-24px_rgba(15,23,42,0.45)] backdrop-blur"
+    >
+      <div className={`absolute -left-10 -top-10 h-36 w-36 rounded-full blur-3xl ${rail.glow}`} aria-hidden />
+      <div className={`flex flex-wrap items-center justify-between gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+        <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+          <span
+            className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${rail.accent} text-white shadow-lg shadow-primary-500/30`}
+          >
+            <Gamepad2 className="h-5 w-5" aria-hidden />
+          </span>
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">{rail.label}</h2>
+            <p className="text-sm text-slate-500">{rail.items.length} games</p>
+          </div>
+        </div>
+        <span className="flex items-center gap-2 text-sm font-semibold text-primary-700">
+          <span role="img" aria-label={rail.label}>
+            {isRTL ? '⬅️' : '➡️'}
+          </span>
+          {rail.items.length > 2 ? swipeLabel : ''}
+        </span>
+      </div>
+
+      <div className={`mt-4 flex gap-4 overflow-x-auto pb-4 ${isRTL ? 'flex-row-reverse' : ''} snap-x snap-mandatory`}>
+        {rail.items.map((item) => (
+          <GameBubble key={item.id} item={item} accent={rail.accent} isRTL={isRTL} />
+        ))}
+      </div>
+
+      <div className="pointer-events-none absolute -bottom-12 right-4 h-24 w-24 rotate-12 rounded-full bg-white/60 blur-2xl" aria-hidden />
+    </section>
+  )
+}
 
 function ScoreSparkle({ show, label }: { show: boolean; label: string }) {
   return (
@@ -32,183 +135,218 @@ export default function GamesPage() {
   const isRTL = language === 'ar'
   const [selectedGame, setSelectedGame] = useState<GameType | null>(null)
 
-  const rails = [
-    {
-      id: 'feelings',
-      label: t('games.rails.feelings'),
-      accent: 'from-pink-400 to-rose-500',
-      items: [
-        {
-          id: 'emoji-match',
-          title: t('games.memory.title'),
-          icon: '😊',
-          tag: t('games.difficulty.easy'),
-          action: () => setSelectedGame('memory' as GameType),
-          aria: t('games.memory.aria'),
-        },
-        {
-          id: 'feelings-game',
-          title: t('games.emotions.title'),
-          icon: '🎈',
-          tag: t('games.difficulty.easy'),
-          action: () => setSelectedGame('emotions' as GameType),
-          aria: t('games.emotions.aria'),
-        },
-        {
-          id: 'diary',
-          title: t('games.entries.diary.title'),
-          icon: '📔',
-          tag: t('games.entries.diary.tag'),
-          href: '/diary',
-        },
-      ],
-    },
-    {
-      id: 'body',
-      label: t('games.rails.body'),
-      accent: 'from-blue-400 to-cyan-500',
-      items: [
-        {
-          id: 'timeline',
-          title: t('games.entries.timeline.title'),
-          icon: '⏳',
-          tag: t('games.entries.timeline.tag'),
-          href: '/timeline',
-        },
-        {
-          id: 'hygiene',
-          title: t('games.entries.hygiene.title'),
-          icon: '🧼',
-          tag: t('games.entries.hygiene.tag'),
-          href: '/hygiene',
-        },
-      ],
-    },
-    {
-      id: 'confidence',
-      label: t('games.rails.confidence'),
-      accent: 'from-purple-400 to-indigo-500',
-      items: [
-        {
-          id: 'superpowers',
-          title: t('games.entries.superpower.title'),
-          icon: '⭐',
-          tag: t('games.entries.superpower.tag'),
-          href: '/what-i-like-about-me',
-        },
-        {
-          id: 'tiny-goals',
-          title: t('games.entries.tinyGoals.title'),
-          icon: '🎯',
-          tag: t('games.entries.tinyGoals.tag'),
-          href: '/confidence',
-        },
-        {
-          id: 'kind-words',
-          title: t('games.entries.kindWords.title'),
-          icon: '💌',
-          tag: t('games.entries.kindWords.tag'),
-          href: '/diary',
-        },
-        {
-          id: 'self-love',
-          title: t('games.entries.selfLove.title'),
-          icon: '🌟',
-          tag: t('games.entries.selfLove.tag'),
-          href: '/body-image-activities',
-        },
-      ],
-    },
-  ]
+  const rails = useMemo(
+    () => [
+      {
+        id: 'feelings',
+        label: t('games.rails.feelings'),
+        accent: 'from-pink-400 to-rose-500',
+        glow: 'bg-pink-300/40',
+        items: [
+          {
+            id: 'emoji-match',
+            title: t('games.memory.title'),
+            icon: '😊',
+            tag: t('games.difficulty.easy'),
+            action: () => setSelectedGame('memory' as GameType),
+            aria: t('games.memory.aria'),
+          },
+          {
+            id: 'feelings-game',
+            title: t('games.emotions.title'),
+            icon: '🎈',
+            tag: t('games.difficulty.easy'),
+            action: () => setSelectedGame('emotions' as GameType),
+            aria: t('games.emotions.aria'),
+          },
+          {
+            id: 'diary',
+            title: t('games.entries.diary.title'),
+            icon: '📔',
+            tag: t('games.entries.diary.tag'),
+            href: '/diary',
+          },
+        ],
+      },
+      {
+        id: 'body',
+        label: t('games.rails.body'),
+        accent: 'from-blue-400 to-cyan-500',
+        glow: 'bg-cyan-300/40',
+        items: [
+          {
+            id: 'timeline',
+            title: t('games.entries.timeline.title'),
+            icon: '⏳',
+            tag: t('games.entries.timeline.tag'),
+            href: '/timeline',
+          },
+          {
+            id: 'hygiene',
+            title: t('games.entries.hygiene.title'),
+            icon: '🧼',
+            tag: t('games.entries.hygiene.tag'),
+            href: '/hygiene',
+          },
+        ],
+      },
+      {
+        id: 'confidence',
+        label: t('games.rails.confidence'),
+        accent: 'from-purple-400 to-indigo-500',
+        glow: 'bg-indigo-300/40',
+        items: [
+          {
+            id: 'superpowers',
+            title: t('games.entries.superpower.title'),
+            icon: '⭐',
+            tag: t('games.entries.superpower.tag'),
+            href: '/what-i-like-about-me',
+          },
+          {
+            id: 'tiny-goals',
+            title: t('games.entries.tinyGoals.title'),
+            icon: '🎯',
+            tag: t('games.entries.tinyGoals.tag'),
+            href: '/confidence',
+          },
+          {
+            id: 'kind-words',
+            title: t('games.entries.kindWords.title'),
+            icon: '💌',
+            tag: t('games.entries.kindWords.tag'),
+            href: '/diary',
+          },
+          {
+            id: 'self-love',
+            title: t('games.entries.selfLove.title'),
+            icon: '🌟',
+            tag: t('games.entries.selfLove.tag'),
+            href: '/body-image-activities',
+          },
+        ],
+      },
+    ],
+    [t, setSelectedGame]
+  )
+
+  const heroBadges = useMemo(
+    () => [
+      { icon: '🎨', label: t('games.hero.badges.fun') },
+      { icon: '⭐', label: t('games.hero.badges.stars') },
+      { icon: '↔️', label: t('games.hero.badges.swipe') },
+    ],
+    [t]
+  )
 
   return (
-    <main className="container mx-auto px-4 py-10 md:py-14" dir={isRTL ? 'rtl' : 'ltr'}>
-      <motion.header
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        className={`flex flex-col items-center text-center gap-3 mb-10 ${isRTL ? 'text-right items-end' : ''}`}
-      >
-        <div className="flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-primary-700 font-semibold shadow-sm">
-          <Gamepad2 className="w-5 h-5" aria-hidden />
-          <span>{t('games.tagline')}</span>
+    <main
+      className="min-h-screen bg-gradient-to-b from-primary-50/80 via-white to-sky-50"
+      dir={isRTL ? 'rtl' : 'ltr'}
+    >
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-x-0 -top-12 h-48 bg-gradient-to-br from-primary-200/60 via-rose-200/40 to-sky-200/60 blur-3xl" aria-hidden />
+        <div className="container mx-auto px-4 pt-12 pb-10 lg:pb-14">
+          <div className={`grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center ${isRTL ? 'text-right' : ''}`}>
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-primary-700 shadow-sm">
+                <Gamepad2 className="w-5 h-5" aria-hidden />
+                <span>{t('games.tagline')}</span>
+              </div>
+              <motion.h1
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-4xl md:text-5xl font-black text-slate-900 leading-tight"
+              >
+                {t('games.title')}
+              </motion.h1>
+              <p className="text-lg text-slate-700">{t('games.subtitle')}</p>
+
+              <div className={`flex flex-wrap gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                {heroBadges.map((badge) => (
+                  <span
+                    key={badge.label}
+                    className="flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-slate-800 shadow-md shadow-primary-500/15"
+                  >
+                    <span role="img" aria-label={badge.label}>
+                      {badge.icon}
+                    </span>
+                    {badge.label}
+                  </span>
+                ))}
+              </div>
+
+              <div className={`flex flex-wrap gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <Link
+                  href="#rails"
+                  className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary-500 to-rose-500 px-5 py-3 text-white text-lg font-semibold shadow-lg shadow-primary-500/30 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+                >
+                  🎉 {t('games.startGame')}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setSelectedGame('memory')}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-3 text-slate-800 font-semibold shadow-sm focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+                >
+                  😊 {t('games.memory.title')}
+                </button>
+              </div>
+            </div>
+
+            <div className={`relative ${isRTL ? 'lg:order-first' : ''}`} aria-hidden>
+              <div className="absolute -left-6 top-4 h-28 w-28 rounded-full bg-primary-300/30 blur-2xl" />
+              <div className="absolute -right-6 bottom-6 h-24 w-24 rounded-full bg-rose-300/30 blur-2xl" />
+              <div className="relative mx-auto max-w-[420px] rounded-[32px] border border-white/70 bg-white/80 p-6 shadow-[0_20px_60px_-24px_rgba(15,23,42,0.45)] backdrop-blur">
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  {[t('games.tips.tap'), t('games.tips.drag'), t('games.tips.stars'), t('games.hero.badges.rtlReady')].map((tip, idx) => (
+                    <div
+                      key={tip}
+                      className="rounded-2xl bg-gradient-to-br from-slate-50 to-white p-3 shadow-inner shadow-white/60 border border-white/80"
+                    >
+                      <p className="text-2xl" aria-label={tip}>
+                        {['🎮', '↔️', '⭐', '🌍'][idx]}
+                      </p>
+                      <p className="text-sm font-semibold text-slate-800">{tip}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 flex items-center justify-between rounded-2xl bg-gradient-to-r from-primary-100/80 via-white to-rose-100/70 p-3 text-left">
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary-700">{t('games.hero.badges.quick')}</p>
+                    <p className="text-lg font-bold text-slate-900">{t('games.hero.badges.pick')}</p>
+                  </div>
+                  <div className="flex items-center gap-1 text-amber-500" aria-label={t('games.aria.progressStars')}>
+                    {[...Array(4)].map((_, i) => (
+                      <Sparkles key={i} className="h-5 w-5" aria-hidden />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">{t('games.title')}</h1>
-        <p className="text-lg text-gray-700">{t('games.subtitle')}</p>
-        <div className={`flex flex-wrap justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-          {[t('games.tips.tap'), t('games.tips.drag'), t('games.tips.stars')].map((tip, index) => (
-            <span
-              key={tip}
-              className="flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm text-primary-700 shadow-sm border border-primary-100"
-            >
-              <span role="img" aria-label={t('games.aria.tip')}>{['🎮', '↔️', '⭐'][index]}</span>
-              {tip}
+      </section>
+
+      <section id="rails" className="container mx-auto px-4 pb-16 space-y-8">
+        <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-primary-700">{t('games.tagline')}</p>
+            <h2 className="text-2xl font-bold text-slate-900">{t('games.hero.badges.pick')}</h2>
+          </div>
+          <div className="hidden md:flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+            <span role="img" aria-label={t('games.aria.tip')}>
+              {isRTL ? '⬅️' : '➡️'}
             </span>
+            {t('games.swipe')}
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {rails.map((rail) => (
+            <RailSection key={rail.id} rail={rail} isRTL={isRTL} swipeLabel={t('games.swipe')} />
           ))}
         </div>
-      </motion.header>
-
-      <div className="space-y-10">
-        {rails.map((rail) => (
-          <section key={rail.id} className="space-y-4">
-            <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <span className={`inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${rail.accent} text-white shadow-md`}>
-                  <Sparkles className="w-5 h-5" aria-hidden />
-                </span>
-                <h2 className="text-2xl font-bold text-gray-900">{rail.label}</h2>
-              </div>
-              <span className="text-sm text-gray-500">{t('games.swipe')}</span>
-            </div>
-
-            <div className={`flex gap-3 overflow-x-auto pb-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              {rail.items.map((item) => {
-                const bubble = (
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="min-w-[180px] max-w-[200px] rounded-3xl bg-white border border-gray-100 shadow-sm p-4 flex flex-col items-center gap-3 text-center"
-                  >
-                    <div
-                      className="relative"
-                      role="img"
-                      aria-label={item.aria || item.title}
-                    >
-                      <span className={`flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${rail.accent} text-3xl shadow-lg`}>
-                        {item.icon}
-                      </span>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-lg font-semibold text-gray-900">{item.title}</p>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700">
-                        {item.tag}
-                      </span>
-                    </div>
-                  </motion.div>
-                )
-
-                if (item.href) {
-                  return (
-                    <Link key={item.id} href={item.href} className="focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 rounded-3xl">
-                      {bubble}
-                    </Link>
-                  )
-                }
-
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={item.action}
-                    className="focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 rounded-3xl"
-                  >
-                    {bubble}
-                  </button>
-                )
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
+      </section>
 
       {/* Game Modal */}
       <AnimatePresence>

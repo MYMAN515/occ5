@@ -233,6 +233,16 @@
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   },
   "games": {
+    "hero": {
+      "badges": {
+        "fun": "Seronok & warna",
+        "stars": "Kumpul bintang",
+        "swipe": "Leret & ketik",
+        "rtlReady": "Sedia RTL",
+        "quick": "Pilih pantas",
+        "pick": "Pilih permainan"
+      }
+    },
     "title": "Zon Permainan",
     "subtitle": "Pilih & main.",
     "tagline": "Seronok di sini",
