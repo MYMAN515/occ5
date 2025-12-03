@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Users, Brain } from 'lucide-react'
+import { Menu, X, Home, Sparkles, Users, HeartHandshake, Smile, BookOpen, Library, Brain } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -14,15 +14,23 @@ export default function Navigation() {
   const pathname = usePathname()
   const { t } = useLanguage()
 
+  const childrenLinks = [
+    { href: '/children/body-image', label: t('nav.bodyImage'), icon: <HeartHandshake className="w-4 h-4" /> },
+    { href: '/children/what-i-like', label: t('nav.selfLove'), icon: <Smile className="w-4 h-4" /> },
+    { href: '/quizzes', label: t('nav.quizzes'), icon: <Brain className="w-4 h-4" /> }
+  ]
+
+  const parentLinks = [
+    { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" /> },
+    { href: '/body-guide', label: t('nav.developmentalChanges'), icon: <HeartHandshake className="w-4 h-4" /> },
+    { href: '/resources', label: t('nav.resources'), icon: <Library className="w-4 h-4" /> }
+  ]
+
   const links = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
-    { href: '/activities', label: 'Activities', icon: <Activity className="w-4 h-4" /> },
-    { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" /> },
-    { href: '/quiz', label: t('nav.quiz'), icon: <Brain className="w-4 h-4" /> },
-    { href: '/body-guide', label: 'Changes & Body', icon: <Heart className="w-4 h-4" /> },
-    { href: '/resources', label: 'Resources', icon: <BookOpen className="w-4 h-4" /> },
-    { href: '/diary', label: t('nav.diary'), icon: <Sparkles className="w-4 h-4" /> },
-    { href: '/team', label: 'Team', icon: <Users className="w-4 h-4" />, special: true },
+    { href: '/children', label: t('nav.forChildren'), icon: <Smile className="w-4 h-4" />, children: childrenLinks },
+    { href: '/parent-guide', label: t('nav.forParents'), icon: <HeartHandshake className="w-4 h-4" />, children: parentLinks },
+    { href: '/team', label: t('nav.about'), icon: <Users className="w-4 h-4" />, special: true },
   ]
 
   useEffect(() => {
@@ -37,7 +45,7 @@ export default function Navigation() {
     setIsOpen(false)
   }, [pathname])
 
-  const isActive = (href: string) => pathname === href
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -65,61 +73,79 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-2">
             {links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <motion.div
-                  whileHover={{ y: -2, scale: link.special ? 1.05 : 1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
-                    isActive(link.href)
-                      ? link.special 
+              <div key={link.href} className="relative group">
+                <Link href={link.href}>
+                  <motion.div
+                    whileHover={{ y: -2, scale: link.special ? 1.05 : 1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+                      isActive(link.href)
                         ? 'text-white'
-                        : 'text-white'
-                      : link.special
-                        ? 'text-gray-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600'
-                        : 'text-gray-700 hover:text-blue-600'
-                  }`}
-                >
-                  {isActive(link.href) && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className={`absolute inset-0 rounded-xl shadow-md ${
-                        link.special
-                          ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-purple-500/30'
-                          : 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-blue-500/30'
-                      }`}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  {link.special && !isActive(link.href) && (
-                    <motion.div
-                      animate={{
-                        background: [
-                          'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
-                          'linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
-                          'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
-                        ]
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                      className="absolute inset-0 rounded-xl opacity-50"
-                    />
-                  )}
-                  <span className="relative z-10 flex items-center gap-2">
-                    {link.icon}
-                    <span className="font-medium text-sm whitespace-nowrap">{link.label}</span>
-                    {link.special && (
-                      <motion.span
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="text-xs"
-                      >
-                        ⭐
-                      </motion.span>
+                        : link.special
+                          ? 'text-gray-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600'
+                          : 'text-gray-700 hover:text-blue-600'
+                    }`}
+                  >
+                    {isActive(link.href) && (
+                      <motion.div
+                        layoutId="activeTab"
+                        className={`absolute inset-0 rounded-xl shadow-md ${
+                          link.special
+                            ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-purple-500/30'
+                            : 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-blue-500/30'
+                        }`}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
                     )}
-                  </span>
-                </motion.div>
-              </Link>
+                    {link.special && !isActive(link.href) && (
+                      <motion.div
+                        animate={{
+                          background: [
+                            'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
+                            'linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
+                            'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
+                          ]
+                        }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                        className="absolute inset-0 rounded-xl opacity-50"
+                      />
+                    )}
+                    <span className="relative z-10 flex items-center gap-2">
+                      {link.icon}
+                      <span className="font-medium text-sm whitespace-nowrap">{link.label}</span>
+                      {link.special && (
+                        <motion.span
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                          className="text-xs"
+                        >
+                          ⭐
+                        </motion.span>
+                      )}
+                    </span>
+                  </motion.div>
+                </Link>
+                {link.children && (
+                  <div className="absolute left-0 mt-2 hidden group-hover:block">
+                    <div className="glass-effect rounded-2xl p-3 shadow-lg min-w-[220px]">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-colors ${
+                            isActive(child.href) ? 'bg-blue-50 text-blue-700' : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          {child.icon}
+                          <span className="text-sm font-semibold">{child.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
             <div className="ml-2 pl-2 border-l border-gray-200">
               <LanguageSwitcher />
@@ -192,6 +218,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ delay: index * 0.05, duration: 0.2 }}
+                    className="space-y-2"
                   >
                     <Link
                       href={link.href}
@@ -230,6 +257,23 @@ export default function Navigation() {
                         />
                       )}
                     </Link>
+                    {link.children && (
+                      <div className="pl-10 space-y-1">
+                        {link.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm transition-colors ${
+                              isActive(child.href) ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-blue-50'
+                            }`}
+                          >
+                            {child.icon}
+                            <span className="font-semibold">{child.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>

@@ -269,7 +269,7 @@ export default function ChangesPage() {
                 </div>
               </div>
               <Link
-                href="/quiz"
+                href="/quizzes"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg"
               >
                 Jump to Quiz Page ➜

@@ -7,9 +7,17 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan",
+    "parentGuide": "Panduan Ibu Bapa",
     "quiz": "Kuiz",
-    "team": "Pasukan Kami"
+    "team": "Pasukan",
+    "forChildren": "Untuk Kanak-kanak",
+    "bodyImage": "Aktiviti Imej Diri",
+    "selfLove": "Apa Saya Suka Tentang Diri Saya",
+    "quizzes": "Kuiz",
+    "forParents": "Untuk Ibu Bapa",
+    "developmentalChanges": "Perubahan Perkembangan",
+    "resources": "Perpustakaan Sumber",
+    "about": "Tentang Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -240,23 +248,9 @@
     }
   },
   "footer": {
-    "tagline": "Dihasilkan dengan kasih untuk keluarga yang melalui perubahan akil baligh",
-    "title": "Teman tenang untuk setiap fasa akil baligh",
-    "description": "Kami memadukan nasihat pakar, kepekaan budaya dan pembelajaran yang menyeronokkan supaya anda dan anak dapat membesar dengan yakin.",
-    "links": {
-      "title": "Terokai lebih banyak panduan",
-      "parentGuide": "Panduan ibu bapa",
-      "guidance": "Petua berasaskan bukti",
-      "games": "Permainan & aktiviti",
-      "diary": "Diari perasaan"
-    },
-    "pwa": {
-      "title": "Simpan aplikasi ke telefon anda",
-      "headline": "Gunakan seperti aplikasi asli",
-      "instructions": "Buka menu pelayar anda dan pilih 'Add to Home Screen' untuk akses walaupun di luar talian."
-    },
-    "rights": "© 2025 Parenting Hub – Dibina oleh pasukan Universiti Malaya untuk keluarga di mana-mana.",
-    "communityNote": "Semua kandungan tersedia dalam English, العربية dan Bahasa Melayu supaya setiap penjaga rasa dialu-alukan."
+    "title": "Menyokong Keluarga Melalui Akil Baligh",
+    "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
+    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
@@ -654,9 +648,199 @@
       "hygiene": "Kebersihan Diri"
     }
   },
-  "footer": {
-    "title": "Menyokong Keluarga Melalui Akil Baligh",
-    "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
-    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  "bodyImage": {
+    "title": "Perasaan Tentang Imej Diri",
+    "intro": "Terokai lima gambar harian dan pilih perasaan yang sesuai. Setiap idea meraikan perbezaan dan membina keyakinan tenang.",
+    "progress": "Soalan {current} daripada {total}",
+    "parentLabel": "Fokus ibu bapa",
+    "toolHint": "Tekan ikon mentol untuk membaca mengapa soalan ini penting dan cara memimpin perbualan lembut.",
+    "emotionPrompt": "Bagaimana perasaan anda?",
+    "emotions": {
+      "happy": "Gembira",
+      "proud": "Bangga",
+      "curious": "Ingin tahu",
+      "anxious": "Cemas",
+      "confused": "Keliru",
+      "excited": "Teruja"
+    },
+    "questions": {
+      "q1": {
+        "title": "Kawan bermain",
+        "prompt": "Bagaimana anda rasa melihat kanak-kanak dengan bentuk badan berbeza bermain bersama?",
+        "tip": "Raikan perbezaan dan bagaimana setiap badan boleh turut serta.",
+        "focus": "Perwakilan dan rasa belong",
+        "icon": "🎨"
+      },
+      "q2": {
+        "title": "Mencuba pakaian baharu",
+        "prompt": "Bagaimana perasaan anda mencuba pakaian yang berbeza daripada gaya biasa?",
+        "tip": "Bercakap tentang keselesaan dan pilihan peribadi sebelum trend.",
+        "focus": "Keselesaan dahulu",
+        "icon": "🧥"
+      },
+      "q3": {
+        "title": "Sukan dan pergerakan",
+        "prompt": "Bayangkan badan anda bergerak dalam sukan atau aktiviti baharu. Perasaan apa muncul?",
+        "tip": "Sambungkan pergerakan kepada keseronokan dan kekuatan, bukan rupa.",
+        "focus": "Kegembiraan bergerak",
+        "icon": "🏃"
+      },
+      "q4": {
+        "title": "Saat di cermin",
+        "prompt": "Melihat cermin hari ini, perasaan mana paling tepat?",
+        "tip": "Perhatikan satu perkara baik untuk dikatakan tentang diri anda.",
+        "focus": "Belas kasihan diri",
+        "icon": "🪞"
+      },
+      "q5": {
+        "title": "Pilihan makanan",
+        "prompt": "Bagaimana perasaan anda melihat pinggan berwarna-warni penuh makanan?",
+        "tip": "Makanan memberi tenaga; semua badan layak mendapat nutrisi.",
+        "focus": "Pemakanan dan penjagaan",
+        "icon": "🍽️"
+      }
+    },
+    "selectionNote": "Anda memilih",
+    "footerPrompt": "Tarik nafas perlahan. Perasaan ialah mesej — tiada yang salah.",
+    "parentReminder": "Kongsi fokus dengan kuat supaya anak mendengar mesej positif."
+  },
+  "worksheet": {
+    "title": "Apa Saya Suka Tentang Diri Saya",
+    "intro": "Ruang lembut untuk perasan kekuatan, kebaikan, dan keunikan diri anda. Jawapan disimpan di peranti ini.",
+    "saveNotice": "Disimpan automatik pada peranti ini.",
+    "reset": "Tetap semula semua",
+    "export": "Cetak atau simpan",
+    "saved": "Kemajuan disimpan!",
+    "placeholder": "Tulis fikiran anda di sini...",
+    "rtlNotice": "Bahasa Arab akan dipaparkan kanan-ke-kiri untuk bacaan selesa.",
+    "sections": {
+      "skills": "Beberapa perkara saya mahir",
+      "friends": "Perkara rakan suka tentang saya",
+      "self": "Perkara saya suka tentang diri saya",
+      "family": "Perkara keluarga saya sayang tentang saya",
+      "proud": "Perkara yang saya banggakan",
+      "unique": "Satu perkara unik tentang saya"
+    },
+    "tips": {
+      "skills": "Fikirkan tentang sekolah, seni, membina, atau membantu.",
+      "friends": "Ingat pujian atau saat rakan tersenyum kerana anda.",
+      "self": "Senaraikan kualiti atau tabiat yang buat anda rasa baik.",
+      "family": "Apa yang keluarga ucap terima kasih atau suka lakukan bersama anda?",
+      "proud": "Saat anda berlatih, meningkat, atau membantu orang lain.",
+      "unique": "Keunikan, minat, atau kekuatan yang sangat anda."
+    },
+    "actions": {
+      "clearConfirm": "Adakah anda pasti mahu menetapkan semula helaian? Ini akan memadam nota anda pada peranti ini.",
+      "printHint": "Gunakan cetakan pelayar untuk simpan PDF."
+    }
+  },
+  "quizHub": {
+    "title": "Kuiz",
+    "intro": "Pilih kuiz untuk belajar tentang perubahan badan, tidur, pemakanan dan banyak lagi.",
+    "items": {
+      "puberty": {
+        "title": "Kuiz Akil Baligh & Perubahan Badan",
+        "description": "Uji pengetahuan tentang pertumbuhan badan, perasaan, dan kebersihan.",
+        "cta": "Mulakan kuiz akil baligh"
+      },
+      "wellness": {
+        "title": "Kuiz Kesan Tidur & Pemakanan",
+        "description": "Ketahui bagaimana rehat, makanan, dan hidrasi menyokong tenaga dan emosi anda.",
+        "cta": "Mulakan kuiz kesihatan"
+      }
+    }
+  },
+  "wellnessQuiz": {
+    "title": "Kuiz Kesan Tidur & Pemakanan",
+    "intro": "Jawab satu soalan pada satu masa untuk meneroka bagaimana tidur, makanan, vitamin, dan air membantu badan serta emosi.",
+    "continue": "Teruskan",
+    "nextQuestion": "Soalan seterusnya",
+    "resultIntro": "Kuiz selesai!",
+    "summary": "Anda menjawab {correct} daripada {total}. Terus jaga badan anda—ia menjaga anda!",
+    "encouragement": "Setiap pilihan hari ini boleh bantu anda rasa lebih tenang dan kuat esok.",
+    "questions": [
+      {
+        "prompt": "Menggunakan skrin sebelum tidur biasanya membuat...",
+        "options": [
+          "lebih sukar untuk tidur lena",
+          "lebih mudah untuk tidur",
+          "tiada kesan langsung"
+        ],
+        "correct": "lebih sukar untuk tidur lena",
+        "icon": "📱",
+        "feedback": {
+          "correct": "Betul! Cahaya biru dan permainan boleh buat otak berjaga.",
+          "incorrect": "Skrin boleh buat otak sibuk. Cuba rutin tenang tanpa skrin."
+        }
+      },
+      {
+        "prompt": "Berapa jam tidur diperlukan kebanyakan kanak-kanak sekolah setiap malam?",
+        "options": [
+          "5-6 jam",
+          "9-12 jam",
+          "12-14 jam"
+        ],
+        "correct": "9-12 jam",
+        "icon": "🛌",
+        "feedback": {
+          "correct": "Hebat! 9-12 jam memberi otak dan badan masa untuk pulih.",
+          "incorrect": "Kebanyakan kanak-kanak rasa terbaik dengan 9-12 jam untuk tumbesaran dan fokus."
+        }
+      },
+      {
+        "prompt": "Apakah pilihan snek yang menenangkan sebelum tidur?",
+        "options": [
+          "Minuman bergula",
+          "Susu suam atau pisang",
+          "Kerepek pedas"
+        ],
+        "correct": "Susu suam atau pisang",
+        "icon": "🥛",
+        "feedback": {
+          "correct": "Pilihan selesa! Snek lembut membantu badan berehat.",
+          "incorrect": "Snek lembut seperti susu suam atau pisang lebih mudah untuk tidur."
+        }
+      },
+      {
+        "prompt": "Vitamin mana membantu badan menggunakan cahaya matahari dan membina tulang kuat?",
+        "options": [
+          "Vitamin D",
+          "Vitamin C",
+          "Vitamin Z"
+        ],
+        "correct": "Vitamin D",
+        "icon": "☀️",
+        "feedback": {
+          "correct": "Ya! Vitamin D bekerjasama dengan kalsium untuk tulang kuat.",
+          "incorrect": "Vitamin D bersama cahaya matahari dan kalsium menyokong tulang sihat."
+        }
+      },
+      {
+        "prompt": "Bagaimana minum air pada siang hari membantu anda?",
+        "options": [
+          "Kekalkan tenaga dan fokus stabil",
+          "Menjadikan anda lebih letih",
+          "Menghalang anda tidur"
+        ],
+        "correct": "Kekalkan tenaga dan fokus stabil",
+        "icon": "💧",
+        "feedback": {
+          "correct": "Hidrasi menyokong otot, mood, dan pemikiran jelas.",
+          "incorrect": "Air membantu tenaga stabil, fokus, dan rasa tenang."
+        }
+      }
+    ],
+    "buttons": {
+      "startOver": "Mula semula",
+      "finish": "Lihat ringkasan"
+    },
+    "status": {
+      "correct": "Betul!",
+      "incorrect": "Cubaan baik — ini petunjuk."
+    }
+  },
+  "navigation": {
+    "previous": "Sebelumnya",
+    "next": "Seterusnya"
   }
 }

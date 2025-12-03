@@ -7,9 +7,17 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips",
-    "quiz": "Quiz",
-    "team": "Our Team"
+    "parentGuide": "Parent Guide",
+    "quiz": "Quizzes",
+    "team": "Team",
+    "forChildren": "For Children",
+    "bodyImage": "Body Image Activities",
+    "selfLove": "What I Like About Me",
+    "quizzes": "Quizzes",
+    "forParents": "For Parents",
+    "developmentalChanges": "Developmental Changes",
+    "resources": "Resource Library",
+    "about": "About Us"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -240,23 +248,23 @@
     }
   },
   "footer": {
-    "tagline": "Created with love for families navigating change",
-    "title": "A calm companion for every stage of puberty",
-    "description": "We blend expert advice, cultural sensitivity, and playful learning so you and your child can grow together with confidence.",
+    "tagline": "Supporting Families",
+    "title": "Supporting Families Through Puberty",
+    "description": "A safe, loving resource for parents and children navigating puberty together 🌱",
     "links": {
-      "title": "Explore more guidance",
-      "parentGuide": "Parent guide",
-      "guidance": "Evidence-based tips",
-      "games": "Games & activities",
-      "diary": "Feelings diary"
+      "title": "Quick Links",
+      "parentGuide": "Parent Guide",
+      "guidance": "Guidance",
+      "games": "Games & Activities",
+      "diary": "Mood Diary"
     },
     "pwa": {
-      "title": "Save the app to your phone",
-      "headline": "Use it like a native app",
-      "instructions": "Open this site in your browser menu and choose ‘Add to Home Screen’ to access resources even when you're offline."
+      "title": "Install App",
+      "headline": "Install as App",
+      "instructions": "Add to your home screen for easy access anytime, anywhere."
     },
-    "rights": "© 2025 Parenting Hub – Built by the University of Malaya team for families everywhere.",
-    "communityNote": "All content is available in English, العربية, and Bahasa Melayu so every caregiver feels welcome."
+    "rights": "© 2025 Parenting Hub. All rights reserved.",
+    "communityNote": "Made with 💙 to support families through puberty education"
   },
   "games": {
     "title": "Interactive Games & Activities",
@@ -654,23 +662,199 @@
       "hygiene": "Personal Hygiene"
     }
   },
-  "footer": {
-    "tagline": "Supporting Families",
-    "title": "Supporting Families Through Puberty",
-    "description": "A safe, loving resource for parents and children navigating puberty together 🌱",
-    "links": {
-      "title": "Quick Links",
-      "parentGuide": "Parent Guide",
-      "guidance": "Guidance",
-      "games": "Games & Activities",
-      "diary": "Mood Diary"
+  "bodyImage": {
+    "title": "Body Image Feelings",
+    "intro": "Explore five everyday pictures and choose the feeling that best matches how the image makes you feel. Each idea helps celebrate differences and build calm confidence.",
+    "progress": "Question {current} of {total}",
+    "parentLabel": "Parent focus",
+    "toolHint": "Tap the lightbulb to read why this question matters and how to guide gentle conversation.",
+    "emotionPrompt": "How does this make you feel?",
+    "emotions": {
+      "happy": "Happy",
+      "proud": "Proud",
+      "curious": "Curious",
+      "anxious": "Anxious",
+      "confused": "Confused",
+      "excited": "Excited"
     },
-    "pwa": {
-      "title": "Install App",
-      "headline": "Install as App",
-      "instructions": "Add to your home screen for easy access anytime, anywhere."
+    "questions": {
+      "q1": {
+        "title": "Friends playing",
+        "prompt": "How do you feel seeing kids with different bodies playing together?",
+        "tip": "Celebrate differences and how every body can join in.",
+        "focus": "Representation and belonging",
+        "icon": "🎨"
+      },
+      "q2": {
+        "title": "Trying new clothes",
+        "prompt": "How would you feel trying on an outfit that looks different from your usual style?",
+        "tip": "Talk about comfort and personal choice over trends.",
+        "focus": "Comfort first",
+        "icon": "🧥"
+      },
+      "q3": {
+        "title": "Sport and movement",
+        "prompt": "Imagine moving your body in a new sport or activity. What feeling shows up?",
+        "tip": "Link movement to fun and strength, not appearance.",
+        "focus": "Joy of movement",
+        "icon": "🏃"
+      },
+      "q4": {
+        "title": "Mirror moment",
+        "prompt": "Looking in the mirror today, which feeling fits best?",
+        "tip": "Notice one kind thing to say about yourself.",
+        "focus": "Self-kindness",
+        "icon": "🪞"
+      },
+      "q5": {
+        "title": "Food choices",
+        "prompt": "How do you feel seeing a colorful plate with many foods?",
+        "tip": "Food fuels the body; all bodies deserve nourishment.",
+        "focus": "Nourishment and care",
+        "icon": "🍽️"
+      }
     },
-    "rights": "© 2025 Parenting Hub. All rights reserved.",
-    "communityNote": "Made with 💙 to support families through puberty education"
+    "selectionNote": "You picked",
+    "footerPrompt": "Take a slow breath. Feelings are messages—none are wrong.",
+    "parentReminder": "Share the focus aloud so your child hears the positive message."
+  },
+  "worksheet": {
+    "title": "What I Like About Me",
+    "intro": "A gentle space to notice strengths, kindness, and the unique spark inside you. Your answers stay on this device.",
+    "saveNotice": "Saved automatically on this device.",
+    "reset": "Reset all",
+    "export": "Print or save",
+    "saved": "Progress saved!",
+    "placeholder": "Type your thoughts here...",
+    "rtlNotice": "Arabic will flip to right-to-left for comfy reading.",
+    "sections": {
+      "skills": "Some things I’m good at",
+      "friends": "Things my friends like about me",
+      "self": "Things I like about me",
+      "family": "Things my family love about me",
+      "proud": "Things that I’m proud of",
+      "unique": "One unique thing about me"
+    },
+    "tips": {
+      "skills": "Think about school, art, building, coding, drawing, or helping.",
+      "friends": "Recall compliments or moments friends smile because of you.",
+      "self": "List qualities, styles, or habits that make you feel good.",
+      "family": "What do family members thank you for or enjoy doing with you?",
+      "proud": "Moments you practiced, improved, or helped someone else.",
+      "unique": "A quirk, interest, or strength that feels especially you."
+    },
+    "actions": {
+      "clearConfirm": "Are you sure you want to reset the worksheet? This clears your notes on this device.",
+      "printHint": "Use your browser print to save a PDF copy."
+    }
+  },
+  "quizHub": {
+    "title": "Quizzes",
+    "intro": "Choose a quiz to learn about body changes, sleep, nutrition, and more.",
+    "items": {
+      "puberty": {
+        "title": "Puberty & Body Changes Quiz",
+        "description": "Test knowledge about growing bodies, feelings, and hygiene.",
+        "cta": "Start puberty quiz"
+      },
+      "wellness": {
+        "title": "Sleep & Nutrition Impact Quiz",
+        "description": "Discover how rest, food, and hydration support your energy and mood.",
+        "cta": "Start wellness quiz"
+      }
+    }
+  },
+  "wellnessQuiz": {
+    "title": "Sleep & Nutrition Impact Quiz",
+    "intro": "Answer one question at a time to explore how sleep, food, vitamins, and hydration help your body and emotions.",
+    "continue": "Continue",
+    "nextQuestion": "Next question",
+    "resultIntro": "Quiz complete!",
+    "summary": "You answered {correct} out of {total}. Keep caring for your body—it cares for you back!",
+    "encouragement": "Every choice you make today can help you feel calmer and stronger tomorrow.",
+    "questions": [
+      {
+        "prompt": "Using screens right before bed usually makes it...",
+        "options": [
+          "harder to fall asleep well",
+          "easier to sleep",
+          "have no effect at all"
+        ],
+        "correct": "harder to fall asleep well",
+        "icon": "📱",
+        "feedback": {
+          "correct": "Yes! Blue light and exciting games can keep the brain awake.",
+          "incorrect": "Screens can keep the brain busy. Try a calm routine without them."
+        }
+      },
+      {
+        "prompt": "How many hours of sleep do most school-age kids need each night?",
+        "options": [
+          "5-6 hours",
+          "9-12 hours",
+          "12-14 hours"
+        ],
+        "correct": "9-12 hours",
+        "icon": "🛌",
+        "feedback": {
+          "correct": "Great! 9-12 hours gives the brain and body time to recharge.",
+          "incorrect": "Most kids feel best with 9-12 hours so their bodies can grow and focus."
+        }
+      },
+      {
+        "prompt": "What is a calming snack choice close to bedtime?",
+        "options": [
+          "Sugary soda",
+          "Warm milk or a banana",
+          "Spicy chips"
+        ],
+        "correct": "Warm milk or a banana",
+        "icon": "🥛",
+        "feedback": {
+          "correct": "Cozy pick! Gentle snacks help the body relax.",
+          "incorrect": "Gentle snacks like warm milk or banana are easier on the stomach for sleep."
+        }
+      },
+      {
+        "prompt": "Which vitamin helps your body use sunlight and build strong bones?",
+        "options": [
+          "Vitamin D",
+          "Vitamin C",
+          "Vitamin Z"
+        ],
+        "correct": "Vitamin D",
+        "icon": "☀️",
+        "feedback": {
+          "correct": "Yes! Vitamin D teams with calcium for strong bones.",
+          "incorrect": "Vitamin D works with sunlight and calcium to support healthy bones."
+        }
+      },
+      {
+        "prompt": "How does drinking water during the day help you?",
+        "options": [
+          "Keeps energy and focus steady",
+          "Makes you more tired",
+          "Stops you from sleeping"
+        ],
+        "correct": "Keeps energy and focus steady",
+        "icon": "💧",
+        "feedback": {
+          "correct": "Hydration powers muscles, mood, and clear thinking.",
+          "incorrect": "Water supports steady energy, focus, and calm feelings."
+        }
+      }
+    ],
+    "buttons": {
+      "startOver": "Start over",
+      "finish": "See my summary"
+    },
+    "status": {
+      "correct": "You got it!",
+      "incorrect": "Nice try—here is a tip."
+    }
+  },
+  "navigation": {
+    "previous": "Previous",
+    "next": "Next"
   }
 }
