@@ -6,7 +6,7 @@
     "diary": "Diari Anak",
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
-    "games": "Permainan & Aktiviti",
+    "games": "Permainan",
     "parentGuide": "Petua Keibubapaan",
     "quiz": "Kuiz",
     "team": "Pasukan Kami",
@@ -253,93 +253,119 @@
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   },
   "games": {
-    "title": "Permainan & Aktiviti Interaktif",
-    "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
+    "title": "Zona Permainan",
+    "subtitle": "Pilih permainan!",
     "easy": "Mudah",
     "medium": "Sederhana",
-    "moreActivities": "Lebih Banyak Aktiviti Tersedia",
-    "startGame": "Mula Permainan",
+    "moreActivities": "Aktiviti lain",
+    "startGame": "Mula",
     "score": "Skor",
     "question": "Soalan",
-    "scenario": "Senario",
-    "congratulations": "Tahniah!",
+    "scenario": "Cerita",
+    "congratulations": "Syabas!",
     "wellDone": "Bagus!",
-    "quizComplete": "Kuiz Selesai!",
-    "yourScore": "Skor Anda",
-    "perfectScore": "Sempurna! Anda padankan semuanya!",
-    "playAgain": "Main Lagi",
+    "quizComplete": "Kuiz selesai!",
+    "yourScore": "Mata",
+    "perfectScore": "Semua padan!",
+    "playAgain": "Main lagi",
     "close": "Tutup",
+    "openGame": "Buka permainan",
+    "tips": {
+      "tap": "Tekan & main",
+      "drag": "Seret kad",
+      "stars": "Kumpul bintang"
+    },
+    "aria": {
+      "gamepad": "Ikon permainan",
+      "tip": "Tip ceria",
+      "progressStars": "Bintang kemajuan",
+      "star": "Bintang ganjaran",
+      "sparkle": "Kilau mata",
+      "hiddenCard": "Kad tersembunyi",
+      "emojiHappy": "Muka gembira",
+      "emojiSad": "Muka sedih",
+      "emojiAngry": "Muka marah",
+      "emojiNervous": "Muka cemas",
+      "emojiSleepy": "Muka mengantuk",
+      "emojiHug": "Muka peluk",
+      "emojiCool": "Muka cool",
+      "emojiLoved": "Muka sayang"
+    },
     "memory": {
-      "title": "Permainan Ingatan Emosi",
-      "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "title": "Padan Emoji",
+      "description": "Cari emoji kembar",
+      "instructions": "Terbalik, padan, sorak!",
+      "aria": "Ikon otak"
     },
     "quiz": {
-      "title": "Kuiz Pengetahuan Akil Baligh",
-      "description": "Uji pemahaman anda tentang perubahan akil baligh dengan soalan kuiz yang menyeronokkan",
-      "instructions": "Jawab soalan tentang akil baligh. Pilih jawapan terbaik untuk setiap soalan!",
+      "title": "Kuiz Pantas",
+      "description": "Fakta cepat",
+      "instructions": "Pilih satu jawapan!",
+      "aria": "Ikon sasaran kuiz",
       "q1": {
-        "question": "Yang manakah adalah bahagian normal akil baligh?",
-        "a1": "Tidak pernah berasa emosi",
-        "a2": "Menghentikan semua pertumbuhan fizikal",
-        "a3": "Kekal sama",
-        "a4": "Mengalami perubahan mood"
+        "question": "Perubahan biasa?",
+        "a1": "Tiada emosi",
+        "a2": "Tiada tumbesaran",
+        "a3": "Sama saja",
+        "a4": "Mood berubah"
       },
       "q2": {
-        "question": "Apa yang penting semasa akil baligh?",
-        "a1": "Kebersihan yang baik dan penjagaan diri",
-        "a2": "Mengelakkan semua senaman",
-        "a3": "Melangkau makanan",
-        "a4": "Berjaga sepanjang malam"
+        "question": "Apa bantu?",
+        "a1": "Jaga diri",
+        "a2": "Tiada senaman",
+        "a3": "Skip makan",
+        "a4": "Tidur lewat"
       },
       "q3": {
-        "question": "Apabila anda mempunyai soalan tentang akil baligh, apa yang perlu anda lakukan?",
-        "a1": "Simpan untuk diri sendiri",
-        "a2": "Berasa malu",
-        "a3": "Bercakap dengan orang dewasa yang dipercayai",
-        "a4": "Risau tentangnya bersendirian"
+        "question": "Tanya siapa?",
+        "a1": "Diam saja",
+        "a2": "Rasa malu",
+        "a3": "Tanya dewasa",
+        "a4": "Risau sendiri"
       }
     },
     "matching": {
-      "title": "Permainan Padanan Perubahan",
-      "description": "Padankan perubahan akil baligh dengan cara membantu untuk menanganinya",
-      "instructions": "Sambungkan setiap perubahan di sebelah kiri dengan cara terbaik untuk menanganinya di sebelah kanan!",
-      "instruction": "Klik kad di sebelah kiri, kemudian cari padanannya di sebelah kanan!",
+      "title": "Padan Perubahan",
+      "description": "Sambung perubahan & bantuan",
+      "instructions": "Padan kiri ke kanan!",
+      "instruction": "Tekan kiri dulu",
+      "aria": "Ikon puzzle",
       "pair1": {
-        "left": "Berasa Moody",
-        "right": "Bercakap dengan seseorang & bersenam"
+        "left": "Moody",
+        "right": "Bercakap & bergerak"
       },
       "pair2": {
-        "left": "Bau Badan",
-        "right": "Gunakan deodoran setiap hari"
+        "left": "Bau badan",
+        "right": "Guna deodoran"
       },
       "pair3": {
-        "left": "Bertambah Tinggi",
-        "right": "Makan sihat & tidur cukup"
+        "left": "Makin tinggi",
+        "right": "Makan & rehat"
       },
       "pair4": {
-        "left": "Minat Baru",
-        "right": "Terokai & cuba perkara baru"
+        "left": "Minat baru",
+        "right": "Cuba perkara baru"
       }
     },
     "emotions": {
-      "title": "Memahami Emosi",
-      "description": "Belajar mengenal pasti dan memahami emosi yang berbeza semasa akil baligh",
-      "instructions": "Baca setiap senario dan pilih bagaimana ia akan membuat anda berasa!",
-      "howWouldYouFeel": "Bagaimana perasaan anda?",
+      "title": "Permainan Emosi",
+      "description": "Pilih perasaan",
+      "instructions": "Baca. Tekan perasaan!",
+      "howWouldYouFeel": "Apa rasa anda?",
       "happy": "Gembira",
       "angry": "Marah",
       "sad": "Sedih",
       "anxious": "Cemas",
       "proud": "Bangga",
+      "aria": "Ikon hati",
       "scenario1": {
-        "situation": "Rakan anda meminjam barang kegemaran anda tanpa bertanya."
+        "situation": "Kawan ambil barang."
       },
       "scenario2": {
-        "situation": "Anda bekerja keras dan mendapat gred yang hebat dalam ujian anda!"
+        "situation": "Markah hebat!"
       },
       "scenario3": {
-        "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
+        "situation": "Berucap depan kelas."
       }
     }
   },
