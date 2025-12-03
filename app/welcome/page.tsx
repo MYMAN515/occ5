@@ -213,16 +213,17 @@ export default function WelcomePage() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={handlePrevious}
-            disabled={currentSlide === 0}
-            className={`px-6 py-3 rounded-full font-semibold transition-all ${
-              currentSlide === 0
-                ? 'opacity-0 pointer-events-none'
-                : 'glass-effect text-gray-700 hover:shadow-lg'
-            }`}
-          >
-            ← {t('welcome.previous')}
-          </motion.button>
+          onClick={handlePrevious}
+          disabled={currentSlide === 0}
+          className={`px-6 py-3 rounded-full font-semibold transition-all ${
+            currentSlide === 0
+              ? 'opacity-0 pointer-events-none'
+              : 'glass-effect text-gray-700 hover:shadow-lg'
+          }`}
+        >
+          <span aria-hidden="true">←</span>
+          <span className="ml-2">{t('welcome.previous')}</span>
+        </motion.button>
 
           {currentSlide < slides.length - 1 ? (
             <motion.button
@@ -231,7 +232,8 @@ export default function WelcomePage() {
               onClick={handleNext}
               className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
             >
-              {t('welcome.next')} <ArrowRight className="w-5 h-5" />
+              <span>{t('welcome.next')}</span>
+              <ArrowRight className="w-5 h-5" />
             </motion.button>
           ) : (
             <motion.button
@@ -245,7 +247,8 @@ export default function WelcomePage() {
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
             >
-              {t('welcome.getStarted')} <Heart className="w-5 h-5" />
+              <span>{t('welcome.getStarted')}</span>
+              <Heart className="w-5 h-5" />
             </motion.button>
           )}
         </div>
