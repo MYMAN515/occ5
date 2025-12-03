@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 const infoLinks = [
   { href: '/parent-guide', key: 'parentGuide' },
   { href: '/guidance', key: 'guidance' },
-  { href: '/games', key: 'games' },
+  { href: '/#quick-links', key: 'games' },
   { href: '/diary', key: 'diary' },
 ]
 
