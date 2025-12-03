@@ -9,7 +9,15 @@
     "games": "Games & Activities",
     "parentGuide": "Parenting Tips",
     "quiz": "Quiz",
-    "team": "Our Team"
+    "team": "Our Team",
+    "forChildren": "For Children",
+    "forParents": "For Parents",
+    "about": "About Us",
+    "bodyImageActivities": "Body Image Activities",
+    "whatILike": "What I Like About Me",
+    "quizzes": "Quizzes",
+    "developmentalChanges": "Developmental Changes",
+    "resourceLibrary": "Resource Library"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -240,23 +248,23 @@
     }
   },
   "footer": {
-    "tagline": "Created with love for families navigating change",
-    "title": "A calm companion for every stage of puberty",
-    "description": "We blend expert advice, cultural sensitivity, and playful learning so you and your child can grow together with confidence.",
+    "tagline": "Supporting Families",
+    "title": "Supporting Families Through Puberty",
+    "description": "A safe, loving resource for parents and children navigating puberty together 🌱",
     "links": {
-      "title": "Explore more guidance",
-      "parentGuide": "Parent guide",
-      "guidance": "Evidence-based tips",
-      "games": "Games & activities",
-      "diary": "Feelings diary"
+      "title": "Quick Links",
+      "parentGuide": "Parent Guide",
+      "guidance": "Guidance",
+      "games": "Games & Activities",
+      "diary": "Mood Diary"
     },
     "pwa": {
-      "title": "Save the app to your phone",
-      "headline": "Use it like a native app",
-      "instructions": "Open this site in your browser menu and choose ‘Add to Home Screen’ to access resources even when you're offline."
+      "title": "Install App",
+      "headline": "Install as App",
+      "instructions": "Add to your home screen for easy access anytime, anywhere."
     },
-    "rights": "© 2025 Parenting Hub – Built by the University of Malaya team for families everywhere.",
-    "communityNote": "All content is available in English, العربية, and Bahasa Melayu so every caregiver feels welcome."
+    "rights": "© 2025 Parenting Hub. All rights reserved.",
+    "communityNote": "Made with 💙 to support families through puberty education"
   },
   "games": {
     "title": "Interactive Games & Activities",
@@ -654,23 +662,245 @@
       "hygiene": "Personal Hygiene"
     }
   },
-  "footer": {
-    "tagline": "Supporting Families",
-    "title": "Supporting Families Through Puberty",
-    "description": "A safe, loving resource for parents and children navigating puberty together 🌱",
-    "links": {
-      "title": "Quick Links",
-      "parentGuide": "Parent Guide",
-      "guidance": "Guidance",
-      "games": "Games & Activities",
-      "diary": "Mood Diary"
+  "bodyImage": {
+    "title": "Positive Body Image Activities",
+    "subtitle": "Five gentle prompts with illustrations to help kids name their feelings and talk about body kindness.",
+    "instruction": "Choose a feeling for each picture. You can change your answer anytime.",
+    "parentLabel": "Parent focus",
+    "parentButton": "Why this matters",
+    "progressLabel": "Question",
+    "next": "Next question",
+    "previous": "Previous",
+    "emotions": {
+      "proud": "Proud",
+      "happy": "Happy",
+      "calm": "Calm/Okay",
+      "anxious": "Anxious",
+      "curious": "Curious",
+      "sad": "A little sad"
     },
-    "pwa": {
-      "title": "Install App",
-      "headline": "Install as App",
-      "instructions": "Add to your home screen for easy access anytime, anywhere."
+    "questions": [
+      {
+        "title": "Looking in the mirror",
+        "prompt": "What feeling comes up when you see a kid smiling kindly at their reflection?",
+        "focus": "Invite your child to notice strengths, talents, and kindness—not just appearance."
+      },
+      {
+        "title": "Trying a new sport",
+        "prompt": "How do you feel seeing someone discovering what their body can do?",
+        "focus": "Celebrate effort and movement over winning. This builds body confidence."
+      },
+      {
+        "title": "Choosing comfy clothes",
+        "prompt": "When you see a kid picking clothes that feel right for them, what feeling fits you?",
+        "focus": "Explain that comfort and self-expression matter more than pleasing others."
+      },
+      {
+        "title": "Drawing a self-portrait",
+        "prompt": "How do you feel about a child drawing themselves with bright colors?",
+        "focus": "Encourage creative self-expression and noticing unique traits."
+      },
+      {
+        "title": "Stretch and breathe",
+        "prompt": "What feeling do you pick seeing someone stretch, breathe, and relax?",
+        "focus": "Body gratitude grows when kids pair movement with calm breathing."
+      }
+    ]
+  },
+  "whatILike": {
+    "title": "What I Like About Me",
+    "subtitle": "A calm space for children to reflect on their strengths, kindness, and growth.",
+    "helperCta": "Tap the lightbulb for ideas",
+    "placeholder": "Type your thoughts here...",
+    "saveMessage": "Your notes stay on this device so you can come back anytime.",
+    "restoreMessage": "We loaded your last answers.",
+    "reset": "Reset everything",
+    "print": "Print or export",
+    "sections": [
+      {
+        "id": "goodAt",
+        "title": "Some things I'm good at",
+        "hint": "Think of skills, games, or hobbies you enjoy practising."
+      },
+      {
+        "id": "friendsLike",
+        "title": "Things my friends like about me",
+        "hint": "Kind words you say, the way you include others, or how you listen."
+      },
+      {
+        "id": "iLike",
+        "title": "Things I like about me",
+        "hint": "Maybe your curiosity, humor, patience, or creativity."
+      },
+      {
+        "id": "familyLove",
+        "title": "Things my family love about me",
+        "hint": "Moments you help out, share, or bring joy to your family."
+      },
+      {
+        "id": "proudOf",
+        "title": "Things that I'm proud of",
+        "hint": "Times you were brave, kept trying, or learned something new."
+      },
+      {
+        "id": "unique",
+        "title": "One unique thing about me",
+        "hint": "A special interest, talent, perspective, or way you solve problems."
+      }
+    ]
+  },
+  "quizzesPage": {
+    "title": "Quizzes",
+    "subtitle": "Short, kind quizzes that teach one idea at a time. Try them with your child or let them explore alone.",
+    "tag": "For Children",
+    "pickerTitle": "Pick a quiz to begin",
+    "labels": {
+      "start": "Start quiz",
+      "continue": "Continue",
+      "next": "Next question",
+      "restart": "Restart quiz",
+      "selectOption": "Pick one answer",
+      "summary": "Your results",
+      "encouragement": "Thanks for learning today!"
     },
-    "rights": "© 2025 Parenting Hub. All rights reserved.",
-    "communityNote": "Made with 💙 to support families through puberty education"
+    "sleep": {
+      "title": "Sleep & Nutrition Impact",
+      "description": "Discover how rest, food, and water support calm moods and steady energy.",
+      "questions": [
+        {
+          "question": "Using phones or tablets right before bed usually...",
+          "options": [
+            "Makes it harder to fall asleep",
+            "Helps you sleep faster",
+            "Does nothing to your sleep",
+            "Always relaxes your eyes"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "Blue light and exciting content can delay sleep. A short screen break helps the brain slow down.",
+          "incorrectFeedback": "Screens can wake up the brain. A calming routine helps sleep arrive sooner.",
+          "icon": "📱"
+        },
+        {
+          "question": "Most school-age kids feel best with about...",
+          "options": [
+            "6-7 hours of sleep",
+            "9-11 hours of sleep",
+            "13-14 hours of sleep",
+            "Only naps during the day"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "About 9-11 hours keeps focus, mood, and growth on track for most kids.",
+          "incorrectFeedback": "Bodies grow and brains recharge with plenty of night sleep—usually about 9-11 hours.",
+          "icon": "🛏️"
+        },
+        {
+          "question": "A gentle bedtime snack could be...",
+          "options": [
+            "Sugary soda",
+            "A heavy burger",
+            "Warm milk or a banana",
+            "An energy drink"
+          ],
+          "correctIndex": 2,
+          "correctFeedback": "Light snacks like warm milk or bananas are calming. Sugary or heavy foods can upset sleep.",
+          "incorrectFeedback": "Try a light, calming snack like warm milk or a banana instead of sugary or heavy foods.",
+          "icon": "🍌"
+        },
+        {
+          "question": "Magnesium and vitamin D can help...",
+          "options": [
+            "Keep muscles calm and bones strong",
+            "Make screens safer at night",
+            "Replace all fruits and vegetables",
+            "Stop you from ever feeling tired"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "These nutrients support relaxed muscles, steady mood, and strong bones. Food first, supplements only if needed.",
+          "incorrectFeedback": "Magnesium and vitamin D support calm muscles and healthy bones—foods like leafy greens and sunlight help.",
+          "icon": "🌞"
+        },
+        {
+          "question": "Drinking water through the day helps you...",
+          "options": [
+            "Focus and stay energised",
+            "Feel hungrier",
+            "Skip sleep",
+            "Never need snacks"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "Hydration keeps energy, focus, and mood steady. Keep a water bottle nearby.",
+          "incorrectFeedback": "Sips of water during the day keep your body and brain steady and focused.",
+          "icon": "💧"
+        }
+      ],
+      "summary": {
+        "perfect": "Amazing sleep-smart choices!",
+        "good": "Great job noticing what helps your body rest.",
+        "keepGoing": "Nice effort—try again to learn even more."
+      }
+    },
+    "puberty": {
+      "title": "Puberty Basics",
+      "description": "Friendly reminders about body changes, feelings, and self-care.",
+      "questions": [
+        {
+          "question": "Puberty can start at different ages, usually between...",
+          "options": [
+            "Ages 5-7",
+            "Ages 8-14",
+            "Ages 18-20",
+            "Only after college"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Bodies have their own clocks. It's okay to start earlier or later than friends.",
+          "incorrectFeedback": "Most kids begin somewhere around ages 8-14, and every timeline is okay.",
+          "icon": "⏰"
+        },
+        {
+          "question": "A common physical change is...",
+          "options": [
+            "Getting shorter",
+            "Growth spurts",
+            "Losing eyebrows",
+            "Nothing changes"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Growth spurts are normal. Clothes may feel shorter for a while!",
+          "incorrectFeedback": "Growth spurts happen to many kids during puberty and are normal.",
+          "icon": "🦒"
+        },
+        {
+          "question": "Mood swings during puberty are...",
+          "options": [
+            "Weird and rare",
+            "Normal and common",
+            "A sign you are in trouble",
+            "Impossible"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Feelings can be a rollercoaster. Naming emotions and taking breaks can help.",
+          "incorrectFeedback": "Big feelings are common during puberty. Pausing, breathing, and talking help.",
+          "icon": "🎢"
+        },
+        {
+          "question": "A simple way to handle new body smells is...",
+          "options": [
+            "Never shower",
+            "Use deodorant and wash regularly",
+            "Stay away from friends",
+            "Ignore it"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "Daily washing, fresh clothes, and deodorant can help you feel comfortable.",
+          "incorrectFeedback": "Fresh clothes, washing, and deodorant help with new body smells.",
+          "icon": "🧼"
+        }
+      ],
+      "summary": {
+        "perfect": "You handled every question with confidence!",
+        "good": "Nice! You know a lot about growing up.",
+        "keepGoing": "Great start—try again to remember even more."
+      }
+    }
   }
 }
