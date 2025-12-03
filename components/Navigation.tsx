@@ -3,7 +3,19 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Users, Brain } from 'lucide-react'
+import {
+  Menu,
+  X,
+  Home,
+  Heart,
+  Activity,
+  BookOpen,
+  Sparkles,
+  Users,
+  Brain,
+  Library,
+  BookHeart,
+} from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -11,19 +23,47 @@ import LanguageSwitcher from './LanguageSwitcher'
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [openGroup, setOpenGroup] = useState<string | null>(null)
   const pathname = usePathname()
   const { t } = useLanguage()
 
-  const links = [
-    { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
-    { href: '/activities', label: 'Activities', icon: <Activity className="w-4 h-4" /> },
-    { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" /> },
-    { href: '/quiz', label: t('nav.quiz'), icon: <Brain className="w-4 h-4" /> },
-    { href: '/body-guide', label: 'Changes & Body', icon: <Heart className="w-4 h-4" /> },
-    { href: '/resources', label: 'Resources', icon: <BookOpen className="w-4 h-4" /> },
-    { href: '/diary', label: t('nav.diary'), icon: <Sparkles className="w-4 h-4" /> },
-    { href: '/team', label: 'Team', icon: <Users className="w-4 h-4" />, special: true },
-  ]
+  const navItems = [
+    {
+      type: 'link',
+      href: '/',
+      label: t('nav.home'),
+      icon: <Home className="w-4 h-4" />,
+    },
+    {
+      type: 'group',
+      label: t('nav.forChildren'),
+      icon: <Sparkles className="w-4 h-4" />,
+      key: 'children',
+      children: [
+        { href: '/body-image-activities', label: t('nav.bodyImage'), icon: <Heart className="w-4 h-4" /> },
+        { href: '/what-i-like-about-me', label: t('nav.selfReflection'), icon: <BookHeart className="w-4 h-4" /> },
+        { href: '/quizzes', label: t('nav.quizzes'), icon: <Brain className="w-4 h-4" /> },
+      ],
+    },
+    {
+      type: 'group',
+      label: t('nav.forParents'),
+      icon: <Users className="w-4 h-4" />,
+      key: 'parents',
+      children: [
+        { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-4 h-4" /> },
+        { href: '/developmental-changes', label: t('nav.developmental'), icon: <Activity className="w-4 h-4" /> },
+        { href: '/resources', label: t('nav.resources'), icon: <Library className="w-4 h-4" /> },
+      ],
+    },
+    {
+      type: 'link',
+      href: '/team',
+      label: t('nav.about'),
+      icon: <Users className="w-4 h-4" />,
+      special: true,
+    },
+  ] as const
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,9 +75,10 @@ export default function Navigation() {
 
   useEffect(() => {
     setIsOpen(false)
+    setOpenGroup(null)
   }, [pathname])
 
-  const isActive = (href: string) => pathname === href
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -65,62 +106,111 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <motion.div
-                  whileHover={{ y: -2, scale: link.special ? 1.05 : 1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
-                    isActive(link.href)
-                      ? link.special 
-                        ? 'text-white'
-                        : 'text-white'
-                      : link.special
-                        ? 'text-gray-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600'
-                        : 'text-gray-700 hover:text-blue-600'
-                  }`}
-                >
-                  {isActive(link.href) && (
+          <div className="hidden lg:flex items-center gap-2">
+            {navItems.map((item) => {
+              if (item.type === 'link') {
+                return (
+                  <Link key={item.label} href={item.href}>
                     <motion.div
-                      layoutId="activeTab"
-                      className={`absolute inset-0 rounded-xl shadow-md ${
-                        link.special
-                          ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-purple-500/30'
-                          : 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-blue-500/30'
+                      whileHover={{ y: -2, scale: item.special ? 1.05 : 1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+                        isActive(item.href)
+                          ? 'text-white'
+                          : item.special
+                            ? 'text-gray-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600'
+                            : 'text-gray-700 hover:text-blue-600'
                       }`}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  {link.special && !isActive(link.href) && (
-                    <motion.div
-                      animate={{
-                        background: [
-                          'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
-                          'linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
-                          'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
-                        ]
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                      className="absolute inset-0 rounded-xl opacity-50"
-                    />
-                  )}
-                  <span className="relative z-10 flex items-center gap-2">
-                    {link.icon}
-                    <span className="font-medium text-sm whitespace-nowrap">{link.label}</span>
-                    {link.special && (
-                      <motion.span
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="text-xs"
+                    >
+                      {isActive(item.href) && (
+                        <motion.div
+                          layoutId="activeTab"
+                          className={`absolute inset-0 rounded-xl shadow-md ${
+                            item.special
+                              ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-purple-500/30'
+                              : 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-blue-500/30'
+                          }`}
+                          transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                      {item.special && !isActive(item.href) && (
+                        <motion.div
+                          animate={{
+                            background: [
+                              'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
+                              'linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
+                              'linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))',
+                            ],
+                          }}
+                          transition={{ duration: 3, repeat: Infinity }}
+                          className="absolute inset-0 rounded-xl opacity-50"
+                        />
+                      )}
+                      <span className="relative z-10 flex items-center gap-2">
+                        {item.icon}
+                        <span className="font-medium text-sm whitespace-nowrap">{item.label}</span>
+                        {item.special && (
+                          <motion.span
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="text-xs"
+                          >
+                            ⭐
+                          </motion.span>
+                        )}
+                      </span>
+                    </motion.div>
+                  </Link>
+                )
+              }
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenGroup(item.key)}
+                  onMouseLeave={() => setOpenGroup(null)}
+                >
+                  <button
+                    onClick={() => setOpenGroup(openGroup === item.key ? null : item.key)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+                      item.children.some((child) => isActive(child.href))
+                        ? 'text-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg'
+                        : 'text-gray-700 hover:text-blue-600'
+                    }`}
+                    aria-expanded={openGroup === item.key}
+                  >
+                    {item.icon}
+                    <span className="font-medium text-sm whitespace-nowrap">{item.label}</span>
+                  </button>
+                  <AnimatePresence>
+                    {openGroup === item.key && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        className="absolute top-full left-0 mt-2 w-64 rounded-2xl bg-white shadow-xl border border-gray-100 p-3 space-y-1"
                       >
-                        ⭐
-                      </motion.span>
+                        {item.children.map((child) => (
+                          <Link key={child.href} href={child.href}>
+                            <div
+                              className={`flex items-center gap-3 px-3 py-2 rounded-xl transition-colors ${
+                                isActive(child.href)
+                                  ? 'bg-blue-50 text-blue-700 font-semibold'
+                                  : 'text-gray-700 hover:bg-gray-50'
+                              }`}
+                            >
+                              {child.icon}
+                              <span className="text-sm">{child.label}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </motion.div>
                     )}
-                  </span>
-                </motion.div>
-              </Link>
-            ))}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
             <div className="ml-2 pl-2 border-l border-gray-200">
               <LanguageSwitcher />
             </div>
@@ -185,53 +275,97 @@ export default function Navigation() {
               className="lg:hidden overflow-hidden"
             >
               <div className="pt-4 pb-2 space-y-1">
-                {links.map((link, index) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: index * 0.05, duration: 0.2 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
-                        isActive(link.href)
-                          ? link.special
-                            ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-md shadow-purple-500/30'
-                            : 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30'
-                          : link.special
-                            ? 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:via-purple-50 hover:to-pink-50 active:bg-gradient-to-r active:from-blue-100 active:via-purple-100 active:to-pink-100'
-                            : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'
-                      }`}
-                    >
+                {navItems.map((item, index) => {
+                  if (item.type === 'link') {
+                    return (
                       <motion.div
-                        animate={isActive(link.href) ? { scale: [1, 1.2, 1] } : {}}
-                        transition={{ duration: 0.3 }}
+                        key={item.href}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ delay: index * 0.05, duration: 0.2 }}
                       >
-                        {link.icon}
-                      </motion.div>
-                      <span className="font-medium">{link.label}</span>
-                      {link.special && (
-                        <motion.span
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                          className="text-xs ml-1"
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                            isActive(item.href)
+                              ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30'
+                              : item.special
+                                ? 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:via-purple-50 hover:to-pink-50 active:bg-gradient-to-r active:from-blue-100 active:via-purple-100 active:to-pink-100'
+                                : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'
+                          }`}
                         >
-                          ⭐
-                        </motion.span>
-                      )}
-                      {isActive(link.href) && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="ml-auto w-2 h-2 bg-white rounded-full"
-                        />
-                      )}
-                    </Link>
-                  </motion.div>
-                ))}
+                          <motion.div
+                            animate={isActive(item.href) ? { scale: [1, 1.2, 1] } : {}}
+                            transition={{ duration: 0.3 }}
+                          >
+                            {item.icon}
+                          </motion.div>
+                          <span className="font-medium">{item.label}</span>
+                          {item.special && (
+                            <motion.span
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                              className="text-xs ml-1"
+                            >
+                              ⭐
+                            </motion.span>
+                          )}
+                        </Link>
+                      </motion.div>
+                    )
+                  }
+
+                  return (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ delay: index * 0.05, duration: 0.2 }}
+                      className="px-4"
+                    >
+                      <button
+                        onClick={() => setOpenGroup(openGroup === item.key ? null : item.key)}
+                        className="w-full flex items-center justify-between gap-2 px-3 py-3 rounded-xl text-gray-800 font-semibold bg-gray-50"
+                        aria-expanded={openGroup === item.key}
+                      >
+                        <span className="flex items-center gap-2">
+                          {item.icon}
+                          {item.label}
+                        </span>
+                        <span aria-hidden>{openGroup === item.key ? '−' : '+'}</span>
+                      </button>
+                      <AnimatePresence>
+                        {openGroup === item.key && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="mt-2 space-y-1"
+                          >
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-colors ${
+                                  isActive(child.href)
+                                    ? 'bg-blue-50 text-blue-700'
+                                    : 'text-gray-700 hover:bg-gray-100'
+                                }`}
+                              >
+                                {child.icon}
+                                <span className="text-sm">{child.label}</span>
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )
+                })}
               </div>
             </motion.div>
           )}
