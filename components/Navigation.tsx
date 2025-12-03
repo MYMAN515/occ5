@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Smile, HeartHandshake, BookOpen, Library, Users, Brain, Sparkles, ChevronDown } from 'lucide-react'
+import { Menu, X, Home, Smile, HeartHandshake, BookOpen, Library, Users, Brain, Sparkles, ChevronDown, Gamepad2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -14,6 +14,7 @@ type NavLink = {
   label: string
   icon: ReactNode
   description?: string
+  highlight?: boolean
 }
 
 type NavGroup = {
@@ -44,6 +45,13 @@ export default function Navigation() {
 
   const navItems: (NavGroup | NavLink)[] = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
+    {
+      href: '/games',
+      label: t('nav.games'),
+      icon: <Gamepad2 className="w-4 h-4" aria-hidden />,
+      description: t('games.subtitle'),
+      highlight: true
+    },
     { id: 'children', label: t('nav.forChildren'), icon: <Smile className="w-4 h-4" />, items: childLinks },
     { id: 'parents', label: t('nav.forParents'), icon: <HeartHandshake className="w-4 h-4" />, items: parentLinks },
     { href: '/team', label: t('nav.about'), icon: <Users className="w-4 h-4" /> }
@@ -65,11 +73,17 @@ export default function Navigation() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   const renderLink = (link: NavLink) => (
-    <Link key={link.href} href={link.href} className="relative">
+    <Link key={link.href} href={link.href} className="relative" aria-label={link.label}>
       <motion.div
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.97 }}
-        className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${isActive(link.href) ? 'text-white' : 'text-gray-700 hover:text-blue-600'}`}
+        className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+          isActive(link.href)
+            ? 'text-white'
+            : link.highlight
+              ? 'text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-100 shadow-md ring-1 ring-purple-100 font-semibold'
+              : 'text-gray-700 hover:text-blue-600'
+        }`}
       >
         {isActive(link.href) && (
           <motion.div
@@ -78,9 +92,9 @@ export default function Navigation() {
             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
           />
         )}
-        <span className="relative z-10 flex items-center gap-2">
+        <span className="relative z-10 flex items-center gap-2 text-sm font-semibold">
           {link.icon}
-          <span className="font-medium text-sm whitespace-nowrap">{link.label}</span>
+          <span className="whitespace-nowrap">{link.label}</span>
         </span>
       </motion.div>
     </Link>
@@ -277,7 +291,13 @@ export default function Navigation() {
                       key={linkItem.href}
                       href={linkItem.href}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive(linkItem.href) ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md shadow-blue-500/30' : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'}`}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                        isActive(linkItem.href)
+                          ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md shadow-blue-500/30'
+                          : linkItem.highlight
+                            ? 'bg-purple-50 text-purple-800 border border-purple-100 shadow-sm'
+                            : 'text-gray-700 hover:bg-blue-50 active:bg-blue-100'
+                      }`}
                     >
                       {linkItem.icon}
                       <span className="font-medium">{linkItem.label}</span>

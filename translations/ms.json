@@ -6,7 +6,7 @@
     "diary": "Diari Anak",
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
-    "games": "Permainan & Aktiviti",
+    "games": "Permainan 🎮",
     "parentGuide": "Petua Keibubapaan",
     "quiz": "Kuiz",
     "team": "Pasukan Kami",
@@ -20,70 +20,50 @@
     "resourceLibrary": "Pustaka Sumber"
   },
   "home": {
-    "title": "Menyokong Anak Anda Melalui Akil Baligh",
-    "subtitle": "Pangkalan rumah berasaskan penyelidikan dengan pembuka perbualan, rutin harian, dan sokongan emosi supaya anda dapat membimbing anak dengan tenang. 💙",
-    "forParents": "Untuk Ibu Bapa",
-    "forChildren": "Untuk Anak Anda",
-    "startLearning": "Terokai Panduan Ibu Bapa",
-    "myDiary": "Lihat Aktiviti",
-    "features": {
-      "title": "Terokai setiap sudut Parenting Hub",
-      "subtitle": "Pautan pantas mesra telefon—ketik kad untuk terus masuk.",
-      "parentGuide": {
-        "title": "Panduan Ibu Bapa Komprehensif",
-        "description": "Perbualan langkah demi langkah, petua sensitif budaya, dan penenang hati untuk setiap soalan besar."
-      },
+    "title": "Membesar bersama OCC5",
+    "subtitle": "Alat ringkas untuk anak & ibu bapa.",
+    "tagline": "Sedia bermain",
+    "heroButtons": {
+      "play": "Mula permainan",
+      "parents": "Tip ibu bapa"
+    },
+    "heroCardTitle": "Main selamat & mudah.",
+    "badges": {
+      "play": "Seronok",
+      "safe": "Peribadi"
+    },
+    "quickLinks": {
       "games": {
-        "title": "Permainan Interaktif untuk Kanak-kanak",
-        "description": "Aktiviti yang dimainkan bersama menjadikan pelajaran akil baligh yang sukar lebih menyeronokkan."
+        "label": "Permainan",
+        "helper": "Semua game"
       },
-      "changes": {
-        "title": "Memahami Perubahan Fizikal & Emosi",
-        "description": "Huraian terperinci tentang peringkat perubahan serta cara membalas dengan empati dan jelas."
+      "kids": {
+        "label": "Untuk Anak",
+        "helper": "Main & belajar"
       },
-      "timeline": {
-        "title": "Aktiviti Garis Masa",
-        "description": "Permainan interaktif untuk anak anda belajar tentang peringkat akil baligh"
+      "parents": {
+        "label": "Untuk Ibu Bapa",
+        "helper": "Tip ringkas"
       },
-      "diary": {
-        "title": "Diari Mood untuk Anak Anda",
-        "description": "Dorongan bimbingan dan afirmasi lembut supaya anak memproses emosi dengan selamat."
-      },
-      "bodyGuide": {
-        "title": "Panduan Perubahan Badan",
-        "description": "Penerangan bergambar yang sesuai umur tentang bagaimana tubuh berkembang."
-      },
-      "aiChat": {
-        "title": "Pembantu AI untuk Ibu Bapa",
-        "description": "Jurulatih berbilang bahasa dengan nasihat sedia guna untuk detik keibubapaan harian."
+      "quizzes": {
+        "label": "Kuiz",
+        "helper": "Soalan pantas"
       }
     },
-    "support": {
-      "title": "Apa yang keluarga terima di Parenting Hub",
-      "description": "Setiap bahagian dihasilkan bersama pakar psikologi kanak-kanak, pendidik dan penasihat budaya Malaysia supaya anda boleh bergantung pada panduan yang dipercayai pada bila-bila masa.",
-      "pillars": {
-        "conversation": {
-          "title": "Pembuka perbualan yang lembut",
-          "description": "Skrip dan soalan untuk membuka, meneruskan dan menyambung semula perbualan tentang perubahan dengan tenang."
-        },
-        "trust": {
-          "title": "Keselamatan dan kepercayaan dahulu",
-          "description": "Alat yang menghormati privasi, petua peka trauma, dan peringatan untuk mengekalkan sempadan kukuh."
-        },
-        "routines": {
-          "title": "Ritma kesejahteraan harian",
-          "description": "Senarai semak, rutin dan perjanjian keluarga siap guna untuk tidur, kebersihan dan masa skrin."
-        },
-        "community": {
-          "title": "Sokongan untuk setiap keluarga",
-          "description": "Kandungan diterjemah dengan teliti ke dalam العربية dan Bahasa Melayu supaya semua orang rasa dilihat."
-        }
-      },
-      "note": "Tukar antara English, العربية dan Bahasa Melayu pada bila-bila masa—kemajuan anda kekal tersimpan."
+    "note": "Tukar bahasa bila-bila • Data kekal di peranti ini.",
+    "aria": {
+      "heroSparkles": "Sorotan ceria",
+      "heroFamily": "Ilustrasi keluarga",
+      "badgePlay": "Lencana bermain",
+      "badgeSafe": "Lencana selamat"
     },
-    "notAlone": {
-      "title": "Anda Tidak Bersendirian dalam Perjalanan Ini 💙",
-      "content": "Akil baligh boleh terasa tidak menentu, namun anda sudah menjadi sauh yang tenang untuk anak anda. Terokai nasihat berasaskan penyelidikan, aktiviti boleh cetak dan renungan yang mengekalkan komunikasi penuh kasih—walaupun pada hari yang sukar. Tarik nafas, pilih satu bahagian, dan kita akan lalui bersama."
+    "features": {
+      "parentGuide": {
+        "description": "Tip ringkas ibu bapa"
+      },
+      "bodyGuide": {
+        "description": "Panduan perubahan badan"
+      }
     }
   },
   "welcome": {
@@ -253,93 +233,167 @@
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   },
   "games": {
-    "title": "Permainan & Aktiviti Interaktif",
-    "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
-    "easy": "Mudah",
-    "medium": "Sederhana",
-    "moreActivities": "Lebih Banyak Aktiviti Tersedia",
-    "startGame": "Mula Permainan",
+    "hero": {
+      "badges": {
+        "fun": "Seronok & warna",
+        "stars": "Kumpul bintang",
+        "swipe": "Leret & ketik",
+        "rtlReady": "Sedia RTL",
+        "quick": "Pilih pantas",
+        "pick": "Pilih permainan"
+      }
+    },
+    "title": "Zon Permainan",
+    "subtitle": "Pilih & main.",
+    "tagline": "Seronok di sini",
+    "swipe": "Leret untuk lihat",
+    "difficulty": {
+      "easy": "Mudah",
+      "medium": "Sukar sikit"
+    },
+    "startGame": "Mula",
     "score": "Skor",
     "question": "Soalan",
-    "scenario": "Senario",
+    "scenario": "Situasi",
     "congratulations": "Tahniah!",
     "wellDone": "Bagus!",
-    "quizComplete": "Kuiz Selesai!",
-    "yourScore": "Skor Anda",
-    "perfectScore": "Sempurna! Anda padankan semuanya!",
-    "playAgain": "Main Lagi",
+    "quizComplete": "Kuiz siap!",
+    "yourScore": "Markah",
+    "perfectScore": "Semua tepat!",
+    "playAgain": "Main lagi",
     "close": "Tutup",
+    "openGame": "Buka permainan",
+    "tips": {
+      "tap": "Ketuk & main",
+      "drag": "Seret kad",
+      "stars": "Kumpul bintang"
+    },
+    "aria": {
+      "gamepad": "Ikon pusat permainan",
+      "tip": "Tip bermain",
+      "progressStars": "Bintang kemajuan",
+      "star": "Ganjaran bintang",
+      "sparkle": "Cahaya skor",
+      "hiddenCard": "Kad tersembunyi",
+      "emojiHappy": "Muka gembira",
+      "emojiSad": "Muka sedih",
+      "emojiAngry": "Muka marah",
+      "emojiNervous": "Muka gementar",
+      "emojiSleepy": "Muka mengantuk",
+      "emojiHug": "Muka peluk",
+      "emojiCool": "Muka cermin mata",
+      "emojiLoved": "Muka sayang"
+    },
+    "rails": {
+      "feelings": "Perasaan",
+      "body": "Badan & perubahan",
+      "confidence": "Permainan keyakinan"
+    },
+    "entries": {
+      "diary": {
+        "title": "Diari Anak",
+        "tag": "Tulis rasa"
+      },
+      "timeline": {
+        "title": "Permainan Garis Masa",
+        "tag": "Peringkat"
+      },
+      "hygiene": {
+        "title": "Kebersihan",
+        "tag": "Jaga harian"
+      },
+      "superpower": {
+        "title": "Saya Hebat",
+        "tag": "Kekuatan"
+      },
+      "tinyGoals": {
+        "title": "Matlamat Kecil",
+        "tag": "Bina tabiat"
+      },
+      "kindWords": {
+        "title": "Kata Baik",
+        "tag": "Hati hangat"
+      },
+      "selfLove": {
+        "title": "Kuasa Saya",
+        "tag": "Suka diri"
+      }
+    },
     "memory": {
-      "title": "Permainan Ingatan Emosi",
-      "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "title": "Padan Emoji",
+      "description": "Cari pasangan",
+      "instructions": "Terbalik, padan, sorak!",
+      "aria": "Ikon otak"
     },
     "quiz": {
-      "title": "Kuiz Pengetahuan Akil Baligh",
-      "description": "Uji pemahaman anda tentang perubahan akil baligh dengan soalan kuiz yang menyeronokkan",
-      "instructions": "Jawab soalan tentang akil baligh. Pilih jawapan terbaik untuk setiap soalan!",
+      "title": "Kuiz Pantas",
+      "description": "Fakta cepat",
+      "instructions": "Pilih jawapan!",
+      "aria": "Ikon sasaran",
       "q1": {
-        "question": "Yang manakah adalah bahagian normal akil baligh?",
-        "a1": "Tidak pernah berasa emosi",
-        "a2": "Menghentikan semua pertumbuhan fizikal",
-        "a3": "Kekal sama",
-        "a4": "Mengalami perubahan mood"
+        "question": "Perubahan normal?",
+        "a1": "Tiada rasa",
+        "a2": "Tiada tinggi",
+        "a3": "Sama sahaja",
+        "a4": "Emosi naik turun"
       },
       "q2": {
-        "question": "Apa yang penting semasa akil baligh?",
-        "a1": "Kebersihan yang baik dan penjagaan diri",
-        "a2": "Mengelakkan semua senaman",
-        "a3": "Melangkau makanan",
-        "a4": "Berjaga sepanjang malam"
+        "question": "Apa membantu?",
+        "a1": "Cuci & jaga",
+        "a2": "Tiada senaman",
+        "a3": "Langkau makan",
+        "a4": "Tidur lewat"
       },
       "q3": {
-        "question": "Apabila anda mempunyai soalan tentang akil baligh, apa yang perlu anda lakukan?",
-        "a1": "Simpan untuk diri sendiri",
-        "a2": "Berasa malu",
-        "a3": "Bercakap dengan orang dewasa yang dipercayai",
-        "a4": "Risau tentangnya bersendirian"
+        "question": "Tanya siapa?",
+        "a1": "Diam",
+        "a2": "Malu",
+        "a3": "Tanya dewasa",
+        "a4": "Risau sendiri"
       }
     },
     "matching": {
-      "title": "Permainan Padanan Perubahan",
-      "description": "Padankan perubahan akil baligh dengan cara membantu untuk menanganinya",
-      "instructions": "Sambungkan setiap perubahan di sebelah kiri dengan cara terbaik untuk menanganinya di sebelah kanan!",
-      "instruction": "Klik kad di sebelah kiri, kemudian cari padanannya di sebelah kanan!",
+      "title": "Padan Perubahan",
+      "description": "Sambung bantuan",
+      "instructions": "Padan kiri kanan!",
+      "instruction": "Ketuk lalu padan",
+      "aria": "Ikon teka-teki",
       "pair1": {
-        "left": "Berasa Moody",
-        "right": "Bercakap dengan seseorang & bersenam"
+        "left": "Mood berubah",
+        "right": "Bercakap & bergerak"
       },
       "pair2": {
-        "left": "Bau Badan",
-        "right": "Gunakan deodoran setiap hari"
+        "left": "Bau badan",
+        "right": "Guna deodoran"
       },
       "pair3": {
-        "left": "Bertambah Tinggi",
-        "right": "Makan sihat & tidur cukup"
+        "left": "Tinggi meningkat",
+        "right": "Makan & rehat"
       },
       "pair4": {
-        "left": "Minat Baru",
-        "right": "Terokai & cuba perkara baru"
+        "left": "Minat baru",
+        "right": "Cuba perkara baru"
       }
     },
     "emotions": {
-      "title": "Memahami Emosi",
-      "description": "Belajar mengenal pasti dan memahami emosi yang berbeza semasa akil baligh",
-      "instructions": "Baca setiap senario dan pilih bagaimana ia akan membuat anda berasa!",
-      "howWouldYouFeel": "Bagaimana perasaan anda?",
+      "title": "Permainan Perasaan",
+      "description": "Pilih perasaan",
+      "instructions": "Baca. Ketuk perasaan!",
+      "howWouldYouFeel": "Apa rasa?",
       "happy": "Gembira",
       "angry": "Marah",
       "sad": "Sedih",
-      "anxious": "Cemas",
+      "anxious": "Gelisah",
       "proud": "Bangga",
+      "aria": "Ikon hati",
       "scenario1": {
-        "situation": "Rakan anda meminjam barang kegemaran anda tanpa bertanya."
+        "situation": "Kawan ambil barang kamu."
       },
       "scenario2": {
-        "situation": "Anda bekerja keras dan mendapat gred yang hebat dalam ujian anda!"
+        "situation": "Markah hebat!"
       },
       "scenario3": {
-        "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
+        "situation": "Bercakap depan kelas."
       }
     }
   },
