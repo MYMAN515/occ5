@@ -11,28 +11,64 @@ export default function Home() {
 
   const quickLinks = [
     {
-      href: '/games',
-      icon: '🎮',
-      label: t('home.quickLinks.games.label'),
-      helper: t('home.quickLinks.games.helper'),
+      href: '/diary',
+      icon: '📔',
+      label: 'Mood Diary for Your Child',
+      helper: 'Track feelings with quick daily check-ins.',
     },
     {
-      href: '/body-image-activities',
+      href: '/hygiene',
+      icon: '🧼',
+      label: 'Hygiene & Self-Care',
+      helper: 'Build gentle routines together.',
+    },
+    {
+      href: '/confidence',
+      icon: '💪',
+      label: 'Confidence & Lifestyle',
+      helper: 'Grow healthy habits and self-belief.',
+    },
+    {
+      href: '/timeline',
+      icon: '⏳',
+      label: 'Timeline Game',
+      helper: 'Match changes to before or after puberty.',
+    },
+    {
+      href: '/emotion-memory',
+      icon: '🧠',
+      label: 'Emotion Memory Game',
+      helper: 'Flip cards to match feelings.',
+    },
+    {
+      href: '/puberty-knowledge-quiz',
+      icon: '🎯',
+      label: 'Puberty Knowledge Quiz',
+      helper: 'Test what you know about body changes.',
+    },
+    {
+      href: '/changes-matching-game',
       icon: '🧩',
-      label: t('home.quickLinks.kids.label'),
-      helper: t('home.quickLinks.kids.helper'),
+      label: 'Changes Matching Game',
+      helper: 'Pair related changes together.',
     },
     {
-      href: '/parent-guide',
-      icon: '👪',
-      label: t('home.quickLinks.parents.label'),
-      helper: t('home.quickLinks.parents.helper'),
+      href: '/understanding-emotions',
+      icon: '🎈',
+      label: 'Understanding Emotions',
+      helper: 'Learn to name and sort feelings.',
+    },
+    {
+      href: '/what-i-like-about-me',
+      icon: '✨',
+      label: 'What I Like About Me',
+      helper: 'Celebrate personal strengths.',
     },
     {
       href: '/quizzes',
-      icon: '🧠',
-      label: t('home.quickLinks.quizzes.label'),
-      helper: t('home.quickLinks.quizzes.helper'),
+      icon: '🧪',
+      label: 'Quizzes',
+      helper: 'Explore wellbeing quizzes together.',
     },
   ]
 
@@ -60,7 +96,7 @@ export default function Home() {
           <p className="text-lg text-gray-700 max-w-xl">{t('home.subtitle')}</p>
 
           <div className={`flex flex-wrap gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <Link href="/games" className="w-full sm:w-auto">
+            <Link href="#quick-links" className="w-full sm:w-auto">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -114,7 +150,10 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <section className="mt-12">
+      <section id="quick-links" className="mt-12 space-y-4">
+        <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+          <h2 className="text-2xl font-bold text-gray-900">Quick links crafted for small screens—tap a card to jump right in.</h2>
+        </div>
         <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${isRTL ? 'text-right' : ''}`}>
           {quickLinks.map((item) => (
             <Link key={item.href} href={item.href} className="group">

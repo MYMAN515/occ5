@@ -19,7 +19,7 @@ type LikeItem = {
   id: string
   name: string
   icon: string
-  category: 'like' | 'not-like'
+  category: 'good' | 'not-good'
 }
 
 export default function ConfidencePage() {
@@ -27,7 +27,7 @@ export default function ConfidencePage() {
   const [currentHabit, setCurrentHabit] = useState<Habit | null>(null)
   const [habits, setHabits] = useState<Habit[]>([])
   const [gameItems, setGameItems] = useState<LikeItem[]>([])
-  const [gameAnswers, setGameAnswers] = useState<{ [key: string]: 'like' | 'not-like' }>({})
+  const [gameAnswers, setGameAnswers] = useState<{ [key: string]: 'good' | 'not-good' }>({})
   const [gameSubmitted, setGameSubmitted] = useState(false)
 
   const availableHabits: Habit[] = [
@@ -82,18 +82,18 @@ export default function ConfidencePage() {
   ]
 
   const likeGameItems: LikeItem[] = [
-    { id: 'healthy-food', name: 'Eating Healthy Food', icon: '🥗', category: 'like' },
-    { id: 'exercise-fun', name: 'Playing Sports', icon: '⚽', category: 'like' },
-    { id: 'reading-books', name: 'Reading Books', icon: '📖', category: 'like' },
-    { id: 'art-creativity', name: 'Drawing & Art', icon: '🎨', category: 'like' },
-    { id: 'music', name: 'Listening to Music', icon: '🎵', category: 'like' },
-    { id: 'friends', name: 'Spending Time with Friends', icon: '👫', category: 'like' },
-    { id: 'junk-food', name: 'Eating Only Junk Food', icon: '🍟', category: 'not-like' },
-    { id: 'screen-all-day', name: 'Screen Time All Day', icon: '📱', category: 'not-like' },
-    { id: 'skipping-meals', name: 'Skipping Meals', icon: '⏭️', category: 'not-like' },
-    { id: 'no-sleep', name: 'Staying Up Very Late', icon: '🌙', category: 'not-like' },
-    { id: 'no-exercise', name: 'No Physical Activity', icon: '🛋️', category: 'not-like' },
-    { id: 'isolation', name: 'Isolating from Others', icon: '🚪', category: 'not-like' },
+    { id: 'sports', name: 'Playing Sports', icon: '⚽', category: 'good' },
+    { id: 'art', name: 'Drawing & Art', icon: '🎨', category: 'good' },
+    { id: 'singing', name: 'Singing', icon: '🎤', category: 'good' },
+    { id: 'reading', name: 'Reading Books', icon: '📚', category: 'good' },
+    { id: 'fishing', name: 'Fishing', icon: '🎣', category: 'good' },
+    { id: 'board-games', name: 'Board Games', icon: '🎲', category: 'good' },
+    { id: 'dancing', name: 'Dancing', icon: '💃', category: 'good' },
+    { id: 'photos', name: 'Taking Photos', icon: '📸', category: 'good' },
+    { id: 'cooking', name: 'Cooking', icon: '👩‍🍳', category: 'good' },
+    { id: 'gardening', name: 'Gardening', icon: '🌱', category: 'good' },
+    { id: 'baking', name: 'Baking', icon: '🧁', category: 'good' },
+    { id: 'programming', name: 'Programming', icon: '💻', category: 'good' },
   ]
 
   // Load saved habits
@@ -191,7 +191,7 @@ export default function ConfidencePage() {
     return habit.completedDates.includes(today)
   }
 
-  const handleGameAnswer = (itemId: string, answer: 'like' | 'not-like') => {
+  const handleGameAnswer = (itemId: string, answer: 'good' | 'not-good') => {
     if (gameSubmitted) return
     setGameAnswers({ ...gameAnswers, [itemId]: answer })
   }
@@ -258,7 +258,7 @@ export default function ConfidencePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            👍 Like / Not Like
+            👍 Good / Not Good
           </button>
         </div>
       </motion.div>
@@ -417,9 +417,9 @@ export default function ConfidencePage() {
             className="space-y-8"
           >
             <div className="glass-effect rounded-3xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Like / Not Like Activity</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">Good / Not Good Activity</h3>
               <p className="text-gray-600 mb-6">
-                Choose whether each activity is something you LIKE (healthy, positive) or NOT LIKE (unhealthy, negative) for your lifestyle!
+                Choose whether each activity feels GOOD for you or NOT GOOD for you.
               </p>
 
               {/* Items */}
@@ -438,30 +438,30 @@ export default function ConfidencePage() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => handleGameAnswer(item.id, 'like')}
+                        onClick={() => handleGameAnswer(item.id, 'good')}
                         disabled={gameSubmitted}
                         className={`flex-1 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 ${
-                          gameAnswers[item.id] === 'like'
+                          gameAnswers[item.id] === 'good'
                             ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                             : 'bg-green-100 text-green-700 hover:bg-green-200'
                         } ${gameSubmitted ? 'opacity-50' : ''}`}
                       >
                         <ThumbsUp className="w-5 h-5" />
-                        LIKE
+                        GOOD
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => handleGameAnswer(item.id, 'not-like')}
+                        onClick={() => handleGameAnswer(item.id, 'not-good')}
                         disabled={gameSubmitted}
                         className={`flex-1 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 ${
-                          gameAnswers[item.id] === 'not-like'
+                          gameAnswers[item.id] === 'not-good'
                             ? 'bg-gradient-to-r from-red-500 to-rose-500 text-white'
                             : 'bg-red-100 text-red-700 hover:bg-red-200'
                         } ${gameSubmitted ? 'opacity-50' : ''}`}
                       >
                         <ThumbsDown className="w-5 h-5" />
-                        NOT LIKE
+                        NOT GOOD
                       </motion.button>
                     </div>
 
@@ -475,7 +475,7 @@ export default function ConfidencePage() {
                         ) : (
                           <div className="flex items-center justify-center gap-2 text-red-600 font-semibold">
                             <XCircle className="w-5 h-5" />
-                            Should be {item.category === 'like' ? 'LIKE' : 'NOT LIKE'}
+                            Should be {item.category === 'good' ? 'GOOD' : 'NOT GOOD'}
                           </div>
                         )}
                       </div>
