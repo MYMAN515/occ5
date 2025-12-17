@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { safeLocalStorage } from '@/utils/storage'
 
-export type Language = 'en' | 'ar' | 'ms'
+export type Language = 'en' | 'ar' | 'ms' | 'zh'
 
 type LanguageContextType = {
   language: Language
@@ -20,7 +20,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Load saved language from localStorage
     const saved = safeLocalStorage.getItem('app-language')
-    if (saved && ['en', 'ar', 'ms'].includes(saved)) {
+    if (saved && ['en', 'ar', 'ms', 'zh'].includes(saved)) {
       setLanguageState(saved as Language)
     }
   }, [])

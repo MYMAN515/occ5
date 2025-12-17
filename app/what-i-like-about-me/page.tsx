@@ -21,6 +21,11 @@ type WhatILikeContent = {
   restoreMessage: string
   reset: string
   print: string
+  inputLabel: string
+  encourageTitle: string
+  encourageDescription: string
+  savedBadge: string
+  printBadge: string
   sections: Section[]
 }
 
@@ -143,7 +148,7 @@ export default function WhatILikeAboutMePage() {
                     className="space-y-3"
                   >
                     <label className="block text-sm font-semibold text-gray-700">
-                      {language === 'ar' ? 'اكتب شعورك هنا' : language === 'ms' ? 'Tulis perasaan anda di sini' : 'Write what comes to mind'}
+                      {content?.inputLabel}
                     </label>
                     <textarea
                       dir={isRTL ? 'rtl' : 'ltr'}
@@ -168,16 +173,15 @@ export default function WhatILikeAboutMePage() {
         <div className="flex items-start gap-3">
           <Sparkles className="w-5 h-5 text-blue-600 mt-0.5" />
           <div>
-            <p className="font-semibold text-blue-700">{language === 'ar' ? 'شجّع الكلمات اللطيفة' : language === 'ms' ? 'Galakkan kata-kata yang baik' : 'Encourage kind words'}</p>
-            <p className="text-sm text-gray-700">{language === 'ar' ? 'يمكن للطفل مشاركة ما يكتبه إذا أراد، لكن الخصوصية تساعده على التعبير بحرية.' : language === 'ms' ? 'Anak boleh berkongsi apa yang ditulis jika mahu, tetapi privasi membantu mereka menulis dengan bebas.' : 'Your child can share if they want, but privacy helps them write freely.'}</p>
+            <p className="font-semibold text-blue-700">{content?.encourageTitle}</p>
+            <p className="text-sm text-gray-700">{content?.encourageDescription}</p>
           </div>
         </div>
         <div className="flex gap-2 text-sm text-gray-700">
-          <div className="px-3 py-2 rounded-xl bg-white/80 border border-blue-100">{language === 'ar' ? 'حفظ محلي' : language === 'ms' ? 'Disimpan pada peranti' : 'Saved on device'}</div>
-          <div className="px-3 py-2 rounded-xl bg-white/80 border border-blue-100">{language === 'ar' ? 'جاهز للطباعة' : language === 'ms' ? 'Sedia dicetak' : 'Ready to print'}</div>
+          <div className="px-3 py-2 rounded-xl bg-white/80 border border-blue-100">{content?.savedBadge}</div>
+          <div className="px-3 py-2 rounded-xl bg-white/80 border border-blue-100">{content?.printBadge}</div>
         </div>
       </div>
     </div>
   )
 }
-

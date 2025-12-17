@@ -230,7 +230,8 @@
   "footer": {
     "title": "Menyokong Keluarga Melalui Akil Baligh",
     "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
-    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga",
+    "languagesLabel": "Bahasa"
   },
   "games": {
     "hero": {
@@ -574,12 +575,343 @@
       }
     },
     "emergency": {
-      "title": "Bila Mencari Bantuan Segera",
-      "description": "Jika anak anda menunjukkan mana-mana tanda ini, jangan teragak-agak - dapatkan bantuan profesional segera:",
-      "point1": "Sebarang sebutan kecederaan diri, bunuh diri, atau mencederakan orang lain",
-      "point2": "Perubahan personaliti yang mendadak dan dramatik",
-      "point3": "Tanda-tanda penderaan"
-    }
+      "title": "Perlu Bantuan Segera? 🆘",
+      "description": "Jika anda rasa sangat sedih, takut, atau perlu bercakap segera, jangan tunggu:",
+      "points": [
+        "Bercakap segera dengan ibu bapa, penjaga atau orang dewasa dipercayai",
+        "Hubungi kaunselor atau jururawat sekolah",
+        "Hubungi talian bantuan di negara anda (percuma dan sulit)",
+        "Ingat: Meminta bantuan tanda kekuatan, bukan kelemahan! 💪"
+      ]
+    },
+    "header": {
+      "title": "Panduan Ibu Bapa & Tip Keibubapaan",
+      "subtitle": "Nasihat pakar untuk ibu bapa dan petua berguna untuk anak anda",
+      "parentTab": "Panduan ibu bapa",
+      "childTab": "Tip keibubapaan",
+      "periodImageLabel": "📷 Imej penjagaan haid",
+      "periodImagePath": "/images/period-care-guide.jpg"
+    },
+    "extraSections": {
+      "communication": [
+        {
+          "id": "difficult-conversations",
+          "title": "Mengendalikan Perbualan Sukar",
+          "description": "Apabila anak anda bertanya soalan yang tidak selesa atau topik sensitif",
+          "tips": [
+            "Kekal tenang dan elakkan menunjukkan terkejut atau malu - reaksi anda menentukan nada",
+            "Tidak mengapa untuk berkata \"Saya perlukan masa untuk berfikir\" daripada memberi jawapan tergesa-gesa",
+            "Gunakan bahasa yang sesuai dengan usia - jujur tetapi jangan membebankan dengan butiran",
+            "Jika anda tidak tahu sesuatu, akui dan cadangkan mencari jawapan bersama",
+            "Cipta ruang selamat di mana tiada soalan dianggap \"pelik\" atau \"salah\"",
+            "Susuli kemudian untuk melihat jika mereka ada soalan lain"
+          ]
+        },
+        {
+          "id": "cultural-considerations",
+          "title": "Kepekaan Budaya dalam Perbualan",
+          "description": "Menghormati nilai budaya dan agama sambil memberi maklumat tepat",
+          "tips": [
+            "Akui dan hormati nilai budaya dan agama keluarga anda",
+            "Cari cara membincangkan akil baligh yang selari dengan kepercayaan anda",
+            "Gunakan contoh dan bahasa yang sesuai secara budaya",
+            "Hubungi pemimpin komuniti atau penasihat dipercayai jika perlu",
+            "Seimbangkan nilai budaya dengan ketepatan sains",
+            "Ingat: pendekatan setiap keluarga adalah sah"
+          ]
+        }
+      ],
+      "emotional": [
+        {
+          "id": "handling-rejection",
+          "title": "Apabila Anak Menolak Bantuan Anda",
+          "description": "Apa yang perlu dilakukan apabila anak menjauhkan diri atau berkata tidak perlukan bantuan",
+          "tips": [
+            "Jangan ambil hati - berdikari adalah sebahagian normal perkembangan",
+            "Kekal tersedia tanpa mendesak - beritahu mereka anda ada bila mereka bersedia",
+            "Hormati keperluan mereka untuk ruang sambil mengekalkan batasan",
+            "Cari cara tidak langsung untuk menyokong (tinggalkan sumber berguna, bertanya dengan santai)",
+            "Hubungkan mereka dengan orang dewasa dipercayai lain (makcik, guru, kaunselor)",
+            "Ingat: menjauh sering tanda mereka bergelut, bukan menolak anda"
+          ]
+        },
+        {
+          "id": "anxiety-stress",
+          "title": "Menyokong Anak yang Cemas atau Tertekan",
+          "description": "Membantu anak mengurus kebimbangan dan tekanan semasa akil baligh",
+          "tips": [
+            "Sedari bahawa akil baligh sendiri boleh menegangkan - sahkan perasaan mereka",
+            "Ajarkan strategi mudah: pernafasan dalam, kiraan, teknik grounding",
+            "Bantu kenal pasti pencetus dan buat rancangan menguruskannya",
+            "Galakkan saluran sihat: senaman, seni, muzik, jurnal",
+            "Tunjukkan pengurusan tekanan sihat dalam hidup anda",
+            "Dapatkan bantuan profesional jika kebimbangan menjejaskan rutin harian"
+          ]
+        }
+      ],
+      "physical": [
+        {
+          "id": "first-period",
+          "title": "Bersedia untuk Haid Pertama Anak",
+          "description": "Panduan praktikal apabila anak perempuan mula haid",
+          "tips": [
+            "Sediakan keperluan haid sebelum bermula (tuala wanita, tampon, seluar dalam haid)",
+            "Buat \"kit haid\" untuk ke sekolah dengan bekalan dan pakaian ganti",
+            "Normalisasikan haid - bercakap sebagai proses semula jadi dan sihat",
+            "Ajarkan cara menjejak kitaran dan apa yang perlu dijangka",
+            "Bincang pilihan mengurus kesakitan haid (haba, senaman lembut, ubat sakit)",
+            "Yakinkan mereka bahawa kitaran tidak teratur pada tahun pertama adalah normal"
+          ]
+        },
+        {
+          "id": "body-image",
+          "title": "Menyokong Imej Badan Positif",
+          "description": "Membantu anak membina hubungan sihat dengan badan yang berubah",
+          "tips": [
+            "Elakkan komen negatif tentang badan sendiri atau orang lain",
+            "Fokus pada apa yang badan boleh lakukan, bukan hanya rupa",
+            "Raikan kepelbagaian - semua bentuk dan saiz badan adalah normal",
+            "Hadkan pendedahan kepada imej media yang tidak realistik bila boleh",
+            "Galakkan aktiviti yang membuat mereka rasa kuat dan mampu",
+            "Tegur segera sebarang komen memalukan tentang badan"
+          ]
+        }
+      ],
+      "social": [
+        {
+          "id": "dating-relationships",
+          "title": "Mengharungi Hubungan Pertama",
+          "description": "Menyokong anak melalui cinta dan hubungan pertama",
+          "tips": [
+            "Mulakan perbualan tentang hubungan sihat lebih awal, sebelum mula berpasangan",
+            "Bincang persetujuan, hormat, dan batasan dengan cara sesuai usia",
+            "Tetapkan peraturan jelas tentang berpacaran yang seiring dengan nilai keluarga",
+            "Kekalkan komunikasi terbuka - tanya tentang kawan dan minat mereka",
+            "Bantu kenal pasti tanda amaran dalam hubungan",
+            "Jadi orang selamat untuk mereka bercakap tentang kebimbangan hubungan"
+          ]
+        },
+        {
+          "id": "social-media",
+          "title": "Media Sosial dan Pengaruh Rakan",
+          "description": "Membantu anak menavigasi media sosial dan tekanan rakan dalam talian",
+          "tips": [
+            "Tetapkan peraturan jelas tentang penggunaan media sosial dan tetapan privasi",
+            "Adakan perbualan berkala tentang apa yang mereka lihat dalam talian",
+            "Ajar pemikiran kritis tentang kandungan dan pempengaruh",
+            "Pantau aktiviti dalam talian sambil menghormati peningkatan kebebasan",
+            "Bincang perbezaan antara persona dalam talian dan kehidupan sebenar",
+            "Wujudkan masa dan ruang bebas gajet untuk hubungan keluarga"
+          ]
+        }
+      ]
+    },
+    "childTips": {
+      "categories": {
+        "physical": "Fizikal",
+        "emotional": "Emosi",
+        "social": "Sosial",
+        "hygiene": "Kebersihan"
+      },
+      "cards": {
+        "physical": [
+          {
+            "id": "exercise",
+            "title": "Kekal Aktif",
+            "description": "Senaman berkala membantu tubuh membesar sihat dan meningkatkan mood",
+            "tips": [
+              "Sasar sekurang-kurangnya 60 minit aktiviti setiap hari",
+              "Cuba pelbagai sukan untuk cari yang anda suka",
+              "Berjalan, menari dan bermain dengan rakan juga dikira!",
+              "Bersenam juga membantu mengurangkan tekanan dan tidur"
+            ]
+          },
+          {
+            "id": "nutrition",
+            "title": "Pemakanan Sihat",
+            "description": "Tubuh yang sedang membesar memerlukan nutrisi baik untuk menyokong semua perubahan",
+            "tips": [
+              "Makan banyak buah-buahan dan sayur setiap hari",
+              "Minum banyak air - sasar 6-8 gelas sehari",
+              "Jangan abaikan sarapan - ia beri tenaga untuk hari anda",
+              "Hadkan snek dan minuman bergula"
+            ]
+          },
+          {
+            "id": "sleep",
+            "title": "Dapatkan Cukup Tidur",
+            "description": "Waktu tidur badan anda membesar dan membaiki diri",
+            "tips": [
+              "Remaja memerlukan 8-10 jam tidur setiap malam",
+              "Cuba tidur pada waktu yang sama setiap malam",
+              "Elakkan skrin 30 minit sebelum tidur",
+              "Pastikan bilik tidur sejuk, gelap dan tenang"
+            ]
+          },
+          {
+            "id": "pain",
+            "title": "Mengurus Ketidakselesaan",
+            "description": "Beberapa perubahan mungkin menyebabkan ketidakselesaan sementara",
+            "tips": [
+              "Untuk sakit tumbesaran, cuba regangan lembut",
+              "Mandian hangat boleh membantu sakit otot",
+              "Berbincang dengan orang dewasa jika sakit berterusan atau merisaukan",
+              "Ingat: kebanyakan ketidakselesaan adalah sementara"
+            ]
+          }
+        ],
+        "emotional": [
+          {
+            "id": "feelings",
+            "title": "Memahami Perasaan Anda",
+            "description": "Perasaan besar adalah normal semasa akil baligh",
+            "tips": [
+              "Semua perasaan adalah sah - gembira, sedih, marah, keliru",
+              "Perubahan emosi disebabkan hormon - ia normal",
+              "Tidak mengapa menangis atau rasa terbeban kadang-kadang",
+              "Perasaan anda akan menjadi lebih stabil dengan masa"
+            ]
+          },
+          {
+            "id": "stress",
+            "title": "Mengurus Tekanan",
+            "description": "Pelajari cara sihat untuk menghadapi tekanan dan kebimbangan",
+            "tips": [
+              "Cuba pernafasan dalam: tarik 4, tahan 4, hembus 4",
+              "Bercakap dengan seseorang yang dipercayai tentang kerisauan anda",
+              "Senaman ialah pelepas tekanan yang hebat",
+              "Berehat seketika apabila rasa terbeban"
+            ]
+          },
+          {
+            "id": "confidence",
+            "title": "Membina Keyakinan Diri",
+            "description": "Rasa baik tentang diri memerlukan latihan",
+            "tips": [
+              "Fokus pada perkara yang anda suka tentang diri anda",
+              "Tetapkan matlamat kecil yang boleh dicapai dan raikan kejayaan",
+              "Jangan bandingkan diri dengan orang lain - semua orang berbeza",
+              "Amalkan kata-kata positif kepada diri sendiri setiap hari"
+            ]
+          },
+          {
+            "id": "help",
+            "title": "Bila Perlu Minta Bantuan",
+            "description": "Penting untuk tahu bila perlu mendapatkan bantuan",
+            "tips": [
+              "Jika rasa sedih berlarutan lebih dua minggu",
+              "Jika terfikir untuk mencederakan diri",
+              "Jika kebimbangan menghalang aktiviti harian",
+              "Bercakap dengan ibu bapa, kaunselor sekolah, atau orang dewasa dipercayai"
+            ]
+          }
+        ],
+        "social": [
+          {
+            "id": "friends",
+            "title": "Persahabatan",
+            "description": "Hubungan menjadi lebih penting semasa akil baligh",
+            "tips": [
+              "Kawan sejati menerima anda sebagaimana anda",
+              "Tidak mengapa jika persahabatan berubah - semua orang sedang membesar",
+              "Kualiti lebih penting daripada kuantiti",
+              "Jadilah diri sendiri - jangan berpura-pura menjadi orang lain"
+            ]
+          },
+          {
+            "id": "peer-pressure",
+            "title": "Mengendalikan Tekanan Rakan",
+            "description": "Belajar membuat pilihan sendiri dengan yakin",
+            "tips": [
+              "Tidak mengapa berkata \"tidak\" - kawan sejati akan hormat",
+              "Anda tidak perlu melakukan sesuatu hanya kerana orang lain melakukannya",
+              "Jika sesuatu rasa tidak betul, percaya naluri anda",
+              "Cari kawan yang berkongsi nilai anda"
+            ]
+          },
+          {
+            "id": "communication",
+            "title": "Komunikasi",
+            "description": "Nyatakan diri dengan jelas dan dengar orang lain",
+            "tips": [
+              "Guna pernyataan \"saya rasa\" bukannya menyalahkan",
+              "Dengar dengan penuh perhatian apabila orang lain bercakap",
+              "Tidak mengapa untuk berbeza pendapat dengan hormat",
+              "Tanya soalan jika anda tidak faham"
+            ]
+          },
+          {
+            "id": "boundaries",
+            "title": "Batas Peribadi",
+            "description": "Memahami dan menghormati ruang peribadi",
+            "tips": [
+              "Tubuh anda milik anda - anda tentukan siapa yang menyentuhnya",
+              "Katakan \"berhenti\" jika sesuatu membuat anda tidak selesa",
+              "Hormati batas orang lain juga",
+              "Beritahu orang dewasa dipercayai jika seseorang melampaui batas anda"
+            ]
+          }
+        ],
+        "hygiene": [
+          {
+            "id": "shower",
+            "title": "Kebersihan Harian",
+            "description": "Pastikan badan bersih dan segar",
+            "tips": [
+              "Mandi setiap hari, terutamanya selepas bersenam",
+              "Gunakan sabun dan syampu - beri perhatian pada bawah lengan",
+              "Cuci muka dua kali sehari untuk mencegah jerawat",
+              "Tukar pakaian bersih setiap hari"
+            ]
+          },
+          {
+            "id": "deodorant",
+            "title": "Mengurus Bau Badan",
+            "description": "Semua orang berpeluh lebih semasa akil baligh",
+            "tips": [
+              "Gunakan deodoran atau antipeluh setiap hari",
+              "Sapu selepas mandi dan sebelum tidur",
+              "Pakai fabrik yang bernafas seperti kapas",
+              "Simpan deodoran tambahan dalam beg anda"
+            ]
+          },
+          {
+            "id": "skin",
+            "title": "Penjagaan Kulit",
+            "description": "Jaga kulit anda yang sedang berubah",
+            "tips": [
+              "Cuci muka dengan lembut - jangan gosok terlalu kuat",
+              "Gunakan pelembap tanpa minyak jika kulit kering",
+              "Jangan picit jerawat - boleh tinggalkan parut",
+              "Jumpa doktor jika jerawat mengganggu anda"
+            ]
+          },
+          {
+            "id": "period",
+            "title": "Penjagaan Haid (bagi yang datang haid)",
+            "description": "Mengurus kitaran bulanan anda",
+            "tips": [
+              "Tukar tuala/tampon setiap 4-6 jam",
+              "Simpan bekalan dalam beg untuk kecemasan",
+              "Jejak kitaran anda untuk tahu bila ia akan datang",
+              "Senaman ringan boleh membantu mengurangkan kekejangan"
+            ]
+          }
+        ]
+      },
+      "helpfulTipsLabel": "Petua berguna:",
+      "emergency": {
+        "title": "Perlu Bantuan Segera? 🆘",
+        "description": "Jika anda rasa sangat sedih, takut, atau perlu bercakap segera, jangan tunggu:",
+        "points": [
+          "Bercakap segera dengan ibu bapa, penjaga atau orang dewasa dipercayai",
+          "Hubungi kaunselor atau jururawat sekolah",
+          "Hubungi talian bantuan di negara anda (percuma dan sulit)",
+          "Ingat: Meminta bantuan tanda kekuatan, bukan kelemahan! 💪"
+        ]
+      }
+    },
+    "helpfulTipsLabel": "Petua berguna:"
   },
   "changes": {
     "title": "Memahami Perubahan Anak Anda",
@@ -793,7 +1125,12 @@
         "title": "Satu perkara unik tentang saya",
         "hint": "Minat khas, bakat, pandangan, atau cara anda menyelesaikan masalah."
       }
-    ]
+    ],
+    "inputLabel": "Tulis apa yang terlintas",
+    "encourageTitle": "Galakkan kata-kata yang baik",
+    "encourageDescription": "Anak anda boleh berkongsi jika mahu, tetapi privasi membantu mereka menulis dengan bebas.",
+    "savedBadge": "Disimpan pada peranti",
+    "printBadge": "Sedia dicetak"
   },
   "quizzesPage": {
     "title": "Kuiz",
@@ -947,6 +1284,10 @@
         "good": "Bagus! Anda tahu banyak tentang membesar.",
         "keepGoing": "Permulaan yang baik—cuba lagi untuk ingat lebih banyak."
       }
+    },
+    "tips": {
+      "oneAtATime": "Satu soalan pada satu masa membantu otak kekal tenang dan fokus.",
+      "encouragement": "Galakan segera membantu anak mencuba lagi dengan yakin."
     }
   }
 }

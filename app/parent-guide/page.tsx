@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { 
@@ -10,8 +10,20 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 
-type GuideCategory = 'communication' | 'emotional' | 'physical' | 'social' | 'privacy' | 'resources'
+type GuideCategory = 'communication' | 'emotional' | 'physical' | 'social' | 'privacy' | 'resources' | 'hygiene'
 type ViewMode = 'parent-guide' | 'child-tips'
+type GuideSection = { id: string; title: string; description: string; tips: string[] }
+type ChildTipCard = { id: string; title: string; description: string; tips: string[] }
+type ChildTipsContent = {
+  categories: Record<string, string>
+  cards: Record<string, ChildTipCard[]>
+  helpfulTipsLabel?: string
+  emergency?: {
+    title: string
+    description: string
+    points: string[]
+  }
+}
 
 // Moon icon component
 const Moon = ({ className }: { className?: string }) => (
@@ -22,10 +34,21 @@ const Moon = ({ className }: { className?: string }) => (
 
 export default function ParentGuidePage() {
   const { t } = useLanguage()
+  const header = t('parentGuide.header') as { title: string; subtitle: string; parentTab: string; childTab: string; periodImageLabel: string; periodImagePath: string }
+  const extraSections = t('parentGuide.extraSections') as Partial<Record<GuideCategory, GuideSection[]>>
+  const childTipsContent = t('parentGuide.childTips') as ChildTipsContent
   const [activeCategory, setActiveCategory] = useState<GuideCategory>('communication')
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<ViewMode>('parent-guide')
   const [expandedTip, setExpandedTip] = useState<string | null>(null)
+  useEffect(() => {
+    if (viewMode === 'parent-guide' && activeCategory === 'hygiene') {
+      setActiveCategory('communication')
+    }
+    if (viewMode === 'child-tips' && !['physical', 'emotional', 'social', 'hygiene'].includes(activeCategory)) {
+      setActiveCategory('physical')
+    }
+  }, [viewMode, activeCategory])
 
   const categories = [
     { id: 'communication' as GuideCategory, icon: <MessageCircle className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500' },
@@ -71,32 +94,7 @@ export default function ParentGuidePage() {
           t('parentGuide.communication.openness.tip4')
         ]
       },
-      {
-        id: 'difficult-conversations',
-        title: 'Handling Difficult Conversations',
-        description: 'When your child asks uncomfortable questions or brings up sensitive topics',
-        tips: [
-          'Stay calm and don\'t show shock or embarrassment - your reaction sets the tone',
-          'It\'s okay to say "I need a moment to think" rather than giving a rushed answer',
-          'Use age-appropriate language - be honest but don\'t overwhelm with details',
-          'If you don\'t know something, say so and offer to find out together',
-          'Create a safe space where no question is "silly" or "wrong"',
-          'Follow up later to see if they have more questions'
-        ]
-      },
-      {
-        id: 'cultural-considerations',
-        title: 'Cultural Sensitivity in Conversations',
-        description: 'Respecting cultural and religious values while providing accurate information',
-        tips: [
-          'Acknowledge and respect your family\'s cultural and religious values',
-          'Find ways to discuss puberty that align with your beliefs',
-          'Use culturally appropriate examples and language',
-          'Connect with community leaders or trusted advisors if needed',
-          'Balance cultural values with scientific accuracy',
-          'Remember: every family\'s approach is valid'
-        ]
-      }
+      ...(extraSections?.communication || [])
     ],
     emotional: [
       {
@@ -132,32 +130,7 @@ export default function ParentGuidePage() {
           t('parentGuide.emotional.mentalHealth.tip4')
         ]
       },
-      {
-        id: 'handling-rejection',
-        title: 'When Your Child Rejects Your Help',
-        description: 'What to do when your child pushes you away or says they don\'t need help',
-        tips: [
-          'Don\'t take it personally - independence is a normal part of development',
-          'Stay available without being pushy - let them know you\'re there when ready',
-          'Respect their need for space while maintaining boundaries',
-          'Find indirect ways to support (leave helpful resources, check in casually)',
-          'Connect them with other trusted adults (aunt, teacher, counselor)',
-          'Remember: pushing away is often a sign of struggling, not rejection of you'
-        ]
-      },
-      {
-        id: 'anxiety-stress',
-        title: 'Supporting Anxious or Stressed Children',
-        description: 'Helping your child manage anxiety and stress during puberty',
-        tips: [
-          'Recognize that puberty itself can be stressful - validate their feelings',
-          'Teach simple coping strategies: deep breathing, counting, grounding techniques',
-          'Help them identify triggers and create a plan for managing them',
-          'Encourage healthy outlets: exercise, art, music, journaling',
-          'Model healthy stress management in your own life',
-          'Seek professional help if anxiety interferes with daily life'
-        ]
-      }
+      ...(extraSections?.emotional || [])
     ],
     physical: [
       {
@@ -193,32 +166,7 @@ export default function ParentGuidePage() {
           t('parentGuide.physical.health.tip4')
         ]
       },
-      {
-        id: 'first-period',
-        title: 'Preparing for Your Child\'s First Period',
-        description: 'Practical guidance for when your daughter starts menstruating',
-        tips: [
-          'Have period supplies ready before it starts (pads, tampons, period underwear)',
-          'Create a "period kit" for school with supplies and a change of clothes',
-          'Normalize periods - talk about them as a natural, healthy process',
-          'Teach them how to track their cycle and what to expect',
-          'Discuss period pain management options (heat, gentle exercise, pain relief)',
-          'Reassure them that irregular periods in the first year are completely normal'
-        ]
-      },
-      {
-        id: 'body-image',
-        title: 'Supporting Positive Body Image',
-        description: 'Helping your child develop a healthy relationship with their changing body',
-        tips: [
-          'Avoid negative comments about your own body or others\' bodies',
-          'Focus on what bodies can DO, not just how they look',
-          'Celebrate diversity - all body shapes and sizes are normal',
-          'Limit exposure to unrealistic media images when possible',
-          'Encourage activities that make them feel strong and capable',
-          'Address body-shaming comments from others immediately'
-        ]
-      }
+      ...(extraSections?.physical || [])
     ],
     social: [
       {
@@ -254,32 +202,7 @@ export default function ParentGuidePage() {
           t('parentGuide.social.boundaries.tip4')
         ]
       },
-      {
-        id: 'dating-relationships',
-        title: 'Navigating First Relationships',
-        description: 'Supporting your child through their first crushes and relationships',
-        tips: [
-          'Start conversations about healthy relationships early, before dating begins',
-          'Discuss consent, respect, and boundaries in age-appropriate ways',
-          'Set clear rules about dating that match your family values',
-          'Keep communication open - ask about their friends and interests',
-          'Help them recognize red flags in relationships',
-          'Be a safe person they can talk to about relationship concerns'
-        ]
-      },
-      {
-        id: 'social-media',
-        title: 'Social Media and Peer Influence',
-        description: 'Helping your child navigate social media and online peer pressure',
-        tips: [
-          'Set clear rules about social media use and privacy settings',
-          'Have regular conversations about what they see online',
-          'Teach critical thinking about online content and influencers',
-          'Monitor their online activity while respecting growing independence',
-          'Discuss the difference between online personas and real life',
-          'Create tech-free times and spaces for family connection'
-        ]
-      }
+      ...(extraSections?.social || [])
     ],
     privacy: [
       {
@@ -328,7 +251,8 @@ export default function ParentGuidePage() {
           t('parentGuide.resources.professional.tip4')
         ]
       }
-    ]
+    ],
+    hygiene: []
   }
 
   return (
@@ -347,10 +271,10 @@ export default function ParentGuidePage() {
           <BookOpen className="w-16 h-16 text-blue-500" />
         </motion.div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-          Parent Guide & Parenting Tips
+          {header?.title || t('parentGuide.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Expert advice for parents and helpful tips for your child
+          {header?.subtitle || t('parentGuide.subtitle')}
         </p>
       </motion.div>
 
@@ -363,24 +287,24 @@ export default function ParentGuidePage() {
       >
         <div className="glass-effect rounded-full p-2 inline-flex gap-2">
           <button
-            onClick={() => { setViewMode('parent-guide'); setExpandedSection(null) }}
+            onClick={() => { setViewMode('parent-guide'); setExpandedSection(null); setActiveCategory('communication') }}
             className={`px-6 py-3 rounded-full font-semibold transition-all ${
               viewMode === 'parent-guide'
                 ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
                 : 'text-gray-600 hover:bg-blue-50'
             }`}
           >
-            👨‍👩‍👧 Parent Guide
+            👨‍👩‍👧 {header?.parentTab || t('parentGuide.categories.communication')}
           </button>
           <button
-            onClick={() => { setViewMode('child-tips'); setExpandedTip(null) }}
+            onClick={() => { setViewMode('child-tips'); setExpandedTip(null); setActiveCategory('physical') }}
             className={`px-6 py-3 rounded-full font-semibold transition-all ${
               viewMode === 'child-tips'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
                 : 'text-gray-600 hover:bg-purple-50'
             }`}
           >
-            💡 Parenting Tips
+            💡 {header?.childTab || t('parentGuide.title')}
           </button>
         </div>
       </motion.div>
@@ -472,8 +396,8 @@ export default function ParentGuidePage() {
                       >
                         <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-pink-100 flex items-center justify-center">
                           <div className="text-center">
-                            <span className="text-blue-600 text-sm block mb-2">📷 Period Care Image</span>
-                            <span className="text-gray-500 text-xs">/images/period-care-guide.jpg</span>
+                            <span className="text-blue-600 text-sm block mb-2">{header?.periodImageLabel}</span>
+                            <span className="text-gray-500 text-xs">{header?.periodImagePath}</span>
                             {/* Replace with: <Image src="/images/period-care-guide.jpg" alt="Period Care Guide" width={600} height={400} className="w-full h-auto rounded-xl" /> */}
                           </div>
                         </div>
@@ -627,10 +551,10 @@ export default function ParentGuidePage() {
               className="flex flex-wrap justify-center gap-3 mb-12"
             >
               {[
-                { id: 'physical' as const, icon: <Heart className="w-6 h-6" />, color: 'from-pink-400 to-rose-500', label: 'Physical' },
-                { id: 'emotional' as const, icon: <Sparkles className="w-6 h-6" />, color: 'from-purple-400 to-pink-500', label: 'Emotional' },
-                { id: 'social' as const, icon: <Users className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', label: 'Social' },
-                { id: 'hygiene' as const, icon: <Droplets className="w-6 h-6" />, color: 'from-green-400 to-teal-500', label: 'Hygiene' },
+                { id: 'physical' as const, icon: <Heart className="w-6 h-6" />, color: 'from-pink-400 to-rose-500', label: childTipsContent?.categories?.physical || 'Physical' },
+                { id: 'emotional' as const, icon: <Sparkles className="w-6 h-6" />, color: 'from-purple-400 to-pink-500', label: childTipsContent?.categories?.emotional || 'Emotional' },
+                { id: 'social' as const, icon: <Users className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', label: childTipsContent?.categories?.social || 'Social' },
+                { id: 'hygiene' as const, icon: <Droplets className="w-6 h-6" />, color: 'from-green-400 to-teal-500', label: childTipsContent?.categories?.hygiene || 'Hygiene' },
               ].map((category) => (
                 <motion.button
                   key={category.id}
@@ -662,218 +586,34 @@ export default function ParentGuidePage() {
               className="max-w-5xl mx-auto space-y-4"
             >
               {(() => {
-                const childTipsData: any = {
-                  physical: [
-                    {
-                      id: 'exercise',
-                      icon: <Heart className="w-6 h-6" />,
-                      title: 'Stay Active',
-                      description: 'Regular exercise helps your body develop healthily and boosts your mood',
-                      tips: [
-                        'Aim for at least 60 minutes of activity each day',
-                        'Try different sports to find what you enjoy',
-                        'Walking, dancing, and playing with friends all count!',
-                        'Exercise helps with stress and sleep too'
-                      ]
-                    },
-                    {
-                      id: 'nutrition',
-                      icon: <Sparkles className="w-6 h-6" />,
-                      title: 'Healthy Eating',
-                      description: 'Your growing body needs good nutrition to support all the changes',
-                      tips: [
-                        'Eat plenty of fruits and vegetables every day',
-                        'Drink lots of water - aim for 6-8 glasses daily',
-                        'Don\'t skip breakfast - it gives you energy for the day',
-                        'Limit sugary snacks and drinks'
-                      ]
-                    },
-                    {
-                      id: 'sleep',
-                      icon: <Moon className="w-6 h-6" />,
-                      title: 'Get Enough Sleep',
-                      description: 'Sleep is when your body grows and repairs itself',
-                      tips: [
-                        'Teenagers need 8-10 hours of sleep each night',
-                        'Try to go to bed at the same time every night',
-                        'Avoid screens 30 minutes before bedtime',
-                        'Keep your bedroom cool, dark, and quiet'
-                      ]
-                    },
-                    {
-                      id: 'pain',
-                      icon: <AlertCircle className="w-6 h-6" />,
-                      title: 'Managing Discomfort',
-                      description: 'Some changes might cause temporary discomfort',
-                      tips: [
-                        'For growing pains, try gentle stretching',
-                        'A warm bath can help with muscle aches',
-                        'Talk to an adult if pain persists or worries you',
-                        'Remember: most discomfort is temporary'
-                      ]
-                    }
-                  ],
-                  emotional: [
-                    {
-                      id: 'feelings',
-                      icon: <Heart className="w-6 h-6" />,
-                      title: 'Understanding Your Feelings',
-                      description: 'It\'s normal to have big emotions during puberty',
-                      tips: [
-                        'All feelings are valid - happy, sad, angry, confused',
-                        'Mood swings are caused by hormones - they\'re normal',
-                        'It\'s okay to cry or feel overwhelmed sometimes',
-                        'Your feelings will become more stable with time'
-                      ]
-                    },
-                    {
-                      id: 'stress',
-                      icon: <Shield className="w-6 h-6" />,
-                      title: 'Managing Stress',
-                      description: 'Learn healthy ways to cope with stress and anxiety',
-                      tips: [
-                        'Try deep breathing: breathe in for 4, hold for 4, out for 4',
-                        'Talk to someone you trust about your worries',
-                        'Exercise is a great stress reliever',
-                        'Take breaks when you feel overwhelmed'
-                      ]
-                    },
-                    {
-                      id: 'confidence',
-                      icon: <Smile className="w-6 h-6" />,
-                      title: 'Building Self-Confidence',
-                      description: 'Feeling good about yourself takes practice',
-                      tips: [
-                        'Focus on what you like about yourself',
-                        'Set small, achievable goals and celebrate wins',
-                        'Don\'t compare yourself to others - everyone\'s different',
-                        'Practice positive self-talk daily'
-                      ]
-                    },
-                    {
-                      id: 'help',
-                      icon: <Phone className="w-6 h-6" />,
-                      title: 'When to Ask for Help',
-                      description: 'It\'s important to know when to reach out',
-                      tips: [
-                        'If sad feelings last more than 2 weeks',
-                        'If you have thoughts of hurting yourself',
-                        'If anxiety stops you from daily activities',
-                        'Talk to parents, school counselor, or trusted adult'
-                      ]
-                    }
-                  ],
-                  social: [
-                    {
-                      id: 'friends',
-                      icon: <Users className="w-6 h-6" />,
-                      title: 'Friendships',
-                      description: 'Relationships become more important during puberty',
-                      tips: [
-                        'Real friends accept you for who you are',
-                        'It\'s okay if friendships change - you\'re all growing',
-                        'Quality is more important than quantity',
-                        'Be yourself - don\'t pretend to be someone you\'re not'
-                      ]
-                    },
-                    {
-                      id: 'peer-pressure',
-                      icon: <Shield className="w-6 h-6" />,
-                      title: 'Handling Peer Pressure',
-                      description: 'Learn to make your own choices confidently',
-                      tips: [
-                        'It\'s okay to say "no" - real friends will respect that',
-                        'You don\'t have to do something just because others do',
-                        'If something feels wrong, trust your instincts',
-                        'Find friends who share your values'
-                      ]
-                    },
-                    {
-                      id: 'communication',
-                      icon: <MessageCircle className="w-6 h-6" />,
-                      title: 'Communication',
-                      description: 'Express yourself clearly and listen to others',
-                      tips: [
-                        'Use "I feel" statements instead of blaming',
-                        'Listen actively when others speak',
-                        'It\'s okay to disagree respectfully',
-                        'Ask questions if you don\'t understand'
-                      ]
-                    },
-                    {
-                      id: 'boundaries',
-                      icon: <Shield className="w-6 h-6" />,
-                      title: 'Personal Boundaries',
-                      description: 'Understanding and respecting personal space',
-                      tips: [
-                        'Your body is yours - you control who touches it',
-                        'Say "stop" if something makes you uncomfortable',
-                        'Respect others\' boundaries too',
-                        'Tell a trusted adult if someone crosses your boundaries'
-                      ]
-                    }
-                  ],
-                  hygiene: [
-                    {
-                      id: 'shower',
-                      icon: <Droplets className="w-6 h-6" />,
-                      title: 'Daily Hygiene',
-                      description: 'Keep your body clean and fresh',
-                      tips: [
-                        'Shower or bathe daily, especially after exercise',
-                        'Use soap and shampoo - pay attention to underarms',
-                        'Wash your face twice daily to prevent acne',
-                        'Change into clean clothes daily'
-                      ]
-                    },
-                    {
-                      id: 'deodorant',
-                      icon: <Sparkles className="w-6 h-6" />,
-                      title: 'Managing Body Odor',
-                      description: 'Everyone sweats more during puberty',
-                      tips: [
-                        'Use deodorant or antiperspirant daily',
-                        'Apply after showering and before bed',
-                        'Wear breathable fabrics like cotton',
-                        'Keep extra deodorant in your backpack'
-                      ]
-                    },
-                    {
-                      id: 'skin',
-                      icon: <Heart className="w-6 h-6" />,
-                      title: 'Skin Care',
-                      description: 'Take care of your changing skin',
-                      tips: [
-                        'Wash your face gently - don\'t scrub too hard',
-                        'Use oil-free moisturizer if your skin is dry',
-                        'Never pop pimples - it can cause scarring',
-                        'See a doctor if acne bothers you'
-                      ]
-                    },
-                    {
-                      id: 'period',
-                      icon: <CheckCircle className="w-6 h-6" />,
-                      title: 'Period Care (for those who menstruate)',
-                      description: 'Managing your monthly cycle',
-                      tips: [
-                        'Change pads/tampons every 4-6 hours',
-                        'Keep supplies in your bag for emergencies',
-                        'Track your cycle to know when to expect it',
-                        'Gentle exercise can help with cramps'
-                      ]
-                    }
-                  ]
-                }
-
-                const tips = childTipsData[activeCategory] || []
+                const cardsByCategory = childTipsContent?.cards || {}
+                const tips = (cardsByCategory as Record<string, ChildTipCard[]>)[activeCategory] || []
                 const tipCategory = [
                   { id: 'physical' as const, color: 'from-pink-400 to-rose-500' },
                   { id: 'emotional' as const, color: 'from-purple-400 to-pink-500' },
                   { id: 'social' as const, color: 'from-blue-400 to-cyan-500' },
                   { id: 'hygiene' as const, color: 'from-green-400 to-teal-500' },
                 ].find(c => c.id === activeCategory)
+                const tipIcons: Record<string, JSX.Element> = {
+                  exercise: <Heart className="w-6 h-6" />,
+                  nutrition: <Sparkles className="w-6 h-6" />,
+                  sleep: <Moon className="w-6 h-6" />,
+                  pain: <AlertCircle className="w-6 h-6" />,
+                  feelings: <Heart className="w-6 h-6" />,
+                  stress: <Shield className="w-6 h-6" />,
+                  confidence: <Smile className="w-6 h-6" />,
+                  help: <Phone className="w-6 h-6" />,
+                  friends: <Users className="w-6 h-6" />,
+                  'peer-pressure': <Shield className="w-6 h-6" />,
+                  communication: <MessageCircle className="w-6 h-6" />,
+                  boundaries: <Shield className="w-6 h-6" />,
+                  shower: <Droplets className="w-6 h-6" />,
+                  deodorant: <Sparkles className="w-6 h-6" />,
+                  skin: <Heart className="w-6 h-6" />,
+                  period: <CheckCircle className="w-6 h-6" />
+                }
 
-                return tips.map((item: any, index: number) => (
+                return tips.map((item, index: number) => (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, x: -20 }}
@@ -886,7 +626,7 @@ export default function ParentGuidePage() {
                       className="w-full p-6 flex items-start gap-4 text-left hover:bg-white/50 transition-all"
                     >
                       <div className={`bg-gradient-to-r ${tipCategory?.color || 'from-blue-400 to-cyan-500'} w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0`}>
-                        {item.icon}
+                        {tipIcons[item.id] || <Lightbulb className="w-6 h-6" />}
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
@@ -913,7 +653,7 @@ export default function ParentGuidePage() {
                           <div className="p-6 bg-white/30">
                             <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
                               <CheckCircle className="w-5 h-5 text-green-500" />
-                              Helpful Tips:
+                              {childTipsContent?.helpfulTipsLabel || 'Helpful Tips:'}
                             </h4>
                             <ul className="space-y-3">
                               {item.tips.map((tip: string, idx: number) => (
@@ -951,28 +691,23 @@ export default function ParentGuidePage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold mb-3 text-gray-800">
-                    Need Immediate Help? 🆘
+                    {childTipsContent?.emergency?.title || 'Need Immediate Help? 🆘'}
                   </h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    If you're feeling very upset, scared, or need to talk to someone right away, don't wait:
+                    {childTipsContent?.emergency?.description || \"If you're feeling very upset, scared, or need to talk to someone right away, don't wait:\"}
                   </p>
                   <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>Talk to a parent, guardian, or trusted adult immediately</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>Contact your school counselor or nurse</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>Call a helpline in your country (they're free and confidential)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>Remember: Asking for help is a sign of strength, not weakness! 💪</span>
-                    </li>
+                    {(childTipsContent?.emergency?.points || [
+                      'Talk to a parent, guardian, or trusted adult immediately',
+                      'Contact your school counselor or nurse',
+                      \"Call a helpline in your country (they're free and confidential)\",
+                      'Remember: Asking for help is a sign of strength, not weakness! 💪'
+                    ]).map((point, idx) => (
+                      <li key={point + idx} className="flex items-start gap-2">
+                        <span className="text-blue-500 font-bold">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

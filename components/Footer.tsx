@@ -11,7 +11,7 @@ const infoLinks = [
   { href: '/diary', key: 'diary' },
 ]
 
-const languages = ['English', 'العربية', 'Bahasa Melayu']
+const languages = ['English', 'العربية', 'Bahasa Melayu', '中文']
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Languages */}
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-wide text-white/70 font-semibold mb-3">
-              Languages
+              {t('footer.languagesLabel') || 'Languages'}
             </p>
             <div className="flex flex-wrap gap-2">
               {languages.map((label) => (

@@ -1,0 +1,1283 @@
+{
+  "nav": {
+    "home": "主页",
+    "changes": "孩子的变化",
+    "timeline": "时间轴游戏",
+    "diary": "孩子日记",
+    "bodyGuide": "身体指南",
+    "guidance": "指导",
+    "games": "游戏 🎮",
+    "parentGuide": "育儿贴士",
+    "quiz": "测验",
+    "team": "我们的团队",
+    "forChildren": "给孩子",
+    "forParents": "给父母",
+    "about": "关于我们",
+    "bodyImageActivities": "身体形象活动",
+    "whatILike": "我喜欢自己的地方",
+    "quizzes": "问答",
+    "developmentalChanges": "发育变化",
+    "resourceLibrary": "资源库"
+  },
+  "home": {
+    "title": "与 Parenting Hub 一起成长",
+    "subtitle": "为孩子和父母提供简单的工具。",
+    "tagline": "准备好开始游戏",
+    "heroButtons": {
+      "play": "开始游戏",
+      "parents": "父母贴士"
+    },
+    "heroCardTitle": "玩耍、学习、感到安全。",
+    "badges": {
+      "play": "有趣",
+      "safe": "私密"
+    },
+    "quickLinks": {
+      "games": {
+        "label": "游戏",
+        "helper": "所有游戏"
+      },
+      "kids": {
+        "label": "给孩子",
+        "helper": "玩与学"
+      },
+      "parents": {
+        "label": "给父母",
+        "helper": "贴士与指南"
+      },
+      "quizzes": {
+        "label": "问答",
+        "helper": "快速问题"
+      }
+    },
+    "note": "随时切换语言 • 数据仅保存在此设备。",
+    "aria": {
+      "heroSparkles": "趣味高光",
+      "heroFamily": "父母与孩子的插画",
+      "badgePlay": "玩耍徽章",
+      "badgeSafe": "安全徽章"
+    },
+    "features": {
+      "parentGuide": {
+        "description": "父母快速贴士"
+      },
+      "bodyGuide": {
+        "description": "身体变化指南"
+      }
+    }
+  },
+  "welcome": {
+    "branding": "与马来亚大学的鼓舞精神合作",
+    "slide1": {
+      "title": "欢迎，亲爱的父母！💝",
+      "subtitle": "很高兴你来到这里",
+      "description": "在青春期育儿可能让人手足无措，但你不必独自面对。这个应用满含关怀，支持你陪伴孩子度过人生重要的转变。一起让旅程对全家更顺畅。"
+    },
+    "slide2": {
+      "title": "理解你的角色",
+      "subtitle": "你是孩子最重要的引导者",
+      "description": "孩子比以往更需要你的智慧、耐心和无条件支持。这个应用帮助你理解他们身体和情绪的经历，让你在尊重他们成长独立性的同时提供指导。"
+    },
+    "slide3": {
+      "title": "应用提供什么",
+      "subtitle": "一站式资源",
+      "feature1": "关于沟通和情绪支持的专家育儿指导",
+      "feature2": "为孩子准备的教育游戏和活动",
+      "feature3": "符合年龄的信息，讲解身心变化",
+      "feature4": "AI 助手，回答你的育儿问题",
+      "feature5": "私密日记空间，帮助孩子梳理感受"
+    },
+    "slide4": {
+      "title": "你的隐私与安全很重要",
+      "subtitle": "我们认真对待你的信任",
+      "point1": "所有数据留在你的设备上——不会传送到外部服务器",
+      "point2": "没有跟踪，没有分析，没有第三方访问你的信息",
+      "point3": "日记功能完全私密——只有你的孩子能访问",
+      "point4": "这是一个安全、无评判的空间，以孩子安全与家庭隐私为首要考虑",
+      "acceptPrivacy": "我理解并接受隐私政策"
+    },
+    "next": "下一步",
+    "previous": "上一步",
+    "skip": "跳到隐私",
+    "getStarted": "让我们开始这段旅程"
+  },
+  "aiChat": {
+    "title": "父母助手",
+    "subtitle": "用中文、英语、阿拉伯语或马来语向我提问。我会给出今天就能实践的建议。",
+    "greeting": "你好！我是你的多语言青春期支持指南。我可以用中文、英语、阿拉伯语或马来语聊天——选择你最舒服的语言。告诉我发生了什么，我会分享温柔的对话示例、日常点子，也提醒你照顾自己。需要什么帮助？",
+    "placeholder": "在这里输入你的问题...",
+    "suggestedTitle": "你可以快速开始：",
+    "suggestions": {
+      "q1": "如何温柔地解释青春期阶段？",
+      "q2": "当孩子感到压抑时可以做什么？",
+      "q3": "怎样建立每日的自我照顾习惯？",
+      "q4": "如何鼓励健康的睡眠习惯？",
+      "q5": "应该怎样谈论月经和身体变化？",
+      "q6": "如何尊重地制定使用电子设备的规则？"
+    },
+    "quickTopics": {
+      "title": "点击快捷主题直接发送问题",
+      "items": {
+        "communication": {
+          "label": "保持沟通畅通",
+          "prompt": "如何在不尴尬的情况下保持关于青春期的对话？"
+        },
+        "emotions": {
+          "label": "支持大情绪",
+          "prompt": "我的孩子情绪起伏很大——我怎样才能支持他们又不过度反应？"
+        },
+        "routines": {
+          "label": "每日习惯",
+          "prompt": "有哪些日常习惯能让孩子在青春期更平衡？"
+        },
+        "culture": {
+          "label": "信仰与文化",
+          "prompt": "如何在谈论青春期时尊重我们的文化或信仰？"
+        },
+        "selfCare": {
+          "label": "父母自我照顾",
+          "prompt": "在陪伴孩子度过青春期时，我怎样照顾好自己并保持冷静？"
+        }
+      }
+    },
+    "historyNotice": "你的聊天记录保存在此设备，随时可回顾贴士。",
+    "resources": {
+      "title": "接下来可以打开的有用版块",
+      "items": {
+        "parentGuide": {
+          "title": "父母指南中心",
+          "description": "针对每个里程碑的对话脚本、安心提示和文化背景。"
+        },
+        "games": {
+          "title": "游戏与活动",
+          "description": "用有趣的挑战一起了解身体变化。"
+        },
+        "diary": {
+          "title": "心情日记",
+          "description": "仅属于你孩子的私密日记空间。"
+        }
+      }
+    },
+    "clearHistory": "开始新的聊天",
+    "closeLabel": "关闭聊天窗口",
+    "sendLabel": "发送信息",
+    "response": {
+      "puberty": "好问题！试试这些步骤：\n• 选在轻松的日常时刻提及你注意到的变化，比如开车或散步时。\n• 常常分享小信息，而不是一次性的“大谈”，让信息变得自然。\n• 用这句话邀请提问：“有什么都可以问我，就算有点尴尬也没关系。”\n• 准备可信的书籍或文章，让孩子可以私下阅读，准备好再回来讨论。\n• 安抚他们：每个人的成长节奏不同，你会一直陪着他们。",
+      "emotions": "情绪波动是青春期的一部分。可以这样做：\n• 先肯定感受（“我能看出这对你很难”）。\n• 一起准备一个平静工具箱——呼吸、伸展、画画、听喜欢的歌。\n• 鼓励给情绪命名，并评估强度。\n• 用简短的“情绪检视”结束一天，让他们知道家里欢迎大情绪。\n• 如果双方都感到难以承受，可以暂停对话，等情绪稳定后再继续。",
+      "communication": "良好的沟通来自习惯：\n• 计划每周一次的检查，让孩子选择活动。\n• 用开场问题，比如“今天的收获和小波折是什么？”\n• 复述你听到的内容，并感谢他们的分享。\n• 如果对话升温，约定暂停、呼吸、稍后再谈——尊重比赢辩论更重要。\n• 偶尔分享自己的感受，让孩子知道诚实是安全的。",
+      "social": "友谊可能会起伏：\n• 讨论健康友谊的表现——善意、倾听、尊重界限。\n• 角色扮演如何应对同伴压力，让他们提前做好准备。\n• 鼓励参加符合兴趣的社团或队伍，扩大社交圈。\n• 提醒他们友谊变化很正常，并不代表自己的价值。\n• 赞美他们对他人的善举，帮助建立自信。",
+      "privacy": "我们构建了以家庭隐私为核心的应用：\n• 日记内容仅保存在此设备——不会上传任何个人数据。\n• 没有跟踪或广告。\n• 鼓励孩子将日记作为私密空间来处理情绪。\n• 商量何时（如果有）一起查看内容。\n• 定期重申隐私承诺，让信任更牢固。",
+      "activities": "学习在游戏中最容易：\n• 一起探索“游戏”栏目，并聊聊彼此的观察。\n• 记忆配对了解身体知识，问答提升信心，情绪游戏开启诚实对话。\n• 问问哪项活动最有帮助以及原因。\n• 用他们的回答作为桥梁，把对话延续到线下。\n• 赞赏参与，而非完美，让过程保持有趣。",
+      "hygiene": "帮助孩子建立简单的卫生节奏：\n• 每天或运动后洗澡，使用止汗剂并换上干净衣物。\n• 用适合他们的产品护理皮肤和头发。\n• 变成合作：制作清单贴在浴室。\n• 一开始一起练习，之后为他们的独立点赞。\n• 赞美努力而非完美，让自信成长。",
+      "nutrition": "身体需要稳定的能量：\n• 提供均衡膳食——多彩蔬果、蛋白、全谷物和足够水分。\n• 邀请孩子每周计划或烹饪一顿饭。\n• 准备快捷的健康零食，满足突发的饥饿。\n• 谈谈如何倾听饥饿与饱足感。\n• 分享营养如何让能量和情绪更稳定。",
+      "sleep": "荷尔蒙变化可能推迟困意：\n• 睡前一小时调暗灯光，换成平静活动。\n• 保持固定的起床时间，周末也尽量一致。\n• 提供安静的亲子时刻——伸展、轻聊或一起阅读。\n• 如果担忧影响睡眠，把想法写在小本上，明天再处理。\n• 示范你自己的放松流程，让他们看到休息的重要性。",
+      "boundaries": "开诚布公地谈论个人界限：\n• 涵盖身体隐私、情绪空间、尊重他人界限。\n• 模拟请求同意（“我可以抱你吗？”）。\n• 练习用友善但坚定的方式说“不”。\n• 当他们为自己或朋友发声时，及时肯定。\n• 提醒他们：清晰的界限带来更健康、更安全的关系。",
+      "digital": "一起制定家庭媒体计划：\n• 约定无屏幕区域——例如用餐时间和睡前卧室。\n• 讨论如何处理好友申请、私信或意外内容。\n• 教他们发帖前先暂停思考，如果遇到不舒服的内容要告诉你。\n• 承诺孩子分享不安全的网上经历时不会被责怪。\n• 随着他们成长，定期回顾计划。",
+      "menstruation": "以平静自信的态度谈论月经：\n• 解释基础知识——周期长短不同，腹痛常见，各种用品都可选择。\n• 展示如何在纸上或可信的应用中记录周期。\n• 准备一个学校小套件，放上卫生巾、护垫和备用内裤。\n• 讨论缓解疼痛的方法——热敷、拉伸，如有需要看医生。\n• 提醒他们：月经是健康成长的信号，不需要隐瞒。",
+      "default": "我随时帮助你处理青春期、身心健康和家庭沟通相关的一切。可以问卫生习惯、经期支持、情绪健康、友谊、学业压力、信仰考量，或如何让对话流动。我们一起应对——你在想什么？"
+    }
+  },
+  "team": {
+    "title": "认识 Parenting Hub 背后的团队",
+    "subtitle": "我们融合创意、研究与技术，以同理和喜悦支持每个家庭。",
+    "umTagline": "由马来亚大学充满启发的社区精神驱动。",
+    "celebration": "我们一起打造兼具研究与关怀的支持，让父母和孩子被看见、感到安全并被庆祝。",
+    "badges": {
+      "dev": "开发者",
+      "special": "特别感谢"
+    },
+    "special": {
+      "title": "致以真挚感谢",
+      "name": "Dr. Nazean Jomhari",
+      "description": "Dr. Nazean Jomhari 以马来亚大学的愿景引领我们——倡导同理心、安全与有意义的数字健康。",
+      "highlight": "她的指导让我们的使命扎根真实的社区需求与学术卓越。"
+    },
+    "members": {
+      "qais": {
+        "name": "Qais Al-Hrahsheh",
+        "description": "程序员与系统守护者，把关怀想法转化为安全、愉悦的家庭体验。"
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "description": "主持人，用温暖、清晰和真实案例带领家庭使用应用。"
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "description": "团队秘书，让我们井然有序，记录决策，确保每个承诺都落实。"
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "description": "界面设计师，融合色彩、字体与包容性，让家庭一进应用就有家的感觉。"
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "description": "视频与摄影创作者，捕捉温暖故事，让学习更亲切。"
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "description": "联合秘书，记录洞察、追踪进展，确保每个声音被听见。"
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "description": "视觉概念负责人，打造情绪板、图标风格和柔和的页面氛围。"
+      },
+      "zhou": {
+        "name": "Zhou Junan",
+        "description": "质量与研究伙伴，反复核对事实、本地化与可访问性细节。"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "支持家庭",
+    "title": "陪伴家庭度过青春期",
+    "description": "为父母和孩子提供安全、充满爱意的青春期资源 🌱",
+    "links": {
+      "title": "快速链接",
+      "parentGuide": "父母指南",
+      "guidance": "指导",
+      "games": "游戏与活动",
+      "diary": "心情日记"
+    },
+    "pwa": {
+      "title": "安装应用",
+      "headline": "安装为应用",
+      "instructions": "添加到主屏幕，随时访问。"
+    },
+    "rights": "© 2025 Parenting Hub. 版权所有。",
+    "communityNote": "用 💙 支持家庭度过青春期教育",
+    "languagesLabel": "语言"
+  },
+  "games": {
+    "hero": {
+      "badges": {
+        "fun": "色彩有趣",
+        "stars": "收集星星",
+        "swipe": "滑动点击",
+        "rtlReady": "支持RTL",
+        "quick": "快速开始",
+        "pick": "选择游戏"
+      }
+    },
+    "title": "游戏中心",
+    "subtitle": "挑选并开始。",
+    "tagline": "欢乐开启",
+    "swipe": "滑动浏览",
+    "difficulty": {
+      "easy": "简单",
+      "medium": "有点挑战"
+    },
+    "startGame": "开始",
+    "score": "分数",
+    "question": "问题",
+    "scenario": "情景",
+    "congratulations": "你做到了！",
+    "wellDone": "干得好！",
+    "quizComplete": "测验完成！",
+    "yourScore": "得分",
+    "perfectScore": "全部匹配！",
+    "playAgain": "再玩一次",
+    "close": "关闭",
+    "openGame": "打开游戏",
+    "tips": {
+      "tap": "点击游玩",
+      "drag": "拖动卡片",
+      "stars": "赚取星星"
+    },
+    "aria": {
+      "gamepad": "游戏中心图标",
+      "tip": "游戏提示",
+      "progressStars": "进度星星",
+      "star": "星星奖励",
+      "sparkle": "得分闪光",
+      "hiddenCard": "隐藏卡片",
+      "emojiHappy": "开心表情",
+      "emojiSad": "难过表情",
+      "emojiAngry": "生气表情",
+      "emojiNervous": "紧张表情",
+      "emojiSleepy": "困倦表情",
+      "emojiHug": "拥抱表情",
+      "emojiCool": "酷酷表情",
+      "emojiLoved": "被爱表情"
+    },
+    "rails": {
+      "feelings": "情绪与感受",
+      "body": "身体与变化",
+      "confidence": "自信游戏"
+    },
+    "entries": {
+      "diary": {
+        "title": "孩子日记",
+        "tag": "写感受"
+      },
+      "timeline": {
+        "title": "时间轴游戏",
+        "tag": "阶段"
+      },
+      "hygiene": {
+        "title": "卫生",
+        "tag": "每日护理"
+      },
+      "superpower": {
+        "title": "我擅长",
+        "tag": "优势"
+      },
+      "tinyGoals": {
+        "title": "小目标",
+        "tag": "养成习惯"
+      },
+      "kindWords": {
+        "title": "温柔的话",
+        "tag": "感受善意"
+      },
+      "selfLove": {
+        "title": "我的超能力",
+        "tag": "自我欣赏"
+      }
+    },
+    "memory": {
+      "title": "表情配对",
+      "description": "找到相同表情",
+      "instructions": "翻开、配对、欢呼！",
+      "aria": "大脑配对图标"
+    },
+    "quiz": {
+      "title": "快速测验",
+      "description": "简短的青春期小知识",
+      "instructions": "选择一个答案！",
+      "aria": "测验靶心图标",
+      "q1": {
+        "question": "正常的变化？",
+        "a1": "没有情绪",
+        "a2": "没有长高",
+        "a3": "保持不变",
+        "a4": "情绪波动"
+      },
+      "q2": {
+        "question": "什么能帮助？",
+        "a1": "清洁与护理",
+        "a2": "不运动",
+        "a3": "不吃饭",
+        "a4": "不睡觉"
+      },
+      "q3": {
+        "question": "向谁求助？",
+        "a1": "保持沉默",
+        "a2": "觉得害羞",
+        "a3": "询问可信的成年人",
+        "a4": "自己默默担心"
+      }
+    },
+    "matching": {
+      "title": "匹配变化",
+      "description": "把变化与帮助连接",
+      "instructions": "左右配对！",
+      "instruction": "先点左边再点右边",
+      "aria": "拼图配对图标",
+      "pair1": {
+        "left": "情绪多变",
+        "right": "聊天与运动"
+      },
+      "pair2": {
+        "left": "体味",
+        "right": "使用除臭剂"
+      },
+      "pair3": {
+        "left": "长得更高",
+        "right": "饮食与休息"
+      },
+      "pair4": {
+        "left": "新兴趣",
+        "right": "尝试新事物"
+      }
+    },
+    "emotions": {
+      "title": "情绪游戏",
+      "description": "选择你的感受",
+      "instructions": "点选与表情匹配的情绪！",
+      "prompt": "哪个情绪适合这个表情？",
+      "complete": "你探索了所有的情绪！",
+      "emotion1": "开心",
+      "emotion2": "难过",
+      "emotion3": "生气",
+      "emotion4": "惊讶",
+      "howWouldYouFeel": "你会怎么感觉？",
+      "happy": "开心",
+      "angry": "生气",
+      "sad": "难过",
+      "anxious": "担心",
+      "proud": "自豪",
+      "aria": "爱心表情图标",
+      "scenario1": {
+        "situation": "朋友拿走了你的东西。"
+      },
+      "scenario2": {
+        "situation": "考试得了高分！"
+      },
+      "scenario3": {
+        "situation": "在班上发言。"
+      }
+    }
+  },
+  "parentGuide": {
+    "title": "父母综合指南",
+    "subtitle": "循证建议，帮助你支持正在经历青春期的孩子 💙",
+    "categories": {
+      "communication": "沟通",
+      "emotional": "情绪支持",
+      "physical": "身体变化",
+      "social": "社交发展",
+      "privacy": "隐私与安全",
+      "resources": "资源"
+    },
+    "communication": {
+      "startEarly": {
+        "title": "尽早开始对话",
+        "description": "不要等到“那次谈话”——让青春期成为持续的话题",
+        "tip1": "在8-9岁左右开始符合年龄的讨论，在变化发生前",
+        "tip2": "利用日常场景作为教学机会（电视、书籍、所见）",
+        "tip3": "保持随意，让话题正常化——不要让它变成大事情",
+        "tip4": "让孩子用问题引导你，跟随他们的好奇心"
+      },
+      "listening": {
+        "title": "练习积极倾听",
+        "description": "真正倾听能建立信任与开放",
+        "tip1": "收起手机，在他们想说话时全神贯注",
+        "tip2": "不要打断或急于解决问题——有时他们只是想被听见",
+        "tip3": "反映你听到的内容：“听起来你在感觉……”",
+        "tip4": "避免评判或忽视他们的担忧，即使在你看来很小"
+      },
+      "openness": {
+        "title": "创造无评判的空间",
+        "description": "让孩子能安全地分享任何事",
+        "tip1": "当他们分享困难事情时保持冷静——你的反应决定他们是否还会分享",
+        "tip2": "以符合年龄的方式分享你自己的青春期故事，表示理解",
+        "tip3": "使用正确的解剖名称——能去除羞耻、教给正确词汇",
+        "tip4": "确保他们知道没有问题是尴尬或愚蠢的"
+      }
+    },
+    "emotional": {
+      "moodSwings": {
+        "title": "理解情绪波动",
+        "description": "荷尔蒙变化会带来真实的情绪起伏——不只是态度",
+        "tip1": "认识到情绪波动源于生理，而非故意行为",
+        "tip2": "不要把情绪爆发当作针对你——给空间但保持可用",
+        "tip3": "帮助他们识别情绪：“你看起来很沮丧”而不是“你为什么这么怒？”",
+        "tip4": "教应对策略：深呼吸、运动、写日记或聊天"
+      },
+      "confidence": {
+        "title": "建立自信",
+        "description": "青春期可能动摇自尊——你的支持很关键",
+        "tip1": "关注努力和品格，而不仅是外表或成绩",
+        "tip2": "经常指出他们的长处，尤其是他们未察觉的地方",
+        "tip3": "在自己的生活中示范积极的自我对话和接纳身体",
+        "tip4": "帮助设定现实目标，并庆祝小进步"
+      },
+      "mentalHealth": {
+        "title": "留意心理健康",
+        "description": "了解什么时候正常情绪变化变得更严重",
+        "tip1": "持续两周以上的低落可能是抑郁——寻求帮助",
+        "tip2": "关注睡眠、食欲、成绩或退出喜欢的活动等变化",
+        "tip3": "任何提及自伤或自杀都要极其认真——立即寻求帮助",
+        "tip4": "寻求专业帮助不羞耻——治疗师能提供你没有的工具"
+      }
+    },
+    "physical": {
+      "bodyChanges": {
+        "title": "解释身体变化",
+        "description": "帮助孩子理解身体发生什么",
+        "tip1": "说明每个人发育速度不同——没有“正常”的时间线",
+        "tip2": "尽可能在变化发生前讨论——准备能减少焦虑",
+        "tip3": "以平常心谈论月经、勃起、体毛等话题",
+        "tip4": "安慰他们，对身体变化的尴尬感是暂时的"
+      },
+      "hygiene": {
+        "title": "教授正确的卫生习惯",
+        "description": "青春期会出现新的卫生需求",
+        "tip1": "不必大惊小怪地提供必需品：止汗、洗发水、经期用品等",
+        "tip2": "教导每日洗澡，尤其运动后",
+        "tip3": "温和谈论痘痘护理——不要让他们感到尴尬",
+        "tip4": "让卫生用品在浴室随手可得"
+      },
+      "health": {
+        "title": "促进健康习惯",
+        "description": "青春期是建立终身好习惯的好时机",
+        "tip1": "确保每晚睡眠8-10小时——青少年需要更多睡眠",
+        "tip2": "备好健康零食——成长的身体需要常补充能量",
+        "tip3": "鼓励他们喜欢的规律活动，不只是竞技运动",
+        "tip4": "自己以身作则——他们更容易学你做的而不是你说的"
+      }
+    },
+    "social": {
+      "friendships": {
+        "title": "应对变化的友谊",
+        "description": "青春期社交关系更复杂",
+        "tip1": "肯定友谊的变化和失去既痛苦又正常",
+        "tip2": "帮助区分健康与不健康的友谊",
+        "tip3": "克制替他们解决问题的冲动——引导他们自己解决",
+        "tip4": "保持沟通，了解他们与谁相处"
+      },
+      "peerPressure": {
+        "title": "处理同伴压力",
+        "description": "为孩子提供抵制负面影响的工具",
+        "tip1": "角色扮演场景，让他们在面对真实压力前练习说“没有”",
+        "tip2": "给他们退场理由：可以“怪”父母（“我爸妈会生气”）",
+        "tip3": "讨论融入与改变自我的区别",
+        "tip4": "建立他们对自身价值观和决策能力的信心"
+      },
+      "boundaries": {
+        "title": "教授个人界限",
+        "description": "帮助孩子理解并表达界限",
+        "tip1": "让他们知道身体属于自己——由他们决定谁触碰以及如何触碰",
+        "tip2": "尊重他们对隐私的需求（敲门、不看日记等）",
+        "tip3": "示范你如何与他人设定界限",
+        "tip4": "明确告诉他们，若有人让他们不舒服，随时可以告诉你"
+      }
+    },
+    "privacy": {
+      "onlineSafety": {
+        "title": "青春期的数字安全",
+        "description": "随着孩子更独立，线上风险增加",
+        "tip1": "公开讨论他们的网络活动——不要只偷偷监控",
+        "tip2": "讲解网络内容的持久性和数字足迹",
+        "tip3": "讨论网上人设与现实的差异（包括不现实的身体形象）",
+        "tip4": "设定清晰规则，关于分享个人信息和照片"
+      },
+      "personalSpace": {
+        "title": "尊重隐私需求",
+        "description": "在确保安全的同时平衡他们对隐私的需求",
+        "tip1": "进房间前敲门——身体隐私建立信任",
+        "tip2": "除非有严重安全担忧，不要看日记或信息",
+        "tip3": "在提供帮助的同时给予浴室和更衣的隐私",
+        "tip4": "解释隐私是伴随责任与诚实的特权"
+      }
+    },
+    "resources": {
+      "books": {
+        "title": "推荐书籍与资料",
+        "description": "优质资源能补充你的对话",
+        "tip1": "适龄的青春期书籍，放在孩子可私下阅读的地方",
+        "tip2": "考虑与你孩子性别身份和身体匹配的书籍",
+        "tip3": "来自可靠来源的在线资源（医疗机构、学校）",
+        "tip4": "本应用的互动游戏与活动让学习更有趣"
+      },
+      "professional": {
+        "title": "何时寻求专业帮助",
+        "description": "有时需要专家指导——这很正常",
+        "tip1": "在9-11岁左右看儿科医生聊青春期",
+        "tip2": "如果情绪困扰持续或加重，可找治疗师",
+        "tip3": "社交或学业问题可求助学校辅导员",
+        "tip4": "加入同路父母的支持小组"
+      }
+    },
+    "keyPrinciples": {
+      "title": "青春期育儿核心原则",
+      "patience": {
+        "title": "耐心最重要",
+        "description": "这个阶段是暂时的。孩子会犯错、说伤人的话、测试界限。保持稳定——你的平静和一致是他们在风暴中的锚。"
+      },
+      "communication": {
+        "title": "持续沟通",
+        "description": "即使他们看似不感兴趣或推开你，也要持续出现。简短的问候、纸条、短信——找到适合他们的连接方式。"
+      },
+      "safety": {
+        "title": "安全永远第一",
+        "description": "信任重要，安全更重要。监护、提问、设限是可以的。做“酷”父母不如做保护者重要。"
+      },
+      "support": {
+        "title": "无条件的爱",
+        "description": "无论这个阶段多具挑战，都要经常提醒孩子你的爱不会因他们长大而减少。他们需要知道你的爱不会失去。"
+      }
+    },
+    "emergency": {
+      "title": "何时需要立即求助",
+      "description": "如果孩子出现以下迹象，请毫不犹豫地立即寻求专业帮助：",
+      "point1": "任何提及自伤、自杀或伤害他人",
+      "point2": "突然剧烈的性格变化或完全退缩",
+      "point3": "虐待迹象（身体痕迹、极度恐惧、不适当的性知识）"
+    },
+    "header": {
+      "title": "父母指南与育儿贴士",
+      "subtitle": "为父母提供专家建议，也给孩子的温柔提示",
+      "parentTab": "父母指南",
+      "childTab": "育儿贴士",
+      "periodImageLabel": "📷 经期护理图片",
+      "periodImagePath": "/images/period-care-guide.jpg"
+    },
+    "extraSections": {
+      "communication": [
+        {
+          "id": "difficult-conversations",
+          "title": "处理棘手对话",
+          "description": "当孩子提出让人不适的问题或敏感话题时",
+          "tips": [
+            "保持冷静，不要表现出震惊或尴尬——你的反应会定下基调",
+            "可以说“我需要想一想”，比匆忙回答更好",
+            "使用符合年龄的表达——诚实但不要用细节压倒他们",
+            "如果你不知道，就直说，并提议一起查找",
+            "营造安全空间，让任何问题都不被视为“傻”或“错误”",
+            "之后再跟进，看看他们是否还有疑问"
+          ]
+        },
+        {
+          "id": "cultural-considerations",
+          "title": "对话中的文化敏感度",
+          "description": "在尊重文化和宗教价值的同时提供准确信息",
+          "tips": [
+            "承认并尊重家庭的文化和宗教价值",
+            "寻找与信念相符的方式来讨论青春期",
+            "使用符合文化的例子和语言",
+            "需要时联系社区领袖或可信赖的顾问",
+            "在文化价值与科学准确之间取得平衡",
+            "记住：每个家庭的做法都值得尊重"
+          ]
+        }
+      ],
+      "emotional": [
+        {
+          "id": "handling-rejection",
+          "title": "当孩子拒绝你的帮助",
+          "description": "孩子疏远你或说不需要帮助时该怎么做",
+          "tips": [
+            "不要往心里去——独立是成长的正常部分",
+            "保持可联系但不强迫——让他们知道你随时在",
+            "在维持界限的同时尊重他们需要空间",
+            "寻找间接支持的方式（留下有用资源、轻松问候）",
+            "把他们连接给其他可信赖的成年人（姨妈、老师、辅导员）",
+            "记住：推开往往是他们在挣扎的信号，而不是拒绝你"
+          ]
+        },
+        {
+          "id": "anxiety-stress",
+          "title": "支持焦虑或紧张的孩子",
+          "description": "帮助孩子在青春期管理焦虑和压力",
+          "tips": [
+            "认识到青春期本身就可能有压力——肯定他们的感受",
+            "教一些简单的应对策略：深呼吸、计数、地面感知",
+            "帮助他们找出诱因并制定应对计划",
+            "鼓励健康的释放方式：运动、艺术、音乐、写日记",
+            "在自己的生活中示范健康的压力管理",
+            "如果焦虑影响日常生活，寻求专业帮助"
+          ]
+        }
+      ],
+      "physical": [
+        {
+          "id": "first-period",
+          "title": "为孩子的初潮做准备",
+          "description": "当女儿开始月经时的实用指导",
+          "tips": [
+            "在开始前准备好经期用品（卫生巾、棉条、经期内裤）",
+            "为学校准备一套“月经包”，包含用品和备用衣物",
+            "正常化月经——把它当作自然、健康的过程来谈论",
+            "教他们如何记录周期以及会发生什么",
+            "讨论缓解经痛的方式（热敷、轻运动、止痛药）",
+            "安抚他们：第一年周期不规律是很常见的"
+          ]
+        },
+        {
+          "id": "body-image",
+          "title": "支持积极的身体形象",
+          "description": "帮助孩子与变化中的身体建立健康关系",
+          "tips": [
+            "避免对自己或他人身体的负面评论",
+            "关注身体能做什么，而不仅是外观",
+            "庆祝多样性——所有体型都很正常",
+            "尽量减少接触不现实的媒体形象",
+            "鼓励让他们感觉强壮和有能力的活动",
+            "立即回应他人的羞辱身体言论"
+          ]
+        }
+      ],
+      "social": [
+        {
+          "id": "dating-relationships",
+          "title": "探索初恋和关系",
+          "description": "陪伴孩子度过第一次心动与关系",
+          "tips": [
+            "在交往前就尽早谈论健康的关系",
+            "用符合年龄的方式讨论同意、尊重和界限",
+            "设定与家庭价值观一致的约会规则",
+            "保持沟通畅通——询问他们的朋友和兴趣",
+            "帮助他们识别关系中的危险信号",
+            "做一个安全的倾诉对象，能谈关系中的顾虑"
+          ]
+        },
+        {
+          "id": "social-media",
+          "title": "社交媒体与同伴影响",
+          "description": "帮助孩子应对社交媒体和线上同伴压力",
+          "tips": [
+            "为社交媒体使用和隐私设置制定清晰规则",
+            "定期聊聊他们在网上看到的内容",
+            "教他们对网络内容和网红进行批判性思考",
+            "在尊重他们逐渐独立的同时留意线上活动",
+            "讨论线上人设与现实生活的区别",
+            "安排无设备的家庭时光和空间"
+          ]
+        }
+      ]
+    },
+    "childTips": {
+      "categories": {
+        "physical": "身体",
+        "emotional": "情绪",
+        "social": "社交",
+        "hygiene": "卫生"
+      },
+      "cards": {
+        "physical": [
+          {
+            "id": "exercise",
+            "title": "保持活跃",
+            "description": "规律运动有助于身体健康发育，也能提升心情",
+            "tips": [
+              "每天至少活动60分钟",
+              "尝试不同运动，找到你喜欢的",
+              "散步、跳舞、和朋友玩耍都算",
+              "运动也有助于减压和睡眠"
+            ]
+          },
+          {
+            "id": "nutrition",
+            "title": "健康饮食",
+            "description": "正在成长的身体需要良好营养来支持变化",
+            "tips": [
+              "每天多吃水果和蔬菜",
+              "多喝水——目标6-8杯",
+              "别跳过早餐——它提供一天的能量",
+              "少吃含糖零食和饮料"
+            ]
+          },
+          {
+            "id": "sleep",
+            "title": "睡眠充足",
+            "description": "睡眠时身体会生长和修复",
+            "tips": [
+              "青少年每晚需要8-10小时睡眠",
+              "尽量每天同一时间上床",
+              "睡前30分钟远离屏幕",
+              "保持卧室凉爽、昏暗、安静"
+            ]
+          },
+          {
+            "id": "pain",
+            "title": "缓解不适",
+            "description": "一些变化可能带来暂时的不适",
+            "tips": [
+              "长身体疼痛时试试轻柔拉伸",
+              "温水澡有助于舒缓肌肉",
+              "如果疼痛持续或让你担心，告诉大人",
+              "记住：大多数不适都是暂时的"
+            ]
+          }
+        ],
+        "emotional": [
+          {
+            "id": "feelings",
+            "title": "理解你的感受",
+            "description": "青春期出现强烈情绪是正常的",
+            "tips": [
+              "所有感受都有效——开心、难过、生气、困惑",
+              "情绪波动源于荷尔蒙——这很正常",
+              "有时想哭或感到不知所措也没关系",
+              "随着时间推移，你的情绪会更稳定"
+            ]
+          },
+          {
+            "id": "stress",
+            "title": "管理压力",
+            "description": "学习健康方式来应对压力和焦虑",
+            "tips": [
+              "试试深呼吸：吸气4拍，停4拍，呼气4拍",
+              "把担心告诉信任的人",
+              "运动是很好的减压方式",
+              "感到压力大时要适时休息"
+            ]
+          },
+          {
+            "id": "confidence",
+            "title": "建立自信",
+            "description": "感觉良好需要练习",
+            "tips": [
+              "专注于你喜欢自己的哪些方面",
+              "设定小而可实现的目标并庆祝进步",
+              "不要与他人比较——每个人都不同",
+              "每天练习积极的自我对话"
+            ]
+          },
+          {
+            "id": "help",
+            "title": "何时寻求帮助",
+            "description": "知道何时求助很重要",
+            "tips": [
+              "如果难过持续超过两周",
+              "如果出现伤害自己的想法",
+              "如果焦虑让你无法进行日常活动",
+              "与父母、学校辅导员或信任的成年人交谈"
+            ]
+          }
+        ],
+        "social": [
+          {
+            "id": "friends",
+            "title": "友谊",
+            "description": "青春期关系变得更重要",
+            "tips": [
+              "真正的朋友会接受真实的你",
+              "友谊变化没关系——大家都在成长",
+              "质量比数量重要",
+              "做自己——不要假装成别人"
+            ]
+          },
+          {
+            "id": "peer-pressure",
+            "title": "应对同伴压力",
+            "description": "自信地做出自己的选择",
+            "tips": [
+              "可以说“不”——真正的朋友会尊重你",
+              "不要因为别人做就觉得必须跟着做",
+              "如果感觉不对劲，相信你的直觉",
+              "寻找与自己价值观一致的朋友"
+            ]
+          },
+          {
+            "id": "communication",
+            "title": "沟通",
+            "description": "清晰表达自己，也倾听他人",
+            "tips": [
+              "用“我觉得”句式代替指责",
+              "当别人说话时专心倾听",
+              "有分歧没关系，但要尊重",
+              "不明白就提问"
+            ]
+          },
+          {
+            "id": "boundaries",
+            "title": "个人界限",
+            "description": "理解并尊重个人空间",
+            "tips": [
+              "你的身体属于你——由你决定谁能触碰",
+              "如果不舒服就说“停”",
+              "也要尊重他人的界限",
+              "若有人越界，告诉可信的成年人"
+            ]
+          }
+        ],
+        "hygiene": [
+          {
+            "id": "shower",
+            "title": "每日清洁",
+            "description": "保持身体干净清爽",
+            "tips": [
+              "每天洗澡或淋浴，尤其运动后",
+              "使用香皂和洗发水——注意腋下",
+              "每天洗脸两次以预防痘痘",
+              "每天换上干净衣服"
+            ]
+          },
+          {
+            "id": "deodorant",
+            "title": "管理体味",
+            "description": "青春期每个人都会更多出汗",
+            "tips": [
+              "每天使用止汗或除臭产品",
+              "在洗澡后和睡前涂抹",
+              "穿透气的面料，如棉质",
+              "包里放一支备用除臭剂"
+            ]
+          },
+          {
+            "id": "skin",
+            "title": "皮肤护理",
+            "description": "照顾正在变化的皮肤",
+            "tips": [
+              "温和洗脸——不要用力摩擦",
+              "皮肤干时用不含油的保湿霜",
+              "不要挤痘痘——会留下疤痕",
+              "如果痘痘困扰你，去看医生"
+            ]
+          },
+          {
+            "id": "period",
+            "title": "经期护理（适用于月经者）",
+            "description": "管理每月的周期",
+            "tips": [
+              "每4-6小时更换卫生巾/棉条",
+              "包里准备应急用品",
+              "记录周期，知道何时来临",
+              "轻柔运动能帮助缓解经痛"
+            ]
+          }
+        ]
+      },
+      "helpfulTipsLabel": "实用提示：",
+      "emergency": {
+        "title": "需要立刻帮助吗？🆘",
+        "description": "如果你非常难过、害怕，或需要立刻找人谈谈，请不要等待：",
+        "points": [
+          "马上和父母、监护人或信任的成年人说",
+          "联系学校辅导员或校医",
+          "拨打你所在国家的求助热线（免费且保密）",
+          "记住：寻求帮助是力量的表现，而非软弱！💪"
+        ]
+      }
+    }
+  },
+  "changes": {
+    "title": "Understanding Your Child's Changes",
+    "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
+    "physical": "Physical",
+    "emotional": "Emotional",
+    "physicalChanges": {
+      "growth": {
+        "title": "Growth Spurts",
+        "description": "Children grow at different rates. Growth spurts can be rapid and awkward."
+      },
+      "bodyShape": {
+        "title": "Body Shape Changes",
+        "description": "Body develops new proportions and curves as they mature."
+      },
+      "voice": {
+        "title": "Voice Changes",
+        "description": "Voice may deepen or change in pitch - especially in boys."
+      },
+      "skin": {
+        "title": "Skin Changes",
+        "description": "Acne and oily skin are common. Good hygiene helps manage this."
+      },
+      "hair": {
+        "title": "Hair Growth",
+        "description": "New hair grows in underarms, pubic area, and on face (boys)."
+      },
+      "odor": {
+        "title": "Body Odor",
+        "description": "Increased sweating requires daily deodorant use."
+      }
+    },
+    "emotionalChanges": {
+      "mood": {
+        "title": "Mood Swings",
+        "description": "Hormonal changes cause real emotional volatility - it's biological."
+      },
+      "interests": {
+        "title": "New Interests",
+        "description": "Children develop new hobbies, passions, and interests."
+      },
+      "independence": {
+        "title": "Independence",
+        "description": "They'll want more privacy and independence from family."
+      },
+      "relationships": {
+        "title": "Relationships",
+        "description": "Friendships and romantic interests become more important."
+      },
+      "awareness": {
+        "title": "Self-Awareness",
+        "description": "They think more about identity and who they want to become."
+      },
+      "confidence": {
+        "title": "Confidence Challenges",
+        "description": "Self-esteem often dips during puberty - they need reassurance."
+      }
+    },
+    "remember": {
+      "title": "Important Reminders for Parents 🌈",
+      "timing": "Timing: Puberty can start ages 8-14. Every child is unique - don't compare!",
+      "pace": "Pace: Some changes happen quickly, others take years. Be patient.",
+      "support": "Support: Keep communication open. Your child needs to know you're available for any questions or concerns."
+    }
+  },
+  "diary": {
+    "title": "Your Child's Feelings Diary",
+    "subtitle": "A private space for your child to track and express their emotions 📝",
+    "addEntry": "Add New Entry",
+    "cancel": "Cancel",
+    "howFeeling": "How are you feeling today?",
+    "moods": {
+      "happy": "Happy",
+      "neutral": "Neutral",
+      "sad": "Sad",
+      "excited": "Excited",
+      "anxious": "Anxious"
+    },
+    "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
+    "saveEntry": "Save Entry",
+    "noEntries": "No entries yet. Start by adding your first one! 💭",
+    "tips": {
+      "title": "💡 Diary Tips for Your Child",
+      "regular": "✨ Write regularly - even just a few sentences helps!",
+      "honest": "🎯 Be honest about feelings - this is a private space",
+      "lookback": "🌈 Look back at old entries to see growth over time",
+      "valid": "💪 Remember: all feelings are valid and normal"
+    }
+  },
+  "bodyGuide": {
+    "title": "Body Changes Guide",
+    "subtitle": "Age-appropriate information about physical development 🌱",
+    "everyone": "Everyone",
+    "femaleBody": "Female Body",
+    "maleBody": "Male Body",
+    "remember": {
+      "title": "Remember: Every Child is Unique 🌈",
+      "timing": "⏰ Timing: Changes can start ages 8-14 and continue into late teens.",
+      "variation": "📏 Variation: There's NO single 'normal' - everyone develops differently!",
+      "questions": "💬 Questions? Encourage your child to talk with you, their doctor, or a trusted adult.",
+      "health": "🏥 Health: If something causes pain or worries your child, consult a healthcare provider."
+    }
+  },
+  "timeline": {
+    "title": "Timeline Matching Game",
+    "subtitle": "Match each change to before or after puberty begins! 🎯",
+    "score": "Score",
+    "attempts": "Attempts",
+    "accuracy": "Accuracy",
+    "congratulations": "Congratulations! 🎉",
+    "completed": "You completed the game with {score} correct out of {attempts} attempts!",
+    "playAgain": "Play Again",
+    "selectCard": "👇 Click on a card below, then choose when it happens!",
+    "chooseStage": "👆 Now click either \"Before Puberty\" or \"After Puberty\" below!",
+    "beforePuberty": "👶 Before Puberty",
+    "afterPuberty": "🌟 After Puberty",
+    "resetGame": "Reset Game"
+  },
+  "guidance": {
+    "title": "Practical Guidance for Your Child",
+    "subtitle": "Help your child learn to handle puberty changes with confidence 💪",
+    "categories": {
+      "physical": "Physical Care",
+      "emotional": "Emotional Wellbeing",
+      "social": "Social Life",
+      "hygiene": "Personal Hygiene"
+    }
+  },
+  "bodyImage": {
+    "title": "Positive Body Image Activities",
+    "subtitle": "Five gentle prompts with illustrations to help kids name their feelings and talk about body kindness.",
+    "instruction": "Choose a feeling for each picture. You can change your answer anytime.",
+    "parentLabel": "Parent focus",
+    "parentButton": "Why this matters",
+    "progressLabel": "Question",
+    "next": "Next question",
+    "previous": "Previous",
+    "emotions": {
+      "proud": "Proud",
+      "happy": "Happy",
+      "calm": "Calm/Okay",
+      "anxious": "Anxious",
+      "curious": "Curious",
+      "sad": "A little sad"
+    },
+    "questions": [
+      {
+        "title": "Looking in the mirror",
+        "prompt": "What feeling comes up when you see a kid smiling kindly at their reflection?",
+        "focus": "Invite your child to notice strengths, talents, and kindness—not just appearance."
+      },
+      {
+        "title": "Trying a new sport",
+        "prompt": "How do you feel seeing someone discovering what their body can do?",
+        "focus": "Celebrate effort and movement over winning. This builds body confidence."
+      },
+      {
+        "title": "Choosing comfy clothes",
+        "prompt": "When you see a kid picking clothes that feel right for them, what feeling fits you?",
+        "focus": "Explain that comfort and self-expression matter more than pleasing others."
+      },
+      {
+        "title": "Drawing a self-portrait",
+        "prompt": "How do you feel about a child drawing themselves with bright colors?",
+        "focus": "Encourage creative self-expression and noticing unique traits."
+      },
+      {
+        "title": "Stretch and breathe",
+        "prompt": "What feeling do you pick seeing someone stretch, breathe, and relax?",
+        "focus": "Body gratitude grows when kids pair movement with calm breathing."
+      }
+    ]
+  },
+  "whatILike": {
+    "title": "我喜欢我的地方",
+    "subtitle": "一个安静的空间，让孩子反思自己的优点、善意和成长。",
+    "helperCta": "点击灯泡查看灵感",
+    "placeholder": "在这里输入你的想法...",
+    "saveMessage": "你的笔记保存在此设备，随时可以回来。",
+    "restoreMessage": "已为你加载上次的回答。",
+    "reset": "全部重置",
+    "print": "打印或导出",
+    "inputLabel": "写下此刻的想法",
+    "encourageTitle": "鼓励温柔的词语",
+    "encourageDescription": "孩子想分享就分享，但隐私能帮助他们自在地书写。",
+    "savedBadge": "已保存在设备",
+    "printBadge": "可打印导出",
+    "sections": [
+      {
+        "id": "goodAt",
+        "title": "我擅长的事情",
+        "hint": "想想你喜欢练习的技能、游戏或爱好。"
+      },
+      {
+        "id": "friendsLike",
+        "title": "朋友喜欢我的哪些地方",
+        "hint": "你说过的善意话语、你如何包容他人、或你倾听的方式。"
+      },
+      {
+        "id": "iLike",
+        "title": "我喜欢自己的地方",
+        "hint": "也许是你的好奇心、幽默感、耐心或创造力。"
+      },
+      {
+        "id": "familyLove",
+        "title": "家人爱我的地方",
+        "hint": "你帮助、分享或带来快乐的时刻。"
+      },
+      {
+        "id": "proudOf",
+        "title": "我感到骄傲的事",
+        "hint": "你曾勇敢、坚持或学会新东西的时刻。"
+      },
+      {
+        "id": "unique",
+        "title": "我与众不同的一点",
+        "hint": "特别的兴趣、才能、视角或解决问题的方式。"
+      }
+    ]
+  },
+  "quizzesPage": {
+    "title": "问答",
+    "subtitle": "简短、温柔的问答，一次学习一个概念。可以与孩子一起做，或让他们独自探索。",
+    "tag": "给孩子",
+    "pickerTitle": "选择一个测验开始",
+    "labels": {
+      "start": "开始测验",
+      "continue": "继续",
+      "next": "下一个问题",
+      "restart": "重新开始",
+      "selectOption": "选择一个答案",
+      "summary": "你的结果",
+      "encouragement": "谢谢你今天的学习！"
+    },
+    "sleep": {
+      "title": "睡眠与营养影响",
+      "description": "了解休息、饮食和饮水如何支持平静的情绪与稳定能量。",
+      "questions": [
+        {
+          "question": "睡前立刻用手机或平板通常会……",
+          "options": [
+            "让入睡更困难",
+            "帮助你更快入睡",
+            "对睡眠没有影响",
+            "总能放松眼睛"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "蓝光和刺激的内容会延迟睡意。短暂离屏有助于大脑慢下来。",
+          "incorrectFeedback": "屏幕会让大脑清醒。一个平静的睡前流程能让睡眠来得更快。",
+          "icon": "📱"
+        },
+        {
+          "question": "大多数学龄孩子感觉最佳的睡眠时间大约……",
+          "options": [
+            "6-7小时",
+            "9-11小时",
+            "13-14小时",
+            "只在白天小睡"
+          ],
+          "correctIndex": 1,
+          "correctFeedback": "大约9-11小时能让注意力、情绪和成长保持良好。",
+          "incorrectFeedback": "充足的夜间睡眠——通常9-11小时——帮助身体成长、让大脑充电。",
+          "icon": "🛏️"
+        },
+        {
+          "question": "温和的睡前小零食可以是……",
+          "options": [
+            "含糖汽水",
+            "厚重的汉堡",
+            "香蕉或温牛奶",
+            "大杯咖啡"
+          ],
+          "correctIndex": 2,
+          "correctFeedback": "轻盈的点心如香蕉或温牛奶能安抚胃部，不会让身体过度兴奋。",
+          "incorrectFeedback": "较轻的点心（如香蕉、牛奶、麦片）最好。咖啡因或油腻食物可能扰乱睡眠。",
+          "icon": "🍌"
+        },
+        {
+          "question": "如果担忧让你难以入睡，下面的做法有帮助……",
+          "options": [
+            "把担心写下来，明天再看",
+            "不停查看社交媒体",
+            "喝含咖啡因的饮料",
+            "完全不跟任何人提起"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "把担心写下、告诉信任的人、再配合深呼吸，能帮助大脑放松。",
+          "incorrectFeedback": "试着把担忧写下来，做深呼吸，或与信任的人谈谈。刺激性的饮品或刷屏会让入睡更难。",
+          "icon": "🧠"
+        }
+      ],
+      "summary": {
+        "perfect": "太棒了！你非常了解睡眠与营养。",
+        "good": "做得好！记住：休息、饮食与喝水都能让情绪更平稳。",
+        "keepGoing": "继续尝试！小小的睡眠与饮食调整能带来大不同。"
+      }
+    },
+    "puberty": {
+      "title": "青春期基础",
+      "description": "了解情绪、身体变化与安全。",
+      "questions": [
+        {
+          "question": "青春期常见的情绪变化是……",
+          "options": [
+            "情绪起伏",
+            "完全没有情绪",
+            "永远保持冷静",
+            "永远开心"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "情绪波动是青春期的正常部分。把感受说出来能带来轻松。",
+          "incorrectFeedback": "青春期的荷尔蒙会带来情绪波动。谈一谈能减轻压力。",
+          "icon": "🎭"
+        },
+        {
+          "question": "照顾身体的好方式包括……",
+          "options": [
+            "每天洗澡并使用止汗剂",
+            "忽视卫生",
+            "不吃早餐",
+            "从不运动"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "规律清洁、吃饭、饮水和运动能让身体感觉更舒服。",
+          "incorrectFeedback": "健康习惯包括洗澡、好好吃饭、喝水、运动与休息。"
+        },
+        {
+          "question": "如果网上或同伴让你不舒服，你可以……",
+          "options": [
+            "告诉信任的成年人",
+            "把感受藏起来",
+            "假装什么都没发生",
+            "继续保密"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "与可信任的成年人分享能帮助你保持安全并获得支持。",
+          "incorrectFeedback": "当你感到不安或不安全时，和信任的成年人交谈是安全的选择。"
+        },
+        {
+          "question": "如果朋友的身体变化与你不同，你应该……",
+          "options": [
+            "记住每个人的节奏不同",
+            "嘲笑他们",
+            "比较并担心",
+            "认为自己有问题"
+          ],
+          "correctIndex": 0,
+          "correctFeedback": "每个人的成长时间线都不同——耐心和善意最重要。",
+          "incorrectFeedback": "每个人成长速度都不同。保持善意并专注于自己的旅程。"
+        }
+      ],
+      "summary": {
+        "perfect": "满分！你很好地了解青春期基础。",
+        "good": "做得不错！继续保持好奇和友善。",
+        "keepGoing": "再试一次！每个问题都是学习的机会。"
+      }
+    }
+  }
+}

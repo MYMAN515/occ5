@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Target, Puzzle, Brain, Heart, Sparkles, Trophy } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -78,8 +78,61 @@ function ScoreSparkle({ show, label }: { show: boolean; label: string }) {
   )
 }
 
+function useGameSounds() {
+  const audioCtxRef = useRef<AudioContext | null>(null)
+
+  useEffect(() => {
+    return () => {
+      audioCtxRef.current?.close()
+    }
+  }, [])
+
+  const playTone = (frequency: number, duration = 0.2, type: OscillatorType = 'sine', volume = 0.18) => {
+    if (typeof window === 'undefined') return
+    const AudioContextConstructor = window.AudioContext || (window as any).webkitAudioContext
+    if (!AudioContextConstructor) return
+
+    if (!audioCtxRef.current) {
+      audioCtxRef.current = new AudioContextConstructor()
+    }
+
+    const ctx = audioCtxRef.current
+    const oscillator = ctx.createOscillator()
+    const gain = ctx.createGain()
+
+    oscillator.type = type
+    oscillator.frequency.value = frequency
+    gain.gain.value = volume
+
+    oscillator.connect(gain)
+    gain.connect(ctx.destination)
+
+    const now = ctx.currentTime
+    oscillator.start(now)
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + duration)
+    oscillator.stop(now + duration + 0.05)
+  }
+
+  const playSuccess = () => {
+    playTone(880, 0.22, 'triangle')
+    setTimeout(() => playTone(660, 0.16, 'triangle', 0.12), 60)
+  }
+
+  const playError = () => playTone(180, 0.22, 'sawtooth', 0.12)
+
+  const playStart = () => playTone(520, 0.16, 'square', 0.14)
+
+  const playComplete = () => {
+    playTone(660, 0.22, 'sine', 0.16)
+    setTimeout(() => playTone(990, 0.24, 'sine', 0.14), 90)
+  }
+
+  return { playSuccess, playError, playStart, playComplete }
+}
+
 function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const { playSuccess, playError, playStart, playComplete } = useGameSounds()
   const [flippedCards, setFlippedCards] = useState<number[]>([])
   const [matchedCards, setMatchedCards] = useState<number[]>([])
   const [cards, setCards] = useState<string[]>([])
@@ -106,17 +159,23 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
         setShowSparkle(true)
         setTimeout(() => setShowSparkle(false), 800)
         setFlippedCards([])
+        playSuccess()
 
         if (matchedCards.length + 2 === cards.length) {
-          setTimeout(() => setGameState('finished'), 500)
+          setTimeout(() => {
+            playComplete()
+            setGameState('finished')
+          }, 500)
         }
       } else {
+        playError()
         setTimeout(() => setFlippedCards([]), 1000)
       }
     }
   }
 
   const startGame = () => {
+    playStart()
     setGameState('playing')
     setScore(0)
     setMatchedCards([])
@@ -212,6 +271,7 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
 
 function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const { playSuccess, playError, playStart, playComplete } = useGameSounds()
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [showSparkle, setShowSparkle] = useState(false)
@@ -255,6 +315,9 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
       setScore(score + 10)
       setShowSparkle(true)
       setTimeout(() => setShowSparkle(false), 800)
+      playSuccess()
+    } else {
+      playError()
     }
 
     setTimeout(() => {
@@ -262,6 +325,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
         setCurrentQuestion(currentQuestion + 1)
         setSelectedAnswer(null)
       } else {
+        playComplete()
         setGameState('finished')
       }
     }, 1500)
@@ -277,7 +341,10 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setGameState('playing')}
+            onClick={() => {
+              playStart()
+              setGameState('playing')
+            }}
             className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
@@ -360,6 +427,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
 
 function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const { playSuccess, playError, playStart, playComplete } = useGameSounds()
   const [pairs] = useState([
     { left: t('games.matching.pair1.left'), right: t('games.matching.pair1.right'), id: 1 },
     { left: t('games.matching.pair2.left'), right: t('games.matching.pair2.right'), id: 2 },
@@ -386,6 +454,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
       setScore(score + 10)
       setShowSparkle(true)
       setTimeout(() => setShowSparkle(false), 800)
+      playSuccess()
       setCardPositions({
         ...cardPositions,
         [id]: { x: 0, y: 0 }
@@ -393,9 +462,13 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
       setSelectedLeft(null)
 
       if (matched.length + 1 === pairs.length) {
-        setTimeout(() => setGameState('finished'), 500)
+        setTimeout(() => {
+          playComplete()
+          setGameState('finished')
+        }, 500)
       }
     } else {
+      playError()
       setCardPositions({
         ...cardPositions,
         [id]: { x: -10, y: 0 }
@@ -426,7 +499,10 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setGameState('playing')}
+            onClick={() => {
+              playStart()
+              setGameState('playing')
+            }}
             className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
@@ -515,6 +591,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
                 setScore(0)
                 setMatched([])
                 setSelectedLeft(null)
+                playStart()
               }}
               className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
@@ -537,6 +614,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
 
 function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const { playSuccess, playError, playStart, playComplete } = useGameSounds()
   const [currentEmotion, setCurrentEmotion] = useState(0)
   const [showSparkle, setShowSparkle] = useState(false)
 
@@ -552,12 +630,18 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
       setScore(score + 10)
       setShowSparkle(true)
       setTimeout(() => setShowSparkle(false), 800)
+      playSuccess()
+    } else {
+      playError()
     }
 
     if (currentEmotion < emotions.length - 1) {
       setTimeout(() => setCurrentEmotion(currentEmotion + 1), 800)
     } else {
-      setTimeout(() => setGameState('finished'), 800)
+      setTimeout(() => {
+        playComplete()
+        setGameState('finished')
+      }, 800)
     }
   }
 
@@ -571,7 +655,10 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setGameState('playing')}
+            onClick={() => {
+              playStart()
+              setGameState('playing')
+            }}
             className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold w-full sm:w-auto"
           >
             {t('games.startGame')}
@@ -629,6 +716,7 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
                 setGameState('intro')
                 setScore(0)
                 setCurrentEmotion(0)
+                playStart()
               }}
               className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto"
             >
