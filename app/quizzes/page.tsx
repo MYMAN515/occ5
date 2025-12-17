@@ -22,6 +22,10 @@ type QuizContent = {
   labels: Record<string, string>
   sleep: QuizSection
   puberty: QuizSection
+  tips: {
+    oneAtATime: string
+    encouragement: string
+  }
 }
 
 type QuizSection = {
@@ -51,6 +55,7 @@ export default function QuizzesPage() {
   const activeIndex = currentQuestion[activeQuiz] ?? 0
   const selectedAnswer = answers[activeQuiz]?.[activeIndex]
   const isRTL = language === 'ar'
+  const tips = content?.tips ?? { oneAtATime: '', encouragement: '' }
 
   useEffect(() => {
     setCurrentQuestion((prev) => ({ ...prev, [activeQuiz]: 0 }))
@@ -238,11 +243,11 @@ export default function QuizzesPage() {
             <div className="space-y-2 text-sm text-gray-700">
               <div className="flex items-start gap-2">
                 <Shield className="w-4 h-4 text-primary-600 mt-0.5" />
-                <span>{language === 'ar' ? 'تقدم سؤالًا واحدًا في كل مرة لمساعدة الدماغ على التركيز.' : language === 'ms' ? 'Satu soalan pada satu masa supaya otak fokus.' : 'One question at a time keeps the brain calm and focused.'}</span>
+                <span>{tips.oneAtATime}</span>
               </div>
               <div className="flex items-start gap-2">
                 <Smile className="w-4 h-4 text-secondary-600 mt-0.5" />
-                <span>{language === 'ar' ? 'التشجيع الفوري يساعد الطفل على المحاولة مرة أخرى بثقة.' : language === 'ms' ? 'Maklum balas segera membantu anak mencuba lagi dengan yakin.' : 'Instant encouragement helps kids try again with confidence.'}</span>
+                <span>{tips.encouragement}</span>
               </div>
             </div>
 
@@ -265,4 +270,3 @@ export default function QuizzesPage() {
     </div>
   )
 }
-

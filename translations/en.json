@@ -244,7 +244,8 @@
       "instructions": "Add to your home screen for easy access anytime, anywhere."
     },
     "rights": "© 2025 Parenting Hub. All rights reserved.",
-    "communityNote": "Made with 💙 to support families through puberty education"
+    "communityNote": "Made with 💙 to support families through puberty education",
+    "languagesLabel": "Languages"
   },
   "games": {
     "hero": {
@@ -593,6 +594,333 @@
       "point1": "Any mention of self-harm, suicide, or hurting others",
       "point2": "Sudden, dramatic personality changes or complete withdrawal",
       "point3": "Signs of abuse (physical marks, extreme fear, inappropriate sexual knowledge)"
+    },
+    "header": {
+      "title": "Parent Guide & Parenting Tips",
+      "subtitle": "Expert advice for parents and helpful tips for your child",
+      "parentTab": "Parent Guide",
+      "childTab": "Parenting Tips",
+      "periodImageLabel": "📷 Period Care Image",
+      "periodImagePath": "/images/period-care-guide.jpg"
+    },
+    "extraSections": {
+      "communication": [
+        {
+          "id": "difficult-conversations",
+          "title": "Handling Difficult Conversations",
+          "description": "When your child asks uncomfortable questions or brings up sensitive topics",
+          "tips": [
+            "Stay calm and don't show shock or embarrassment - your reaction sets the tone",
+            "It's okay to say \"I need a moment to think\" rather than giving a rushed answer",
+            "Use age-appropriate language - be honest but don't overwhelm with details",
+            "If you don't know something, say so and offer to find out together",
+            "Create a safe space where no question is \"silly\" or \"wrong\"",
+            "Follow up later to see if they have more questions"
+          ]
+        },
+        {
+          "id": "cultural-considerations",
+          "title": "Cultural Sensitivity in Conversations",
+          "description": "Respecting cultural and religious values while providing accurate information",
+          "tips": [
+            "Acknowledge and respect your family's cultural and religious values",
+            "Find ways to discuss puberty that align with your beliefs",
+            "Use culturally appropriate examples and language",
+            "Connect with community leaders or trusted advisors if needed",
+            "Balance cultural values with scientific accuracy",
+            "Remember: every family's approach is valid"
+          ]
+        }
+      ],
+      "emotional": [
+        {
+          "id": "handling-rejection",
+          "title": "When Your Child Rejects Your Help",
+          "description": "What to do when your child pushes you away or says they don't need help",
+          "tips": [
+            "Don't take it personally - independence is a normal part of development",
+            "Stay available without being pushy - let them know you're there when ready",
+            "Respect their need for space while maintaining boundaries",
+            "Find indirect ways to support (leave helpful resources, check in casually)",
+            "Connect them with other trusted adults (aunt, teacher, counselor)",
+            "Remember: pushing away is often a sign of struggling, not rejection of you"
+          ]
+        },
+        {
+          "id": "anxiety-stress",
+          "title": "Supporting Anxious or Stressed Children",
+          "description": "Helping your child manage anxiety and stress during puberty",
+          "tips": [
+            "Recognize that puberty itself can be stressful - validate their feelings",
+            "Teach simple coping strategies: deep breathing, counting, grounding techniques",
+            "Help them identify triggers and create a plan for managing them",
+            "Encourage healthy outlets: exercise, art, music, journaling",
+            "Model healthy stress management in your own life",
+            "Seek professional help if anxiety interferes with daily life"
+          ]
+        }
+      ],
+      "physical": [
+        {
+          "id": "first-period",
+          "title": "Preparing for Your Child's First Period",
+          "description": "Practical guidance for when your daughter starts menstruating",
+          "tips": [
+            "Have period supplies ready before it starts (pads, tampons, period underwear)",
+            "Create a \"period kit\" for school with supplies and a change of clothes",
+            "Normalize periods - talk about them as a natural, healthy process",
+            "Teach them how to track their cycle and what to expect",
+            "Discuss period pain management options (heat, gentle exercise, pain relief)",
+            "Reassure them that irregular periods in the first year are completely normal"
+          ]
+        },
+        {
+          "id": "body-image",
+          "title": "Supporting Positive Body Image",
+          "description": "Helping your child develop a healthy relationship with their changing body",
+          "tips": [
+            "Avoid negative comments about your own body or others' bodies",
+            "Focus on what bodies can DO, not just how they look",
+            "Celebrate diversity - all body shapes and sizes are normal",
+            "Limit exposure to unrealistic media images when possible",
+            "Encourage activities that make them feel strong and capable",
+            "Address body-shaming comments from others immediately"
+          ]
+        }
+      ],
+      "social": [
+        {
+          "id": "dating-relationships",
+          "title": "Navigating First Relationships",
+          "description": "Supporting your child through their first crushes and relationships",
+          "tips": [
+            "Start conversations about healthy relationships early, before dating begins",
+            "Discuss consent, respect, and boundaries in age-appropriate ways",
+            "Set clear rules about dating that match your family values",
+            "Keep communication open - ask about their friends and interests",
+            "Help them recognize red flags in relationships",
+            "Be a safe person they can talk to about relationship concerns"
+          ]
+        },
+        {
+          "id": "social-media",
+          "title": "Social Media and Peer Influence",
+          "description": "Helping your child navigate social media and online peer pressure",
+          "tips": [
+            "Set clear rules about social media use and privacy settings",
+            "Have regular conversations about what they see online",
+            "Teach critical thinking about online content and influencers",
+            "Monitor their online activity while respecting growing independence",
+            "Discuss the difference between online personas and real life",
+            "Create tech-free times and spaces for family connection"
+          ]
+        }
+      ]
+    },
+    "childTips": {
+      "categories": {
+        "physical": "Physical",
+        "emotional": "Emotional",
+        "social": "Social",
+        "hygiene": "Hygiene"
+      },
+      "cards": {
+        "physical": [
+          {
+            "id": "exercise",
+            "title": "Stay Active",
+            "description": "Regular exercise helps your body develop healthily and boosts your mood",
+            "tips": [
+              "Aim for at least 60 minutes of activity each day",
+              "Try different sports to find what you enjoy",
+              "Walking, dancing, and playing with friends all count!",
+              "Exercise helps with stress and sleep too"
+            ]
+          },
+          {
+            "id": "nutrition",
+            "title": "Healthy Eating",
+            "description": "Your growing body needs good nutrition to support all the changes",
+            "tips": [
+              "Eat plenty of fruits and vegetables every day",
+              "Drink lots of water - aim for 6-8 glasses daily",
+              "Don't skip breakfast - it gives you energy for the day",
+              "Limit sugary snacks and drinks"
+            ]
+          },
+          {
+            "id": "sleep",
+            "title": "Get Enough Sleep",
+            "description": "Sleep is when your body grows and repairs itself",
+            "tips": [
+              "Teenagers need 8-10 hours of sleep each night",
+              "Try to go to bed at the same time every night",
+              "Avoid screens 30 minutes before bedtime",
+              "Keep your bedroom cool, dark, and quiet"
+            ]
+          },
+          {
+            "id": "pain",
+            "title": "Managing Discomfort",
+            "description": "Some changes might cause temporary discomfort",
+            "tips": [
+              "For growing pains, try gentle stretching",
+              "A warm bath can help with muscle aches",
+              "Talk to an adult if pain persists or worries you",
+              "Remember: most discomfort is temporary"
+            ]
+          }
+        ],
+        "emotional": [
+          {
+            "id": "feelings",
+            "title": "Understanding Your Feelings",
+            "description": "It's normal to have big emotions during puberty",
+            "tips": [
+              "All feelings are valid - happy, sad, angry, confused",
+              "Mood swings are caused by hormones - they're normal",
+              "It's okay to cry or feel overwhelmed sometimes",
+              "Your feelings will become more stable with time"
+            ]
+          },
+          {
+            "id": "stress",
+            "title": "Managing Stress",
+            "description": "Learn healthy ways to cope with stress and anxiety",
+            "tips": [
+              "Try deep breathing: breathe in for 4, hold for 4, out for 4",
+              "Talk to someone you trust about your worries",
+              "Exercise is a great stress reliever",
+              "Take breaks when you feel overwhelmed"
+            ]
+          },
+          {
+            "id": "confidence",
+            "title": "Building Self-Confidence",
+            "description": "Feeling good about yourself takes practice",
+            "tips": [
+              "Focus on what you like about yourself",
+              "Set small, achievable goals and celebrate wins",
+              "Don't compare yourself to others - everyone's different",
+              "Practice positive self-talk daily"
+            ]
+          },
+          {
+            "id": "help",
+            "title": "When to Ask for Help",
+            "description": "It's important to know when to reach out",
+            "tips": [
+              "If sad feelings last more than 2 weeks",
+              "If you have thoughts of hurting yourself",
+              "If anxiety stops you from daily activities",
+              "Talk to parents, school counselor, or trusted adult"
+            ]
+          }
+        ],
+        "social": [
+          {
+            "id": "friends",
+            "title": "Friendships",
+            "description": "Relationships become more important during puberty",
+            "tips": [
+              "Real friends accept you for who you are",
+              "It's okay if friendships change - you're all growing",
+              "Quality is more important than quantity",
+              "Be yourself - don't pretend to be someone you're not"
+            ]
+          },
+          {
+            "id": "peer-pressure",
+            "title": "Handling Peer Pressure",
+            "description": "Learn to make your own choices confidently",
+            "tips": [
+              "It's okay to say \"no\" - real friends will respect that",
+              "You don't have to do something just because others do",
+              "If something feels wrong, trust your instincts",
+              "Find friends who share your values"
+            ]
+          },
+          {
+            "id": "communication",
+            "title": "Communication",
+            "description": "Express yourself clearly and listen to others",
+            "tips": [
+              "Use \"I feel\" statements instead of blaming",
+              "Listen actively when others speak",
+              "It's okay to disagree respectfully",
+              "Ask questions if you don't understand"
+            ]
+          },
+          {
+            "id": "boundaries",
+            "title": "Personal Boundaries",
+            "description": "Understanding and respecting personal space",
+            "tips": [
+              "Your body is yours - you control who touches it",
+              "Say \"stop\" if something makes you uncomfortable",
+              "Respect others' boundaries too",
+              "Tell a trusted adult if someone crosses your boundaries"
+            ]
+          }
+        ],
+        "hygiene": [
+          {
+            "id": "shower",
+            "title": "Daily Hygiene",
+            "description": "Keep your body clean and fresh",
+            "tips": [
+              "Shower or bathe daily, especially after exercise",
+              "Use soap and shampoo - pay attention to underarms",
+              "Wash your face twice daily to prevent acne",
+              "Change into clean clothes daily"
+            ]
+          },
+          {
+            "id": "deodorant",
+            "title": "Managing Body Odor",
+            "description": "Everyone sweats more during puberty",
+            "tips": [
+              "Use deodorant or antiperspirant daily",
+              "Apply after showering and before bed",
+              "Wear breathable fabrics like cotton",
+              "Keep extra deodorant in your backpack"
+            ]
+          },
+          {
+            "id": "skin",
+            "title": "Skin Care",
+            "description": "Take care of your changing skin",
+            "tips": [
+              "Wash your face gently - don't scrub too hard",
+              "Use oil-free moisturizer if your skin is dry",
+              "Never pop pimples - it can cause scarring",
+              "See a doctor if acne bothers you"
+            ]
+          },
+          {
+            "id": "period",
+            "title": "Period Care (for those who menstruate)",
+            "description": "Managing your monthly cycle",
+            "tips": [
+              "Change pads/tampons every 4-6 hours",
+              "Keep supplies in your bag for emergencies",
+              "Track your cycle to know when to expect it",
+              "Gentle exercise can help with cramps"
+            ]
+          }
+        ]
+      },
+      "helpfulTipsLabel": "Helpful Tips:",
+      "emergency": {
+        "title": "Need Immediate Help? 🆘",
+        "description": "If you're feeling very upset, scared, or need to talk to someone right away, don't wait:",
+        "points": [
+          "Talk to a parent, guardian, or trusted adult immediately",
+          "Contact your school counselor or nurse",
+          "Call a helpline in your country (they're free and confidential)",
+          "Remember: Asking for help is a sign of strength, not weakness! 💪"
+        ]
+      }
     }
   },
   "changes": {
@@ -807,7 +1135,12 @@
         "title": "One unique thing about me",
         "hint": "A special interest, talent, perspective, or way you solve problems."
       }
-    ]
+    ],
+    "inputLabel": "Write what comes to mind",
+    "encourageTitle": "Encourage kind words",
+    "encourageDescription": "Your child can share if they want, but privacy helps them write freely.",
+    "savedBadge": "Saved on device",
+    "printBadge": "Ready to print"
   },
   "quizzesPage": {
     "title": "Quizzes",
@@ -961,6 +1294,10 @@
         "good": "Nice! You know a lot about growing up.",
         "keepGoing": "Great start—try again to remember even more."
       }
+    },
+    "tips": {
+      "oneAtATime": "One question at a time keeps the brain calm and focused.",
+      "encouragement": "Instant encouragement helps kids try again with confidence."
     }
   }
 }

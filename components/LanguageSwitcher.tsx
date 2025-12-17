@@ -13,6 +13,7 @@ export default function LanguageSwitcher() {
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'ar', name: 'العربية', flag: '🇯🇴' },
     { code: 'ms', name: 'Melayu', flag: '🇲🇾' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
   ]
 
   const handleLanguageChange = (lang: Language) => {
