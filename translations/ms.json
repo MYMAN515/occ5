@@ -225,6 +225,17 @@
         "name": "Zhou Junan",
         "description": "Rakan kualiti dan penyelidikan yang menyemak fakta, penterjemahan dan butiran kebolehcapaian."
       }
+    },
+    "membersRoles": {
+      "qais": "Ketua Pembangun",
+      "nazean": "Penasihat Projek",
+      "tan": "Pembentang",
+      "chengyang": "Setiausaha",
+      "raja": "Pereka Antaramuka",
+      "hanif": "Pencipta Video & Jurugambar",
+      "rafia": "Setiausaha",
+      "wong": "Konsep Visual",
+      "zhou": "Rakan Kualiti & Penyelidikan"
     }
   },
   "footer": {
@@ -1288,6 +1299,250 @@
     "tips": {
       "oneAtATime": "Satu soalan pada satu masa membantu otak kekal tenang dan fokus.",
       "encouragement": "Galakan segera membantu anak mencuba lagi dengan yakin."
+    }
+  },
+  "resourceLibrary": {
+    "title": "Pustaka Sumber",
+    "subtitle": "Panduan, senarai semak dan lembaran aktiviti boleh dimuat turun untuk menyokong perjalanan keluarga anda",
+    "actions": {
+      "visit": "Lawat",
+      "preview": "Pratonton",
+      "open": "Buka",
+      "download": "Muat turun",
+      "sourceLabel": "Sumber",
+      "sizeLabel": "Panjang/Format"
+    },
+    "categories": {
+      "parentGuides": {
+        "title": "Panduan Ibu Bapa & Sumber Pendidikan"
+      },
+      "books": {
+        "title": "Buku & Bacaan Disyorkan"
+      }
+    },
+    "items": {
+      "kidshealth-parent-guide": {
+        "title": "KidsHealth: Berbual dengan Anak tentang Akil Baligh",
+        "description": "Panduan pakar daripada Nemours KidsHealth tentang cara berbual mengikut usia mengenai akil baligh",
+        "type": "Sumber Web",
+        "size": "Dalam talian",
+        "source": "Nemours KidsHealth"
+      },
+      "planned-parenthood-guide": {
+        "title": "Planned Parenthood: Akil Baligh & Membesar",
+        "description": "Sumber menyeluruh merangkumi perubahan fizikal, perkembangan emosi dan cara menyokong anak anda",
+        "type": "Sumber Web",
+        "size": "Dalam talian",
+        "source": "Planned Parenthood"
+      },
+      "aap-puberty-resource": {
+        "title": "American Academy of Pediatrics: Sumber Akil Baligh",
+        "description": "Panduan perubatan AAP tentang perkembangan fizikal dan psikososial remaja",
+        "type": "Sumber Web",
+        "size": "Dalam talian",
+        "source": "AAP"
+      },
+      "puberty-curriculum": {
+        "title": "Puberty Curriculum: Sumber Ibu Bapa",
+        "description": "Alat dan maklumat untuk membantu ibu bapa berbincang tentang akil baligh dengan yakin bersama anak",
+        "type": "Sumber Web",
+        "size": "Dalam talian",
+        "source": "Puberty Curriculum"
+      },
+      "our-whole-lives": {
+        "title": "Program Our Whole Lives (OWL)",
+        "description": "Kurikulum pendidikan seksualiti yang menyeluruh dan sesuai usia untuk pelbagai kumpulan umur",
+        "type": "Maklumat Program",
+        "size": "Dalam talian",
+        "source": "Unitarian Universalist Association"
+      },
+      "perfectly-normal": {
+        "title": "It's Perfectly Normal oleh Robie Harris",
+        "description": "Buku pemenang anugerah tentang perubahan tubuh, membesar, seks dan kesihatan seksual",
+        "type": "Buku",
+        "size": "Tersedia di perpustakaan",
+        "source": "Robie Harris"
+      },
+      "care-keeping": {
+        "title": "Siri The Care and Keeping of You",
+        "description": "Siri American Girl tentang perubahan badan, kebersihan dan penjagaan diri untuk kanak-kanak perempuan",
+        "type": "Siri Buku",
+        "size": "Tersedia di perpustakaan",
+        "source": "American Girl"
+      },
+      "guy-stuff": {
+        "title": "Guy Stuff: The Body Book for Boys",
+        "description": "Panduan menyeluruh mengenai akil baligh, perubahan badan dan membesar untuk lelaki",
+        "type": "Buku",
+        "size": "Tersedia di perpustakaan",
+        "source": "American Girl"
+      }
+    },
+    "about": {
+      "title": "📚 Tentang Sumber Ini",
+      "points": [
+        {
+          "title": "Muat Turun Percuma",
+          "detail": "Semua sumber adalah percuma dan untuk kegunaan peribadi."
+        },
+        {
+          "title": "Mesra Cetakan",
+          "detail": "Semua PDF dioptimumkan untuk dicetak di rumah."
+        },
+        {
+          "title": "Kemas Kini Berkala",
+          "detail": "Kami menambah sumber baharu secara berkala berdasarkan maklum balas komuniti."
+        },
+        {
+          "title": "Privasi",
+          "detail": "Muat turun adalah peribadi - tiada akaun atau maklumat peribadi diperlukan."
+        }
+      ]
+    }
+  },
+  "developmentalChanges": {
+    "title": "Memahami Perubahan",
+    "subtitle": "Akhil baligh membawa banyak perubahan pada tubuh dan minda. Jom terokai bersama! 🌟",
+    "tabs": {
+      "physical": "💪 Fizikal",
+      "emotional": "💭 Emosi",
+      "comics": "📚 Komik",
+      "video": "🎥 Video"
+    },
+    "physical": [
+      {
+        "title": "Lonjakan Pertumbuhan",
+        "description": "Anda akan menjadi lebih tinggi! Ini berlaku pada masa yang berbeza bagi setiap orang."
+      },
+      {
+        "title": "Perubahan Bentuk Badan",
+        "description": "Badan anda akan mempunyai lengkung dan perkadaran baharu apabila matang."
+      },
+      {
+        "title": "Perubahan Suara",
+        "description": "Suara mungkin menjadi lebih dalam atau berubah nada - ini sangat normal!"
+      },
+      {
+        "title": "Perubahan Kulit",
+        "description": "Anda mungkin mendapat jerawat atau kulit berminyak. Kebersihan yang baik membantu mengawalnya."
+      },
+      {
+        "title": "Pertumbuhan Rambut",
+        "description": "Rambut baharu akan tumbuh di bahagian badan yang berbeza."
+      },
+      {
+        "title": "Bau Badan",
+        "description": "Anda akan mula lebih berpeluh. Penggunaan deodoran menjadi penting!"
+      }
+    ],
+    "emotional": [
+      {
+        "title": "Perubahan Mood",
+        "description": "Emosi mungkin rasa seperti rollercoaster - itu normal!"
+      },
+      {
+        "title": "Minat Baharu",
+        "description": "Anda mungkin mengembangkan hobi, minat dan semangat baharu."
+      },
+      {
+        "title": "Kemandirian",
+        "description": "Anda akan mahukan lebih banyak privasi dan kebebasan daripada keluarga."
+      },
+      {
+        "title": "Hubungan",
+        "description": "Persahabatan dan hubungan sosial menjadi lebih penting."
+      },
+      {
+        "title": "Kesedaran Diri",
+        "description": "Anda akan lebih berfikir tentang siapa anda dan siapa yang anda ingin jadi."
+      },
+      {
+        "title": "Keyakinan",
+        "description": "Membina keyakinan mengambil masa - bersabarlah dengan diri sendiri!"
+      }
+    ],
+    "comics": [
+      {
+        "title": "Lonjakan Pertumbuhan",
+        "panels": [
+          "Saya perasan saya semakin tinggi!",
+          "Baju saya tidak muat lagi...",
+          "Itu sangat normal semasa akil baligh!"
+        ],
+        "lesson": "Lonjakan pertumbuhan adalah sebahagian semula jadi daripada membesar!"
+      },
+      {
+        "title": "Ayunan Emosi",
+        "panels": [
+          "Saya rasa gembira sekejap...",
+          "Kemudian sedih selepas itu...",
+          "Ingat: emosi adalah normal!"
+        ],
+        "lesson": "Ayunan emosi biasa berlaku semasa akil baligh kerana perubahan hormon."
+      },
+      {
+        "title": "Perubahan Badan",
+        "panels": [
+          "Badan saya sedang berubah...",
+          "Saya rasa berbeza daripada kawan-kawan",
+          "Setiap orang berubah pada kadar mereka sendiri!"
+        ],
+        "lesson": "Badan setiap orang berubah pada masa yang berbeza - itu tidak mengapa!"
+      }
+    ],
+    "quiz": {
+      "title": "Kuiz Dipindahkan!",
+      "description": "Cari pengembaraan kuiz yang lucu dan berwarna-warni di halaman Kuiz baharu.",
+      "cta": "Terus ke Halaman Kuiz ➜"
+    },
+    "video": {
+      "title": "Video & Animasi Pendidikan",
+      "subtitle": "Tonton video berguna tentang perubahan akil baligh dari sumber dipercayai",
+      "items": [
+        {
+          "title": "Memahami Akil Baligh",
+          "description": "Panduan menyeluruh tentang perubahan fizikal dan emosi",
+          "source": "Laman Web Kesihatan Rasmi",
+          "duration": "5 min"
+        },
+        {
+          "title": "Perubahan Emosi Dijelaskan",
+          "description": "Ketahui tentang ayunan emosi dan perkembangan perasaan",
+          "source": "Saluran Pendidikan",
+          "duration": "4 min"
+        },
+        {
+          "title": "Animasi Perubahan Badan",
+          "description": "Panduan animasi tentang perkembangan fizikal",
+          "source": "Organisasi Kesihatan",
+          "duration": "6 min"
+        },
+        {
+          "title": "Membina Keyakinan",
+          "description": "Tip penerimaan diri semasa akil baligh",
+          "source": "Sokongan Belia",
+          "duration": "3 min"
+        }
+      ],
+      "button": "Tonton",
+      "note": "Nota: Video ini hanyalah pemegang tempat. Dalam aplikasi sebenar, anda akan memasukkan video daripada laman kesihatan rasmi atau saluran pendidikan."
+    },
+    "info": {
+      "title": "Ingat: Setiap Orang Berbeza 🌈",
+      "points": [
+        {
+          "label": "Masa",
+          "text": "Akil baligh boleh bermula antara umur 8-14. Tiada masa yang \"betul\"!"
+        },
+        {
+          "label": "Kadar",
+          "text": "Sesetengah perubahan berlaku dengan cepat, yang lain mengambil masa bertahun. Perjalanan anda unik."
+        },
+        {
+          "label": "Sokongan",
+          "text": "Bercakap dengan orang dewasa dipercayai jika anda ada soalan atau kebimbangan. Mereka sedia membantu!"
+        }
+      ]
     }
   }
 }
