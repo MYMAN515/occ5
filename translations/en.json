@@ -225,6 +225,17 @@
         "name": "Zhou Junan",
         "description": "Quality and research partner who double-checks facts, localisation, and accessibility details."
       }
+    },
+    "membersRoles": {
+      "qais": "Lead Developer",
+      "nazean": "Project Advisor",
+      "tan": "Presenter",
+      "chengyang": "Secretary",
+      "raja": "Interface Designer",
+      "hanif": "Video Creator & Photographer",
+      "rafia": "Secretary",
+      "wong": "Visual Concept",
+      "zhou": "Quality & Research Partner"
     }
   },
   "footer": {
@@ -1298,6 +1309,250 @@
     "tips": {
       "oneAtATime": "One question at a time keeps the brain calm and focused.",
       "encouragement": "Instant encouragement helps kids try again with confidence."
+    }
+  },
+  "resourceLibrary": {
+    "title": "Resource Library",
+    "subtitle": "Downloadable guides, checklists, and activity sheets to support your family's journey",
+    "actions": {
+      "visit": "Visit",
+      "preview": "Preview",
+      "open": "Open",
+      "download": "Download",
+      "sourceLabel": "Source",
+      "sizeLabel": "Length/Format"
+    },
+    "categories": {
+      "parentGuides": {
+        "title": "Parent Guides & Educational Resources"
+      },
+      "books": {
+        "title": "Recommended Books & Reading"
+      }
+    },
+    "items": {
+      "kidshealth-parent-guide": {
+        "title": "KidsHealth: Talking to Your Child About Puberty",
+        "description": "Expert guide from Nemours KidsHealth on how to have age-appropriate conversations about puberty",
+        "type": "Web Resource",
+        "size": "Online",
+        "source": "Nemours KidsHealth"
+      },
+      "planned-parenthood-guide": {
+        "title": "Planned Parenthood: Puberty & Growing Up",
+        "description": "Comprehensive resource covering physical changes, emotional development, and how to support your child",
+        "type": "Web Resource",
+        "size": "Online",
+        "source": "Planned Parenthood"
+      },
+      "aap-puberty-resource": {
+        "title": "American Academy of Pediatrics: Puberty Resources",
+        "description": "Medical guidance from AAP on physical and psychosocial development during adolescence",
+        "type": "Web Resource",
+        "size": "Online",
+        "source": "AAP"
+      },
+      "puberty-curriculum": {
+        "title": "Puberty Curriculum: Parent Resources",
+        "description": "Tools and information to help parents discuss puberty confidently with their children",
+        "type": "Web Resource",
+        "size": "Online",
+        "source": "Puberty Curriculum"
+      },
+      "our-whole-lives": {
+        "title": "Our Whole Lives (OWL) Program",
+        "description": "Comprehensive, age-appropriate sexuality education curricula for various age groups",
+        "type": "Program Info",
+        "size": "Online",
+        "source": "Unitarian Universalist Association"
+      },
+      "perfectly-normal": {
+        "title": "It's Perfectly Normal by Robie Harris",
+        "description": "Award-winning book covering changing bodies, growing up, sex, and sexual health",
+        "type": "Book",
+        "size": "Available in libraries",
+        "source": "Robie Harris"
+      },
+      "care-keeping": {
+        "title": "The Care and Keeping of You Series",
+        "description": "American Girl series covering body changes, hygiene, and self-care for girls",
+        "type": "Book Series",
+        "size": "Available in libraries",
+        "source": "American Girl"
+      },
+      "guy-stuff": {
+        "title": "Guy Stuff: The Body Book for Boys",
+        "description": "Comprehensive guide to puberty, body changes, and growing up for boys",
+        "type": "Book",
+        "size": "Available in libraries",
+        "source": "American Girl"
+      }
+    },
+    "about": {
+      "title": "📚 About These Resources",
+      "points": [
+        {
+          "title": "Free to Download",
+          "detail": "All resources are free and available for personal use."
+        },
+        {
+          "title": "Print-Friendly",
+          "detail": "All PDFs are optimized for printing at home."
+        },
+        {
+          "title": "Regular Updates",
+          "detail": "We regularly add new resources based on community feedback."
+        },
+        {
+          "title": "Privacy",
+          "detail": "Downloads are private - no account or personal information required."
+        }
+      ]
+    }
+  },
+  "developmentalChanges": {
+    "title": "Understanding Changes",
+    "subtitle": "Puberty brings many changes to your body and mind. Let's explore them together! 🌟",
+    "tabs": {
+      "physical": "💪 Physical",
+      "emotional": "💭 Emotional",
+      "comics": "📚 Comics",
+      "video": "🎥 Video"
+    },
+    "physical": [
+      {
+        "title": "Growth Spurts",
+        "description": "You'll grow taller! This happens at different times for everyone."
+      },
+      {
+        "title": "Body Shape Changes",
+        "description": "Your body will develop new curves and proportions as you mature."
+      },
+      {
+        "title": "Voice Changes",
+        "description": "Your voice may deepen or change in pitch - this is totally normal!"
+      },
+      {
+        "title": "Skin Changes",
+        "description": "You might get acne or oily skin. Good hygiene helps manage this."
+      },
+      {
+        "title": "Hair Growth",
+        "description": "New hair will grow in different places on your body."
+      },
+      {
+        "title": "Body Odor",
+        "description": "You'll start to sweat more. Using deodorant becomes important!"
+      }
+    ],
+    "emotional": [
+      {
+        "title": "Mood Swings",
+        "description": "Your emotions might feel like a rollercoaster - that's normal!"
+      },
+      {
+        "title": "New Interests",
+        "description": "You might develop new hobbies, interests, and passions."
+      },
+      {
+        "title": "Independence",
+        "description": "You'll want more privacy and independence from family."
+      },
+      {
+        "title": "Relationships",
+        "description": "Friendships and social connections become more important."
+      },
+      {
+        "title": "Self-Awareness",
+        "description": "You'll think more about who you are and who you want to be."
+      },
+      {
+        "title": "Confidence",
+        "description": "Building confidence takes time - be patient with yourself!"
+      }
+    ],
+    "comics": [
+      {
+        "title": "The Growth Spurt",
+        "panels": [
+          "I noticed I'm getting taller!",
+          "My clothes don't fit anymore...",
+          "That's totally normal during puberty!"
+        ],
+        "lesson": "Growth spurts are a natural part of growing up!"
+      },
+      {
+        "title": "Mood Swings",
+        "panels": [
+          "I feel happy one moment...",
+          "Then sad the next...",
+          "Remember: emotions are normal!"
+        ],
+        "lesson": "Mood swings are common during puberty due to hormonal changes."
+      },
+      {
+        "title": "Body Changes",
+        "panels": [
+          "My body is changing...",
+          "I feel different from my friends",
+          "Everyone changes at their own pace!"
+        ],
+        "lesson": "Everyone's body changes at different times - that's okay!"
+      }
+    ],
+    "quiz": {
+      "title": "Quiz Time Moved!",
+      "description": "Find the silly, colorful quiz adventure on the new Quiz page.",
+      "cta": "Jump to Quiz Page ➜"
+    },
+    "video": {
+      "title": "Educational Videos & Animations",
+      "subtitle": "Watch helpful videos about puberty changes from trusted sources",
+      "items": [
+        {
+          "title": "Understanding Puberty",
+          "description": "A comprehensive guide to physical and emotional changes",
+          "source": "Official Health Website",
+          "duration": "5 min"
+        },
+        {
+          "title": "Emotional Changes Explained",
+          "description": "Learn about mood swings and emotional development",
+          "source": "Educational Channel",
+          "duration": "4 min"
+        },
+        {
+          "title": "Body Changes Animation",
+          "description": "Animated guide to physical development",
+          "source": "Health Organization",
+          "duration": "6 min"
+        },
+        {
+          "title": "Building Confidence",
+          "description": "Tips for self-acceptance during puberty",
+          "source": "Youth Support",
+          "duration": "3 min"
+        }
+      ],
+      "button": "Watch",
+      "note": "Note: These videos are placeholders. In the actual app, you would embed videos from official health websites or educational channels."
+    },
+    "info": {
+      "title": "Remember: Everyone is Different 🌈",
+      "points": [
+        {
+          "label": "Timing",
+          "text": "Puberty can start anywhere from ages 8-14. There's no \"right\" time!"
+        },
+        {
+          "label": "Pace",
+          "text": "Some changes happen quickly, others take years. Your journey is unique."
+        },
+        {
+          "label": "Support",
+          "text": "Talk to trusted adults if you have questions or concerns. They're here to help!"
+        }
+      ]
     }
   }
 }

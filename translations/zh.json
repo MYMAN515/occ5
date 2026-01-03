@@ -225,6 +225,17 @@
         "name": "Zhou Junan",
         "description": "质量与研究伙伴，反复核对事实、本地化与可访问性细节。"
       }
+    },
+    "membersRoles": {
+      "qais": "首席开发者",
+      "nazean": "项目顾问",
+      "tan": "演示者",
+      "chengyang": "秘书",
+      "raja": "界面设计师",
+      "hanif": "视频与摄影创作者",
+      "rafia": "秘书",
+      "wong": "视觉概念",
+      "zhou": "质量与研究伙伴"
     }
   },
   "footer": {
@@ -1278,6 +1289,250 @@
         "good": "做得不错！继续保持好奇和友善。",
         "keepGoing": "再试一次！每个问题都是学习的机会。"
       }
+    }
+  },
+  "resourceLibrary": {
+    "title": "资源库",
+    "subtitle": "可下载的指南、清单和活动表，支持您家庭的成长旅程",
+    "actions": {
+      "visit": "访问",
+      "preview": "预览",
+      "open": "打开",
+      "download": "下载",
+      "sourceLabel": "来源",
+      "sizeLabel": "长度/格式"
+    },
+    "categories": {
+      "parentGuides": {
+        "title": "家长指南与教育资源"
+      },
+      "books": {
+        "title": "推荐书籍与阅读"
+      }
+    },
+    "items": {
+      "kidshealth-parent-guide": {
+        "title": "KidsHealth：与孩子谈论青春期",
+        "description": "Nemours KidsHealth 提供的专家指南，教您如何进行适龄的青春期对话",
+        "type": "网络资源",
+        "size": "在线",
+        "source": "Nemours KidsHealth"
+      },
+      "planned-parenthood-guide": {
+        "title": "Planned Parenthood：青春期与成长",
+        "description": "全面资源，涵盖身体变化、情感发展以及如何支持孩子",
+        "type": "网络资源",
+        "size": "在线",
+        "source": "Planned Parenthood"
+      },
+      "aap-puberty-resource": {
+        "title": "美国儿科学会：青春期资源",
+        "description": "AAP 提供的关于青少年身心发展的医学指南",
+        "type": "网络资源",
+        "size": "在线",
+        "source": "AAP"
+      },
+      "puberty-curriculum": {
+        "title": "Puberty Curriculum：家长资源",
+        "description": "帮助父母自信与孩子讨论青春期的工具与信息",
+        "type": "网络资源",
+        "size": "在线",
+        "source": "Puberty Curriculum"
+      },
+      "our-whole-lives": {
+        "title": "Our Whole Lives (OWL) 课程",
+        "description": "面向不同年龄段的全面、适龄性教育课程",
+        "type": "项目信息",
+        "size": "在线",
+        "source": "Unitarian Universalist Association"
+      },
+      "perfectly-normal": {
+        "title": "《It's Perfectly Normal》 作者 Robie Harris",
+        "description": "获奖图书，介绍身体变化、成长、性与性健康",
+        "type": "书籍",
+        "size": "图书馆可借阅",
+        "source": "Robie Harris"
+      },
+      "care-keeping": {
+        "title": "The Care and Keeping of You 系列",
+        "description": "American Girl 系列，讲述女孩的身体变化、卫生与自我照顾",
+        "type": "系列书籍",
+        "size": "图书馆可借阅",
+        "source": "American Girl"
+      },
+      "guy-stuff": {
+        "title": "Guy Stuff: The Body Book for Boys",
+        "description": "为男孩准备的青春期、身体变化与成长全面指南",
+        "type": "书籍",
+        "size": "图书馆可借阅",
+        "source": "American Girl"
+      }
+    },
+    "about": {
+      "title": "📚 关于这些资源",
+      "points": [
+        {
+          "title": "免费下载",
+          "detail": "所有资源均可免费获取并用于个人用途。"
+        },
+        {
+          "title": "便于打印",
+          "detail": "所有 PDF 都已针对家庭打印进行优化。"
+        },
+        {
+          "title": "定期更新",
+          "detail": "我们会根据社区反馈定期新增资源。"
+        },
+        {
+          "title": "隐私",
+          "detail": "下载是私密的——无需账户或个人信息。"
+        }
+      ]
+    }
+  },
+  "developmentalChanges": {
+    "title": "了解变化",
+    "subtitle": "青春期会带来身体和心理的许多变化。让我们一起探索吧！🌟",
+    "tabs": {
+      "physical": "💪 身体",
+      "emotional": "💭 情绪",
+      "comics": "📚 漫画",
+      "video": "🎥 视频"
+    },
+    "physical": [
+      {
+        "title": "生长突增",
+        "description": "你会长得更高！每个人发生的时间都不同。"
+      },
+      {
+        "title": "体型变化",
+        "description": "随着成长，身体会出现新的曲线和比例。"
+      },
+      {
+        "title": "声音变化",
+        "description": "你的声音可能会变低或音调变化——这完全正常！"
+      },
+      {
+        "title": "皮肤变化",
+        "description": "你可能会长痘或变油。良好卫生习惯有助于管理。"
+      },
+      {
+        "title": "体毛生长",
+        "description": "身体不同部位会长出新的毛发。"
+      },
+      {
+        "title": "体味",
+        "description": "你会开始更多出汗，使用除臭剂很重要！"
+      }
+    ],
+    "emotional": [
+      {
+        "title": "情绪起伏",
+        "description": "情绪可能像过山车一样——这是正常的！"
+      },
+      {
+        "title": "新兴趣",
+        "description": "你可能发展出新的爱好、兴趣和热情。"
+      },
+      {
+        "title": "独立",
+        "description": "你会想要更多隐私和独立。"
+      },
+      {
+        "title": "人际关系",
+        "description": "友情和社交联系变得更重要。"
+      },
+      {
+        "title": "自我意识",
+        "description": "你会更多思考自己是谁、想成为什么样的人。"
+      },
+      {
+        "title": "自信",
+        "description": "建立自信需要时间——请耐心对待自己！"
+      }
+    ],
+    "comics": [
+      {
+        "title": "生长突增",
+        "panels": [
+          "我发现自己长高了！",
+          "我的衣服不合身了……",
+          "青春期出现这种情况很正常！"
+        ],
+        "lesson": "生长突增是成长的一部分！"
+      },
+      {
+        "title": "情绪波动",
+        "panels": [
+          "我一会儿开心……",
+          "下一刻又难过……",
+          "记住：情绪是正常的！"
+        ],
+        "lesson": "由于荷尔蒙变化，青春期常见情绪波动。"
+      },
+      {
+        "title": "身体变化",
+        "panels": [
+          "我的身体在变化……",
+          "我和朋友感觉不一样",
+          "每个人的变化速度不同！"
+        ],
+        "lesson": "每个人的身体变化时间都不同——这没问题！"
+      }
+    ],
+    "quiz": {
+      "title": "测验已移至新页面！",
+      "description": "在新的测验页面找到有趣多彩的冒险。",
+      "cta": "前往测验页面 ➜"
+    },
+    "video": {
+      "title": "教育视频与动画",
+      "subtitle": "观看可信来源提供的青春期变化视频",
+      "items": [
+        {
+          "title": "认识青春期",
+          "description": "关于身体与情感变化的综合指南",
+          "source": "官方健康网站",
+          "duration": "5 分钟"
+        },
+        {
+          "title": "情绪变化解析",
+          "description": "了解情绪波动和情感发展",
+          "source": "教育频道",
+          "duration": "4 分钟"
+        },
+        {
+          "title": "身体变化动画",
+          "description": "关于身体发育的动画指南",
+          "source": "健康组织",
+          "duration": "6 分钟"
+        },
+        {
+          "title": "建立自信",
+          "description": "青春期自我接纳的小贴士",
+          "source": "青少年支持",
+          "duration": "3 分钟"
+        }
+      ],
+      "button": "观看",
+      "note": "说明：这些视频为占位符。正式应用中会嵌入来自官方健康网站或教育频道的视频。"
+    },
+    "info": {
+      "title": "记住：每个人都不同 🌈",
+      "points": [
+        {
+          "label": "时间",
+          "text": "青春期可能在 8-14 岁任何时候开始。没有“正确”时间！"
+        },
+        {
+          "label": "速度",
+          "text": "有些变化很快，有些需要几年。你的旅程是独一无二的。"
+        },
+        {
+          "label": "支持",
+          "text": "如果有疑问或担忧，请与可信赖的成年人交谈。他们会帮助你！"
+        }
+      ]
     }
   }
 }
