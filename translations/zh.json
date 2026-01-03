@@ -924,174 +924,174 @@
     }
   },
   "changes": {
-    "title": "Understanding Your Child's Changes",
-    "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
-    "physical": "Physical",
-    "emotional": "Emotional",
+    "title": "了解你的孩子正在经历的变化",
+    "subtitle": "了解孩子在身体和情绪上正在经历什么 🌟",
+    "physical": "身体",
+    "emotional": "情绪",
     "physicalChanges": {
       "growth": {
-        "title": "Growth Spurts",
-        "description": "Children grow at different rates. Growth spurts can be rapid and awkward."
+        "title": "生长突增",
+        "description": "孩子的生长速度各不相同。生长突增可能又快又让人不适应。"
       },
       "bodyShape": {
-        "title": "Body Shape Changes",
-        "description": "Body develops new proportions and curves as they mature."
+        "title": "身体形态变化",
+        "description": "随着成长，身体会出现新的比例和曲线。"
       },
       "voice": {
-        "title": "Voice Changes",
-        "description": "Voice may deepen or change in pitch - especially in boys."
+        "title": "嗓音变化",
+        "description": "嗓音可能变得更低或音调改变——尤其是男孩。"
       },
       "skin": {
-        "title": "Skin Changes",
-        "description": "Acne and oily skin are common. Good hygiene helps manage this."
+        "title": "皮肤变化",
+        "description": "长痘和皮肤出油很常见。良好的清洁习惯有助于管理。"
       },
       "hair": {
-        "title": "Hair Growth",
-        "description": "New hair grows in underarms, pubic area, and on face (boys)."
+        "title": "体毛生长",
+        "description": "腋下、阴部和（男孩的）脸上会长出新的毛发。"
       },
       "odor": {
-        "title": "Body Odor",
-        "description": "Increased sweating requires daily deodorant use."
+        "title": "体味",
+        "description": "出汗增多，需要每天使用除臭产品。"
       }
     },
     "emotionalChanges": {
       "mood": {
-        "title": "Mood Swings",
-        "description": "Hormonal changes cause real emotional volatility - it's biological."
+        "title": "情绪波动",
+        "description": "荷尔蒙变化会带来真实的情绪起伏——这是生理反应。"
       },
       "interests": {
-        "title": "New Interests",
-        "description": "Children develop new hobbies, passions, and interests."
+        "title": "新兴趣",
+        "description": "孩子会发展出新的爱好、热情和兴趣。"
       },
       "independence": {
-        "title": "Independence",
-        "description": "They'll want more privacy and independence from family."
+        "title": "独立性",
+        "description": "他们会想要更多隐私和独立，不再总是依赖家人。"
       },
       "relationships": {
-        "title": "Relationships",
-        "description": "Friendships and romantic interests become more important."
+        "title": "人际关系",
+        "description": "友谊和萌芽的感情会变得更重要。"
       },
       "awareness": {
-        "title": "Self-Awareness",
-        "description": "They think more about identity and who they want to become."
+        "title": "自我意识",
+        "description": "他们更常思考自己的身份以及想成为什么样的人。"
       },
       "confidence": {
-        "title": "Confidence Challenges",
-        "description": "Self-esteem often dips during puberty - they need reassurance."
+        "title": "自信挑战",
+        "description": "青春期自尊心常会下降——他们需要安慰与肯定。"
       }
     },
     "remember": {
-      "title": "Important Reminders for Parents 🌈",
-      "timing": "Timing: Puberty can start ages 8-14. Every child is unique - don't compare!",
-      "pace": "Pace: Some changes happen quickly, others take years. Be patient.",
-      "support": "Support: Keep communication open. Your child needs to know you're available for any questions or concerns."
+      "title": "给父母的重要提醒 🌈",
+      "timing": "时间：青春期可能在 8-14 岁开始。每个孩子都独一无二——别互相比较！",
+      "pace": "节奏：有些变化很快，有些需要数年。请耐心陪伴。",
+      "support": "支持：保持开放沟通。让孩子知道你随时可以回答问题或倾听担忧。"
     }
   },
   "diary": {
-    "title": "Your Child's Feelings Diary",
-    "subtitle": "A private space for your child to track and express their emotions 📝",
-    "addEntry": "Add New Entry",
-    "cancel": "Cancel",
-    "howFeeling": "How are you feeling today?",
+    "title": "孩子的心情日记",
+    "subtitle": "一个私密空间，让孩子记录并表达自己的情绪 📝",
+    "addEntry": "添加新条目",
+    "cancel": "取消",
+    "howFeeling": "你今天感觉如何？",
     "moods": {
-      "happy": "Happy",
-      "neutral": "Neutral",
-      "sad": "Sad",
-      "excited": "Excited",
-      "anxious": "Anxious"
+      "happy": "开心",
+      "neutral": "平静",
+      "sad": "难过",
+      "excited": "兴奋",
+      "anxious": "焦虑"
     },
-    "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
-    "saveEntry": "Save Entry",
-    "noEntries": "No entries yet. Start by adding your first one! 💭",
+    "placeholder": "在想些什么？分享你的想法、感受，或今天发生的事……",
+    "saveEntry": "保存条目",
+    "noEntries": "还没有条目。先添加第一条吧！💭",
     "tips": {
-      "title": "💡 Diary Tips for Your Child",
-      "regular": "✨ Write regularly - even just a few sentences helps!",
-      "honest": "🎯 Be honest about feelings - this is a private space",
-      "lookback": "🌈 Look back at old entries to see growth over time",
-      "valid": "💪 Remember: all feelings are valid and normal"
+      "title": "💡 给孩子的日记小贴士",
+      "regular": "✨ 定期书写——哪怕几句话也有帮助！",
+      "honest": "🎯 如实写下感受——这是专属的私密空间",
+      "lookback": "🌈 回看旧记录，看看自己如何成长",
+      "valid": "💪 记住：所有感受都正常、值得被接纳"
     }
   },
   "bodyGuide": {
-    "title": "Body Changes Guide",
-    "subtitle": "Age-appropriate information about physical development 🌱",
-    "everyone": "Everyone",
-    "femaleBody": "Female Body",
-    "maleBody": "Male Body",
+    "title": "身体变化指南",
+    "subtitle": "提供符合年龄的身体发育信息 🌱",
+    "everyone": "所有人",
+    "femaleBody": "女生身体",
+    "maleBody": "男生身体",
     "remember": {
-      "title": "Remember: Every Child is Unique 🌈",
-      "timing": "⏰ Timing: Changes can start ages 8-14 and continue into late teens.",
-      "variation": "📏 Variation: There's NO single 'normal' - everyone develops differently!",
-      "questions": "💬 Questions? Encourage your child to talk with you, their doctor, or a trusted adult.",
-      "health": "🏥 Health: If something causes pain or worries your child, consult a healthcare provider."
+      "title": "记住：每个孩子都独一无二 🌈",
+      "timing": "⏰ 时间：变化可能在 8-14 岁开始，并持续到青少年后期。",
+      "variation": "📏 差异：没有唯一的“正常”——每个人的发展都不同！",
+      "questions": "💬 有疑问？鼓励孩子与你、医生或信任的成年人交流。",
+      "health": "🏥 健康：如果某件事让孩子疼痛或担忧，请咨询医疗人员。"
     }
   },
   "timeline": {
-    "title": "Timeline Matching Game",
-    "subtitle": "Match each change to before or after puberty begins! 🎯",
-    "score": "Score",
-    "attempts": "Attempts",
-    "accuracy": "Accuracy",
-    "congratulations": "Congratulations! 🎉",
-    "completed": "You completed the game with {score} correct out of {attempts} attempts!",
-    "playAgain": "Play Again",
-    "selectCard": "👇 Click on a card below, then choose when it happens!",
-    "chooseStage": "👆 Now click either \"Before Puberty\" or \"After Puberty\" below!",
-    "beforePuberty": "👶 Before Puberty",
-    "afterPuberty": "🌟 After Puberty",
-    "resetGame": "Reset Game"
+    "title": "时间轴配对游戏",
+    "subtitle": "把每项变化配对到青春期前还是之后！🎯",
+    "score": "得分",
+    "attempts": "尝试次数",
+    "accuracy": "准确率",
+    "congratulations": "恭喜！🎉",
+    "completed": "你在 {attempts} 次尝试中答对了 {score} 项！",
+    "playAgain": "再玩一次",
+    "selectCard": "👇 点击下面的一张卡片，然后选择它发生的时间！",
+    "chooseStage": "👆 现在点击下面的“青春期前”或“青春期后”！",
+    "beforePuberty": "👶 青春期前",
+    "afterPuberty": "🌟 青春期后",
+    "resetGame": "重置游戏"
   },
   "guidance": {
-    "title": "Practical Guidance for Your Child",
-    "subtitle": "Help your child learn to handle puberty changes with confidence 💪",
+    "title": "给孩子的实用指南",
+    "subtitle": "帮助孩子自信应对青春期变化 💪",
     "categories": {
-      "physical": "Physical Care",
-      "emotional": "Emotional Wellbeing",
-      "social": "Social Life",
-      "hygiene": "Personal Hygiene"
+      "physical": "身体照护",
+      "emotional": "情绪健康",
+      "social": "社交生活",
+      "hygiene": "个人卫生"
     }
   },
   "bodyImage": {
-    "title": "Positive Body Image Activities",
-    "subtitle": "Five gentle prompts with illustrations to help kids name their feelings and talk about body kindness.",
-    "instruction": "Choose a feeling for each picture. You can change your answer anytime.",
-    "parentLabel": "Parent focus",
-    "parentButton": "Why this matters",
-    "progressLabel": "Question",
-    "next": "Next question",
-    "previous": "Previous",
+    "title": "积极身体形象活动",
+    "subtitle": "五个配插画的温柔提问，帮助孩子说出感受，练习对身体的善意。",
+    "instruction": "为每张图选择一种感受。随时可以更改答案。",
+    "parentLabel": "给父母的提示",
+    "parentButton": "为什么重要",
+    "progressLabel": "问题",
+    "next": "下一个问题",
+    "previous": "上一个",
     "emotions": {
-      "proud": "Proud",
-      "happy": "Happy",
-      "calm": "Calm/Okay",
-      "anxious": "Anxious",
-      "curious": "Curious",
-      "sad": "A little sad"
+      "proud": "自豪",
+      "happy": "开心",
+      "calm": "平静/还好",
+      "anxious": "紧张",
+      "curious": "好奇",
+      "sad": "有点难过"
     },
     "questions": [
       {
-        "title": "Looking in the mirror",
-        "prompt": "What feeling comes up when you see a kid smiling kindly at their reflection?",
-        "focus": "Invite your child to notice strengths, talents, and kindness—not just appearance."
+        "title": "照镜子",
+        "prompt": "看到一个孩子善意地微笑看着自己的倒影，你会有什么感觉？",
+        "focus": "邀请孩子注意自己的长处、才能和善意，而不仅仅是外表。"
       },
       {
-        "title": "Trying a new sport",
-        "prompt": "How do you feel seeing someone discovering what their body can do?",
-        "focus": "Celebrate effort and movement over winning. This builds body confidence."
+        "title": "尝试一项新运动",
+        "prompt": "看到有人发现自己身体能做到什么，你感觉如何？",
+        "focus": "把焦点放在努力和运动，而不是胜负。这能建立身体自信。"
       },
       {
-        "title": "Choosing comfy clothes",
-        "prompt": "When you see a kid picking clothes that feel right for them, what feeling fits you?",
-        "focus": "Explain that comfort and self-expression matter more than pleasing others."
+        "title": "选择舒适的衣服",
+        "prompt": "看到一个孩子挑选对自己合适的衣服，你会选哪种感受？",
+        "focus": "说明舒适和自我表达比取悦他人更重要。"
       },
       {
-        "title": "Drawing a self-portrait",
-        "prompt": "How do you feel about a child drawing themselves with bright colors?",
-        "focus": "Encourage creative self-expression and noticing unique traits."
+        "title": "画自画像",
+        "prompt": "看到孩子用鲜艳颜色画自己，你的感受是？",
+        "focus": "鼓励创意自我表达，注意到独特特质。"
       },
       {
-        "title": "Stretch and breathe",
-        "prompt": "What feeling do you pick seeing someone stretch, breathe, and relax?",
-        "focus": "Body gratitude grows when kids pair movement with calm breathing."
+        "title": "伸展和呼吸",
+        "prompt": "看到有人伸展、呼吸、放松时，你会选择什么感受？",
+        "focus": "当孩子把运动和平静呼吸结合时，感恩身体的心会成长。"
       }
     ]
   },
