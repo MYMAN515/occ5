@@ -203,8 +203,8 @@ export default function ResourcesPage() {
                   >
                     <Eye className="w-4 h-4" />
                     {resource.type === 'Web Resource'
-                      ? t('resourceLibrary.actions.visit')
-                      : t('resourceLibrary.actions.preview')}
+                      ? String(t('resourceLibrary.actions.visit'))
+                      : String(t('resourceLibrary.actions.preview'))}
                   </motion.button>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
