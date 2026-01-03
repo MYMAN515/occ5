@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Download, FileText, BookOpen, CheckSquare, File, ExternalLink, Eye } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ResourcesPage() {
+  const { t, language } = useLanguage()
+  const isRTL = language === 'ar'
   const resources = [
     {
       category: 'Parent Guides & Educational Resources',
@@ -114,7 +117,7 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
+    <div className="container mx-auto px-4 py-8 md:py-12" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -129,10 +132,10 @@ export default function ResourcesPage() {
           <File className="w-16 h-16 text-blue-500" />
         </motion.div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-          Resource Library
+          {t('resourceLibrary.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Downloadable guides, checklists, and activity sheets to support your family's journey
+          {t('resourceLibrary.subtitle')}
         </p>
       </motion.div>
 
@@ -169,58 +172,60 @@ export default function ResourcesPage() {
                   className="glass-effect rounded-2xl p-6 h-full flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <div className={`bg-gradient-to-r ${category.color} w-10 h-10 rounded-lg flex items-center justify-center text-white`}>
-                      <FileText className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                      {resource.type}
+                <div className={`bg-gradient-to-r ${category.color} w-10 h-10 rounded-lg flex items-center justify-center text-white`}>
+                  <FileText className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                  {resource.type}
                     </span>
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-800 mb-2">{resource.title}</h3>
                   <p className="text-sm text-gray-600 mb-3 flex-grow">{resource.description}</p>
-                  
-                  {resource.source && (
-                    <div className="text-xs text-blue-600 font-medium mb-3">
-                      Source: {resource.source}
-                    </div>
-                  )}
 
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>{resource.size}</span>
-                    <span className="px-2 py-1 bg-gray-100 rounded">{resource.type}</span>
+                {resource.source && (
+                  <div className="text-xs text-blue-600 font-medium mb-3">
+                    {t('resourceLibrary.labels.source')}: {resource.source}
                   </div>
+                )}
 
-                  <div className="flex gap-2">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => handlePreview(resource)}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-semibold text-sm transition-colors"
-                    >
-                      <Eye className="w-4 h-4" />
-                      {resource.type === 'Web Resource' ? 'Visit' : 'Preview'}
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => handleDownload(resource)}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all"
-                    >
-                      {resource.type === 'Web Resource' ? (
-                        <>
-                          <ExternalLink className="w-4 h-4" />
-                          Open
-                        </>
-                      ) : (
-                        <>
-                          <Download className="w-4 h-4" />
-                          Download
-                        </>
-                      )}
-                    </motion.button>
-                  </div>
-                </motion.div>
+                <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+                  <span>{resource.size}</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded">{t('resourceLibrary.labels.type')}: {resource.type}</span>
+                </div>
+
+                <div className="flex gap-2">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handlePreview(resource)}
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-semibold text-sm transition-colors"
+                  >
+                    <Eye className="w-4 h-4" />
+                    {resource.type === 'Web Resource'
+                      ? t('resourceLibrary.actions.visit')
+                      : t('resourceLibrary.actions.preview')}
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleDownload(resource)}
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+                  >
+                    {resource.type === 'Web Resource' ? (
+                      <>
+                        <ExternalLink className="w-4 h-4" />
+                        {t('resourceLibrary.actions.open')}
+                      </>
+                    ) : (
+                      <>
+                        <Download className="w-4 h-4" />
+                        {t('resourceLibrary.actions.download')}
+                      </>
+                    )}
+                  </motion.button>
+                </div>
+              </motion.div>
               ))}
             </div>
           </motion.div>
@@ -235,20 +240,12 @@ export default function ResourcesPage() {
         transition={{ delay: 0.5 }}
         className="mt-12 glass-effect rounded-3xl p-8 max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-purple-50"
       >
-        <h3 className="text-xl font-bold mb-4 text-gray-800 text-center">📚 About These Resources</h3>
+        <h3 className="text-xl font-bold mb-4 text-gray-800 text-center">📚 {t('resourceLibrary.about.title')}</h3>
         <div className="space-y-3 text-gray-700 text-sm md:text-base">
-          <p>
-            <strong>Free to Download:</strong> All resources are free and available for personal use.
-          </p>
-          <p>
-            <strong>Print-Friendly:</strong> All PDFs are optimized for printing at home.
-          </p>
-          <p>
-            <strong>Regular Updates:</strong> We regularly add new resources based on community feedback.
-          </p>
-          <p>
-            <strong>Privacy:</strong> Downloads are private - no account or personal information required.
-          </p>
+          <p>{t('resourceLibrary.about.free')}</p>
+          <p>{t('resourceLibrary.about.print')}</p>
+          <p>{t('resourceLibrary.about.updates')}</p>
+          <p>{t('resourceLibrary.about.privacy')}</p>
         </div>
       </motion.div>
     </div>

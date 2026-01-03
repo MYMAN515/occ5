@@ -33,21 +33,49 @@
       "safe": "私密"
     },
     "quickLinks": {
-      "games": {
-        "label": "游戏",
-        "helper": "所有游戏"
-      },
-      "kids": {
-        "label": "给孩子",
-        "helper": "玩与学"
-      },
-      "parents": {
-        "label": "给父母",
-        "helper": "贴士与指南"
-      },
-      "quizzes": {
-        "label": "问答",
-        "helper": "快速问题"
+      "tagline": "Quick links",
+      "title": "Quick links crafted for small screens—tap a card to jump right in.",
+      "items": {
+        "diary": {
+          "label": "Mood Diary for Your Child",
+          "helper": "Track feelings together each day."
+        },
+        "hygiene": {
+          "label": "Hygiene & Self-Care",
+          "helper": "Build supportive daily routines."
+        },
+        "confidence": {
+          "label": "Confidence & Lifestyle",
+          "helper": "Grow habits that boost confidence."
+        },
+        "timeline": {
+          "label": "Timeline Game",
+          "helper": "Match changes before or after puberty."
+        },
+        "memory": {
+          "label": "Emotion Memory Game",
+          "helper": "Match emotion pairs to practice feelings."
+        },
+        "quiz": {
+          "label": "Puberty Knowledge Quiz",
+          "helper": "Test what you know about growing up."
+        },
+        "matching": {
+          "label": "Changes Matching Game",
+          "helper": "Pair related puberty changes together."
+        },
+        "emotions": {
+          "label": "Understanding Emotions",
+          "helper": "Learn to identify and name feelings."
+        },
+        "whatILike": {
+          "label": "What I Like About Me",
+          "helper": "Celebrate strengths with uplifting prompts."
+        },
+        "quizzes": {
+          "label": "Quizzes",
+          "helper": "Explore the Sleep & Nutrition Impact Quiz."
+        }
       }
     },
     "note": "随时切换语言 • 数据仅保存在此设备。",
@@ -928,6 +956,12 @@
     "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
     "physical": "Physical",
     "emotional": "Emotional",
+    "tabs": {
+      "physical": "Physical",
+      "emotional": "Emotional",
+      "comics": "Comics",
+      "video": "Video"
+    },
     "physicalChanges": {
       "growth": {
         "title": "Growth Spurts",
@@ -978,6 +1012,105 @@
       "confidence": {
         "title": "Confidence Challenges",
         "description": "Self-esteem often dips during puberty - they need reassurance."
+      }
+    },
+    "comicsSection": {
+      "lessonLabel": "Lesson",
+      "items": [
+        {
+          "title": "The Growth Spurt",
+          "panels": [
+            {
+              "text": "I noticed I'm getting taller!",
+              "emoji": "📏"
+            },
+            {
+              "text": "My clothes don't fit anymore...",
+              "emoji": "👕"
+            },
+            {
+              "text": "That's totally normal during puberty!",
+              "emoji": "✨"
+            }
+          ],
+          "lesson": "Growth spurts are a natural part of growing up!"
+        },
+        {
+          "title": "Mood Swings",
+          "panels": [
+            {
+              "text": "I feel happy one moment...",
+              "emoji": "😊"
+            },
+            {
+              "text": "Then sad the next...",
+              "emoji": "😢"
+            },
+            {
+              "text": "Remember: emotions are normal!",
+              "emoji": "💙"
+            }
+          ],
+          "lesson": "Mood swings are common during puberty due to hormonal changes."
+        },
+        {
+          "title": "Body Changes",
+          "panels": [
+            {
+              "text": "My body is changing...",
+              "emoji": "🤔"
+            },
+            {
+              "text": "I feel different from my friends",
+              "emoji": "😕"
+            },
+            {
+              "text": "Everyone changes at their own pace!",
+              "emoji": "🌈"
+            }
+          ],
+          "lesson": "Everyone's body changes at different times - that's okay!"
+        }
+      ],
+      "cta": {
+        "title": "Quiz Time Moved!",
+        "description": "Find the silly, colorful quiz adventure on the new Quiz page.",
+        "button": "Jump to Quiz Page ➜"
+      }
+    },
+    "videoSection": {
+      "title": "Educational Videos & Animations",
+      "subtitle": "Watch helpful videos about puberty changes from trusted sources",
+      "items": [
+        {
+          "title": "Understanding Puberty",
+          "description": "A comprehensive guide to physical and emotional changes",
+          "source": "Official Health Website",
+          "duration": "5 min"
+        },
+        {
+          "title": "Emotional Changes Explained",
+          "description": "Learn about mood swings and emotional development",
+          "source": "Educational Channel",
+          "duration": "4 min"
+        },
+        {
+          "title": "Body Changes Animation",
+          "description": "Animated guide to physical development",
+          "source": "Health Organization",
+          "duration": "6 min"
+        },
+        {
+          "title": "Building Confidence",
+          "description": "Tips for self-acceptance during puberty",
+          "source": "Youth Support",
+          "duration": "3 min"
+        }
+      ],
+      "watch": "Watch",
+      "note": {
+        "label": "Note:",
+        "description": "These videos are placeholders. In the actual app, you would embed videos from official health websites or educational channels."
       }
     },
     "remember": {
@@ -1278,6 +1411,28 @@
         "good": "做得不错！继续保持好奇和友善。",
         "keepGoing": "再试一次！每个问题都是学习的机会。"
       }
+    }
+  },
+  "resourceLibrary": {
+    "title": "Resource Library",
+    "subtitle": "Downloadable guides, checklists, and activity sheets to support your family's journey",
+    "actions": {
+      "visit": "Visit",
+      "preview": "Preview",
+      "open": "Open",
+      "download": "Download"
+    },
+    "labels": {
+      "source": "Source",
+      "size": "Size",
+      "type": "Type"
+    },
+    "about": {
+      "title": "About These Resources",
+      "free": "Free to Download: All resources are free and available for personal use.",
+      "print": "Print-Friendly: All PDFs are optimized for printing at home.",
+      "updates": "Regular Updates: We regularly add new resources based on community feedback.",
+      "privacy": "Privacy: Downloads are private - no account or personal information required."
     }
   }
 }

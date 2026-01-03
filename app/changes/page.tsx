@@ -4,125 +4,113 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Link from 'next/link'
 import { Heart, Brain, Sparkles, Smile, Cloud, Zap, Play, BookOpen, Video } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
+
+type Tab = 'physical' | 'emotional' | 'comics' | 'video'
+
+type Comic = {
+  title: string
+  panels: { text: string; emoji: string }[]
+  lesson: string
+}
+
+type VideoItem = {
+  title: string
+  description: string
+  source: string
+  duration: string
+}
 
 export default function ChangesPage() {
-  const [activeTab, setActiveTab] = useState<'physical' | 'emotional' | 'comics' | 'video'>('physical')
+  const { t, language } = useLanguage()
+  const isRTL = language === 'ar'
+  const [activeTab, setActiveTab] = useState<Tab>('physical')
 
   const physicalChanges = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Growth Spurts",
-      description: "You'll grow taller! This happens at different times for everyone.",
-      color: "from-blue-400 to-cyan-500"
+      title: t('changes.physicalChanges.growth.title'),
+      description: t('changes.physicalChanges.growth.description'),
+      color: 'from-blue-400 to-cyan-500',
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Body Shape Changes",
-      description: "Your body will develop new curves and proportions as you mature.",
-      color: "from-pink-400 to-rose-500"
+      title: t('changes.physicalChanges.bodyShape.title'),
+      description: t('changes.physicalChanges.bodyShape.description'),
+      color: 'from-pink-400 to-rose-500',
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Voice Changes",
-      description: "Your voice may deepen or change in pitch - this is totally normal!",
-      color: "from-purple-400 to-indigo-500"
+      title: t('changes.physicalChanges.voice.title'),
+      description: t('changes.physicalChanges.voice.description'),
+      color: 'from-purple-400 to-indigo-500',
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Skin Changes",
-      description: "You might get acne or oily skin. Good hygiene helps manage this.",
-      color: "from-amber-400 to-orange-500"
+      title: t('changes.physicalChanges.skin.title'),
+      description: t('changes.physicalChanges.skin.description'),
+      color: 'from-amber-400 to-orange-500',
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Hair Growth",
-      description: "New hair will grow in different places on your body.",
-      color: "from-green-400 to-emerald-500"
+      title: t('changes.physicalChanges.hair.title'),
+      description: t('changes.physicalChanges.hair.description'),
+      color: 'from-green-400 to-emerald-500',
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Body Odor",
-      description: "You'll start to sweat more. Using deodorant becomes important!",
-      color: "from-teal-400 to-cyan-500"
-    }
+      title: t('changes.physicalChanges.odor.title'),
+      description: t('changes.physicalChanges.odor.description'),
+      color: 'from-teal-400 to-cyan-500',
+    },
   ]
 
   const emotionalChanges = [
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "Mood Swings",
-      description: "Your emotions might feel like a rollercoaster - that's normal!",
-      color: "from-purple-400 to-pink-500"
+      title: t('changes.emotionalChanges.mood.title'),
+      description: t('changes.emotionalChanges.mood.description'),
+      color: 'from-purple-400 to-pink-500',
     },
     {
       icon: <Smile className="w-6 h-6" />,
-      title: "New Interests",
-      description: "You might develop new hobbies, interests, and passions.",
-      color: "from-yellow-400 to-amber-500"
+      title: t('changes.emotionalChanges.interests.title'),
+      description: t('changes.emotionalChanges.interests.description'),
+      color: 'from-yellow-400 to-amber-500',
     },
     {
       icon: <Cloud className="w-6 h-6" />,
-      title: "Independence",
-      description: "You'll want more privacy and independence from family.",
-      color: "from-blue-400 to-indigo-500"
+      title: t('changes.emotionalChanges.independence.title'),
+      description: t('changes.emotionalChanges.independence.description'),
+      color: 'from-blue-400 to-indigo-500',
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Relationships",
-      description: "Friendships and social connections become more important.",
-      color: "from-rose-400 to-pink-500"
+      title: t('changes.emotionalChanges.relationships.title'),
+      description: t('changes.emotionalChanges.relationships.description'),
+      color: 'from-rose-400 to-pink-500',
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "Self-Awareness",
-      description: "You'll think more about who you are and who you want to be.",
-      color: "from-cyan-400 to-blue-500"
+      title: t('changes.emotionalChanges.awareness.title'),
+      description: t('changes.emotionalChanges.awareness.description'),
+      color: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Confidence",
-      description: "Building confidence takes time - be patient with yourself!",
-      color: "from-orange-400 to-red-500"
-    }
+      title: t('changes.emotionalChanges.confidence.title'),
+      description: t('changes.emotionalChanges.confidence.description'),
+      color: 'from-orange-400 to-red-500',
+    },
   ]
 
-  const comics = [
-    {
-      id: 1,
-      title: "The Growth Spurt",
-      panels: [
-        { text: "I noticed I'm getting taller!", emoji: "📏" },
-        { text: "My clothes don't fit anymore...", emoji: "👕" },
-        { text: "That's totally normal during puberty!", emoji: "✨" }
-      ],
-      lesson: "Growth spurts are a natural part of growing up!"
-    },
-    {
-      id: 2,
-      title: "Mood Swings",
-      panels: [
-        { text: "I feel happy one moment...", emoji: "😊" },
-        { text: "Then sad the next...", emoji: "😢" },
-        { text: "Remember: emotions are normal!", emoji: "💙" }
-      ],
-      lesson: "Mood swings are common during puberty due to hormonal changes."
-    },
-    {
-      id: 3,
-      title: "Body Changes",
-      panels: [
-        { text: "My body is changing...", emoji: "🤔" },
-        { text: "I feel different from my friends", emoji: "😕" },
-        { text: "Everyone changes at their own pace!", emoji: "🌈" }
-      ],
-      lesson: "Everyone's body changes at different times - that's okay!"
-    }
-  ]
+  const comics = (t('changes.comicsSection.items') as Comic[]) || []
+  const videoItems = (t('changes.videoSection.items') as VideoItem[]) || []
 
   const activeChanges = activeTab === 'physical' ? physicalChanges : activeTab === 'emotional' ? emotionalChanges : []
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
+    <div className="container mx-auto px-4 py-8 md:py-12" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -130,11 +118,9 @@ export default function ChangesPage() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Understanding Changes
+          {t('changes.title')}
         </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Puberty brings many changes to your body and mind. Let's explore them together! 🌟
-        </p>
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">{t('changes.subtitle')}</p>
       </motion.div>
 
       {/* Tab Selector */}
@@ -153,7 +139,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💪 Physical
+            💪 {t('changes.tabs.physical')}
           </button>
           <button
             onClick={() => setActiveTab('emotional')}
@@ -163,7 +149,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💭 Emotional
+            💭 {t('changes.tabs.emotional')}
           </button>
           <button
             onClick={() => setActiveTab('comics')}
@@ -173,7 +159,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            📚 Comics
+            📚 {t('changes.tabs.comics')}
           </button>
           <button
             onClick={() => setActiveTab('video')}
@@ -183,7 +169,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            🎥 Video
+            🎥 {t('changes.tabs.video')}
           </button>
         </div>
       </motion.div>
@@ -229,7 +215,7 @@ export default function ChangesPage() {
           >
             {comics.map((comic, comicIndex) => (
               <motion.div
-                key={comic.id}
+                key={`${comic.title}-${comicIndex}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: comicIndex * 0.2 }}
@@ -239,7 +225,7 @@ export default function ChangesPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   {comic.panels.map((panel, panelIndex) => (
                     <motion.div
-                      key={panelIndex}
+                      key={`${panel.text}-${panelIndex}`}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: comicIndex * 0.2 + panelIndex * 0.1 }}
@@ -251,7 +237,7 @@ export default function ChangesPage() {
                   ))}
                 </div>
                 <div className="bg-blue-50 rounded-xl p-4 text-center">
-                  <p className="text-gray-700 font-semibold">💡 Lesson: {comic.lesson}</p>
+                  <p className="text-gray-700 font-semibold">💡 {t('changes.comicsSection.lessonLabel')}: {comic.lesson}</p>
                 </div>
               </motion.div>
             ))}
@@ -264,15 +250,15 @@ export default function ChangesPage() {
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-8 h-8 text-primary-600" />
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Quiz Time Moved!</h3>
-                  <p className="text-gray-600">Find the silly, colorful quiz adventure on the new Quiz page.</p>
+                  <h3 className="text-2xl font-bold text-gray-800">{t('changes.comicsSection.cta.title')}</h3>
+                  <p className="text-gray-600">{t('changes.comicsSection.cta.description')}</p>
                 </div>
               </div>
               <Link
                 href="/quiz"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg"
               >
-                Jump to Quiz Page ➜
+                {t('changes.comicsSection.cta.button')}
               </Link>
             </motion.div>
           </motion.div>
@@ -288,42 +274,15 @@ export default function ChangesPage() {
             <div className="glass-effect rounded-3xl p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 flex items-center justify-center gap-3">
                 <Video className="w-8 h-8 text-primary-600" />
-                Educational Videos & Animations
+                {t('changes.videoSection.title')}
               </h3>
-              <p className="text-center text-gray-600 mb-8">
-                Watch helpful videos about puberty changes from trusted sources
-              </p>
+              <p className="text-center text-gray-600 mb-8">{t('changes.videoSection.subtitle')}</p>
 
               {/* Video Placeholder Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Understanding Puberty",
-                    description: "A comprehensive guide to physical and emotional changes",
-                    source: "Official Health Website",
-                    duration: "5 min"
-                  },
-                  {
-                    title: "Emotional Changes Explained",
-                    description: "Learn about mood swings and emotional development",
-                    source: "Educational Channel",
-                    duration: "4 min"
-                  },
-                  {
-                    title: "Body Changes Animation",
-                    description: "Animated guide to physical development",
-                    source: "Health Organization",
-                    duration: "6 min"
-                  },
-                  {
-                    title: "Building Confidence",
-                    description: "Tips for self-acceptance during puberty",
-                    source: "Youth Support",
-                    duration: "3 min"
-                  }
-                ].map((video, index) => (
+                {videoItems.map((video, index) => (
                   <motion.div
-                    key={index}
+                    key={`${video.title}-${index}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -345,7 +304,7 @@ export default function ChangesPage() {
                         whileTap={{ scale: 0.95 }}
                         className="bg-primary-500 text-white px-4 py-2 rounded-lg text-sm font-semibold"
                       >
-                        Watch
+                        {t('changes.videoSection.watch')}
                       </motion.button>
                     </div>
                   </motion.div>
@@ -354,7 +313,7 @@ export default function ChangesPage() {
 
               <div className="mt-8 bg-blue-50 rounded-xl p-6 text-center">
                 <p className="text-gray-700">
-                  <strong>Note:</strong> These videos are placeholders. In the actual app, you would embed videos from official health websites or educational channels.
+                  <strong>{t('changes.videoSection.note.label')}</strong> {t('changes.videoSection.note.description')}
                 </p>
               </div>
             </div>
@@ -369,19 +328,11 @@ export default function ChangesPage() {
         transition={{ delay: 0.5 }}
         className="glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Remember: Everyone is Different 🌈
-        </h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">{t('changes.remember.title')}</h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>Timing:</strong> Puberty can start anywhere from ages 8-14. There's no "right" time!
-          </p>
-          <p>
-            <strong>Pace:</strong> Some changes happen quickly, others take years. Your journey is unique.
-          </p>
-          <p>
-            <strong>Support:</strong> Talk to trusted adults if you have questions or concerns. They're here to help!
-          </p>
+          <p>{t('changes.remember.timing')}</p>
+          <p>{t('changes.remember.pace')}</p>
+          <p>{t('changes.remember.support')}</p>
         </div>
       </motion.div>
     </div>

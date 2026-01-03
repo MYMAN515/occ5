@@ -24,62 +24,62 @@ export default function Home() {
     {
       href: '/diary',
       icon: '📔',
-      label: 'Mood Diary for Your Child',
-      helper: 'Track feelings together each day.',
+      label: t('home.quickLinks.items.diary.label'),
+      helper: t('home.quickLinks.items.diary.helper'),
     },
     {
       href: '/hygiene',
       icon: '🧼',
-      label: 'Hygiene & Self-Care',
-      helper: 'Build supportive daily routines.',
+      label: t('home.quickLinks.items.hygiene.label'),
+      helper: t('home.quickLinks.items.hygiene.helper'),
     },
     {
       href: '/confidence',
       icon: '🌟',
-      label: 'Confidence & Lifestyle',
-      helper: 'Grow habits that boost confidence.',
+      label: t('home.quickLinks.items.confidence.label'),
+      helper: t('home.quickLinks.items.confidence.helper'),
     },
     {
       href: '/timeline',
       icon: '⏳',
-      label: 'Timeline Game',
-      helper: 'Match changes before or after puberty.',
+      label: t('home.quickLinks.items.timeline.label'),
+      helper: t('home.quickLinks.items.timeline.helper'),
     },
     {
       action: () => setSelectedGame('memory'),
       icon: '🧠',
-      label: 'Emotion Memory Game',
-      helper: 'Match emotion pairs to practice feelings.',
+      label: t('home.quickLinks.items.memory.label'),
+      helper: t('home.quickLinks.items.memory.helper'),
     },
     {
       action: () => setSelectedGame('quiz'),
       icon: '📝',
-      label: 'Puberty Knowledge Quiz',
-      helper: 'Test what you know about growing up.',
+      label: t('home.quickLinks.items.quiz.label'),
+      helper: t('home.quickLinks.items.quiz.helper'),
     },
     {
       action: () => setSelectedGame('matching'),
       icon: '🧩',
-      label: 'Changes Matching Game',
-      helper: 'Pair related puberty changes together.',
+      label: t('home.quickLinks.items.matching.label'),
+      helper: t('home.quickLinks.items.matching.helper'),
     },
     {
       action: () => setSelectedGame('emotions'),
       icon: '🎈',
-      label: 'Understanding Emotions',
-      helper: 'Learn to identify and name feelings.',
+      label: t('home.quickLinks.items.emotions.label'),
+      helper: t('home.quickLinks.items.emotions.helper'),
     },
     {
       href: '/what-i-like-about-me',
       icon: '💫',
-      label: 'What I Like About Me',
-      helper: 'Celebrate strengths with uplifting prompts.',
+      label: t('home.quickLinks.items.whatILike.label'),
+      helper: t('home.quickLinks.items.whatILike.helper'),
     },
     {
       href: '/quizzes',
       icon: '❓',
-      label: 'Quizzes',
-      helper: 'Explore the Sleep & Nutrition Impact Quiz.',
+      label: t('home.quickLinks.items.quizzes.label'),
+      helper: t('home.quickLinks.items.quizzes.helper'),
     },
   ]
 
@@ -164,10 +164,8 @@ export default function Home() {
       <section className="mt-12" id="quick-links">
         <div className="flex items-center justify-between mb-4">
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-primary-700">Quick links</p>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-balance">
-              Quick links crafted for small screens—tap a card to jump right in.
-            </h2>
+            <p className="text-sm font-semibold text-primary-700">{t('home.quickLinks.tagline')}</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-balance">{t('home.quickLinks.title')}</h2>
           </div>
         </div>
         <div className={`grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'text-right' : ''}`}>

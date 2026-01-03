@@ -33,21 +33,49 @@
       "safe": "Peribadi"
     },
     "quickLinks": {
-      "games": {
-        "label": "Permainan",
-        "helper": "Semua game"
-      },
-      "kids": {
-        "label": "Untuk Anak",
-        "helper": "Main & belajar"
-      },
-      "parents": {
-        "label": "Untuk Ibu Bapa",
-        "helper": "Tip ringkas"
-      },
-      "quizzes": {
-        "label": "Kuiz",
-        "helper": "Soalan pantas"
+      "tagline": "Quick links",
+      "title": "Quick links crafted for small screens—tap a card to jump right in.",
+      "items": {
+        "diary": {
+          "label": "Mood Diary for Your Child",
+          "helper": "Track feelings together each day."
+        },
+        "hygiene": {
+          "label": "Hygiene & Self-Care",
+          "helper": "Build supportive daily routines."
+        },
+        "confidence": {
+          "label": "Confidence & Lifestyle",
+          "helper": "Grow habits that boost confidence."
+        },
+        "timeline": {
+          "label": "Timeline Game",
+          "helper": "Match changes before or after puberty."
+        },
+        "memory": {
+          "label": "Emotion Memory Game",
+          "helper": "Match emotion pairs to practice feelings."
+        },
+        "quiz": {
+          "label": "Puberty Knowledge Quiz",
+          "helper": "Test what you know about growing up."
+        },
+        "matching": {
+          "label": "Changes Matching Game",
+          "helper": "Pair related puberty changes together."
+        },
+        "emotions": {
+          "label": "Understanding Emotions",
+          "helper": "Learn to identify and name feelings."
+        },
+        "whatILike": {
+          "label": "What I Like About Me",
+          "helper": "Celebrate strengths with uplifting prompts."
+        },
+        "quizzes": {
+          "label": "Quizzes",
+          "helper": "Explore the Sleep & Nutrition Impact Quiz."
+        }
       }
     },
     "note": "Tukar bahasa bila-bila • Data kekal di peranti ini.",
@@ -914,67 +942,172 @@
     "helpfulTipsLabel": "Petua berguna:"
   },
   "changes": {
-    "title": "Memahami Perubahan Anak Anda",
-    "subtitle": "Ketahui apa yang dialami anak anda secara fizikal dan emosi 🌟",
-    "physical": "Fizikal",
-    "emotional": "Emosi",
+    "title": "Understanding Your Child's Changes",
+    "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
+    "physical": "Physical",
+    "emotional": "Emotional",
+    "tabs": {
+      "physical": "Physical",
+      "emotional": "Emotional",
+      "comics": "Comics",
+      "video": "Video"
+    },
     "physicalChanges": {
       "growth": {
-        "title": "Lonjakan Pertumbuhan",
-        "description": "Kanak-kanak berkembang pada kadar berbeza"
+        "title": "Growth Spurts",
+        "description": "Children grow at different rates. Growth spurts can be rapid and awkward."
       },
       "bodyShape": {
-        "title": "Perubahan Bentuk Badan",
-        "description": "Badan berkembang dengan perkadaran dan lengkungan baru"
+        "title": "Body Shape Changes",
+        "description": "Body develops new proportions and curves as they mature."
       },
       "voice": {
-        "title": "Perubahan Suara",
-        "description": "Suara mungkin menjadi lebih dalam - terutamanya pada lelaki"
+        "title": "Voice Changes",
+        "description": "Voice may deepen or change in pitch - especially in boys."
       },
       "skin": {
-        "title": "Perubahan Kulit",
-        "description": "Jerawat dan kulit berminyak adalah biasa"
+        "title": "Skin Changes",
+        "description": "Acne and oily skin are common. Good hygiene helps manage this."
       },
       "hair": {
-        "title": "Pertumbuhan Rambut",
-        "description": "Rambut baru tumbuh di ketiak dan kawasan kemaluan"
+        "title": "Hair Growth",
+        "description": "New hair grows in underarms, pubic area, and on face (boys)."
       },
       "odor": {
-        "title": "Bau Badan",
-        "description": "Peningkatan peluh memerlukan penggunaan deodoran harian"
+        "title": "Body Odor",
+        "description": "Increased sweating requires daily deodorant use."
       }
     },
     "emotionalChanges": {
       "mood": {
-        "title": "Perubahan Mood",
-        "description": "Perubahan hormon menyebabkan ketidakstabilan emosi yang nyata"
+        "title": "Mood Swings",
+        "description": "Hormonal changes cause real emotional volatility - it's biological."
       },
       "interests": {
-        "title": "Minat Baru",
-        "description": "Kanak-kanak membangunkan hobi dan minat baru"
+        "title": "New Interests",
+        "description": "Children develop new hobbies, passions, and interests."
       },
       "independence": {
-        "title": "Kemerdekaan",
-        "description": "Mereka akan mahukan lebih privasi dan kemerdekaan"
+        "title": "Independence",
+        "description": "They'll want more privacy and independence from family."
       },
       "relationships": {
-        "title": "Hubungan",
-        "description": "Persahabatan dan minat romantik menjadi lebih penting"
+        "title": "Relationships",
+        "description": "Friendships and romantic interests become more important."
       },
       "awareness": {
-        "title": "Kesedaran Diri",
-        "description": "Mereka berfikir lebih tentang identiti"
+        "title": "Self-Awareness",
+        "description": "They think more about identity and who they want to become."
       },
       "confidence": {
-        "title": "Cabaran Keyakinan",
-        "description": "Harga diri sering menurun semasa akil baligh"
+        "title": "Confidence Challenges",
+        "description": "Self-esteem often dips during puberty - they need reassurance."
+      }
+    },
+    "comicsSection": {
+      "lessonLabel": "Lesson",
+      "items": [
+        {
+          "title": "The Growth Spurt",
+          "panels": [
+            {
+              "text": "I noticed I'm getting taller!",
+              "emoji": "📏"
+            },
+            {
+              "text": "My clothes don't fit anymore...",
+              "emoji": "👕"
+            },
+            {
+              "text": "That's totally normal during puberty!",
+              "emoji": "✨"
+            }
+          ],
+          "lesson": "Growth spurts are a natural part of growing up!"
+        },
+        {
+          "title": "Mood Swings",
+          "panels": [
+            {
+              "text": "I feel happy one moment...",
+              "emoji": "😊"
+            },
+            {
+              "text": "Then sad the next...",
+              "emoji": "😢"
+            },
+            {
+              "text": "Remember: emotions are normal!",
+              "emoji": "💙"
+            }
+          ],
+          "lesson": "Mood swings are common during puberty due to hormonal changes."
+        },
+        {
+          "title": "Body Changes",
+          "panels": [
+            {
+              "text": "My body is changing...",
+              "emoji": "🤔"
+            },
+            {
+              "text": "I feel different from my friends",
+              "emoji": "😕"
+            },
+            {
+              "text": "Everyone changes at their own pace!",
+              "emoji": "🌈"
+            }
+          ],
+          "lesson": "Everyone's body changes at different times - that's okay!"
+        }
+      ],
+      "cta": {
+        "title": "Quiz Time Moved!",
+        "description": "Find the silly, colorful quiz adventure on the new Quiz page.",
+        "button": "Jump to Quiz Page ➜"
+      }
+    },
+    "videoSection": {
+      "title": "Educational Videos & Animations",
+      "subtitle": "Watch helpful videos about puberty changes from trusted sources",
+      "items": [
+        {
+          "title": "Understanding Puberty",
+          "description": "A comprehensive guide to physical and emotional changes",
+          "source": "Official Health Website",
+          "duration": "5 min"
+        },
+        {
+          "title": "Emotional Changes Explained",
+          "description": "Learn about mood swings and emotional development",
+          "source": "Educational Channel",
+          "duration": "4 min"
+        },
+        {
+          "title": "Body Changes Animation",
+          "description": "Animated guide to physical development",
+          "source": "Health Organization",
+          "duration": "6 min"
+        },
+        {
+          "title": "Building Confidence",
+          "description": "Tips for self-acceptance during puberty",
+          "source": "Youth Support",
+          "duration": "3 min"
+        }
+      ],
+      "watch": "Watch",
+      "note": {
+        "label": "Note:",
+        "description": "These videos are placeholders. In the actual app, you would embed videos from official health websites or educational channels."
       }
     },
     "remember": {
-      "title": "Peringatan Penting untuk Ibu Bapa 🌈",
-      "timing": "Masa: Akil baligh boleh bermula umur 8-14. Setiap anak unik!",
-      "pace": "Kadar: Sesetengah perubahan berlaku dengan cepat, yang lain mengambil masa.",
-      "support": "Sokongan: Pastikan komunikasi terbuka."
+      "title": "Important Reminders for Parents 🌈",
+      "timing": "Timing: Puberty can start ages 8-14. Every child is unique - don't compare!",
+      "pace": "Pace: Some changes happen quickly, others take years. Be patient.",
+      "support": "Support: Keep communication open. Your child needs to know you're available for any questions or concerns."
     }
   },
   "diary": {
@@ -1288,6 +1421,28 @@
     "tips": {
       "oneAtATime": "Satu soalan pada satu masa membantu otak kekal tenang dan fokus.",
       "encouragement": "Galakan segera membantu anak mencuba lagi dengan yakin."
+    }
+  },
+  "resourceLibrary": {
+    "title": "Resource Library",
+    "subtitle": "Downloadable guides, checklists, and activity sheets to support your family's journey",
+    "actions": {
+      "visit": "Visit",
+      "preview": "Preview",
+      "open": "Open",
+      "download": "Download"
+    },
+    "labels": {
+      "source": "Source",
+      "size": "Size",
+      "type": "Type"
+    },
+    "about": {
+      "title": "About These Resources",
+      "free": "Free to Download: All resources are free and available for personal use.",
+      "print": "Print-Friendly: All PDFs are optimized for printing at home.",
+      "updates": "Regular Updates: We regularly add new resources based on community feedback.",
+      "privacy": "Privacy: Downloads are private - no account or personal information required."
     }
   }
 }
