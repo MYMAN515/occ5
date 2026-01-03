@@ -33,21 +33,49 @@
       "safe": "خاص"
     },
     "quickLinks": {
-      "games": {
-        "label": "الألعاب",
-        "helper": "كل الألعاب"
-      },
-      "kids": {
-        "label": "للأطفال",
-        "helper": "العب وتعلم"
-      },
-      "parents": {
-        "label": "للوالدين",
-        "helper": "إرشادات سريعة"
-      },
-      "quizzes": {
-        "label": "اختبارات",
-        "helper": "أسئلة سريعة"
+      "tagline": "Quick links",
+      "title": "Quick links crafted for small screens—tap a card to jump right in.",
+      "items": {
+        "diary": {
+          "label": "Mood Diary for Your Child",
+          "helper": "Track feelings together each day."
+        },
+        "hygiene": {
+          "label": "Hygiene & Self-Care",
+          "helper": "Build supportive daily routines."
+        },
+        "confidence": {
+          "label": "Confidence & Lifestyle",
+          "helper": "Grow habits that boost confidence."
+        },
+        "timeline": {
+          "label": "Timeline Game",
+          "helper": "Match changes before or after puberty."
+        },
+        "memory": {
+          "label": "Emotion Memory Game",
+          "helper": "Match emotion pairs to practice feelings."
+        },
+        "quiz": {
+          "label": "Puberty Knowledge Quiz",
+          "helper": "Test what you know about growing up."
+        },
+        "matching": {
+          "label": "Changes Matching Game",
+          "helper": "Pair related puberty changes together."
+        },
+        "emotions": {
+          "label": "Understanding Emotions",
+          "helper": "Learn to identify and name feelings."
+        },
+        "whatILike": {
+          "label": "What I Like About Me",
+          "helper": "Celebrate strengths with uplifting prompts."
+        },
+        "quizzes": {
+          "label": "Quizzes",
+          "helper": "Explore the Sleep & Nutrition Impact Quiz."
+        }
       }
     },
     "note": "بدّل اللغة في أي وقت • بياناتك تبقى على جهازك.",
@@ -858,67 +886,172 @@
     "helpfulTipsLabel": "نصائح مفيدة:"
   },
   "changes": {
-    "title": "فهم تغيرات طفلك",
-    "subtitle": "تعرف على ما يمر به طفلك جسديًا وعاطفيًا 🌟",
-    "physical": "جسدية",
-    "emotional": "عاطفية",
+    "title": "Understanding Your Child's Changes",
+    "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
+    "physical": "Physical",
+    "emotional": "Emotional",
+    "tabs": {
+      "physical": "Physical",
+      "emotional": "Emotional",
+      "comics": "Comics",
+      "video": "Video"
+    },
     "physicalChanges": {
       "growth": {
-        "title": "طفرات النمو",
-        "description": "ينمو الأطفال بمعدلات مختلفة"
+        "title": "Growth Spurts",
+        "description": "Children grow at different rates. Growth spurts can be rapid and awkward."
       },
       "bodyShape": {
-        "title": "تغيرات شكل الجسم",
-        "description": "يتطور الجسم بنسب ومنحنيات جديدة"
+        "title": "Body Shape Changes",
+        "description": "Body develops new proportions and curves as they mature."
       },
       "voice": {
-        "title": "تغيرات الصوت",
-        "description": "قد يصبح الصوت أعمق - خاصة عند الأولاد"
+        "title": "Voice Changes",
+        "description": "Voice may deepen or change in pitch - especially in boys."
       },
       "skin": {
-        "title": "تغيرات البشرة",
-        "description": "حب الشباب والبشرة الدهنية شائعة"
+        "title": "Skin Changes",
+        "description": "Acne and oily skin are common. Good hygiene helps manage this."
       },
       "hair": {
-        "title": "نمو الشعر",
-        "description": "ينمو شعر جديد في الإبطين والمنطقة العانية"
+        "title": "Hair Growth",
+        "description": "New hair grows in underarms, pubic area, and on face (boys)."
       },
       "odor": {
-        "title": "رائحة الجسم",
-        "description": "يتطلب التعرق المتزايد استخدام مزيل العرق يوميًا"
+        "title": "Body Odor",
+        "description": "Increased sweating requires daily deodorant use."
       }
     },
     "emotionalChanges": {
       "mood": {
-        "title": "تقلبات المزاج",
-        "description": "التغيرات الهرمونية تسبب تقلبًا عاطفيًا حقيقيًا"
+        "title": "Mood Swings",
+        "description": "Hormonal changes cause real emotional volatility - it's biological."
       },
       "interests": {
-        "title": "اهتمامات جديدة",
-        "description": "يطور الأطفال هوايات واهتمامات جديدة"
+        "title": "New Interests",
+        "description": "Children develop new hobbies, passions, and interests."
       },
       "independence": {
-        "title": "الاستقلالية",
-        "description": "سيريدون المزيد من الخصوصية والاستقلال"
+        "title": "Independence",
+        "description": "They'll want more privacy and independence from family."
       },
       "relationships": {
-        "title": "العلاقات",
-        "description": "تصبح الصداقات والاهتمامات الرومانسية أكثر أهمية"
+        "title": "Relationships",
+        "description": "Friendships and romantic interests become more important."
       },
       "awareness": {
-        "title": "الوعي الذاتي",
-        "description": "يفكرون أكثر في الهوية ومن يريدون أن يصبحوا"
+        "title": "Self-Awareness",
+        "description": "They think more about identity and who they want to become."
       },
       "confidence": {
-        "title": "تحديات الثقة",
-        "description": "غالبًا ما تنخفض احترام الذات أثناء البلوغ"
+        "title": "Confidence Challenges",
+        "description": "Self-esteem often dips during puberty - they need reassurance."
+      }
+    },
+    "comicsSection": {
+      "lessonLabel": "Lesson",
+      "items": [
+        {
+          "title": "The Growth Spurt",
+          "panels": [
+            {
+              "text": "I noticed I'm getting taller!",
+              "emoji": "📏"
+            },
+            {
+              "text": "My clothes don't fit anymore...",
+              "emoji": "👕"
+            },
+            {
+              "text": "That's totally normal during puberty!",
+              "emoji": "✨"
+            }
+          ],
+          "lesson": "Growth spurts are a natural part of growing up!"
+        },
+        {
+          "title": "Mood Swings",
+          "panels": [
+            {
+              "text": "I feel happy one moment...",
+              "emoji": "😊"
+            },
+            {
+              "text": "Then sad the next...",
+              "emoji": "😢"
+            },
+            {
+              "text": "Remember: emotions are normal!",
+              "emoji": "💙"
+            }
+          ],
+          "lesson": "Mood swings are common during puberty due to hormonal changes."
+        },
+        {
+          "title": "Body Changes",
+          "panels": [
+            {
+              "text": "My body is changing...",
+              "emoji": "🤔"
+            },
+            {
+              "text": "I feel different from my friends",
+              "emoji": "😕"
+            },
+            {
+              "text": "Everyone changes at their own pace!",
+              "emoji": "🌈"
+            }
+          ],
+          "lesson": "Everyone's body changes at different times - that's okay!"
+        }
+      ],
+      "cta": {
+        "title": "Quiz Time Moved!",
+        "description": "Find the silly, colorful quiz adventure on the new Quiz page.",
+        "button": "Jump to Quiz Page ➜"
+      }
+    },
+    "videoSection": {
+      "title": "Educational Videos & Animations",
+      "subtitle": "Watch helpful videos about puberty changes from trusted sources",
+      "items": [
+        {
+          "title": "Understanding Puberty",
+          "description": "A comprehensive guide to physical and emotional changes",
+          "source": "Official Health Website",
+          "duration": "5 min"
+        },
+        {
+          "title": "Emotional Changes Explained",
+          "description": "Learn about mood swings and emotional development",
+          "source": "Educational Channel",
+          "duration": "4 min"
+        },
+        {
+          "title": "Body Changes Animation",
+          "description": "Animated guide to physical development",
+          "source": "Health Organization",
+          "duration": "6 min"
+        },
+        {
+          "title": "Building Confidence",
+          "description": "Tips for self-acceptance during puberty",
+          "source": "Youth Support",
+          "duration": "3 min"
+        }
+      ],
+      "watch": "Watch",
+      "note": {
+        "label": "Note:",
+        "description": "These videos are placeholders. In the actual app, you would embed videos from official health websites or educational channels."
       }
     },
     "remember": {
-      "title": "تذكيرات مهمة للآباء 🌈",
-      "timing": "التوقيت: يمكن أن يبدأ البلوغ من سن 8-14. كل طفل فريد!",
-      "pace": "الوتيرة: بعض التغييرات تحدث بسرعة، والبعض الآخر يستغرق سنوات.",
-      "support": "الدعم: حافظ على التواصل مفتوحًا."
+      "title": "Important Reminders for Parents 🌈",
+      "timing": "Timing: Puberty can start ages 8-14. Every child is unique - don't compare!",
+      "pace": "Pace: Some changes happen quickly, others take years. Be patient.",
+      "support": "Support: Keep communication open. Your child needs to know you're available for any questions or concerns."
     }
   },
   "diary": {
@@ -1302,6 +1435,28 @@
     "tips": {
       "oneAtATime": "سؤال واحد في كل مرة يساعد الدماغ على التركيز بهدوء.",
       "encouragement": "التشجيع الفوري يساعد الأطفال على المحاولة مرة أخرى بثقة."
+    }
+  },
+  "resourceLibrary": {
+    "title": "Resource Library",
+    "subtitle": "Downloadable guides, checklists, and activity sheets to support your family's journey",
+    "actions": {
+      "visit": "Visit",
+      "preview": "Preview",
+      "open": "Open",
+      "download": "Download"
+    },
+    "labels": {
+      "source": "Source",
+      "size": "Size",
+      "type": "Type"
+    },
+    "about": {
+      "title": "About These Resources",
+      "free": "Free to Download: All resources are free and available for personal use.",
+      "print": "Print-Friendly: All PDFs are optimized for printing at home.",
+      "updates": "Regular Updates: We regularly add new resources based on community feedback.",
+      "privacy": "Privacy: Downloads are private - no account or personal information required."
     }
   }
 }

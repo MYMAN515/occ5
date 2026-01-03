@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Users, Crown, GraduationCap } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function TeamPage() {
+  const { t, language } = useLanguage()
+  const isRTL = language === 'ar'
   const teamMembers = [
     {
       id: 1,
@@ -76,7 +79,7 @@ export default function TeamPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Simple Header */}
       <div className="container mx-auto px-4 py-12 md:py-16">
         <motion.div
@@ -98,12 +101,12 @@ export default function TeamPage() {
               />
             </div>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Meet Our Team
+            {t('team.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A dedicated group of professionals committed to supporting families through puberty
+            {t('team.subtitle')}
           </p>
         </motion.div>
 
