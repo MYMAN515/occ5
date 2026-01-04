@@ -1008,6 +1008,12 @@
   "diary": {
     "title": "مذكرات مشاعر طفلك",
     "subtitle": "مساحة خاصة لطفلك لتتبع والتعبير عن عواطفه 📝",
+    "header": "مذكرات مشاعري",
+    "description": "تتبّع مزاجك وأفكارك طوال رحلتك 📝",
+    "views": {
+      "list": "عرض القائمة",
+      "calendar": "عرض التقويم"
+    },
     "addEntry": "إضافة إدخال جديد",
     "cancel": "إلغاء",
     "howFeeling": "كيف تشعر اليوم؟",
@@ -1020,6 +1026,13 @@
     },
     "placeholder": "ما الذي يدور في ذهنك؟",
     "saveEntry": "حفظ الإدخال",
+    "listEmpty": "لا توجد إدخالات بعد. ابدأ بكتابة الأولى! 💭",
+    "note": "ملاحظة: يمكنك تصدير تقويم المزاج إلى Google Calendar ليظهر شعورك في كل يوم.",
+    "calendar": {
+      "previous": "الشهر السابق",
+      "next": "الشهر التالي",
+      "weekdays": ["أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"]
+    },
     "noEntries": "لا توجد إدخالات بعد",
     "tips": {
       "title": "💡 نصائح المذكرات لطفلك",
@@ -1027,6 +1040,154 @@
       "honest": "🎯 كن صادقًا بشأن المشاعر",
       "lookback": "🌈 انظر إلى الإدخالات القديمة",
       "valid": "💪 جميع المشاعر صالحة"
+    }
+  },
+  "confidencePage": {
+    "title": "الثقة وتقبّل الذات ونمط الحياة",
+    "subtitle": "ابنِ عادات صحية وارفع ثقتك خطوة بخطوة! 🌟💪",
+    "tabs": {
+      "habits": "🎯 متعقّب العادات",
+      "game": "👍 جيد / غير جيد"
+    },
+    "currentFocus": {
+      "title": "التركيز الحالي",
+      "subtitle": "عادة واحدة في كل مرة لنجاح أفضل! 💪",
+      "streak": "سلسلة الأيام",
+      "totalDays": "إجمالي الأيام",
+      "markComplete": "اكتملت اليوم",
+      "markIncomplete": "ضع علامة إتمام اليوم"
+    },
+    "habitLimit": "ركّز على عادة واحدة في كل مرة! أنهِ عادتك الحالية قبل إضافة أخرى. 💪",
+    "habitCompletion": "رائع! أنجزت {days} يومًا. يمكنك إضافة عادة جديدة أو مواصلة هذه العادة!",
+    "availableHabits": "اختر عادة للتركيز عليها",
+    "habitLocked": "أكمل عادتك الحالية (7 أيام أو أكثر) لفتح عادات جديدة!",
+    "chooseHabit": "اختر عادة لبدء رحلتك!",
+    "habits": [
+      { "id": "exercise", "name": "تمرين يومي", "description": "حرّك جسمك 30 دقيقة على الأقل", "icon": "🏃", "color": "from-blue-400 to-cyan-500" },
+      { "id": "sleep", "name": "نوم جيد", "description": "نم 8-10 ساعات", "icon": "😴", "color": "from-purple-400 to-indigo-500" },
+      { "id": "water", "name": "اشرب ماء", "description": "اشرب 6-8 أكواب من الماء", "icon": "💧", "color": "from-cyan-400 to-blue-500" },
+      { "id": "gratitude", "name": "دفتر الامتنان", "description": "اكتب 3 أشياء تشعر بالامتنان لها", "icon": "📝", "color": "from-yellow-400 to-orange-500" },
+      { "id": "reading", "name": "قراءة للمتعة", "description": "اقرأ لمدة 20 دقيقة", "icon": "📚", "color": "from-green-400 to-emerald-500" },
+      { "id": "meditation", "name": "لحظة وعي", "description": "خذ 5 دقائق للتنفس والاسترخاء", "icon": "🧘", "color": "from-pink-400 to-rose-500" }
+    ],
+    "progress": {
+      "title": "كيف تبني هذه العادة الثقة؟",
+      "points": [
+        "النجاح ➜ إتمام العادات اليومية يثبت أنك تضع أهدافًا وتحققها",
+        "التحكم الذاتي ➜ التزامك بالعادات يبني ثقتك بنفسك",
+        "تغذية راجعة مباشرة ➜ رؤية التقدم (السلسلة، أيام الإتمام) تُظهر أنك يمكن الاعتماد عليك",
+        "تقبّل الذات ➜ عندما تحقق أهدافك تتعلم تقدير نفسك دون انتظار موافقة الآخرين"
+      ]
+    },
+    "tips": {
+      "title": "نصائح لبناء الثقة 💡",
+      "items": [
+        "عادة واحدة في كل مرة: ركّز على عادة صحية واحدة قبل إضافة أخرى حتى تنجح.",
+        "تتبّع تقدمك: رؤية السلسلة والأيام المكتملة يثبت أنك قادر ويمكن الاعتماد عليك.",
+        "احتفل بالإنجازات الصغيرة: كل يوم تنجح في العادة هو فوز يستحق الاحتفال!",
+        "كن صبورًا: بناء الثقة يحتاج وقتًا، كن لطيفًا مع نفسك في الرحلة."
+      ]
+    },
+    "game": {
+      "title": "نشاط جيد / غير جيد",
+      "description": "اختر ما إذا كان كل نشاط يشعر أنه جيد أو غير جيد لنمط حياتك وصحتك.",
+      "good": "جيد",
+      "notGood": "غير جيد",
+      "checkAnswers": "تحقق من الإجابات ({answered}/{total})",
+      "items": [
+        { "id": "playing-sports", "name": "ممارسة الرياضة", "icon": "⚽", "category": "good" },
+        { "id": "drawing-art", "name": "الرسم والفن", "icon": "🎨", "category": "good" },
+        { "id": "singing", "name": "الغناء", "icon": "🎤", "category": "good" },
+        { "id": "reading-books", "name": "قراءة الكتب", "icon": "📖", "category": "good" },
+        { "id": "fishing", "name": "الصيد", "icon": "🎣", "category": "good" },
+        { "id": "board-games", "name": "ألعاب لوحية", "icon": "🎲", "category": "good" },
+        { "id": "dancing", "name": "الرقص", "icon": "🕺", "category": "good" },
+        { "id": "taking-photos", "name": "التصوير", "icon": "📸", "category": "good" },
+        { "id": "cooking", "name": "الطبخ", "icon": "🍳", "category": "good" },
+        { "id": "gardening", "name": "الزراعة", "icon": "🌱", "category": "good" },
+        { "id": "baking", "name": "الخبز", "icon": "🧁", "category": "good" },
+        { "id": "programming", "name": "البرمجة", "icon": "💻", "category": "good" }
+      ],
+      "feedback": {
+        "correct": "إجابة صحيحة!",
+        "shouldBeGood": "يجب أن يكون \"جيد\"",
+        "shouldBeNotGood": "يجب أن يكون \"غير جيد\"",
+        "score": "حصلت على {correct} من أصل {total}!",
+        "perfect": "رائع! أنت تفهم اختيارات نمط الحياة الصحية! 🌟",
+        "almost": "عمل جميل! واصل تعلم العادات الصحية! 💪",
+        "playAgain": "العب مرة أخرى"
+      }
+    }
+  },
+  "hygienePage": {
+    "title": "نظافة الشخصية والرعاية الذاتية",
+    "subtitle": "ابنِ روتينك اليومي وتعلم العناية الذاتية! اسحب بالفأرة أو اضغط على الهاتف. 🧼✨",
+    "tabs": {
+      "builder": "🛁 صانع الروتين",
+      "game": "🎮 لعبة النظافة"
+    },
+    "availableActivities": "أنشطة متاحة",
+    "dragHelp": "اسحب العناصر لبناء روتينك أو اضغط لإضافتها.",
+    "tapTarget": "هدف الإضافة بالضغط:",
+    "tapHint": "(مثالي للهواتف — اضغط على البطاقة لوضعها هنا!)",
+    "routines": {
+      "morning": "🌅 الصباح",
+      "afternoon": "☀️ الظهيرة",
+      "evening": "🌙 المساء",
+      "title": "روتين {time}",
+      "empty": "أسقط العناصر هنا",
+      "saved": {
+        "title": "تم حفظ روتينك!",
+        "description": "أنشأت روتين نظافة يحتوي على {count} عناصر. واصل التقدم! 💪"
+      }
+    },
+    "builderItems": [
+      { "id": "brush-teeth", "name": "تنظيف الأسنان", "icon": "🦷", "category": "morning" },
+      { "id": "wash-face", "name": "غسل الوجه", "icon": "🧼", "category": "morning" },
+      { "id": "shower", "name": "استحمام", "icon": "🚿", "category": "morning" },
+      { "id": "deodorant", "name": "مزيل العرق", "icon": "🧴", "category": "morning" },
+      { "id": "comb-hair", "name": "تمشيط الشعر", "icon": "💇", "category": "morning" },
+      { "id": "wash-hands", "name": "غسل اليدين", "icon": "🤲", "category": "afternoon" },
+      { "id": "change-clothes", "name": "تبديل الملابس", "icon": "👕", "category": "afternoon" },
+      { "id": "brush-teeth-night", "name": "تنظيف الأسنان", "icon": "🦷", "category": "evening" },
+      { "id": "wash-face-night", "name": "غسل الوجه", "icon": "🧼", "category": "evening" },
+      { "id": "shower-night", "name": "استحمام", "icon": "🚿", "category": "evening" }
+    ],
+    "game": {
+      "title": "صنّف أدوات النظافة",
+      "description": "اسحب أو اضغط كل عنصر إلى فئته الصحيحة! طابق أدوات النظافة مع مكان استخدامها حتى على الهاتف.",
+      "categories": [
+        { "id": "shower", "name": "الاستحمام", "icon": "🚿", "color": "from-blue-400 to-cyan-500" },
+        { "id": "oral", "name": "العناية بالفم", "icon": "🦷", "color": "from-green-400 to-emerald-500" },
+        { "id": "hands", "name": "نظافة اليدين", "icon": "🤲", "color": "from-yellow-400 to-orange-500" },
+        { "id": "general", "name": "عناية عامة", "icon": "✨", "color": "from-purple-400 to-pink-500" }
+      ],
+      "items": [
+        { "id": "towel", "name": "منشفة", "icon": "🧺", "category": "shower" },
+        { "id": "soap", "name": "صابون", "icon": "🧼", "category": "shower" },
+        { "id": "shampoo", "name": "شامبو", "icon": "🧴", "category": "shower" },
+        { "id": "toothbrush", "name": "فرشاة أسنان", "icon": "🪥", "category": "oral" },
+        { "id": "toothpaste", "name": "معجون أسنان", "icon": "🦷", "category": "oral" },
+        { "id": "floss", "name": "خيط أسنان", "icon": "🧵", "category": "oral" },
+        { "id": "hand-soap", "name": "صابون يدين", "icon": "🧴", "category": "hands" },
+        { "id": "hand-sanitizer", "name": "معقم يدين", "icon": "💧", "category": "hands" },
+        { "id": "deodorant-game", "name": "مزيل العرق", "icon": "🧴", "category": "general" },
+        { "id": "moisturizer", "name": "مرطب", "icon": "🧴", "category": "general" }
+      ],
+      "dragPrompt": "اسحب أو اضغط هذه العناصر إلى الفئة الصحيحة:",
+      "tapToPlace": "اضغط لوضع العنصر:",
+      "checkAnswers": "تحقق من الإجابات ({answered}/{total})",
+      "score": "حصلت على {correct} من أصل {total}!",
+      "perfect": "ممتاز! أنت خبير في النظافة! 🌟",
+      "almost": "عمل رائع! واصل التعلم عن النظافة! 💪",
+      "playAgain": "العب مرة أخرى"
+    },
+    "tips": {
+      "title": "نصائح النظافة 💡",
+      "daily": "روتين يومي: بناء روتين ثابت يجعلك تشعر بالنظافة والثقة!",
+      "morning": "الصباح والمساء: نظف أسنانك مرتين يوميًا واغسل وجهك بانتظام.",
+      "hands": "بعد الأنشطة: اغسل يديك بعد اللعب، قبل الأكل، وبعد استخدام الحمام.",
+      "shower": "استحم بانتظام: الاستحمام اليومي يحافظ على نظافة جسمك وانتعاشه."
     }
   },
   "bodyGuide": {

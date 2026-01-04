@@ -1075,7 +1075,13 @@
   "diary": {
     "title": "Diari Perasaan Anak Anda",
     "subtitle": "Ruang peribadi untuk anak anda menjejak dan menyatakan emosi mereka 📝",
-    "addEntry": "Tambah Catatan Baru",
+    "header": "Diari Perasaanku",
+    "description": "Jejak mood dan fikiran anda sepanjang perjalanan ini 📝",
+    "views": {
+      "list": "Paparan Senarai",
+      "calendar": "Paparan Kalendar"
+    },
+    "addEntry": "Tambah Catatan Baharu",
     "cancel": "Batal",
     "howFeeling": "Bagaimana perasaan anda hari ini?",
     "moods": {
@@ -1085,8 +1091,15 @@
       "excited": "Teruja",
       "anxious": "Cemas"
     },
-    "placeholder": "Apa yang anda fikirkan?",
+    "placeholder": "Apa yang bermain di fikiran anda? Kongsi perasaan atau apa yang berlaku hari ini...",
     "saveEntry": "Simpan Catatan",
+    "listEmpty": "Tiada catatan lagi. Mulakan dengan menulis yang pertama! 💭",
+    "note": "Nota: Anda boleh mengeksport kalendar mood ke Google Calendar. Setiap catatan akan menunjukkan perasaan anda pada hari itu.",
+    "calendar": {
+      "previous": "Bulan sebelumnya",
+      "next": "Bulan seterusnya",
+      "weekdays": ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"]
+    },
     "noEntries": "Tiada catatan lagi",
     "tips": {
       "title": "💡 Petua Diari untuk Anak Anda",
@@ -1094,6 +1107,154 @@
       "honest": "🎯 Jujur tentang perasaan",
       "lookback": "🌈 Lihat kembali catatan lama",
       "valid": "💪 Semua perasaan adalah sah"
+    }
+  },
+  "confidencePage": {
+    "title": "Keyakinan, Penerimaan Diri & Gaya Hidup",
+    "subtitle": "Bina tabiat sihat dan tingkatkan keyakinan anda langkah demi langkah! 🌟💪",
+    "tabs": {
+      "habits": "🎯 Penjejak Tabiat",
+      "game": "👍 Baik / Tidak Baik"
+    },
+    "currentFocus": {
+      "title": "Fokus Semasa",
+      "subtitle": "Satu tabiat pada satu masa untuk kejayaan lebih baik! 💪",
+      "streak": "Siri hari",
+      "totalDays": "Jumlah Hari",
+      "markComplete": "Selesai hari ini",
+      "markIncomplete": "Tandakan selesai hari ini"
+    },
+    "habitLimit": "Fokus pada satu tabiat dahulu! Lengkapkan tabiat semasa sebelum menambah yang baharu. 💪",
+    "habitCompletion": "Hebat! Anda telah lengkap {days} hari. Anda boleh tambah tabiat baharu atau teruskan yang ini!",
+    "availableHabits": "Pilih tabiat untuk difokuskan",
+    "habitLocked": "Lengkapkan tabiat semasa (7+ hari) untuk membuka tabiat baharu!",
+    "chooseHabit": "Pilih satu tabiat untuk mula perjalanan anda!",
+    "habits": [
+      { "id": "exercise", "name": "Senaman Harian", "description": "Gerakkan badan sekurang-kurangnya 30 minit", "icon": "🏃", "color": "from-blue-400 to-cyan-500" },
+      { "id": "sleep", "name": "Tidur Berkualiti", "description": "Dapatkan 8-10 jam tidur", "icon": "😴", "color": "from-purple-400 to-indigo-500" },
+      { "id": "water", "name": "Minum Air", "description": "Minum 6-8 gelas air", "icon": "💧", "color": "from-cyan-400 to-blue-500" },
+      { "id": "gratitude", "name": "Jurnal Syukur", "description": "Tulis 3 perkara yang anda syukuri", "icon": "📝", "color": "from-yellow-400 to-orange-500" },
+      { "id": "reading", "name": "Membaca untuk Seronok", "description": "Baca selama 20 minit", "icon": "📚", "color": "from-green-400 to-emerald-500" },
+      { "id": "meditation", "name": "Saat Bernafas", "description": "Luangkan 5 minit untuk bernafas dan tenang", "icon": "🧘", "color": "from-pink-400 to-rose-500" }
+    ],
+    "progress": {
+      "title": "Bagaimana ini membina keyakinan?",
+      "points": [
+        "Kejayaan ➜ Menyiapkan tabiat harian membuktikan anda boleh menetapkan dan capai matlamat",
+        "Kawal Diri ➜ Memegang tabiat membina kepercayaan diri",
+        "Maklum balas langsung ➜ Melihat kemajuan (siri, hari selesai) menunjukkan anda boleh diharap",
+        "Penerimaan diri ➜ Bila anda capai matlamat, anda belajar menghargai diri tanpa perlu persetujuan orang lain"
+      ]
+    },
+    "tips": {
+      "title": "Tip Membina Keyakinan 💡",
+      "items": [
+        "Satu tabiat pada satu masa: fokus pada satu tabiat sihat sebelum menambah yang lain supaya anda berjaya.",
+        "Jejak kemajuan anda: melihat siri dan hari siap membuktikan anda mampu dan boleh dipercayai.",
+        "Raikan kemenangan kecil: setiap hari anda lengkapkan tabiat ialah kemenangan yang patut diraikan!",
+        "Bersabar: membina keyakinan mengambil masa, jadi berlembutlah dengan diri sendiri."
+      ]
+    },
+    "game": {
+      "title": "Aktiviti Baik / Tidak Baik",
+      "description": "Pilih sama ada setiap aktiviti rasa BAIK atau TIDAK BAIK untuk gaya hidup dan kesejahteraan anda.",
+      "good": "BAIK",
+      "notGood": "TIDAK BAIK",
+      "checkAnswers": "Semak Jawapan ({answered}/{total})",
+      "items": [
+        { "id": "playing-sports", "name": "Bermain Sukan", "icon": "⚽", "category": "good" },
+        { "id": "drawing-art", "name": "Melukis & Seni", "icon": "🎨", "category": "good" },
+        { "id": "singing", "name": "Menyanyi", "icon": "🎤", "category": "good" },
+        { "id": "reading-books", "name": "Membaca Buku", "icon": "📖", "category": "good" },
+        { "id": "fishing", "name": "Memancing", "icon": "🎣", "category": "good" },
+        { "id": "board-games", "name": "Permainan Papan", "icon": "🎲", "category": "good" },
+        { "id": "dancing", "name": "Menari", "icon": "🕺", "category": "good" },
+        { "id": "taking-photos", "name": "Mengambil Gambar", "icon": "📸", "category": "good" },
+        { "id": "cooking", "name": "Memasak", "icon": "🍳", "category": "good" },
+        { "id": "gardening", "name": "Berkebun", "icon": "🌱", "category": "good" },
+        { "id": "baking", "name": "Membakar", "icon": "🧁", "category": "good" },
+        { "id": "programming", "name": "Pengaturcaraan", "icon": "💻", "category": "good" }
+      ],
+      "feedback": {
+        "correct": "Betul!",
+        "shouldBeGood": "Patut pilih \"BAIK\"",
+        "shouldBeNotGood": "Patut pilih \"TIDAK BAIK\"",
+        "score": "Anda mendapat {correct} daripada {total}!",
+        "perfect": "Hebat! Anda faham pilihan gaya hidup sihat! 🌟",
+        "almost": "Bagus! Terus belajar tabiat sihat! 💪",
+        "playAgain": "Main lagi"
+      }
+    }
+  },
+  "hygienePage": {
+    "title": "Kebersihan & Penjagaan Diri",
+    "subtitle": "Bina rutin kebersihan harian dan pelajari penjagaan diri! Seret di desktop atau tekan di telefon. 🧼✨",
+    "tabs": {
+      "builder": "🛁 Pembina Rutin",
+      "game": "🎮 Permainan Kebersihan"
+    },
+    "availableActivities": "Aktiviti Tersedia",
+    "dragHelp": "Seret item untuk bina rutin atau tekan untuk letakkannya.",
+    "tapTarget": "Sasaran tambah segera:",
+    "tapHint": "(Sesuai untuk telefon — tekan kad untuk letak di sini!)",
+    "routines": {
+      "morning": "🌅 Pagi",
+      "afternoon": "☀️ Tengah hari",
+      "evening": "🌙 Malam",
+      "title": "Rutin {time}",
+      "empty": "Letakkan item di sini",
+      "saved": {
+        "title": "Rutin anda disimpan!",
+        "description": "Anda telah cipta rutin kebersihan dengan {count} item. Teruskan! 💪"
+      }
+    },
+    "builderItems": [
+      { "id": "brush-teeth", "name": "Gosok Gigi", "icon": "🦷", "category": "morning" },
+      { "id": "wash-face", "name": "Cuci Muka", "icon": "🧼", "category": "morning" },
+      { "id": "shower", "name": "Mandi", "icon": "🚿", "category": "morning" },
+      { "id": "deodorant", "name": "Deodoran", "icon": "🧴", "category": "morning" },
+      { "id": "comb-hair", "name": "Sikat Rambut", "icon": "💇", "category": "morning" },
+      { "id": "wash-hands", "name": "Cuci Tangan", "icon": "🤲", "category": "afternoon" },
+      { "id": "change-clothes", "name": "Tukar Pakaian", "icon": "👕", "category": "afternoon" },
+      { "id": "brush-teeth-night", "name": "Gosok Gigi", "icon": "🦷", "category": "evening" },
+      { "id": "wash-face-night", "name": "Cuci Muka", "icon": "🧼", "category": "evening" },
+      { "id": "shower-night", "name": "Mandi", "icon": "🚿", "category": "evening" }
+    ],
+    "game": {
+      "title": "Kategorikan Alat Kebersihan",
+      "description": "Seret atau tekan setiap item ke kategori yang betul! Padankan alat kebersihan dengan tempat ia digunakan, walaupun di telefon.",
+      "categories": [
+        { "id": "shower", "name": "Mandi", "icon": "🚿", "color": "from-blue-400 to-cyan-500" },
+        { "id": "oral", "name": "Penjagaan Mulut", "icon": "🦷", "color": "from-green-400 to-emerald-500" },
+        { "id": "hands", "name": "Kebersihan Tangan", "icon": "🤲", "color": "from-yellow-400 to-orange-500" },
+        { "id": "general", "name": "Penjagaan Umum", "icon": "✨", "color": "from-purple-400 to-pink-500" }
+      ],
+      "items": [
+        { "id": "towel", "name": "Tuala", "icon": "🧺", "category": "shower" },
+        { "id": "soap", "name": "Sabun", "icon": "🧼", "category": "shower" },
+        { "id": "shampoo", "name": "Syampu", "icon": "🧴", "category": "shower" },
+        { "id": "toothbrush", "name": "Berus Gigi", "icon": "🪥", "category": "oral" },
+        { "id": "toothpaste", "name": "Ubat Gigi", "icon": "🦷", "category": "oral" },
+        { "id": "floss", "name": "Flos Gigi", "icon": "🧵", "category": "oral" },
+        { "id": "hand-soap", "name": "Sabun Tangan", "icon": "🧴", "category": "hands" },
+        { "id": "hand-sanitizer", "name": "Penyahkuman Tangan", "icon": "💧", "category": "hands" },
+        { "id": "deodorant-game", "name": "Deodoran", "icon": "🧴", "category": "general" },
+        { "id": "moisturizer", "name": "Pelembap", "icon": "🧴", "category": "general" }
+      ],
+      "dragPrompt": "Seret atau tekan item ini ke kategori yang betul:",
+      "tapToPlace": "Tekan untuk letak:",
+      "checkAnswers": "Semak Jawapan ({answered}/{total})",
+      "score": "Anda mendapat {correct} daripada {total}!",
+      "perfect": "Sempurna! Anda pakar kebersihan! 🌟",
+      "almost": "Bagus! Terus belajar tentang kebersihan! 💪",
+      "playAgain": "Main lagi"
+    },
+    "tips": {
+      "title": "Tip Kebersihan 💡",
+      "daily": "Rutin Harian: Rutin konsisten membantu anda rasa bersih dan yakin!",
+      "morning": "Pagi & Malam: Gosok gigi dua kali sehari dan cuci muka secara berkala.",
+      "hands": "Selepas aktiviti: Cuci tangan selepas bermain, sebelum makan, dan selepas ke tandas.",
+      "shower": "Mandi secara berkala: Mandi setiap hari membantu badan kekal bersih dan segar."
     }
   },
   "bodyGuide": {

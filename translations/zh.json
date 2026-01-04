@@ -1083,27 +1083,188 @@
     }
   },
   "diary": {
-    "title": "Your Child's Feelings Diary",
-    "subtitle": "A private space for your child to track and express their emotions 📝",
-    "addEntry": "Add New Entry",
-    "cancel": "Cancel",
-    "howFeeling": "How are you feeling today?",
-    "moods": {
-      "happy": "Happy",
-      "neutral": "Neutral",
-      "sad": "Sad",
-      "excited": "Excited",
-      "anxious": "Anxious"
+    "title": "孩子的心情日记",
+    "subtitle": "让孩子记录和表达情绪的私密空间 📝",
+    "header": "我的心情日记",
+    "description": "在旅程中记录你的心情和想法 📝",
+    "views": {
+      "list": "列表视图",
+      "calendar": "日历视图"
     },
-    "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
-    "saveEntry": "Save Entry",
-    "noEntries": "No entries yet. Start by adding your first one! 💭",
+    "addEntry": "新增日记",
+    "cancel": "取消",
+    "howFeeling": "你今天感觉怎样？",
+    "moods": {
+      "happy": "开心",
+      "neutral": "平静",
+      "sad": "难过",
+      "excited": "兴奋",
+      "anxious": "紧张"
+    },
+    "placeholder": "你在想什么？分享你的感受或今天发生的事情...",
+    "saveEntry": "保存日记",
+    "listEmpty": "还没有记录，先写下第一篇吧！💭",
+    "note": "提示：你可以把心情日历导出到 Google Calendar，每个日子都会显示当天的心情。",
+    "calendar": {
+      "previous": "上个月",
+      "next": "下个月",
+      "weekdays": ["日", "一", "二", "三", "四", "五", "六"]
+    },
+    "noEntries": "还没有记录，先写下第一篇吧！💭",
     "tips": {
-      "title": "💡 Diary Tips for Your Child",
-      "regular": "✨ Write regularly - even just a few sentences helps!",
-      "honest": "🎯 Be honest about feelings - this is a private space",
-      "lookback": "🌈 Look back at old entries to see growth over time",
-      "valid": "💪 Remember: all feelings are valid and normal"
+      "title": "💡 写日记小贴士",
+      "regular": "✨ 持续记录——几句话也很好！",
+      "honest": "🎯 真诚写下自己的感受——这里是你的私密空间",
+      "lookback": "🌈 回头看看旧记录，感受自己的成长",
+      "valid": "💪 记住：所有情绪都值得被看见"
+    }
+  },
+  "confidencePage": {
+    "title": "自信、自我接纳与生活方式",
+    "subtitle": "一步一步养成健康习惯，提升你的自信！🌟💪",
+    "tabs": {
+      "habits": "🎯 习惯追踪",
+      "game": "👍 好 / 不太好"
+    },
+    "currentFocus": {
+      "title": "当前专注",
+      "subtitle": "一次专注一个习惯，更容易成功！💪",
+      "streak": "连续天数",
+      "totalDays": "累计天数",
+      "markComplete": "今天已完成",
+      "markIncomplete": "标记今天完成"
+    },
+    "habitLimit": "一次只专注一个习惯！完成当前习惯后再添加新的。💪",
+    "habitCompletion": "太棒了！你已经坚持了 {days} 天！可以添加新习惯或继续巩固这个。",
+    "availableHabits": "选择一个要练习的习惯",
+    "habitLocked": "先完成当前习惯（至少7天）再解锁新的习惯！",
+    "chooseHabit": "选一个习惯开始你的旅程吧！",
+    "habits": [
+      { "id": "exercise", "name": "每日运动", "description": "运动至少30分钟", "icon": "🏃", "color": "from-blue-400 to-cyan-500" },
+      { "id": "sleep", "name": "好好睡觉", "description": "睡满8-10小时", "icon": "😴", "color": "from-purple-400 to-indigo-500" },
+      { "id": "water", "name": "多喝水", "description": "每天喝6-8杯水", "icon": "💧", "color": "from-cyan-400 to-blue-500" },
+      { "id": "gratitude", "name": "感恩日记", "description": "写下3件让你感恩的事", "icon": "📝", "color": "from-yellow-400 to-orange-500" },
+      { "id": "reading", "name": "阅读时光", "description": "阅读20分钟", "icon": "📚", "color": "from-green-400 to-emerald-500" },
+      { "id": "meditation", "name": "静心时刻", "description": "花5分钟深呼吸放松", "icon": "🧘", "color": "from-pink-400 to-rose-500" }
+    ],
+    "progress": {
+      "title": "这些习惯怎样提升自信？",
+      "points": [
+        "成就 ➜ 完成每日习惯证明你能设定并达成目标",
+        "自控 ➜ 坚持习惯让你更信任自己",
+        "直接反馈 ➜ 看到连胜和完成天数，知道自己可靠",
+        "自我接纳 ➜ 达成目标时，你会更肯定自己，不必等别人认可"
+      ]
+    },
+    "tips": {
+      "title": "提升自信小贴士 💡",
+      "items": [
+        "一次一个习惯：先把一个健康习惯做好，再加下一个，更容易成功。",
+        "记录进展：看到连胜和完成天数，会证明自己做得到、值得信赖。",
+        "庆祝小胜利：每天完成习惯都是值得庆祝的胜利！",
+        "保持耐心：建立自信需要时间，对自己温柔一点。"
+      ]
+    },
+    "game": {
+      "title": "好 / 不太好 活动",
+      "description": "选择每个活动对你的生活方式来说是“好”还是“ 不太好”。",
+      "good": "好",
+      "notGood": "不太好",
+      "checkAnswers": "检查答案 ({answered}/{total})",
+      "items": [
+        { "id": "playing-sports", "name": "做运动", "icon": "⚽", "category": "good" },
+        { "id": "drawing-art", "name": "绘画与艺术", "icon": "🎨", "category": "good" },
+        { "id": "singing", "name": "唱歌", "icon": "🎤", "category": "good" },
+        { "id": "reading-books", "name": "看书", "icon": "📖", "category": "good" },
+        { "id": "fishing", "name": "钓鱼", "icon": "🎣", "category": "good" },
+        { "id": "board-games", "name": "桌游", "icon": "🎲", "category": "good" },
+        { "id": "dancing", "name": "跳舞", "icon": "🕺", "category": "good" },
+        { "id": "taking-photos", "name": "拍照", "icon": "📸", "category": "good" },
+        { "id": "cooking", "name": "做饭", "icon": "🍳", "category": "good" },
+        { "id": "gardening", "name": "园艺", "icon": "🌱", "category": "good" },
+        { "id": "baking", "name": "烘焙", "icon": "🧁", "category": "good" },
+        { "id": "programming", "name": "编程", "icon": "💻", "category": "good" }
+      ],
+      "feedback": {
+        "correct": "答对了！",
+        "shouldBeGood": "应该选“好”",
+        "shouldBeNotGood": "应该选“ 不太好”",
+        "score": "你答对了 {correct} / {total} 题！",
+        "perfect": "太棒了！你很懂健康生活方式！🌟",
+        "almost": "做得好！继续学习健康习惯！💪",
+        "playAgain": "再玩一次"
+      }
+    }
+  },
+  "hygienePage": {
+    "title": "卫生与自我照顾",
+    "subtitle": "建立每日卫生习惯，学习自我照顾！电脑拖拽，手机点击即可。🧼✨",
+    "tabs": {
+      "builder": "🛁 习惯规划",
+      "game": "🎮 卫生小游戏"
+    },
+    "availableActivities": "可选活动",
+    "dragHelp": "拖拽项目来建立你的习惯，或点击快速放置。",
+    "tapTarget": "点击添加到：",
+    "tapHint": "（手机也适用——点一下卡片就能放到这里！）",
+    "routines": {
+      "morning": "🌅 早晨",
+      "afternoon": "☀️ 下午",
+      "evening": "🌙 晚上",
+      "title": "{time} 习惯",
+      "empty": "把项目放到这里",
+      "saved": {
+        "title": "已保存你的习惯！",
+        "description": "你创建了 {count} 个卫生习惯，继续保持！💪"
+      }
+    },
+    "builderItems": [
+      { "id": "brush-teeth", "name": "刷牙", "icon": "🦷", "category": "morning" },
+      { "id": "wash-face", "name": "洗脸", "icon": "🧼", "category": "morning" },
+      { "id": "shower", "name": "淋浴", "icon": "🚿", "category": "morning" },
+      { "id": "deodorant", "name": "止汗剂", "icon": "🧴", "category": "morning" },
+      { "id": "comb-hair", "name": "梳头", "icon": "💇", "category": "morning" },
+      { "id": "wash-hands", "name": "洗手", "icon": "🤲", "category": "afternoon" },
+      { "id": "change-clothes", "name": "换衣服", "icon": "👕", "category": "afternoon" },
+      { "id": "brush-teeth-night", "name": "刷牙", "icon": "🦷", "category": "evening" },
+      { "id": "wash-face-night", "name": "洗脸", "icon": "🧼", "category": "evening" },
+      { "id": "shower-night", "name": "淋浴", "icon": "🚿", "category": "evening" }
+    ],
+    "game": {
+      "title": "给卫生用品分类",
+      "description": "把每个物品拖拽或点击到正确的分类！匹配它们的使用场景，手机也能玩哦。",
+      "categories": [
+        { "id": "shower", "name": "沐浴", "icon": "🚿", "color": "from-blue-400 to-cyan-500" },
+        { "id": "oral", "name": "口腔护理", "icon": "🦷", "color": "from-green-400 to-emerald-500" },
+        { "id": "hands", "name": "手部清洁", "icon": "🤲", "color": "from-yellow-400 to-orange-500" },
+        { "id": "general", "name": "日常护理", "icon": "✨", "color": "from-purple-400 to-pink-500" }
+      ],
+      "items": [
+        { "id": "towel", "name": "毛巾", "icon": "🧺", "category": "shower" },
+        { "id": "soap", "name": "香皂", "icon": "🧼", "category": "shower" },
+        { "id": "shampoo", "name": "洗发水", "icon": "🧴", "category": "shower" },
+        { "id": "toothbrush", "name": "牙刷", "icon": "🪥", "category": "oral" },
+        { "id": "toothpaste", "name": "牙膏", "icon": "🦷", "category": "oral" },
+        { "id": "floss", "name": "牙线", "icon": "🧵", "category": "oral" },
+        { "id": "hand-soap", "name": "洗手液", "icon": "🧴", "category": "hands" },
+        { "id": "hand-sanitizer", "name": "免洗洗手液", "icon": "💧", "category": "hands" },
+        { "id": "deodorant-game", "name": "止汗剂", "icon": "🧴", "category": "general" },
+        { "id": "moisturizer", "name": "润肤露", "icon": "🧴", "category": "general" }
+      ],
+      "dragPrompt": "把这些物品放到正确的分类：",
+      "tapToPlace": "点击放置：",
+      "checkAnswers": "检查答案 ({answered}/{total})",
+      "score": "你答对了 {correct} / {total}！",
+      "perfect": "完美！你是卫生小达人！🌟",
+      "almost": "很好！继续学习卫生知识！💪",
+      "playAgain": "再玩一次"
+    },
+    "tips": {
+      "title": "卫生小贴士 💡",
+      "daily": "每日习惯：固定的卫生流程让你更干净、更自信！",
+      "morning": "早晚护理：每天刷牙两次，并且规律洗脸。",
+      "hands": "活动之后：玩耍后、吃饭前和上厕所后都要洗手。",
+      "shower": "定期洗澡：每天洗澡可以保持身体干净清爽。"
     }
   },
   "bodyGuide": {

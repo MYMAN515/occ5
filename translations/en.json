@@ -1085,6 +1085,12 @@
   "diary": {
     "title": "Your Child's Feelings Diary",
     "subtitle": "A private space for your child to track and express their emotions 📝",
+    "header": "My Feelings Diary",
+    "description": "Track your moods and thoughts during your journey 📝",
+    "views": {
+      "list": "List View",
+      "calendar": "Calendar View"
+    },
     "addEntry": "Add New Entry",
     "cancel": "Cancel",
     "howFeeling": "How are you feeling today?",
@@ -1097,6 +1103,13 @@
     },
     "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
     "saveEntry": "Save Entry",
+    "listEmpty": "No entries yet. Start by adding your first one! 💭",
+    "note": "Note: You can export your mood calendar to Google Calendar. Each entry will show your mood for that day.",
+    "calendar": {
+      "previous": "Previous month",
+      "next": "Next month",
+      "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    },
     "noEntries": "No entries yet. Start by adding your first one! 💭",
     "tips": {
       "title": "💡 Diary Tips for Your Child",
@@ -1104,6 +1117,190 @@
       "honest": "🎯 Be honest about feelings - this is a private space",
       "lookback": "🌈 Look back at old entries to see growth over time",
       "valid": "💪 Remember: all feelings are valid and normal"
+    }
+  },
+  "confidencePage": {
+    "title": "Confidence, Self-Acceptance & Lifestyle",
+    "subtitle": "Build healthy habits and boost your confidence one step at a time! 🌟💪",
+    "tabs": {
+      "habits": "🎯 Habit Tracker",
+      "game": "👍 Good / Not Good"
+    },
+    "currentFocus": {
+      "title": "Current Focus",
+      "subtitle": "One habit at a time for better success! 💪",
+      "streak": "Streak",
+      "totalDays": "Total Days",
+      "markComplete": "Completed Today",
+      "markIncomplete": "Mark Today Complete"
+    },
+    "habitLimit": "Focus on one habit at a time! Complete your current habit before adding a new one. 💪",
+    "habitCompletion": "Amazing! You've completed {days} days! You can add a new habit or keep building this one!",
+    "availableHabits": "Choose a habit to focus on",
+    "habitLocked": "Complete your current habit (7+ days) to unlock new ones!",
+    "chooseHabit": "Choose a habit to start your journey!",
+    "habits": [
+      {
+        "id": "exercise",
+        "name": "Daily Exercise",
+        "description": "Move your body for at least 30 minutes",
+        "icon": "🏃",
+        "color": "from-blue-400 to-cyan-500"
+      },
+      {
+        "id": "sleep",
+        "name": "Good Sleep",
+        "description": "Get 8-10 hours of sleep",
+        "icon": "😴",
+        "color": "from-purple-400 to-indigo-500"
+      },
+      {
+        "id": "water",
+        "name": "Drink Water",
+        "description": "Drink 6-8 glasses of water",
+        "icon": "💧",
+        "color": "from-cyan-400 to-blue-500"
+      },
+      {
+        "id": "gratitude",
+        "name": "Gratitude Journal",
+        "description": "Write 3 things you're grateful for",
+        "icon": "📝",
+        "color": "from-yellow-400 to-orange-500"
+      },
+      {
+        "id": "reading",
+        "name": "Read for Fun",
+        "description": "Read for 20 minutes",
+        "icon": "📚",
+        "color": "from-green-400 to-emerald-500"
+      },
+      {
+        "id": "meditation",
+        "name": "Mindful Moment",
+        "description": "Take 5 minutes to breathe and relax",
+        "icon": "🧘",
+        "color": "from-pink-400 to-rose-500"
+      }
+    ],
+    "progress": {
+      "title": "How does this build confidence?",
+      "points": [
+        "Success ➜ Completing daily habits proves you can set goals and achieve them",
+        "Self-Control ➜ Proving to yourself that you can stick to habits builds trust in yourself",
+        "Direct Feedback ➜ Seeing your progress (streaks, completed days) shows you're reliable",
+        "Self-Acceptance ➜ When you achieve your goals, you learn to value yourself without needing others' approval"
+      ]
+    },
+    "tips": {
+      "title": "Building Confidence Tips 💡",
+      "items": [
+        "One Habit at a Time: Focus on one healthy habit before adding another so you can succeed!",
+        "Track Your Progress: Seeing your streak and completed days proves you're capable and reliable.",
+        "Celebrate Small Wins: Every day you complete your habit is a victory worth celebrating!",
+        "Be Patient: Building confidence takes time. Be kind to yourself on the journey."
+      ]
+    },
+    "game": {
+      "title": "Good / Not Good Activity",
+      "description": "Choose whether each activity feels GOOD or NOT GOOD for your lifestyle and well-being.",
+      "good": "GOOD",
+      "notGood": "NOT GOOD",
+      "checkAnswers": "Check Answers ({answered}/{total})",
+      "items": [
+        { "id": "playing-sports", "name": "Playing Sports", "icon": "⚽", "category": "good" },
+        { "id": "drawing-art", "name": "Drawing & Art", "icon": "🎨", "category": "good" },
+        { "id": "singing", "name": "Singing", "icon": "🎤", "category": "good" },
+        { "id": "reading-books", "name": "Reading Books", "icon": "📖", "category": "good" },
+        { "id": "fishing", "name": "Fishing", "icon": "🎣", "category": "good" },
+        { "id": "board-games", "name": "Board Games", "icon": "🎲", "category": "good" },
+        { "id": "dancing", "name": "Dancing", "icon": "🕺", "category": "good" },
+        { "id": "taking-photos", "name": "Taking Photos", "icon": "📸", "category": "good" },
+        { "id": "cooking", "name": "Cooking", "icon": "🍳", "category": "good" },
+        { "id": "gardening", "name": "Gardening", "icon": "🌱", "category": "good" },
+        { "id": "baking", "name": "Baking", "icon": "🧁", "category": "good" },
+        { "id": "programming", "name": "Programming", "icon": "💻", "category": "good" }
+      ],
+      "feedback": {
+        "correct": "Correct!",
+        "shouldBeGood": "Should be GOOD",
+        "shouldBeNotGood": "Should be NOT GOOD",
+        "score": "You got {correct} out of {total} correct!",
+        "perfect": "Perfect! You understand healthy lifestyle choices! 🌟",
+        "almost": "Great job! Keep learning about healthy habits! 💪",
+        "playAgain": "Play Again"
+      }
+    }
+  },
+  "hygienePage": {
+    "title": "Hygiene & Self-Care Routines",
+    "subtitle": "Build your daily hygiene routine and learn about self-care! Drag on desktop or tap on phones. 🧼✨",
+    "tabs": {
+      "builder": "🛁 Routine Builder",
+      "game": "🎮 Hygiene Game"
+    },
+    "availableActivities": "Available Activities",
+    "dragHelp": "Drag items to build your routine or tap to place them.",
+    "tapTarget": "Tap-to-add target:",
+    "tapHint": "(Perfect for phones — tap a card to drop it here!)",
+    "routines": {
+      "morning": "🌅 Morning",
+      "afternoon": "☀️ Afternoon",
+      "evening": "🌙 Evening",
+      "title": "{time} Routine",
+      "empty": "Drop items here",
+      "saved": {
+        "title": "Your Routine is Saved!",
+        "description": "You've created a {count}-item hygiene routine. Keep it up! 💪"
+      }
+    },
+    "builderItems": [
+      { "id": "brush-teeth", "name": "Brush Teeth", "icon": "🦷", "category": "morning" },
+      { "id": "wash-face", "name": "Wash Face", "icon": "🧼", "category": "morning" },
+      { "id": "shower", "name": "Shower", "icon": "🚿", "category": "morning" },
+      { "id": "deodorant", "name": "Deodorant", "icon": "🧴", "category": "morning" },
+      { "id": "comb-hair", "name": "Comb Hair", "icon": "💇", "category": "morning" },
+      { "id": "wash-hands", "name": "Wash Hands", "icon": "🤲", "category": "afternoon" },
+      { "id": "change-clothes", "name": "Change Clothes", "icon": "👕", "category": "afternoon" },
+      { "id": "brush-teeth-night", "name": "Brush Teeth", "icon": "🦷", "category": "evening" },
+      { "id": "wash-face-night", "name": "Wash Face", "icon": "🧼", "category": "evening" },
+      { "id": "shower-night", "name": "Shower", "icon": "🚿", "category": "evening" }
+    ],
+    "game": {
+      "title": "Categorize Hygiene Items",
+      "description": "Drag or tap each item to its correct category! Match the hygiene tools with where they're used, even on phones.",
+      "categories": [
+        { "id": "shower", "name": "Shower", "icon": "🚿", "color": "from-blue-400 to-cyan-500" },
+        { "id": "oral", "name": "Oral Care", "icon": "🦷", "color": "from-green-400 to-emerald-500" },
+        { "id": "hands", "name": "Hand Hygiene", "icon": "🤲", "color": "from-yellow-400 to-orange-500" },
+        { "id": "general", "name": "General Care", "icon": "✨", "color": "from-purple-400 to-pink-500" }
+      ],
+      "items": [
+        { "id": "towel", "name": "Towel", "icon": "🧺", "category": "shower" },
+        { "id": "soap", "name": "Soap", "icon": "🧼", "category": "shower" },
+        { "id": "shampoo", "name": "Shampoo", "icon": "🧴", "category": "shower" },
+        { "id": "toothbrush", "name": "Toothbrush", "icon": "🪥", "category": "oral" },
+        { "id": "toothpaste", "name": "Toothpaste", "icon": "🦷", "category": "oral" },
+        { "id": "floss", "name": "Dental Floss", "icon": "🧵", "category": "oral" },
+        { "id": "hand-soap", "name": "Hand Soap", "icon": "🧴", "category": "hands" },
+        { "id": "hand-sanitizer", "name": "Hand Sanitizer", "icon": "💧", "category": "hands" },
+        { "id": "deodorant-game", "name": "Deodorant", "icon": "🧴", "category": "general" },
+        { "id": "moisturizer", "name": "Moisturizer", "icon": "🧴", "category": "general" }
+      ],
+      "dragPrompt": "Drag or tap these items to the correct category:",
+      "tapToPlace": "Tap to place:",
+      "checkAnswers": "Check Answers ({answered}/{total})",
+      "score": "You got {correct} out of {total} correct!",
+      "perfect": "Perfect! You're a hygiene expert! 🌟",
+      "almost": "Great job! Keep learning about hygiene! 💪",
+      "playAgain": "Play Again"
+    },
+    "tips": {
+      "title": "Hygiene Tips 💡",
+      "daily": "Daily Routine: Establishing a consistent hygiene routine helps you feel clean and confident!",
+      "morning": "Morning & Evening: Brush your teeth twice a day and wash your face regularly.",
+      "hands": "After Activities: Wash your hands after playing, before eating, and after using the bathroom.",
+      "shower": "Shower Regularly: Taking a shower daily helps keep your body clean and fresh."
     }
   },
   "bodyGuide": {
