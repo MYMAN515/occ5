@@ -1,0 +1,16 @@
+<svg width="512" height="360" viewBox="0 0 512 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="balanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfccb" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="360" rx="32" fill="url(#balanceGradient)"/>
+  <circle cx="256" cy="150" r="80" fill="#bbf7d0" stroke="#15803d" stroke-width="6"/>
+  <rect x="220" y="90" width="72" height="60" rx="20" fill="#dcfce7" stroke="#15803d" stroke-width="4"/>
+  <rect x="240" y="160" width="32" height="110" rx="16" fill="#f0fdf4" stroke="#15803d" stroke-width="4"/>
+  <rect x="206" y="210" width="100" height="26" rx="13" fill="#4ade80"/>
+  <text x="256" y="320" text-anchor="middle" font-size="30" font-family="'Baloo 2', 'Comic Sans MS', cursive" fill="#166534">
+    Q4 · Balance Break
+  </text>
+</svg>
