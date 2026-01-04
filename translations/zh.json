@@ -112,6 +112,44 @@
       }
     }
   },
+  "timelinePage": {
+    "header": {
+      "title": "时间线配对游戏",
+      "subtitle": "把每个变化与青春期前或后的阶段配对！🎯"
+    },
+    "stats": {
+      "score": "得分",
+      "attempts": "尝试次数",
+      "accuracy": "准确率"
+    },
+    "complete": {
+      "title": "太棒了！🎉",
+      "message": "你在 {attempts} 次尝试中答对了 {score} 个！",
+      "playAgain": "再玩一次"
+    },
+    "instructions": {
+      "selectFirst": "👇 点击下面的卡片，然后选择它发生的时间！",
+      "chooseStage": "👆 现在点击下方的“青春期前”或“青春期后”！"
+    },
+    "stages": {
+      "before": "👶 青春期前",
+      "after": "🌟 青春期后"
+    },
+    "items": [
+      { "id": "1", "text": "身高较矮", "stage": "before" },
+      { "id": "2", "text": "正在经历生长突增", "stage": "after" },
+      { "id": "3", "text": "皮肤光滑清透", "stage": "before" },
+      { "id": "4", "text": "可能出现痘痘", "stage": "after" },
+      { "id": "5", "text": "声音保持不变", "stage": "before" },
+      { "id": "6", "text": "声音变得低沉或发生变化", "stage": "after" },
+      { "id": "7", "text": "身体线条仍像孩子", "stage": "before" },
+      { "id": "8", "text": "身体曲线开始发展", "stage": "after" },
+      { "id": "9", "text": "没有体味", "stage": "before" },
+      { "id": "10", "text": "需要使用止汗露", "stage": "after" },
+      { "id": "11", "text": "体毛极少", "stage": "before" },
+      { "id": "12", "text": "出现新的体毛", "stage": "after" }
+    ]
+  },
   "welcome": {
     "branding": "与马来亚大学的鼓舞精神合作",
     "slide1": {

@@ -112,6 +112,44 @@
       }
     }
   },
+  "timelinePage": {
+    "header": {
+      "title": "Permainan Padanan Garis Masa",
+      "subtitle": "Padankan setiap perubahan sama ada sebelum atau selepas akil baligh bermula! 🎯"
+    },
+    "stats": {
+      "score": "Markah",
+      "attempts": "Cubaan",
+      "accuracy": "Ketepatan"
+    },
+    "complete": {
+      "title": "Tahniah! 🎉",
+      "message": "Anda melengkapkan permainan dengan {score} betul daripada {attempts} percubaan!",
+      "playAgain": "Main Lagi"
+    },
+    "instructions": {
+      "selectFirst": "👇 Ketik kad di bawah, kemudian pilih bila perubahan itu berlaku!",
+      "chooseStage": "👆 Sekarang pilih \"Sebelum Akil Baligh\" atau \"Selepas Akil Baligh\" di bawah!"
+    },
+    "stages": {
+      "before": "👶 Sebelum Akil Baligh",
+      "after": "🌟 Selepas Akil Baligh"
+    },
+    "items": [
+      { "id": "1", "text": "Ketinggian lebih rendah", "stage": "before" },
+      { "id": "2", "text": "Sedang mengalami lonjakan pertumbuhan", "stage": "after" },
+      { "id": "3", "text": "Kulit licin dan jelas", "stage": "before" },
+      { "id": "4", "text": "Jerawat mungkin muncul", "stage": "after" },
+      { "id": "5", "text": "Suara kekal sama", "stage": "before" },
+      { "id": "6", "text": "Suara mendalam atau berubah", "stage": "after" },
+      { "id": "7", "text": "Bentuk badan seperti kanak-kanak", "stage": "before" },
+      { "id": "8", "text": "Lengkungan badan mula terbentuk", "stage": "after" },
+      { "id": "9", "text": "Tiada bau badan", "stage": "before" },
+      { "id": "10", "text": "Perlu guna deodoran", "stage": "after" },
+      { "id": "11", "text": "Rambut badan sangat sedikit", "stage": "before" },
+      { "id": "12", "text": "Pertumbuhan rambut baharu", "stage": "after" }
+    ]
+  },
   "welcome": {
     "branding": "Diperkasakan oleh semangat Universiti Malaya yang menginspirasikan",
     "slide1": {
