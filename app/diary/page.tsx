@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Trash2, Calendar, Smile, Meh, Frown, Heart, CalendarDays } from 'lucide-react'
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, startOfWeek, endOfWeek } from 'date-fns'
 import { safeLocalStorage } from '@/utils/storage'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type Mood = 'happy' | 'neutral' | 'sad' | 'excited' | 'anxious'
 type Entry = {
@@ -15,6 +16,8 @@ type Entry = {
 }
 
 export default function DiaryPage() {
+  const { t } = useLanguage()
+  const diary = t<any>('diary')
   const [entries, setEntries] = useState<Entry[]>([])
   const [showForm, setShowForm] = useState(false)
   const [currentMood, setCurrentMood] = useState<Mood>('happy')
@@ -44,11 +47,11 @@ export default function DiaryPage() {
   }, [entries])
 
   const moods = [
-    { value: 'happy', icon: '😊', label: 'Happy', color: 'from-yellow-400 to-orange-400' },
-    { value: 'neutral', icon: '😐', label: 'Neutral', color: 'from-gray-400 to-gray-500' },
-    { value: 'sad', icon: '😢', label: 'Sad', color: 'from-blue-400 to-blue-500' },
-    { value: 'excited', icon: '🤩', label: 'Excited', color: 'from-pink-400 to-purple-500' },
-    { value: 'anxious', icon: '😰', label: 'Anxious', color: 'from-orange-400 to-red-500' },
+    { value: 'happy', icon: '😊', label: diary?.moods?.happy, color: 'from-yellow-400 to-orange-400' },
+    { value: 'neutral', icon: '😐', label: diary?.moods?.neutral, color: 'from-gray-400 to-gray-500' },
+    { value: 'sad', icon: '😢', label: diary?.moods?.sad, color: 'from-blue-400 to-blue-500' },
+    { value: 'excited', icon: '🤩', label: diary?.moods?.excited, color: 'from-pink-400 to-purple-500' },
+    { value: 'anxious', icon: '😰', label: diary?.moods?.anxious, color: 'from-orange-400 to-red-500' },
   ]
 
   const addEntry = () => {
@@ -81,10 +84,10 @@ export default function DiaryPage() {
         className="text-center mb-8 md:mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          My Feelings Diary
+          {diary?.header}
         </h1>
         <p className="text-lg md:text-xl text-gray-700">
-          Track your moods and thoughts during your journey 📝
+          {diary?.description}
         </p>
       </motion.div>
 
@@ -107,7 +110,7 @@ export default function DiaryPage() {
             }`}
           >
             <Calendar className="w-5 h-5" />
-            List View
+            {diary?.views?.list}
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -120,7 +123,7 @@ export default function DiaryPage() {
             }`}
           >
             <CalendarDays className="w-5 h-5" />
-            Calendar View
+            {diary?.views?.calendar}
           </motion.button>
         </div>
         <motion.button
@@ -130,7 +133,7 @@ export default function DiaryPage() {
           className="w-full glass-effect rounded-2xl p-6 flex items-center justify-center gap-3 font-semibold text-lg text-gray-700 hover:border-2 hover:border-primary-400 transition-all"
         >
           <Plus className="w-6 h-6" />
-          {showForm ? 'Cancel' : 'Add New Entry'}
+          {showForm ? diary?.cancel : diary?.addEntry}
         </motion.button>
       </motion.div>
 
@@ -144,7 +147,7 @@ export default function DiaryPage() {
             className="mb-8"
           >
             <div className="glass-effect rounded-2xl p-6 md:p-8">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">How are you feeling today?</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">{diary?.howFeeling}</h3>
               
               {/* Mood Selector */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
@@ -170,7 +173,7 @@ export default function DiaryPage() {
               <textarea
                 value={currentContent}
                 onChange={(e) => setCurrentContent(e.target.value)}
-                placeholder="What's on your mind? Share your thoughts, feelings, or what happened today..."
+                placeholder={diary?.placeholder}
                 className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary-400 focus:outline-none mb-4 min-h-[150px] resize-none"
               />
 
@@ -186,7 +189,7 @@ export default function DiaryPage() {
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }`}
               >
-                Save Entry
+                {diary?.saveEntry}
               </motion.button>
             </div>
           </motion.div>
@@ -207,6 +210,7 @@ export default function DiaryPage() {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1))}
                 className="p-2 rounded-lg hover:bg-gray-100"
+                aria-label={diary?.calendar?.previous}
               >
                 ←
               </motion.button>
@@ -218,13 +222,14 @@ export default function DiaryPage() {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1))}
                 className="p-2 rounded-lg hover:bg-gray-100"
+                aria-label={diary?.calendar?.next}
               >
                 →
               </motion.button>
             </div>
 
             <div className="grid grid-cols-7 gap-2 mb-2">
-              {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+              {(diary?.calendar?.weekdays || ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']).map((day) => (
                 <div key={day} className="text-center text-sm font-semibold text-gray-600 py-2">
                   {day}
                 </div>
@@ -270,7 +275,7 @@ export default function DiaryPage() {
 
             <div className="mt-6 p-4 bg-blue-50 rounded-xl">
               <p className="text-sm text-gray-700">
-                <strong>Note:</strong> You can export your mood calendar to Google Calendar. Each entry will show your mood for that day.
+                {diary?.note}
               </p>
             </div>
           </div>
@@ -289,7 +294,7 @@ export default function DiaryPage() {
               className="glass-effect rounded-2xl p-12 text-center"
             >
               <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">No entries yet. Start by adding your first one! 💭</p>
+              <p className="text-gray-500 text-lg">{diary?.listEmpty}</p>
             </motion.div>
           )}
 
@@ -341,12 +346,12 @@ export default function DiaryPage() {
         transition={{ delay: 0.5 }}
         className="mt-12 glass-effect rounded-2xl p-6 md:p-8"
       >
-        <h3 className="text-xl font-bold mb-4 text-gray-800">💡 Diary Tips</h3>
+        <h3 className="text-xl font-bold mb-4 text-gray-800">{diary?.tips?.title}</h3>
         <ul className="space-y-2 text-gray-700">
-          <li>✨ Write regularly - even just a few sentences helps!</li>
-          <li>🎯 Be honest about your feelings - this is your private space</li>
-          <li>🌈 Look back at old entries to see how you've grown</li>
-          <li>💪 Remember: all feelings are valid and normal</li>
+          <li>{diary?.tips?.regular}</li>
+          <li>{diary?.tips?.honest}</li>
+          <li>{diary?.tips?.lookback}</li>
+          <li>{diary?.tips?.valid}</li>
         </ul>
       </motion.div>
     </div>

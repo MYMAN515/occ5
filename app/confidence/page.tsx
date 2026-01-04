@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Heart, Target, CheckCircle, Circle, Star, ThumbsUp, ThumbsDown, RotateCcw, Sparkles, TrendingUp, XCircle } from 'lucide-react'
 import { safeLocalStorage } from '@/utils/storage'
 import { format } from 'date-fns'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type Habit = {
   id: string
@@ -23,78 +24,17 @@ type LikeItem = {
 }
 
 export default function ConfidencePage() {
+  const { t } = useLanguage()
+  const confidence = t<any>('confidencePage')
   const [activeTab, setActiveTab] = useState<'habits' | 'game'>('habits')
   const [currentHabit, setCurrentHabit] = useState<Habit | null>(null)
   const [habits, setHabits] = useState<Habit[]>([])
   const [gameItems, setGameItems] = useState<LikeItem[]>([])
   const [gameAnswers, setGameAnswers] = useState<{ [key: string]: 'good' | 'not-good' }>({})
   const [gameSubmitted, setGameSubmitted] = useState(false)
+  const availableHabits: Habit[] = (confidence?.habits || []).map((habit: any) => ({ ...habit, completedDates: habit.completedDates || [] }))
 
-  const availableHabits: Habit[] = [
-    {
-      id: 'exercise',
-      name: 'Daily Exercise',
-      description: 'Move your body for at least 30 minutes',
-      icon: '🏃',
-      color: 'from-blue-400 to-cyan-500',
-      completedDates: []
-    },
-    {
-      id: 'sleep',
-      name: 'Good Sleep',
-      description: 'Get 8-10 hours of sleep',
-      icon: '😴',
-      color: 'from-purple-400 to-indigo-500',
-      completedDates: []
-    },
-    {
-      id: 'water',
-      name: 'Drink Water',
-      description: 'Drink 6-8 glasses of water',
-      icon: '💧',
-      color: 'from-cyan-400 to-blue-500',
-      completedDates: []
-    },
-    {
-      id: 'gratitude',
-      name: 'Gratitude Journal',
-      description: 'Write 3 things you\'re grateful for',
-      icon: '📝',
-      color: 'from-yellow-400 to-orange-500',
-      completedDates: []
-    },
-    {
-      id: 'reading',
-      name: 'Read for Fun',
-      description: 'Read for 20 minutes',
-      icon: '📚',
-      color: 'from-green-400 to-emerald-500',
-      completedDates: []
-    },
-    {
-      id: 'meditation',
-      name: 'Mindful Moment',
-      description: 'Take 5 minutes to breathe and relax',
-      icon: '🧘',
-      color: 'from-pink-400 to-rose-500',
-      completedDates: []
-    }
-  ]
-
-  const likeGameItems: LikeItem[] = [
-    { id: 'playing-sports', name: 'Playing Sports', icon: '⚽', category: 'good' },
-    { id: 'drawing-art', name: 'Drawing & Art', icon: '🎨', category: 'good' },
-    { id: 'singing', name: 'Singing', icon: '🎤', category: 'good' },
-    { id: 'reading-books', name: 'Reading Books', icon: '📖', category: 'good' },
-    { id: 'fishing', name: 'Fishing', icon: '🎣', category: 'good' },
-    { id: 'board-games', name: 'Board Games', icon: '🎲', category: 'good' },
-    { id: 'dancing', name: 'Dancing', icon: '🕺', category: 'good' },
-    { id: 'taking-photos', name: 'Taking Photos', icon: '📸', category: 'good' },
-    { id: 'cooking', name: 'Cooking', icon: '🍳', category: 'good' },
-    { id: 'gardening', name: 'Gardening', icon: '🌱', category: 'good' },
-    { id: 'baking', name: 'Baking', icon: '🧁', category: 'good' },
-    { id: 'programming', name: 'Programming', icon: '💻', category: 'good' },
-  ]
+  const likeGameItems: LikeItem[] = confidence?.game?.items || []
 
   // Load saved habits
   useEffect(() => {
@@ -136,7 +76,7 @@ export default function ConfidencePage() {
 
   const addHabit = (habit: Habit) => {
     if (habits.length >= 1) {
-      alert('Focus on one habit at a time! Complete your current habit before adding a new one. 💪')
+      alert(confidence?.habitLimit)
       return
     }
     const newHabit = { ...habit }
@@ -225,10 +165,10 @@ export default function ConfidencePage() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Confidence, Self-Acceptance & Lifestyle
+          {confidence?.title}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Build healthy habits and boost your confidence one step at a time! 🌟💪
+          {confidence?.subtitle}
         </p>
       </motion.div>
 
@@ -248,7 +188,7 @@ export default function ConfidencePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            🎯 Habit Tracker
+            {confidence?.tabs?.habits}
           </button>
           <button
             onClick={() => setActiveTab('game')}
@@ -258,7 +198,7 @@ export default function ConfidencePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            👍 Good / Not Good
+            {confidence?.tabs?.game}
           </button>
         </div>
       </motion.div>
@@ -296,11 +236,11 @@ export default function ConfidencePage() {
                   
                   <div className="flex items-center gap-6 mb-4">
                     <div>
-                      <p className="text-sm text-gray-600">Streak</p>
+                      <p className="text-sm text-gray-600">{confidence?.currentFocus?.streak}</p>
                       <p className="text-2xl font-bold text-primary-600">{getStreak(currentHabit)} 🔥</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Total Days</p>
+                      <p className="text-sm text-gray-600">{confidence?.currentFocus?.totalDays}</p>
                       <p className="text-2xl font-bold text-secondary-600">{currentHabit.completedDates.length}</p>
                     </div>
                   </div>
@@ -318,12 +258,12 @@ export default function ConfidencePage() {
                     {isTodayCompleted(currentHabit) ? (
                       <>
                         <CheckCircle className="w-6 h-6" />
-                        Completed Today! 🎉
+                        {confidence?.currentFocus?.markComplete}
                       </>
                     ) : (
                       <>
                         <Circle className="w-6 h-6" />
-                        Mark as Complete
+                        {confidence?.currentFocus?.markIncomplete}
                       </>
                     )}
                   </motion.button>
@@ -336,7 +276,7 @@ export default function ConfidencePage() {
                     className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 text-center"
                   >
                     <p className="text-gray-700 font-semibold">
-                      🎉 Amazing! You've completed {currentHabit.completedDates.length} days! You can now add a new habit or continue building this one!
+                      🎉 {confidence?.habitCompletion?.replace('{days}', currentHabit.completedDates.length.toString())}
                     </p>
                   </motion.div>
                 )}
@@ -345,11 +285,11 @@ export default function ConfidencePage() {
 
             {/* Available Habits */}
             <div className="glass-effect rounded-3xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Available Habits</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">{confidence?.availableHabits}</h3>
               <p className="text-gray-600 mb-4">
-                {habits.length >= 1 
-                  ? "Complete your current habit (7+ days) to unlock new ones!"
-                  : "Choose a habit to start your journey!"}
+                {habits.length >= 1
+                  ? confidence?.habitLocked
+                  : confidence?.chooseHabit}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {availableHabits
@@ -374,7 +314,7 @@ export default function ConfidencePage() {
                             : 'bg-white text-gray-800 hover:bg-gray-100'
                         }`}
                       >
-                        {habits.length >= 1 ? 'Focus on Current Habit' : 'Start This Habit'}
+                        {habits.length >= 1 ? confidence?.habitLimit : confidence?.chooseHabit}
                       </motion.button>
                     </motion.div>
                   ))}
@@ -390,21 +330,12 @@ export default function ConfidencePage() {
             >
               <h3 className="text-2xl font-bold mb-4 text-gray-800 flex items-center gap-3">
                 <TrendingUp className="w-8 h-8 text-primary-600" />
-                How Habits Build Confidence
+                {confidence?.progress?.title}
               </h3>
               <div className="space-y-3 text-gray-700">
-                <p>
-                  <strong>Healthy Lifestyle</strong> → Taking care of your body makes you feel strong and capable
-                </p>
-                <p>
-                  <strong>Self-Control</strong> → Proving to yourself that you can stick to habits builds trust in yourself
-                </p>
-                <p>
-                  <strong>Direct Feedback</strong> → Seeing your progress (streaks, completed days) shows you're reliable
-                </p>
-                <p>
-                  <strong>Self-Acceptance</strong> → When you achieve your goals, you learn to value yourself without needing others' approval
-                </p>
+                {(confidence?.progress?.points || []).map((point: string, index: number) => (
+                  <p key={index}>{point}</p>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -417,9 +348,9 @@ export default function ConfidencePage() {
             className="space-y-8"
           >
             <div className="glass-effect rounded-3xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Good / Not Good Activity</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">{confidence?.game?.title}</h3>
               <p className="text-gray-600 mb-6">
-                Choose whether each activity feels GOOD or NOT GOOD for your lifestyle and well-being.
+                {confidence?.game?.description}
               </p>
 
               {/* Items */}
@@ -447,7 +378,7 @@ export default function ConfidencePage() {
                         } ${gameSubmitted ? 'opacity-50' : ''}`}
                       >
                         <ThumbsUp className="w-5 h-5" />
-                        GOOD
+                        {confidence?.game?.good}
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -461,25 +392,27 @@ export default function ConfidencePage() {
                         } ${gameSubmitted ? 'opacity-50' : ''}`}
                       >
                         <ThumbsDown className="w-5 h-5" />
-                        NOT GOOD
+                        {confidence?.game?.notGood}
                       </motion.button>
                     </div>
 
                     {gameSubmitted && (
                       <div className="mt-4 text-center">
-                        {gameAnswers[item.id] === item.category ? (
-                          <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
-                            <CheckCircle className="w-5 h-5" />
-                            Correct!
-                          </div>
-                        ) : (
-                          <div className="flex items-center justify-center gap-2 text-red-600 font-semibold">
-                            <XCircle className="w-5 h-5" />
-                            Should be {item.category === 'good' ? 'GOOD' : 'NOT GOOD'}
+                            {gameAnswers[item.id] === item.category ? (
+                              <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
+                                <CheckCircle className="w-5 h-5" />
+                                {confidence?.game?.feedback?.correct}
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-center gap-2 text-red-600 font-semibold">
+                                <XCircle className="w-5 h-5" />
+                                {item.category === 'good'
+                                  ? confidence?.game?.feedback?.shouldBeGood
+                                  : confidence?.game?.feedback?.shouldBeNotGood}
+                              </div>
+                            )}
                           </div>
                         )}
-                      </div>
-                    )}
                   </motion.div>
                 ))}
               </div>
@@ -497,7 +430,11 @@ export default function ConfidencePage() {
                       : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   }`}
                 >
-                  Check Answers ({Object.keys(gameAnswers).length}/{likeGameItems.length})
+                  {confidence?.game?.checkAnswers
+                    ? confidence?.game?.checkAnswers
+                        .replace('{answered}', Object.keys(gameAnswers).length.toString())
+                        .replace('{total}', likeGameItems.length.toString())
+                    : `Check Answers (${Object.keys(gameAnswers).length}/${likeGameItems.length})`}
                 </motion.button>
               ) : (
                 <motion.div
@@ -508,12 +445,14 @@ export default function ConfidencePage() {
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 text-center">
                     <div className="text-4xl mb-4">🎉</div>
                     <h4 className="text-2xl font-bold mb-2 text-gray-800">
-                      You got {getGameScore().correct} out of {getGameScore().total} correct!
+                      {confidence?.game?.feedback?.score
+                        ?.replace('{correct}', getGameScore().correct.toString())
+                        .replace('{total}', getGameScore().total.toString())}
                     </h4>
                     <p className="text-gray-600 mb-4">
                       {getGameScore().correct === getGameScore().total
-                        ? "Perfect! You understand healthy lifestyle choices! 🌟"
-                        : "Great job! Keep learning about healthy habits! 💪"}
+                        ? confidence?.game?.feedback?.perfect
+                        : confidence?.game?.feedback?.almost}
                     </p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -522,7 +461,7 @@ export default function ConfidencePage() {
                       className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto"
                     >
                       <RotateCcw className="w-5 h-5" />
-                      Play Again
+                      {confidence?.game?.feedback?.playAgain}
                     </motion.button>
                   </div>
                 </motion.div>
@@ -540,21 +479,12 @@ export default function ConfidencePage() {
         className="mt-12 glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Building Confidence Tips 💡
+          {confidence?.tips?.title}
         </h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>One Habit at a Time:</strong> Focus on building one healthy habit before adding another. This helps you succeed!
-          </p>
-          <p>
-            <strong>Track Your Progress:</strong> Seeing your streak and completed days proves you're capable and reliable.
-          </p>
-          <p>
-            <strong>Celebrate Small Wins:</strong> Every day you complete your habit is a victory worth celebrating!
-          </p>
-          <p>
-            <strong>Be Patient:</strong> Building confidence takes time. Be kind to yourself on the journey.
-          </p>
+          {(confidence?.tips?.items || []).map((tip: string, index: number) => (
+            <p key={index}>{tip}</p>
+          ))}
         </div>
       </motion.div>
     </div>

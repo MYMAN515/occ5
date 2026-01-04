@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import type { DragEvent as ReactDragEvent } from 'react'
 import { CheckCircle, XCircle, RotateCcw, Sparkles } from 'lucide-react'
 import { safeLocalStorage } from '@/utils/storage'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type RoutineItem = {
   id: string
@@ -21,6 +22,8 @@ type HygieneItem = {
 }
 
 export default function HygienePage() {
+  const { t } = useLanguage()
+  const hygiene = t<any>('hygienePage')
   const [activeTab, setActiveTab] = useState<'builder' | 'game'>('builder')
   const [routineItems, setRoutineItems] = useState<RoutineItem[]>([])
   const [quickAddTime, setQuickAddTime] = useState<'morning' | 'afternoon' | 'evening'>('morning')
@@ -29,38 +32,11 @@ export default function HygienePage() {
   const [gameAnswers, setGameAnswers] = useState<{ [key: string]: string }>({})
   const [gameSubmitted, setGameSubmitted] = useState(false)
 
-  const availableRoutineItems: RoutineItem[] = [
-    { id: 'brush-teeth', name: 'Brush Teeth', icon: '🦷', category: 'morning' },
-    { id: 'wash-face', name: 'Wash Face', icon: '🧼', category: 'morning' },
-    { id: 'shower', name: 'Shower', icon: '🚿', category: 'morning' },
-    { id: 'deodorant', name: 'Deodorant', icon: '🧴', category: 'morning' },
-    { id: 'comb-hair', name: 'Comb Hair', icon: '💇', category: 'morning' },
-    { id: 'wash-hands', name: 'Wash Hands', icon: '🤲', category: 'afternoon' },
-    { id: 'change-clothes', name: 'Change Clothes', icon: '👕', category: 'afternoon' },
-    { id: 'brush-teeth-night', name: 'Brush Teeth', icon: '🦷', category: 'evening' },
-    { id: 'wash-face-night', name: 'Wash Face', icon: '🧼', category: 'evening' },
-    { id: 'shower-night', name: 'Shower', icon: '🚿', category: 'evening' },
-  ]
+  const availableRoutineItems: RoutineItem[] = hygiene?.builderItems || []
 
-  const hygieneGameItems: HygieneItem[] = [
-    { id: 'towel', name: 'Towel', icon: '🧺', category: 'shower' },
-    { id: 'soap', name: 'Soap', icon: '🧼', category: 'shower' },
-    { id: 'shampoo', name: 'Shampoo', icon: '🧴', category: 'shower' },
-    { id: 'toothbrush', name: 'Toothbrush', icon: '🪥', category: 'oral' },
-    { id: 'toothpaste', name: 'Toothpaste', icon: '🦷', category: 'oral' },
-    { id: 'floss', name: 'Dental Floss', icon: '🧵', category: 'oral' },
-    { id: 'hand-soap', name: 'Hand Soap', icon: '🧴', category: 'hands' },
-    { id: 'hand-sanitizer', name: 'Hand Sanitizer', icon: '💧', category: 'hands' },
-    { id: 'deodorant-game', name: 'Deodorant', icon: '🧴', category: 'general' },
-    { id: 'moisturizer', name: 'Moisturizer', icon: '🧴', category: 'general' },
-  ]
+  const hygieneGameItems: HygieneItem[] = hygiene?.game?.items || []
 
-  const gameCategories = [
-    { id: 'shower', name: 'Shower', icon: '🚿', color: 'from-blue-400 to-cyan-500' },
-    { id: 'oral', name: 'Oral Care', icon: '🦷', color: 'from-green-400 to-emerald-500' },
-    { id: 'hands', name: 'Hand Hygiene', icon: '🤲', color: 'from-yellow-400 to-orange-500' },
-    { id: 'general', name: 'General Care', icon: '✨', color: 'from-purple-400 to-pink-500' },
-  ]
+  const gameCategories = hygiene?.game?.categories || []
 
   // Load saved routine
   useEffect(() => {
@@ -147,10 +123,10 @@ export default function HygienePage() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Hygiene & Self-Care Routines
+          {hygiene?.title}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Build your daily hygiene routine and learn about self-care! Drag on desktop or tap on phones. 🧼✨
+          {hygiene?.subtitle}
         </p>
       </motion.div>
 
@@ -170,7 +146,7 @@ export default function HygienePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            🛁 Routine Builder
+            {hygiene?.tabs?.builder}
           </button>
           <button
             onClick={() => setActiveTab('game')}
@@ -180,7 +156,7 @@ export default function HygienePage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            🎮 Hygiene Game
+            {hygiene?.tabs?.game}
           </button>
         </div>
       </motion.div>
@@ -197,10 +173,10 @@ export default function HygienePage() {
           >
             {/* Available Items */}
             <div className="glass-effect rounded-3xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Available Activities</h3>
-              <p className="text-gray-600 mb-4">Drag items to build your routine or tap to place them.</p>
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">{hygiene?.availableActivities}</h3>
+              <p className="text-gray-600 mb-4">{hygiene?.dragHelp}</p>
               <div className="flex flex-wrap gap-2 mb-4 items-center text-sm">
-                <span className="font-semibold text-gray-700">Tap-to-add target:</span>
+                <span className="font-semibold text-gray-700">{hygiene?.tapTarget}</span>
                 {(['morning', 'afternoon', 'evening'] as const).map((time) => (
                   <button
                     key={time}
@@ -211,10 +187,14 @@ export default function HygienePage() {
                         : 'bg-white text-gray-700 border-gray-200'
                     }`}
                   >
-                    {time === 'morning' ? '🌅 Morning' : time === 'afternoon' ? '☀️ Afternoon' : '🌙 Evening'}
+                    {time === 'morning'
+                      ? hygiene?.routines?.morning
+                      : time === 'afternoon'
+                        ? hygiene?.routines?.afternoon
+                        : hygiene?.routines?.evening}
                   </button>
                 ))}
-                <span className="text-gray-500">(Perfect for phones — tap a card to drop it here!)</span>
+                <span className="text-gray-500">{hygiene?.tapHint}</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {availableRoutineItems
@@ -254,7 +234,7 @@ export default function HygienePage() {
                     <span className="text-2xl">
                       {time === 'morning' ? '🌅' : time === 'afternoon' ? '☀️' : '🌙'}
                     </span>
-                    {time} Routine
+                    {hygiene?.routines?.title?.replace('{time}', time === 'morning' ? hygiene?.routines?.morning : time === 'afternoon' ? hygiene?.routines?.afternoon : hygiene?.routines?.evening)}
                   </h3>
                   <div className="space-y-3">
                     {routineItems
@@ -280,7 +260,7 @@ export default function HygienePage() {
                       ))}
                     {routineItems.filter(item => item.category === time).length === 0 && (
                       <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center text-gray-400">
-                        Drop items here
+                        {hygiene?.routines?.empty}
                       </div>
                     )}
                   </div>
@@ -296,10 +276,10 @@ export default function HygienePage() {
               >
                 <h3 className="text-xl font-bold mb-2 text-gray-800 flex items-center gap-2">
                   <Sparkles className="w-6 h-6 text-primary-600" />
-                  Your Routine is Saved!
+                  {hygiene?.routines?.saved?.title}
                 </h3>
                 <p className="text-gray-600">
-                  You've created a {routineItems.length}-item hygiene routine. Keep it up! 💪
+                  {hygiene?.routines?.saved?.description?.replace('{count}', routineItems.length.toString())}
                 </p>
               </motion.div>
             )}
@@ -313,9 +293,9 @@ export default function HygienePage() {
             className="space-y-8"
           >
             <div className="glass-effect rounded-3xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Categorize Hygiene Items</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">{hygiene?.game?.title}</h3>
               <p className="text-gray-600 mb-6">
-                Drag or tap each item to its correct category! Match the hygiene tools with where they're used, even on phones.
+                {hygiene?.game?.description}
               </p>
 
               {/* Categories */}
@@ -365,7 +345,7 @@ export default function HygienePage() {
 
               {/* Items to Drag */}
               <div className="mb-6">
-                <h4 className="font-bold text-lg mb-4 text-gray-800">Drag or tap these items to the correct category:</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-800">{hygiene?.game?.dragPrompt}</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                   {hygieneGameItems
                     .filter(item => !gameAnswers[item.id])
@@ -388,7 +368,7 @@ export default function HygienePage() {
                         <p className="text-sm font-medium text-gray-700">{item.name}</p>
                         {!gameSubmitted && (
                           <div className="flex flex-wrap gap-2 mt-3 text-xs justify-center">
-                            <span className="font-semibold text-gray-700">Tap to place:</span>
+                            <span className="font-semibold text-gray-700">{hygiene?.game?.tapToPlace}</span>
                             {gameCategories.map((category) => (
                               <button
                                 key={category.id}
@@ -418,7 +398,11 @@ export default function HygienePage() {
                       : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   }`}
                 >
-                  Check Answers ({Object.keys(gameAnswers).length}/{hygieneGameItems.length})
+                  {hygiene?.game?.checkAnswers
+                    ? hygiene?.game?.checkAnswers
+                        .replace('{answered}', Object.keys(gameAnswers).length.toString())
+                        .replace('{total}', hygieneGameItems.length.toString())
+                    : `Check Answers (${Object.keys(gameAnswers).length}/${hygieneGameItems.length})`}
                 </motion.button>
               ) : (
                 <motion.div
@@ -429,12 +413,14 @@ export default function HygienePage() {
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 text-center">
                     <div className="text-4xl mb-4">🎉</div>
                     <h4 className="text-2xl font-bold mb-2 text-gray-800">
-                      You got {getGameScore().correct} out of {getGameScore().total} correct!
+                      {hygiene?.game?.score
+                        ?.replace('{correct}', getGameScore().correct.toString())
+                        .replace('{total}', getGameScore().total.toString())}
                     </h4>
                     <p className="text-gray-600 mb-4">
                       {getGameScore().correct === getGameScore().total
-                        ? "Perfect! You're a hygiene expert! 🌟"
-                        : "Great job! Keep learning about hygiene! 💪"}
+                        ? hygiene?.game?.perfect
+                        : hygiene?.game?.almost}
                     </p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -443,7 +429,7 @@ export default function HygienePage() {
                       className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto"
                     >
                       <RotateCcw className="w-5 h-5" />
-                      Play Again
+                      {hygiene?.game?.playAgain}
                     </motion.button>
                   </div>
                 </motion.div>
@@ -461,21 +447,13 @@ export default function HygienePage() {
         className="mt-12 glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Hygiene Tips 💡
+          {hygiene?.tips?.title}
         </h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>Daily Routine:</strong> Establishing a consistent hygiene routine helps you feel clean and confident!
-          </p>
-          <p>
-            <strong>Morning & Evening:</strong> Brush your teeth twice a day and wash your face regularly.
-          </p>
-          <p>
-            <strong>After Activities:</strong> Wash your hands after playing, before eating, and after using the bathroom.
-          </p>
-          <p>
-            <strong>Shower Regularly:</strong> Taking a shower daily helps keep your body clean and fresh.
-          </p>
+          <p>{hygiene?.tips?.daily}</p>
+          <p>{hygiene?.tips?.morning}</p>
+          <p>{hygiene?.tips?.hands}</p>
+          <p>{hygiene?.tips?.shower}</p>
         </div>
       </motion.div>
     </div>
