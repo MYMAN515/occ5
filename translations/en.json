@@ -106,11 +106,50 @@
         "label": "What I Like About Me",
         "helper": "Celebrate strengths with uplifting prompts."
       },
-      "quizzes": {
-        "label": "Quizzes",
-        "helper": "Explore the Sleep & Nutrition Impact Quiz."
-      }
+    "quizzes": {
+      "label": "Quizzes",
+      "helper": "Explore the Sleep & Nutrition Impact Quiz."
     }
+    }
+  },
+  "timelinePage": {
+    "title": "Timeline Matching Game",
+    "description": "Match each change to before or after puberty begins! 🎯",
+    "labels": {
+      "score": "Score",
+      "attempts": "Attempts",
+      "accuracy": "Accuracy"
+    },
+    "complete": {
+      "title": "Congratulations! 🎉",
+      "message": "You completed the game with {correct} correct out of {attempts} attempts!"
+    },
+    "instructions": {
+      "chooseStage": "👆 Now click either \"Before Puberty\" or \"After Puberty\" below!",
+      "pickCard": "👇 Click on a card below, then choose when it happens!"
+    },
+    "stages": {
+      "before": "👶 Before Puberty",
+      "after": "🌟 After Puberty"
+    },
+    "actions": {
+      "playAgain": "Play Again",
+      "reset": "Reset Game"
+    },
+    "items": [
+      { "id": "1", "text": "Shorter height", "stage": "before" },
+      { "id": "2", "text": "Growth spurt happening", "stage": "after" },
+      { "id": "3", "text": "Smooth, clear skin", "stage": "before" },
+      { "id": "4", "text": "Acne may appear", "stage": "after" },
+      { "id": "5", "text": "Voice stays the same", "stage": "before" },
+      { "id": "6", "text": "Voice deepens or changes", "stage": "after" },
+      { "id": "7", "text": "Child-like body shape", "stage": "before" },
+      { "id": "8", "text": "Body curves develop", "stage": "after" },
+      { "id": "9", "text": "No body odor", "stage": "before" },
+      { "id": "10", "text": "Need for deodorant", "stage": "after" },
+      { "id": "11", "text": "Minimal body hair", "stage": "before" },
+      { "id": "12", "text": "New hair growth", "stage": "after" }
+    ]
   },
   "welcome": {
     "branding": "In partnership with the inspiring spirit of the University of Malaya",

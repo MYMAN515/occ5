@@ -106,11 +106,50 @@
         "label": "我喜欢自己的地方",
         "helper": "用鼓励的提示庆祝优点。"
       },
-      "quizzes": {
-        "label": "测验",
-        "helper": "探索睡眠与营养影响测验。"
-      }
+    "quizzes": {
+      "label": "测验",
+      "helper": "探索睡眠与营养影响测验。"
     }
+    }
+  },
+  "timelinePage": {
+    "title": "时间轴配对游戏",
+    "description": "将每个变化判断在青春期开始前还是之后！🎯",
+    "labels": {
+      "score": "得分",
+      "attempts": "尝试次数",
+      "accuracy": "正确率"
+    },
+    "complete": {
+      "title": "恭喜！🎉",
+      "message": "你以 {attempts} 次尝试获得了 {correct} 个正确答案！"
+    },
+    "instructions": {
+      "chooseStage": "👆 现在点击下方的“青春期前”或“青春期后”按钮！",
+      "pickCard": "👇 先点击下面的卡片，再选择它发生的时间！"
+    },
+    "stages": {
+      "before": "👶 青春期前",
+      "after": "🌟 青春期后"
+    },
+    "actions": {
+      "playAgain": "再玩一次",
+      "reset": "重新开始"
+    },
+    "items": [
+      { "id": "1", "text": "身高较矮", "stage": "before" },
+      { "id": "2", "text": "正在经历快速生长", "stage": "after" },
+      { "id": "3", "text": "皮肤光滑清透", "stage": "before" },
+      { "id": "4", "text": "可能出现痘痘", "stage": "after" },
+      { "id": "5", "text": "声音保持不变", "stage": "before" },
+      { "id": "6", "text": "声音变深或改变", "stage": "after" },
+      { "id": "7", "text": "身体线条像孩子", "stage": "before" },
+      { "id": "8", "text": "身体曲线开始出现", "stage": "after" },
+      { "id": "9", "text": "没有体味", "stage": "before" },
+      { "id": "10", "text": "需要使用止汗剂", "stage": "after" },
+      { "id": "11", "text": "体毛很少", "stage": "before" },
+      { "id": "12", "text": "开始长出新的体毛", "stage": "after" }
+    ]
   },
   "welcome": {
     "branding": "与马来亚大学的鼓舞精神合作",
