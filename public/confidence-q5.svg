@@ -1,0 +1,20 @@
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close up of a tween's face with sweat after sports">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bfdbfe" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="220" rx="24" fill="url(#bg5)" />
+  <ellipse cx="160" cy="120" rx="110" ry="90" fill="#fde68a" />
+  <circle cx="120" cy="110" r="22" fill="#f59e0b" opacity="0.7" />
+  <circle cx="200" cy="110" r="22" fill="#f59e0b" opacity="0.7" />
+  <rect x="90" y="150" width="140" height="30" rx="15" fill="#fbbf24" />
+  <path d="M120 100 C120 85 150 85 150 100" stroke="#92400e" stroke-width="6" stroke-linecap="round" />
+  <path d="M170 100 C170 85 200 85 200 100" stroke="#92400e" stroke-width="6" stroke-linecap="round" />
+  <path d="M130 150 Q160 165 190 150" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+  <circle cx="110" cy="150" r="8" fill="#93c5fd" />
+  <circle cx="95" cy="135" r="6" fill="#93c5fd" />
+  <circle cx="210" cy="150" r="8" fill="#93c5fd" />
+  <circle cx="225" cy="135" r="6" fill="#93c5fd" />
+</svg>
