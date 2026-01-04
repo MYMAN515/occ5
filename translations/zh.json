@@ -1019,91 +1019,91 @@
     }
   },
   "changes": {
-    "title": "Understanding Your Child's Changes",
-    "subtitle": "Learn what your child is experiencing physically and emotionally 🌟",
-    "physical": "Physical",
-    "emotional": "Emotional",
+    "title": "了解孩子的变化",
+    "subtitle": "弄清孩子在身体和情绪上正在经历什么 🌟",
+    "physical": "身体",
+    "emotional": "情绪",
     "physicalChanges": {
       "growth": {
-        "title": "Growth Spurts",
-        "description": "Children grow at different rates. Growth spurts can be rapid and awkward."
+        "title": "生长突增",
+        "description": "孩子的成长速度各不相同，长高可能会突然也会有点笨拙。"
       },
       "bodyShape": {
-        "title": "Body Shape Changes",
-        "description": "Body develops new proportions and curves as they mature."
+        "title": "身体形态变化",
+        "description": "随着成熟，身体会出现新的比例和曲线。"
       },
       "voice": {
-        "title": "Voice Changes",
-        "description": "Voice may deepen or change in pitch - especially in boys."
+        "title": "声音变化",
+        "description": "声音可能变低或改变音调——尤其是男孩。"
       },
       "skin": {
-        "title": "Skin Changes",
-        "description": "Acne and oily skin are common. Good hygiene helps manage this."
+        "title": "皮肤变化",
+        "description": "痘痘和出油很常见，良好的卫生习惯能帮助管理这些变化。"
       },
       "hair": {
-        "title": "Hair Growth",
-        "description": "New hair grows in underarms, pubic area, and on face (boys)."
+        "title": "体毛增长",
+        "description": "腋下、阴部会长出新的体毛，男孩脸上也会长出胡须。"
       },
       "odor": {
-        "title": "Body Odor",
-        "description": "Increased sweating requires daily deodorant use."
+        "title": "体味",
+        "description": "出汗增多，需要每天使用止汗或除臭产品。"
       }
     },
     "emotionalChanges": {
       "mood": {
-        "title": "Mood Swings",
-        "description": "Hormonal changes cause real emotional volatility - it's biological."
+        "title": "情绪波动",
+        "description": "荷尔蒙变化会带来真实的情绪起伏——这是身体反应。"
       },
       "interests": {
-        "title": "New Interests",
-        "description": "Children develop new hobbies, passions, and interests."
+        "title": "新兴趣",
+        "description": "孩子会发展新的爱好、热情和兴趣。"
       },
       "independence": {
-        "title": "Independence",
-        "description": "They'll want more privacy and independence from family."
+        "title": "独立性",
+        "description": "他们会想要更多的隐私和自主。"
       },
       "relationships": {
-        "title": "Relationships",
-        "description": "Friendships and romantic interests become more important."
+        "title": "关系",
+        "description": "友谊和朦胧的好感会变得更重要。"
       },
       "awareness": {
-        "title": "Self-Awareness",
-        "description": "They think more about identity and who they want to become."
+        "title": "自我觉察",
+        "description": "他们会更多思考自我身份以及想成为怎样的人。"
       },
       "confidence": {
-        "title": "Confidence Challenges",
-        "description": "Self-esteem often dips during puberty - they need reassurance."
+        "title": "自信挑战",
+        "description": "青春期自尊常会下降——他们需要安慰和肯定。"
       }
     },
     "remember": {
-      "title": "Important Reminders for Parents 🌈",
-      "timing": "Timing: Puberty can start ages 8-14. Every child is unique - don't compare!",
-      "pace": "Pace: Some changes happen quickly, others take years. Be patient.",
-      "support": "Support: Keep communication open. Your child needs to know you're available for any questions or concerns."
+      "title": "给父母的重要提醒 🌈",
+      "timing": "时间：青春期可能在8-14岁之间开始。每个孩子都不同——不要比较！",
+      "pace": "速度：有些变化发生得很快，有些需要几年。请保持耐心。",
+      "support": "支持：保持沟通畅通，让孩子知道无论有什么问题或担忧你都在。"
     }
   },
   "diary": {
-    "title": "Your Child's Feelings Diary",
-    "subtitle": "A private space for your child to track and express their emotions 📝",
-    "addEntry": "Add New Entry",
-    "cancel": "Cancel",
-    "howFeeling": "How are you feeling today?",
+    "title": "孩子的心情日记",
+    "subtitle": "给孩子的私密空间，用来记录和表达情绪 📝",
+    "addEntry": "新增记录",
+    "cancel": "取消",
+    "howFeeling": "今天感觉如何？",
     "moods": {
-      "happy": "Happy",
-      "neutral": "Neutral",
-      "sad": "Sad",
-      "excited": "Excited",
-      "anxious": "Anxious"
+      "happy": "开心",
+      "neutral": "一般",
+      "sad": "难过",
+      "excited": "兴奋",
+      "anxious": "焦虑"
     },
-    "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
-    "saveEntry": "Save Entry",
-    "noEntries": "No entries yet. Start by adding your first one! 💭",
+    "placeholder": "你在想什么？分享今天的想法、感受或发生的事情……",
+    "saveEntry": "保存记录",
+    "noEntries": "还没有记录。先写下第一条吧！💭",
     "tips": {
-      "title": "💡 Diary Tips for Your Child",
-      "regular": "✨ Write regularly - even just a few sentences helps!",
-      "honest": "🎯 Be honest about feelings - this is a private space",
-      "lookback": "🌈 Look back at old entries to see growth over time",
-      "valid": "💪 Remember: all feelings are valid and normal"
+      "title": "💡 给孩子的日记小贴士",
+      "regular": "✨ 定期书写——几句话也能帮助整理情绪！",
+      "honest": "🎯 对感受诚实——这里是属于你的私人空间",
+      "lookback": "🌈 回看旧记录，看看自己随着时间的成长",
+      "valid": "💪 记住：所有情绪都正常、值得被接纳"
     }
   },
   "bodyGuide": {
@@ -1136,13 +1136,13 @@
     "resetGame": "Reset Game"
   },
   "guidance": {
-    "title": "Practical Guidance for Your Child",
-    "subtitle": "Help your child learn to handle puberty changes with confidence 💪",
+    "title": "孩子的实用指导",
+    "subtitle": "帮助孩子学会自信应对青春期的变化 💪",
     "categories": {
-      "physical": "Physical Care",
-      "emotional": "Emotional Wellbeing",
-      "social": "Social Life",
-      "hygiene": "Personal Hygiene"
+      "physical": "身体照护",
+      "emotional": "情绪健康",
+      "social": "社交生活",
+      "hygiene": "个人卫生"
     }
   },
   "bodyImage": {
