@@ -24,62 +24,62 @@ export default function Home() {
     {
       href: '/diary',
       icon: '📔',
-      label: 'Mood Diary for Your Child',
-      helper: 'Track feelings together each day.',
+      label: t('home.quickLinksCards.diary.label'),
+      helper: t('home.quickLinksCards.diary.helper'),
     },
     {
       href: '/hygiene',
       icon: '🧼',
-      label: 'Hygiene & Self-Care',
-      helper: 'Build supportive daily routines.',
+      label: t('home.quickLinksCards.hygiene.label'),
+      helper: t('home.quickLinksCards.hygiene.helper'),
     },
     {
       href: '/confidence',
       icon: '🌟',
-      label: 'Confidence & Lifestyle',
-      helper: 'Grow habits that boost confidence.',
+      label: t('home.quickLinksCards.confidence.label'),
+      helper: t('home.quickLinksCards.confidence.helper'),
     },
     {
       href: '/timeline',
       icon: '⏳',
-      label: 'Timeline Game',
-      helper: 'Match changes before or after puberty.',
+      label: t('home.quickLinksCards.timeline.label'),
+      helper: t('home.quickLinksCards.timeline.helper'),
     },
     {
       action: () => setSelectedGame('memory'),
       icon: '🧠',
-      label: 'Emotion Memory Game',
-      helper: 'Match emotion pairs to practice feelings.',
+      label: t('home.quickLinksCards.memory.label'),
+      helper: t('home.quickLinksCards.memory.helper'),
     },
     {
       action: () => setSelectedGame('quiz'),
       icon: '📝',
-      label: 'Puberty Knowledge Quiz',
-      helper: 'Test what you know about growing up.',
+      label: t('home.quickLinksCards.quiz.label'),
+      helper: t('home.quickLinksCards.quiz.helper'),
     },
     {
       action: () => setSelectedGame('matching'),
       icon: '🧩',
-      label: 'Changes Matching Game',
-      helper: 'Pair related puberty changes together.',
+      label: t('home.quickLinksCards.matching.label'),
+      helper: t('home.quickLinksCards.matching.helper'),
     },
     {
       action: () => setSelectedGame('emotions'),
       icon: '🎈',
-      label: 'Understanding Emotions',
-      helper: 'Learn to identify and name feelings.',
+      label: t('home.quickLinksCards.emotions.label'),
+      helper: t('home.quickLinksCards.emotions.helper'),
     },
     {
       href: '/what-i-like-about-me',
       icon: '💫',
-      label: 'What I Like About Me',
-      helper: 'Celebrate strengths with uplifting prompts.',
+      label: t('home.quickLinksCards.whatILike.label'),
+      helper: t('home.quickLinksCards.whatILike.helper'),
     },
     {
       href: '/quizzes',
       icon: '❓',
-      label: 'Quizzes',
-      helper: 'Explore the Sleep & Nutrition Impact Quiz.',
+      label: t('home.quickLinksCards.quizzes.label'),
+      helper: t('home.quickLinksCards.quizzes.helper'),
     },
   ]
 
@@ -164,9 +164,9 @@ export default function Home() {
       <section className="mt-12" id="quick-links">
         <div className="flex items-center justify-between mb-4">
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-primary-700">Quick links</p>
+            <p className="text-sm font-semibold text-primary-700">{t('home.quickLinksSection.label')}</p>
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-balance">
-              Quick links crafted for small screens—tap a card to jump right in.
+              {t('home.quickLinksSection.title')}
             </h2>
           </div>
         </div>

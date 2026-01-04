@@ -57,12 +57,58 @@
       "badgePlay": "Play badge",
       "badgeSafe": "Safe badge"
     },
+    "quickLinksSection": {
+      "label": "Quick links",
+      "title": "Quick links crafted for small screens—tap a card to jump right in."
+    },
     "features": {
       "parentGuide": {
         "description": "Quick tips for parents"
       },
       "bodyGuide": {
         "description": "Body changes guide"
+      }
+    },
+    "quickLinksCards": {
+      "diary": {
+        "label": "Mood Diary for Your Child",
+        "helper": "Track feelings together each day."
+      },
+      "hygiene": {
+        "label": "Hygiene & Self-Care",
+        "helper": "Build supportive daily routines."
+      },
+      "confidence": {
+        "label": "Confidence & Lifestyle",
+        "helper": "Grow habits that boost confidence."
+      },
+      "timeline": {
+        "label": "Timeline Game",
+        "helper": "Match changes before or after puberty."
+      },
+      "memory": {
+        "label": "Emotion Memory Game",
+        "helper": "Match emotion pairs to practice feelings."
+      },
+      "quiz": {
+        "label": "Puberty Knowledge Quiz",
+        "helper": "Test what you know about growing up."
+      },
+      "matching": {
+        "label": "Changes Matching Game",
+        "helper": "Pair related puberty changes together."
+      },
+      "emotions": {
+        "label": "Understanding Emotions",
+        "helper": "Learn to identify and name feelings."
+      },
+      "whatILike": {
+        "label": "What I Like About Me",
+        "helper": "Celebrate strengths with uplifting prompts."
+      },
+      "quizzes": {
+        "label": "Quizzes",
+        "helper": "Explore the Sleep & Nutrition Impact Quiz."
       }
     }
   },
