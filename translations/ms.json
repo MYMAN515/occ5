@@ -106,11 +106,50 @@
         "label": "Apa Saya Suka Tentang Diri Saya",
         "helper": "Raikan kekuatan dengan soalan yang mengangkat."
       },
-      "quizzes": {
-        "label": "Kuiz",
-        "helper": "Terokai Kuiz Kesan Tidur & Pemakanan."
-      }
+    "quizzes": {
+      "label": "Kuiz",
+      "helper": "Terokai Kuiz Kesan Tidur & Pemakanan."
     }
+    }
+  },
+  "timelinePage": {
+    "title": "Permainan Padanan Garis Masa",
+    "description": "Padankan setiap perubahan sama ada sebelum atau selepas akil baligh bermula! 🎯",
+    "labels": {
+      "score": "Skor",
+      "attempts": "Cubaan",
+      "accuracy": "Ketepatan"
+    },
+    "complete": {
+      "title": "Tahniah! 🎉",
+      "message": "Anda menamatkan permainan dengan {correct} betul daripada {attempts} cubaan!"
+    },
+    "instructions": {
+      "chooseStage": "👆 Sekarang klik \"Sebelum Akil Baligh\" atau \"Selepas Akil Baligh\" di bawah!",
+      "pickCard": "👇 Klik kad di bawah, kemudian pilih bila perubahan berlaku!"
+    },
+    "stages": {
+      "before": "👶 Sebelum Akil Baligh",
+      "after": "🌟 Selepas Akil Baligh"
+    },
+    "actions": {
+      "playAgain": "Main Lagi",
+      "reset": "Tetapkan Semula Permainan"
+    },
+    "items": [
+      { "id": "1", "text": "Ketinggian lebih rendah", "stage": "before" },
+      { "id": "2", "text": "Sedang mengalami lonjakan pertumbuhan", "stage": "after" },
+      { "id": "3", "text": "Kulit licin dan bersih", "stage": "before" },
+      { "id": "4", "text": "Jerawat mungkin muncul", "stage": "after" },
+      { "id": "5", "text": "Suara kekal sama", "stage": "before" },
+      { "id": "6", "text": "Suara menjadi lebih dalam atau berubah", "stage": "after" },
+      { "id": "7", "text": "Bentuk badan seperti kanak-kanak", "stage": "before" },
+      { "id": "8", "text": "Lengkungan badan terbentuk", "stage": "after" },
+      { "id": "9", "text": "Tiada bau badan", "stage": "before" },
+      { "id": "10", "text": "Perlu guna deodoran", "stage": "after" },
+      { "id": "11", "text": "Sedikit bulu badan", "stage": "before" },
+      { "id": "12", "text": "Pertumbuhan rambut baru", "stage": "after" }
+    ]
   },
   "welcome": {
     "branding": "Diperkasakan oleh semangat Universiti Malaya yang menginspirasikan",
