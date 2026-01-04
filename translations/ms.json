@@ -1590,5 +1590,530 @@
         }
       ]
     }
+  },
+  "bodyGuidePage": {
+    "header": {
+      "title": "Panduan Perubahan & Tubuh",
+      "subtitle": "Ketahui perubahan fizikal dan emosi semasa akil baligh 🌱"
+    },
+    "tabs": {
+      "physical": "Fizikal",
+      "emotional": "Emosi",
+      "comics": "Komik",
+      "video": "Video",
+      "body-guide": "Panduan Tubuh"
+    },
+    "physicalChanges": [
+      {
+        "title": "Lonjakan Pertumbuhan",
+        "description": "Anda akan jadi lebih tinggi! Masa setiap orang berbeza.",
+        "color": "from-blue-400 to-cyan-500"
+      },
+      {
+        "title": "Perubahan Bentuk Badan",
+        "description": "Badan akan mendapat lengkung dan bentuk baru ketika matang.",
+        "color": "from-pink-400 to-rose-500"
+      },
+      {
+        "title": "Perubahan Suara",
+        "description": "Suara mungkin menjadi lebih dalam atau berubah nada - ini normal!",
+        "color": "from-purple-400 to-indigo-500"
+      },
+      {
+        "title": "Perubahan Kulit",
+        "description": "Anda mungkin berjerawat atau kulit berminyak. Kebersihan membantu mengawal.",
+        "color": "from-amber-400 to-orange-500"
+      },
+      {
+        "title": "Pertumbuhan Bulu",
+        "description": "Bulu baru akan tumbuh di bahagian badan yang berbeza.",
+        "color": "from-green-400 to-emerald-500"
+      },
+      {
+        "title": "Bau Badan",
+        "description": "Anda akan lebih berpeluh. Penggunaan deodoran menjadi penting!",
+        "color": "from-teal-400 to-cyan-500"
+      }
+    ],
+    "emotionalChanges": [
+      {
+        "title": "Perubahan Mood",
+        "description": "Emosi mungkin naik turun seperti rollercoaster - itu normal!",
+        "color": "from-purple-400 to-pink-500"
+      },
+      {
+        "title": "Minat Baharu",
+        "description": "Anda mungkin mendapat hobi, minat, dan semangat baru.",
+        "color": "from-yellow-400 to-amber-500"
+      },
+      {
+        "title": "Kemandirian",
+        "description": "Anda mahukan lebih banyak privasi dan kebebasan dari keluarga.",
+        "color": "from-blue-400 to-indigo-500"
+      },
+      {
+        "title": "Hubungan",
+        "description": "Persahabatan dan hubungan sosial menjadi lebih penting.",
+        "color": "from-rose-400 to-pink-500"
+      },
+      {
+        "title": "Kesedaran Diri",
+        "description": "Anda berfikir lebih banyak tentang siapa diri anda dan siapa yang ingin anda jadi.",
+        "color": "from-cyan-400 to-blue-500"
+      },
+      {
+        "title": "Keyakinan",
+        "description": "Membina keyakinan mengambil masa - bersabar dengan diri sendiri!",
+        "color": "from-orange-400 to-red-500"
+      }
+    ],
+    "generalChanges": [
+      {
+        "id": "growth",
+        "title": "Lonjakan Pertumbuhan",
+        "description": "Kebanyakan orang mengalami pertumbuhan cepat semasa akil baligh, biasanya tinggi 5-10 sm setahun pada puncaknya.",
+        "details": "Lonjakan pertumbuhan biasanya berlangsung 2-3 tahun. Tangan dan kaki membesar dahulu, diikuti lengan dan kaki, kemudian batang tubuh. Ini boleh membuatkan anda rasa canggung seketika - sangat normal! Anda mungkin perasan pakaian tidak muat atau lebih kerap terlanggar benda kerana badan membesar lebih cepat daripada otak menyesuaikan diri. Kebanyakan orang mencapai ketinggian dewasa pada umur 18-20, ada yang berterusan hingga awal 20-an. Ingat: setiap orang tumbuh pada kadar sendiri, tiada tinggi yang 'betul'!",
+        "tips": [
+          "Makan makanan berkhasiat untuk menyokong pertumbuhan",
+          "Dapatkan tidur yang cukup (8-10 jam) - pertumbuhan berlaku ketika rehat",
+          "Kekal aktif dengan sukan atau senaman",
+          "Bersabar - lonjakan pertumbuhan adalah sementara"
+        ],
+        "image": "/images/growth-spurt.jpg",
+        "imageUrl": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&h=400&fit=crop&q=80",
+        "emoji": "📏"
+      },
+      {
+        "id": "skin",
+        "title": "Perubahan Kulit",
+        "description": "Kulit menghasilkan lebih banyak minyak, boleh menyebabkan jerawat di muka, dada, dan belakang.",
+        "details": "Basuh muka dua kali sehari dengan pencuci lembut. Jerawat adalah normal dan sementara. Jika mengganggu, bincang dengan doktor tentang rawatan. Jangan picit jerawat kerana boleh tinggalkan parut! Hormon meningkatkan pengeluaran minyak yang boleh menyumbat pori. Jerawat paling biasa di muka, juga boleh muncul di dada, belakang, dan bahu. Kebanyakan orang mengalami jerawat semasa akil baligh dan biasanya berkurang pada lewat remaja atau awal 20-an. Jika teruk atau mengganggu emosi, pakar kulit boleh membantu.",
+        "tips": [
+          "Basuh muka pagi dan malam dengan pencuci bebas minyak",
+          "Elak menyentuh muka dengan tangan kotor",
+          "Guna pelembap tidak menyumbat pori",
+          "Tukar sarung bantal dengan kerap",
+          "Jangan gosok terlalu kuat - lembut lebih baik",
+          "Jumpa doktor jika jerawat teruk atau sakit"
+        ],
+        "image": "/images/skin-changes.jpg",
+        "imageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&h=400&fit=crop&q=80",
+        "emoji": "✨"
+      },
+      {
+        "id": "sweat",
+        "title": "Berpeluh & Bau Badan",
+        "description": "Anda akan lebih berpeluh, terutama di bawah lengan, dan bau badan lebih kuat.",
+        "details": "Mandi setiap hari menjadi penting! Gunakan deodoran atau antipeluh. Pakai pakaian bersih dan fabrik bernafas. Ini tanda tubuh matang - semua orang mengalaminya! Kelenjar peluh lebih aktif semasa akil baligh, terutama di ketiak, kaki, dan kawasan sulit. Bau badan berlaku apabila bakteria memecahkan peluh. Ini normal dan sebahagian daripada proses membesar. Kebersihan yang baik membantu anda rasa segar dan yakin.",
+        "tips": [
+          "Mandi atau bersihkan badan setiap hari, terutama selepas bersenam",
+          "Guna deodoran atau antipeluh setiap hari",
+          "Pakai pakaian bersih - tukar setiap hari",
+          "Pilih fabrik bernafas seperti kapas",
+          "Simpan deodoran tambahan dalam beg sekolah",
+          "Cuci ketiak dengan sabun dengan teliti"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&h=400&fit=crop&q=80",
+        "emoji": "🚿"
+      },
+      {
+        "id": "hair",
+        "title": "Pertumbuhan Bulu Badan",
+        "description": "Bulu tumbuh di tempat baharu seperti ketiak, kaki, dan kawasan kemaluan.",
+        "details": "Jumlah dan ketebalan berbeza antara individu. Ada yang banyak bulu, ada yang sedikit - kedua-duanya normal! Anda boleh pilih untuk buang atau tidak - pilihan anda. Bulu badan biasanya mula muncul sekitar usia 9-14, tetapi waktunya berbeza. Bulu boleh tumbuh di kaki, ketiak, kawasan kemaluan, kadang di dada, belakang atau muka. Warna dan tekstur bulu mungkin berbeza daripada rambut di kepala. Membuang bulu adalah pilihan peribadi - tiada jawapan betul atau salah.",
+        "tips": [
+          "Bulu badan adalah semula jadi dan normal",
+          "Membuang bulu adalah pilihan - ikut keselesaan anda",
+          "Jika mahu membuang, belajar cara selamat daripada orang dewasa dipercayai",
+          "Mencukur perlukan teknik betul untuk elak luka",
+          "Waxing dan cara lain ada kelebihan dan kekurangan",
+          "Ingat: bulu badan setiap orang berbeza"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=400&fit=crop&q=80",
+        "emoji": "🌿"
+      },
+      {
+        "id": "weight",
+        "title": "Perubahan Berat & Bentuk",
+        "description": "Komposisi badan berubah - anda mungkin bertambah berat ketika tinggi dan membina otot.",
+        "details": "Pertambahan berat semasa akil baligh adalah normal dan sihat! Badan perlukan kalori tambahan untuk menyokong pertumbuhan. Anda mungkin perasan bentuk badan berubah - ini sebahagian perkembangan biasa. Fokus pada tabiat sihat, bukan nombor di penimbang. Badan sedang bersedia untuk dewasa, dan perubahan ini perlu untuk perkembangan sihat.",
+        "tips": [
+          "Pertambahan berat ketika akil baligh adalah normal dan sihat",
+          "Fokus pada makanan berkhasiat, bukan diet ketat",
+          "Kekal aktif dengan aktiviti yang anda suka",
+          "Bentuk badan anda unik - hargainya",
+          "Bincang dengan doktor jika risau tentang berat",
+          "Elak membandingkan badan dengan orang lain"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=400&fit=crop&q=80",
+        "emoji": "🍎"
+      },
+      {
+        "id": "sleep",
+        "title": "Corak Tidur Berubah",
+        "description": "Anda mungkin perlukan lebih banyak tidur atau tidur lebih lewat.",
+        "details": "Semasa akil baligh, jam dalaman badan beralih, membuat anda lebih segar pada waktu malam dan mengantuk pada pagi. Sebab itu ramai remaja seperti \"burung hantu malam\". Namun anda masih perlu 8-10 jam tidur untuk pertumbuhan sihat. Cuba kekalkan jadual tidur yang konsisten, termasuk hujung minggu.",
+        "tips": [
+          "Sasarkan 8-10 jam tidur setiap malam",
+          "Cuba tidur dan bangun pada waktu yang hampir sama",
+          "Elak skrin 30-60 minit sebelum tidur",
+          "Cipta rutin tidur yang menenangkan",
+          "Pastikan bilik tidur sejuk, gelap dan senyap",
+          "Hadkan kafein, terutama pada waktu petang"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&h=400&fit=crop&q=80",
+        "emoji": "😴"
+      }
+    ],
+    "femaleChanges": [
+      {
+        "id": "breast",
+        "title": "Perkembangan Payudara",
+        "description": "Payudara mula berkembang dengan bonggol kecil yang mungkin rasa sakit.",
+        "details": "Perkembangan boleh mengambil 4-5 tahun untuk lengkap. Saiz atau kadar perkembangan payudara yang berbeza adalah normal. Ramai memerlukan bra latihan pada waktu ini. Rasa sakit adalah biasa! Perkembangan biasanya bermula usia 8-13, tetapi boleh lebih awal atau lewat. Anda mungkin perasan ketulan kecil dan keras di bawah puting dahulu - ini dipanggil bonggol payudara. Sebelah boleh berkembang lebih cepat - ini normal dan biasanya seimbang kemudian. Sakit biasanya sementara.",
+        "tips": [
+          "Perkembangan payudara berlaku berperingkat selama beberapa tahun",
+          "Sebelah lebih besar sedikit adalah normal",
+          "Rasa sakit biasanya hilang apabila perkembangan berterusan",
+          "Bra lembut dan menyokong boleh membantu keselesaan",
+          "Bercakap dengan orang dewasa dipercayai jika ada soalan",
+          "Semua saiz payudara adalah normal dan cantik"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
+        "emoji": "💖"
+      },
+      {
+        "id": "hips",
+        "title": "Pinggul Melebar & Bentuk Badan",
+        "description": "Pinggul dan paha menjadi lebih lebar dan bulat.",
+        "details": "Ini disebabkan hormon menyiapkan badan untuk dewasa. Bentuk badan berubah daripada lurus kepada lebih melengkung. Ingat: badan datang dalam pelbagai bentuk dan saiz! Apabila paras estrogen meningkat, lemak diagihkan ke pinggul, paha dan punggung, mewujudkan bentuk lebih melengkung. Ini biasanya berlaku secara beransur. Pinggang mungkin lebih jelas, dan bentuk keseluruhan lebih seperti orang dewasa. Perubahan ini semula jadi dan sihat.",
+        "tips": [
+          "Perubahan bentuk badan adalah normal dan sihat",
+          "Setiap orang berkembang mengikut kadar sendiri",
+          "Hargai bentuk badan unik anda",
+          "Pakai pakaian yang selesa",
+          "Fokus pada kesihatan, bukan rupa",
+          "Ingat: semua bentuk badan adalah cantik"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=400&fit=crop&q=80",
+        "emoji": "💃"
+      },
+      {
+        "id": "period",
+        "title": "Haid",
+        "description": "Kitaran haid bermula setiap bulan, biasanya antara umur 11-14.",
+        "details": "Haid pertama mungkin tidak teratur - itu normal! Gunakan tuala wanita, tampon, atau cawan haid. Jejak kitaran anda untuk tahu bila akan datang. Senggugut biasa dan boleh diurus dengan haba, rehat, atau ubat jika perlu. Haid biasanya bermula 1-2 tahun selepas payudara mula berkembang. Beberapa kitaran pertama mungkin tidak teratur - 21-45 hari masih normal. Haid biasanya berlangsung 3-7 hari. Menjejak kitaran membantu anda memahami corak badan.",
+        "tips": [
+          "Simpan bekalan haid (tuala/tampon) dalam beg",
+          "Jejak kitaran menggunakan aplikasi atau kalendar",
+          "Untuk senggugut: cuba haba, senaman ringan atau ubat",
+          "Tukar tuala/tampon setiap 4-6 jam",
+          "Kitaran awal tidak teratur adalah normal",
+          "Jumpa doktor jika haid sangat sakit atau banyak",
+          "Ingat: haid tanda badan yang sihat"
+        ],
+        "image": "/images/period-care.jpg",
+        "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&q=80",
+        "emoji": "🌸"
+      },
+      {
+        "id": "discharge",
+        "title": "Lelehan Faraj",
+        "description": "Lelehan jernih atau putih adalah normal dan menjaga faraj sihat.",
+        "details": "Ini biasanya bermula sebelum haid pertama. Ia cara badan membersihkan diri. Jika lelehan berbau kuat atau menyebabkan gatal, berjumpalah doktor. Lelehan faraj ialah bahagian normal kitaran haid. Ia membantu mengekalkan kebersihan dan mencegah jangkitan. Jumlah, warna dan tekstur boleh berubah sepanjang bulan. Lelehan normal biasanya jernih atau putih dan tidak berbau kuat.",
+        "tips": [
+          "Lelehan normal berwarna jernih atau putih",
+          "Ia boleh bertambah sekitar ovulasi (pertengahan kitaran)",
+          "Pakai seluar dalam kapas bernafas",
+          "Elak douching - tidak perlu",
+          "Jumpa doktor jika lelehan berbau kuat, warna luar biasa atau menyebabkan gatal",
+          "Ini sistem pembersihan semula jadi badan"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&q=80",
+        "emoji": "🩹"
+      },
+      {
+        "id": "emotions",
+        "title": "Perubahan Emosi (Perempuan)",
+        "description": "Perubahan hormon boleh mempengaruhi emosi dan mood anda.",
+        "details": "Paras estrogen dan progesteron berubah sepanjang kitaran haid, yang boleh mempengaruhi perasaan anda. Anda mungkin mengalami perubahan mood, terutama sebelum haid (PMS). Ini sangat normal. Sesetengah orang berasa lebih emosi, mudah marah atau sensitif pada masa tertentu dalam bulan. Perasaan ini sah dan sementara.",
+        "tips": [
+          "Perubahan mood adalah normal dan sementara",
+          "Jejak kitaran untuk faham pola",
+          "Amalkan penjagaan diri pada hari yang sukar",
+          "Bercakap dengan orang dipercayai tentang perasaan anda",
+          "Senaman ringan boleh membantu memperbaiki mood",
+          "Jumpa doktor jika perubahan mood sangat teruk"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&q=80",
+        "emoji": "💭"
+      }
+    ],
+    "maleChanges": [
+      {
+        "id": "voice",
+        "title": "Suara Mendalam",
+        "description": "Suara menjadi lebih dalam apabila kotak suara (laring) membesar.",
+        "details": "Suara \"pecah\" dalam tempoh ini adalah normal dan sementara! Anak tekak (bonjolan di leher) menjadi lebih ketara. Proses perubahan suara biasanya mengambil beberapa bulan hingga setahun, kebiasaannya umur 12-16. Suara mungkin pecah atau serak ketika menyesuaikan diri kerana pita suara memanjang dan menebal. Perubahan ini beransur-ansur dan akhirnya suara akan stabil pada nada lebih rendah. Ini sebahagian normal menjadi lelaki dewasa.",
+        "tips": [
+          "Suara pecah adalah sementara dan normal",
+          "Perubahan berlaku secara beransur dalam beberapa bulan",
+          "Suara anda akhirnya akan stabil",
+          "Jangan risau jika kedengaran berbeza - semua orang mengalaminya",
+          "Berlatih bercakap untuk biasakan suara baharu",
+          "Jika bimbang tentang perubahan suara, berbincang dengan doktor"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop&q=80",
+        "emoji": "🎤"
+      },
+      {
+        "id": "facial",
+        "title": "Pertumbuhan Bulu Muka",
+        "description": "Bulu mula tumbuh di atas bibir, dagu dan pipi.",
+        "details": "Ia bermula sebagai bulu halus dan menjadi lebih tebal. Anda akhirnya perlu mula bercukur jika mahu. Minta orang dewasa dipercayai mengajar cara bercukur dengan selamat apabila bersedia. Bulu muka biasanya mula muncul sekitar 13-16 tahun, tetapi waktunya berbeza. Ia biasanya bermula dengan bulu lembut di atas bibir, kemudian merebak ke dagu, pipi dan leher. Jumlah dan ketebalan bulu berbeza - ada yang berjanggut lebat, ada yang sedikit. Kedua-duanya normal!",
+        "tips": [
+          "Pertumbuhan bulu muka berbeza - setiap orang unik",
+          "Bermula dengan bulu halus sebelum menjadi tebal",
+          "Pelajari teknik bercukur yang betul daripada orang dewasa dipercayai",
+          "Gunakan krim cukur dan pisau tajam",
+          "Cukur ikut arah pertumbuhan bulu untuk elak iritasi",
+          "Tidak mengapa menunggu sehingga anda bersedia untuk bercukur"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=400&fit=crop&q=80",
+        "emoji": "✂️"
+      },
+      {
+        "id": "muscles",
+        "title": "Perkembangan Otot",
+        "description": "Bahu melebar dan otot lebih jelas.",
+        "details": "Anda akan menjadi lebih kuat secara semula jadi apabila testosteron meningkat, terutama kekuatan bahagian atas badan. Senaman berkala membantu membina otot sihat, tetapi elak berlebihan! Semasa akil baligh, jisim otot meningkat secara semula jadi kerana perubahan hormon. Bahu menjadi lebih lebar, dan definisi otot bertambah. Ini berlaku secara beransur selama beberapa tahun. Senaman berkala menyokong perkembangan otot sihat, tetapi penting untuk tidak keterlaluan atau menggunakan berat terlalu besar untuk usia anda.",
+        "tips": [
+          "Perkembangan otot berlaku secara semula jadi dengan hormon",
+          "Senaman berkala menyokong pertumbuhan sihat",
+          "Fokus pada teknik yang betul, bukan berat yang berat",
+          "Sertakan hari rehat dalam rutin senaman",
+          "Makan makanan berkhasiat untuk menyokong otot",
+          "Dapatkan panduan selamat daripada jurulatih atau guru"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=400&fit=crop&q=80",
+        "emoji": "💪"
+      },
+      {
+        "id": "changes",
+        "title": "Perubahan Genital",
+        "description": "Zakar dan testis membesar. Ereksi menjadi lebih kerap.",
+        "details": "Ereksi secara rawak adalah normal dan tidak selalu berkait fikiran seksual. \"Mimpi basah\" (ejakulasi malam) juga normal. Ini tanda perkembangan sihat. Perkembangan genital biasanya bermula sekitar umur 10-14. Zakar dan testis membesar, skrotum (kantung testis) menjadi lebih gelap dan besar. Ereksi rawak boleh berlaku bila-bila masa dan tidak semestinya berkait fikiran - ia sebahagian perkembangan. \"Mimpi basah\" berlaku apabila badan melepaskan air mani ketika tidur - ini juga normal.",
+        "tips": [
+          "Perubahan genital adalah normal dan sihat",
+          "Ereksi rawak tidak semestinya kerana fikiran",
+          "\"Mimpi basah\" adalah biasa dan tidak perlu malu",
+          "Setiap orang berkembang pada kadar sendiri",
+          "Jika ada soalan, berbincang dengan orang dewasa dipercayai atau doktor",
+          "Perubahan ini tanda perkembangan yang sihat"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
+        "emoji": "🔬"
+      },
+      {
+        "id": "emotions-male",
+        "title": "Perubahan Emosi (Lelaki)",
+        "description": "Perubahan hormon boleh mempengaruhi emosi dan mood anda.",
+        "details": "Paras testosteron meningkat semasa akil baligh, yang boleh mempengaruhi emosi. Anda mungkin rasa lebih agresif, kompetitif, atau mempunyai reaksi emosi lebih kuat. Anda juga mungkin mengalami perubahan mood. Perubahan emosi ini normal dan sebahagian proses membesar. Belajar mengurus emosi ialah kemahiran hidup penting.",
+        "tips": [
+          "Perubahan emosi semasa akil baligh adalah normal",
+          "Cari cara sihat untuk meluahkan emosi (sukan, seni, muzik)",
+          "Bercakap dengan orang dipercayai tentang perasaan anda",
+          "Latih pernafasan dalam apabila rasa terbeban",
+          "Senaman boleh membantu mengurus emosi kuat",
+          "Ingat: perasaan dan meluahkannya adalah wajar"
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=400&fit=crop&q=80",
+        "emoji": "🎨"
+      }
+    ],
+    "comics": [
+      {
+        "id": 1,
+        "title": "Lonjakan Pertumbuhan",
+        "panels": [
+          {
+            "text": "Saya perasan saya makin tinggi!",
+            "emoji": "📏"
+          },
+          {
+            "text": "Pakaian saya sudah tidak muat...",
+            "emoji": "👕"
+          },
+          {
+            "text": "Ini sangat normal semasa akil baligh!",
+            "emoji": "✨"
+          }
+        ],
+        "lesson": "Lonjakan pertumbuhan ialah bahagian semula jadi membesar!"
+      },
+      {
+        "id": 2,
+        "title": "Perubahan Mood",
+        "panels": [
+          {
+            "text": "Sekejap saya gembira...",
+            "emoji": "😊"
+          },
+          {
+            "text": "Kemudian rasa sedih pula...",
+            "emoji": "😢"
+          },
+          {
+            "text": "Ingat: emosi adalah normal!",
+            "emoji": "💙"
+          }
+        ],
+        "lesson": "Perubahan mood biasa semasa akil baligh kerana perubahan hormon."
+      },
+      {
+        "id": 3,
+        "title": "Perubahan Badan",
+        "panels": [
+          {
+            "text": "Badan saya sedang berubah...",
+            "emoji": "🤔"
+          },
+          {
+            "text": "Saya rasa berbeza dengan kawan",
+            "emoji": "😕"
+          },
+          {
+            "text": "Setiap orang berubah pada kadar sendiri!",
+            "emoji": "🌈"
+          }
+        ],
+        "lesson": "Perubahan badan berlaku pada masa berbeza untuk setiap orang - tidak mengapa!"
+      }
+    ],
+    "quiz": {
+      "title": "Uji Pemahaman Anda",
+      "start": "Mulakan Kuiz",
+      "submit": "Hantar Jawapan",
+      "tryAgain": "Cuba Lagi",
+      "scoreMessage": "Anda betul {correct} daripada {total} soalan!",
+      "perfect": "Markah penuh! Anda pakar akil baligh! 🌟",
+      "great": "Bagus! Teruskan belajar! 💪",
+      "questions": [
+        {
+          "question": "Akil baligh biasanya bermula bila?",
+          "options": [
+            "Umur 5-7",
+            "Umur 8-14",
+            "Umur 15-18",
+            "Selepas 20"
+          ],
+          "correct": "Umur 8-14"
+        },
+        {
+          "question": "Apakah perubahan fizikal biasa semasa akil baligh?",
+          "options": [
+            "Menjadi lebih rendah",
+            "Lonjakan pertumbuhan",
+            "Kehilangan rambut",
+            "Tiada perubahan"
+          ],
+          "correct": "Lonjakan pertumbuhan"
+        },
+        {
+          "question": "Perubahan mood semasa akil baligh ialah:",
+          "options": [
+            "Tidak normal",
+            "Normal dan biasa",
+            "Tanda penyakit",
+            "Jarang berlaku"
+          ],
+          "correct": "Normal dan biasa"
+        },
+        {
+          "question": "Setiap orang melalui akil baligh:",
+          "options": [
+            "Pada masa yang sama",
+            "Pada masa berbeza",
+            "Hanya lelaki",
+            "Hanya perempuan"
+          ],
+          "correct": "Pada masa berbeza"
+        }
+      ]
+    },
+    "videoSection": {
+      "title": "Video & Animasi Pendidikan",
+      "subtitle": "Tonton video berguna tentang perubahan akil baligh daripada sumber dipercayai",
+      "videos": [
+        {
+          "title": "Akil Baligh Diterangkan untuk Kanak-kanak",
+          "description": "Video pendidikan menjelaskan perubahan akil baligh secara sesuai umur",
+          "videoId": "gWFLnkE9rh4",
+          "source": "Sam.K Tween & Teens",
+          "duration": "5:03"
+        },
+        {
+          "title": "Perubahan Emosi Semasa Akil Baligh",
+          "description": "Memahami perubahan mood dan perkembangan emosi",
+          "videoId": "du8siPJ1ZKo",
+          "source": "Educational Channel",
+          "duration": "3:57"
+        },
+        {
+          "title": "Perubahan Fizikal: Apa yang Dijangka",
+          "description": "Panduan menyeluruh tentang perkembangan fizikal semasa akil baligh",
+          "videoId": "vMRHCYq7oBU",
+          "source": "Health Organization",
+          "duration": "4:40"
+        },
+        {
+          "title": "Membina Keyakinan Diri",
+          "description": "Tip penerimaan diri dan keyakinan semasa akil baligh",
+          "videoId": "pdjaxS4ME2A",
+          "source": "Youth Support",
+          "duration": "6:29"
+        }
+      ],
+      "moreTitle": "Lebih Banyak Video Pendidikan",
+      "moreLinks": [
+        {
+          "title": "Kebersihan Semasa Akil Baligh",
+          "link": "https://www.youtube.com/results?search_query=puberty+hygiene+for+kids"
+        },
+        {
+          "title": "Bercakap dengan Ibu Bapa",
+          "link": "https://www.youtube.com/results?search_query=talking+to+parents+about+puberty"
+        },
+        {
+          "title": "Imej Badan & Keyakinan",
+          "link": "https://www.youtube.com/results?search_query=body+image+puberty+confidence"
+        }
+      ]
+    },
+    "remember": {
+      "title": "Ingat: Setiap Orang Berbeza 🌈",
+      "points": [
+        {
+          "title": "Masa",
+          "text": "Akil baligh boleh bermula antara umur 8-14. Tiada masa yang 'betul'!"
+        },
+        {
+          "title": "Kadar",
+          "text": "Ada perubahan berlaku cepat, ada yang mengambil masa bertahun. Perjalanan anda unik."
+        },
+        {
+          "title": "Sokongan",
+          "text": "Bercakap dengan orang dewasa dipercayai jika ada soalan atau kebimbangan. Mereka ada untuk membantu!"
+        }
+      ]
+    },
+    "helpfulTips": "Tip Berguna:",
+    "lessonLabel": "Pengajaran",
+    "genderTabs": {
+      "general": "Semua",
+      "female": "Perempuan",
+      "male": "Lelaki"
+    },
+    "illustrationFallback": "Ilustrasi pendidikan"
   }
 }
