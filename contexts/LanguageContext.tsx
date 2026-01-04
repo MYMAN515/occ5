@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { safeLocalStorage } from '@/utils/storage'
+import enTranslations from '@/translations/en.json'
 
 export type Language = 'en' | 'ar' | 'ms' | 'zh'
 
@@ -15,7 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en')
-  const [translations, setTranslations] = useState<any>({})
+  const [translations, setTranslations] = useState<any>(enTranslations)
 
   useEffect(() => {
     // Load saved language from localStorage
