@@ -112,6 +112,44 @@
       }
     }
   },
+  "timelinePage": {
+    "header": {
+      "title": "Timeline Matching Game",
+      "subtitle": "Match each change to before or after puberty begins! 🎯"
+    },
+    "stats": {
+      "score": "Score",
+      "attempts": "Attempts",
+      "accuracy": "Accuracy"
+    },
+    "complete": {
+      "title": "Congratulations! 🎉",
+      "message": "You completed the game with {score} correct out of {attempts} attempts!",
+      "playAgain": "Play Again"
+    },
+    "instructions": {
+      "selectFirst": "👇 Click on a card below, then choose when it happens!",
+      "chooseStage": "👆 Now click either \"Before Puberty\" or \"After Puberty\" below!"
+    },
+    "stages": {
+      "before": "👶 Before Puberty",
+      "after": "🌟 After Puberty"
+    },
+    "items": [
+      { "id": "1", "text": "Shorter height", "stage": "before" },
+      { "id": "2", "text": "Growth spurt happening", "stage": "after" },
+      { "id": "3", "text": "Smooth, clear skin", "stage": "before" },
+      { "id": "4", "text": "Acne may appear", "stage": "after" },
+      { "id": "5", "text": "Voice stays the same", "stage": "before" },
+      { "id": "6", "text": "Voice deepens or changes", "stage": "after" },
+      { "id": "7", "text": "Child-like body shape", "stage": "before" },
+      { "id": "8", "text": "Body curves develop", "stage": "after" },
+      { "id": "9", "text": "No body odor", "stage": "before" },
+      { "id": "10", "text": "Need for deodorant", "stage": "after" },
+      { "id": "11", "text": "Minimal body hair", "stage": "before" },
+      { "id": "12", "text": "New hair growth", "stage": "after" }
+    ]
+  },
   "welcome": {
     "branding": "In partnership with the inspiring spirit of the University of Malaya",
     "slide1": {

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, X, RotateCcw, Trophy } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type Item = {
   id: string
@@ -10,33 +11,31 @@ type Item = {
   stage: 'before' | 'after'
 }
 
+type TimelineContent = {
+  header: { title: string; subtitle: string }
+  stats: { score: string; attempts: string; accuracy: string }
+  complete: { title: string; message: string; playAgain: string }
+  instructions: { selectFirst: string; chooseStage: string }
+  stages: { before: string; after: string }
+  items: Item[]
+}
+
 export default function TimelinePage() {
+  const { t } = useLanguage()
+  const content = t('timelinePage') as TimelineContent
+
   const [score, setScore] = useState(0)
   const [attempts, setAttempts] = useState(0)
   const [selectedItem, setSelectedItem] = useState<Item | null>(null)
   const [gameComplete, setGameComplete] = useState(false)
   const [matchedItems, setMatchedItems] = useState<string[]>([])
-
-  const items: Item[] = [
-    { id: '1', text: 'Shorter height', stage: 'before' },
-    { id: '2', text: 'Growth spurt happening', stage: 'after' },
-    { id: '3', text: 'Smooth, clear skin', stage: 'before' },
-    { id: '4', text: 'Acne may appear', stage: 'after' },
-    { id: '5', text: 'Voice stays the same', stage: 'before' },
-    { id: '6', text: 'Voice deepens or changes', stage: 'after' },
-    { id: '7', text: 'Child-like body shape', stage: 'before' },
-    { id: '8', text: 'Body curves develop', stage: 'after' },
-    { id: '9', text: 'No body odor', stage: 'before' },
-    { id: '10', text: 'Need for deodorant', stage: 'after' },
-    { id: '11', text: 'Minimal body hair', stage: 'before' },
-    { id: '12', text: 'New hair growth', stage: 'after' },
-  ]
+  const items = content.items
 
   const [shuffledItems, setShuffledItems] = useState<Item[]>([])
 
   useEffect(() => {
     setShuffledItems([...items].sort(() => Math.random() - 0.5))
-  }, [])
+  }, [items])
 
   const handleItemClick = (item: Item) => {
     if (matchedItems.includes(item.id)) return
@@ -69,6 +68,10 @@ export default function TimelinePage() {
     setShuffledItems([...items].sort(() => Math.random() - 0.5))
   }
 
+  useEffect(() => {
+    resetGame()
+  }, [items])
+
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       {/* Header */}
@@ -78,10 +81,10 @@ export default function TimelinePage() {
         className="text-center mb-8 md:mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Timeline Matching Game
+          {content.header.title}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-balance">
-          Match each change to before or after puberty begins! 🎯
+          {content.header.subtitle}
         </p>
       </motion.div>
 
@@ -94,17 +97,17 @@ export default function TimelinePage() {
       >
         <div className="flex flex-col sm:flex-row justify-around items-center text-center gap-4">
           <div className="w-full sm:w-auto">
-            <p className="text-gray-600 font-medium mb-1">Score</p>
+            <p className="text-gray-600 font-medium mb-1">{content.stats.score}</p>
             <p className="text-3xl font-bold text-primary-600">{score}/{items.length}</p>
           </div>
           <div className="h-px w-full bg-gray-200 sm:h-12 sm:w-px sm:bg-gray-300"></div>
           <div className="w-full sm:w-auto">
-            <p className="text-gray-600 font-medium mb-1">Attempts</p>
+            <p className="text-gray-600 font-medium mb-1">{content.stats.attempts}</p>
             <p className="text-3xl font-bold text-secondary-600">{attempts}</p>
           </div>
           <div className="h-px w-full bg-gray-200 sm:h-12 sm:w-px sm:bg-gray-300"></div>
           <div className="w-full sm:w-auto">
-            <p className="text-gray-600 font-medium mb-1">Accuracy</p>
+            <p className="text-gray-600 font-medium mb-1">{content.stats.accuracy}</p>
             <p className="text-3xl font-bold text-green-600">
               {attempts > 0 ? Math.round((score / attempts) * 100) : 0}%
             </p>
@@ -122,9 +125,11 @@ export default function TimelinePage() {
             className="glass-effect rounded-3xl p-8 mb-8 max-w-2xl mx-auto text-center"
           >
             <Trophy className="w-20 h-20 text-yellow-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-2 text-gray-800">Congratulations! 🎉</h2>
+            <h2 className="text-3xl font-bold mb-2 text-gray-800">{content.complete.title}</h2>
             <p className="text-xl text-gray-700 mb-6">
-              You completed the game with {score} correct out of {attempts} attempts!
+              {content.complete.message
+                .replace('{score}', score.toString())
+                .replace('{attempts}', attempts.toString())}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -133,7 +138,7 @@ export default function TimelinePage() {
               className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto"
             >
               <RotateCcw className="w-5 h-5" />
-              Play Again
+              {content.complete.playAgain}
             </motion.button>
           </motion.div>
         )}
@@ -148,9 +153,7 @@ export default function TimelinePage() {
           className="text-center mb-8"
         >
           <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-effect rounded-2xl p-4 text-balance">
-            {selectedItem
-              ? '👆 Now click either "Before Puberty" or "After Puberty" below!'
-              : '👇 Click on a card below, then choose when it happens!'}
+            {selectedItem ? content.instructions.chooseStage : content.instructions.selectFirst}
           </p>
         </motion.div>
       )}
@@ -174,7 +177,7 @@ export default function TimelinePage() {
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed'
             }`}
           >
-            👶 Before Puberty
+            {content.stages.before}
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -187,7 +190,7 @@ export default function TimelinePage() {
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed'
             }`}
           >
-            🌟 After Puberty
+            {content.stages.after}
           </motion.button>
         </motion.div>
       )}
