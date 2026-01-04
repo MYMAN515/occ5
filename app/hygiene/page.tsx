@@ -21,6 +21,13 @@ type HygieneItem = {
   category: 'shower' | 'oral' | 'hands' | 'general'
 }
 
+type GameCategory = {
+  id: string
+  name: string
+  color: string
+  icon: string
+}
+
 export default function HygienePage() {
   const { t } = useLanguage()
   const hygiene = t<any>('hygienePage')
@@ -36,7 +43,7 @@ export default function HygienePage() {
 
   const hygieneGameItems: HygieneItem[] = hygiene?.game?.items || []
 
-  const gameCategories = hygiene?.game?.categories || []
+  const gameCategories: GameCategory[] = hygiene?.game?.categories || []
 
   // Load saved routine
   useEffect(() => {
