@@ -1,0 +1,19 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Rest check-in</title>
+  <desc>Moon, pillow and stars.</desc>
+  <defs>
+    <linearGradient id="rest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#C7D2FE" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="24" fill="url(#rest)" />
+  <circle cx="92" cy="96" r="46" fill="#2563EB" opacity="0.2" />
+  <path d="M124 96 C124 64 152 40 184 40 C172 56 172 88 184 104 C152 104 124 128 124 96Z" fill="#FCD34D" />
+  <rect x="60" y="140" width="132" height="60" rx="26" fill="#FFFFFF" stroke="#94A3B8" stroke-width="4" />
+  <rect x="76" y="150" width="100" height="40" rx="20" fill="#E2E8F0" />
+  <circle cx="72" cy="78" r="6" fill="#FFFFFF" />
+  <circle cx="188" cy="62" r="5" fill="#FFFFFF" />
+  <circle cx="164" cy="132" r="4" fill="#FBBF24" />
+  <circle cx="60" cy="120" r="4" fill="#FBBF24" />
+</svg>

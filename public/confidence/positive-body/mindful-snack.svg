@@ -1,0 +1,19 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Mindful snack</title>
+  <desc>Illustration of a bowl of fruit.</desc>
+  <defs>
+    <linearGradient id="snack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF7ED" />
+      <stop offset="100%" stop-color="#FEE2E2" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="24" fill="url(#snack)" />
+  <ellipse cx="120" cy="168" rx="76" ry="30" fill="#FDBA74" stroke="#EA580C" stroke-width="4" />
+  <ellipse cx="120" cy="160" rx="68" ry="24" fill="#FFEDD5" />
+  <circle cx="84" cy="124" r="22" fill="#F87171" />
+  <circle cx="132" cy="120" r="26" fill="#60A5FA" />
+  <circle cx="164" cy="136" r="18" fill="#34D399" />
+  <path d="M68 104 C72 96 84 96 90 104" stroke="#047857" stroke-width="5" fill="none" stroke-linecap="round" />
+  <path d="M134 96 C142 90 152 92 158 100" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round" />
+  <path d="M180 116 C186 110 196 112 200 120" stroke="#059669" stroke-width="5" fill="none" stroke-linecap="round" />
+</svg>

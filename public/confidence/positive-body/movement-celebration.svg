@@ -1,0 +1,18 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Movement celebration</title>
+  <desc>Illustration of a joyful person stretching.</desc>
+  <defs>
+    <linearGradient id="move" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ECFCCB" />
+      <stop offset="100%" stop-color="#D1FAE5" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="24" fill="url(#move)" />
+  <circle cx="120" cy="120" r="76" fill="#34D399" opacity="0.2" />
+  <path d="M96 172 Q120 144 144 172" stroke="#059669" stroke-width="10" stroke-linecap="round" fill="none" />
+  <path d="M120 68 C140 84 152 96 168 120" stroke="#2563EB" stroke-width="12" stroke-linecap="round" fill="none" />
+  <path d="M120 68 C108 88 98 112 92 144" stroke="#F97316" stroke-width="12" stroke-linecap="round" fill="none" />
+  <circle cx="120" cy="72" r="18" fill="#FCD34D" stroke="#F59E0B" stroke-width="4" />
+  <circle cx="86" cy="140" r="10" fill="#6366F1" />
+  <circle cx="154" cy="140" r="10" fill="#6366F1" />
+</svg>
