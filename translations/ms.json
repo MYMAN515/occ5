@@ -57,12 +57,58 @@
       "badgePlay": "Lencana bermain",
       "badgeSafe": "Lencana selamat"
     },
+    "quickLinksSection": {
+      "label": "Pautan pantas",
+      "title": "Pautan pantas mesra skrin kecil—ketik kad untuk masuk terus."
+    },
     "features": {
       "parentGuide": {
         "description": "Tip ringkas ibu bapa"
       },
       "bodyGuide": {
         "description": "Panduan perubahan badan"
+      }
+    },
+    "quickLinksCards": {
+      "diary": {
+        "label": "Diari Mood Anak",
+        "helper": "Catat perasaan bersama setiap hari."
+      },
+      "hygiene": {
+        "label": "Kebersihan & Penjagaan Diri",
+        "helper": "Bina rutin harian yang menyokong."
+      },
+      "confidence": {
+        "label": "Keyakinan & Gaya Hidup",
+        "helper": "Bina tabiat yang menaikkan keyakinan."
+      },
+      "timeline": {
+        "label": "Permainan Garis Masa",
+        "helper": "Padankan perubahan sebelum atau selepas akil baligh."
+      },
+      "memory": {
+        "label": "Permainan Ingatan Emosi",
+        "helper": "Padankan pasangan emosi untuk berlatih rasa."
+      },
+      "quiz": {
+        "label": "Kuiz Pengetahuan Akil Baligh",
+        "helper": "Uji apa yang anda tahu tentang membesar."
+      },
+      "matching": {
+        "label": "Permainan Padanan Perubahan",
+        "helper": "Padankan perubahan berkaitan akil baligh."
+      },
+      "emotions": {
+        "label": "Memahami Emosi",
+        "helper": "Belajar mengenal pasti dan menamakan perasaan."
+      },
+      "whatILike": {
+        "label": "Apa Saya Suka Tentang Diri Saya",
+        "helper": "Raikan kekuatan dengan soalan yang mengangkat."
+      },
+      "quizzes": {
+        "label": "Kuiz",
+        "helper": "Terokai Kuiz Kesan Tidur & Pemakanan."
       }
     }
   },

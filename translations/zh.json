@@ -57,12 +57,58 @@
       "badgePlay": "玩耍徽章",
       "badgeSafe": "安全徽章"
     },
+    "quickLinksSection": {
+      "label": "快速链接",
+      "title": "为小屏设计的快速链接——点卡片即可进入。"
+    },
     "features": {
       "parentGuide": {
         "description": "父母快速贴士"
       },
       "bodyGuide": {
         "description": "身体变化指南"
+      }
+    },
+    "quickLinksCards": {
+      "diary": {
+        "label": "儿童心情日记",
+        "helper": "一起每天记录感受。"
+      },
+      "hygiene": {
+        "label": "卫生与自我照顾",
+        "helper": "养成支持性的日常习惯。"
+      },
+      "confidence": {
+        "label": "自信与生活方式",
+        "helper": "培养增强自信的习惯。"
+      },
+      "timeline": {
+        "label": "时间线游戏",
+        "helper": "判断变化发生在青春期前还是后。"
+      },
+      "memory": {
+        "label": "情绪记忆游戏",
+        "helper": "配对情绪表情练习感受。"
+      },
+      "quiz": {
+        "label": "青春期知识测验",
+        "helper": "了解你对成长的认识。"
+      },
+      "matching": {
+        "label": "变化配对游戏",
+        "helper": "配对相关的青春期变化。"
+      },
+      "emotions": {
+        "label": "理解情绪",
+        "helper": "学习认识并说出情绪。"
+      },
+      "whatILike": {
+        "label": "我喜欢自己的地方",
+        "helper": "用鼓励的提示庆祝优点。"
+      },
+      "quizzes": {
+        "label": "测验",
+        "helper": "探索睡眠与营养影响测验。"
       }
     }
   },
