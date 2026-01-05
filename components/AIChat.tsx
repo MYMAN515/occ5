@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   MessageCircle,
@@ -26,7 +26,7 @@ interface QuickAnswer {
 }
 
 export default function AIChat() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
@@ -40,50 +40,24 @@ export default function AIChat() {
     return () => media.removeEventListener('change', handleChange)
   }, [])
 
-  const quickAnswers: QuickAnswer[] = [
-    {
-      id: 'communication',
-      question: 'How do I start talking about puberty?',
-      answer: 'Start early and keep conversations casual. Use everyday moments like TV shows or books to bring up topics. Be honest, use correct terms, and let them know you\'re always available to talk. Create a safe space where questions are welcome.',
-      icon: <MessageCircle className="w-6 h-6" />,
-      color: 'from-blue-400 to-cyan-500'
-    },
-    {
-      id: 'emotions',
-      question: 'How do I handle mood swings?',
-      answer: 'Mood swings are normal during puberty due to hormonal changes. Be patient, validate their feelings, and help them understand this is temporary. Encourage healthy outlets like exercise, hobbies, or talking. Set boundaries but remain understanding.',
-      icon: <Heart className="w-6 h-6" />,
-      color: 'from-pink-400 to-rose-500'
-    },
-    {
-      id: 'physical',
-      question: 'What physical changes should I explain?',
-      answer: 'Explain growth spurts, body shape changes, skin changes (acne), body odor, and hair growth. Be gender-specific when needed. Emphasize that everyone develops at different rates and there\'s no "normal" timeline. Use age-appropriate language.',
-      icon: <Users className="w-6 h-6" />,
-      color: 'from-purple-400 to-indigo-500'
-    },
-    {
-      id: 'hygiene',
-      question: 'How do I teach personal hygiene?',
-      answer: 'Make hygiene routines fun and routine. Teach daily showering, deodorant use, dental care, and period care (for girls). Use positive reinforcement, not shame. Lead by example and make supplies easily accessible.',
-      icon: <Shield className="w-6 h-6" />,
-      color: 'from-green-400 to-emerald-500'
-    },
-    {
-      id: 'confidence',
-      question: 'How can I build their confidence?',
-      answer: 'Praise effort, not just results. Encourage their interests and hobbies. Help them set achievable goals. Teach them that their worth isn\'t tied to appearance. Be a positive role model and celebrate small wins together.',
-      icon: <Lightbulb className="w-6 h-6" />,
-      color: 'from-yellow-400 to-orange-500'
-    },
-    {
-      id: 'support',
-      question: 'When should I seek professional help?',
-      answer: 'Seek help if you notice: persistent sadness or anxiety, withdrawal from activities, significant weight changes, sleep problems, or talk of self-harm. Trust your instincts - it\'s always okay to consult a pediatrician or counselor.',
-      icon: <HelpCircle className="w-6 h-6" />,
-      color: 'from-indigo-400 to-purple-500'
-    },
+  const aiChat = t<any>('aiChatWidget')
+
+  const quickAnswerMeta = [
+    { id: 'communication', icon: <MessageCircle className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500' },
+    { id: 'emotions', icon: <Heart className="w-6 h-6" />, color: 'from-pink-400 to-rose-500' },
+    { id: 'physical', icon: <Users className="w-6 h-6" />, color: 'from-purple-400 to-indigo-500' },
+    { id: 'hygiene', icon: <Shield className="w-6 h-6" />, color: 'from-green-400 to-emerald-500' },
+    { id: 'confidence', icon: <Lightbulb className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500' },
+    { id: 'support', icon: <HelpCircle className="w-6 h-6" />, color: 'from-indigo-400 to-purple-500' }
   ]
+
+  const quickAnswers: QuickAnswer[] = quickAnswerMeta
+    .map(meta => ({
+      ...meta,
+      question: aiChat?.quickAnswers?.[meta.id]?.question || '',
+      answer: aiChat?.quickAnswers?.[meta.id]?.answer || ''
+    }))
+    .filter(answer => answer.question)
 
   const handleTopicClick = (topicId: string) => {
     setSelectedTopic(topicId)
@@ -129,15 +103,15 @@ export default function AIChat() {
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 sm:py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="bg-white/20 rounded-full p-2">
-                  <Bot className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-base sm:text-lg">Parent Helper</h3>
-                  <p className="text-[11px] sm:text-xs opacity-90">Quick answers for parents</p>
-                </div>
-              </div>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-white/20 rounded-full p-2">
+                      <Bot className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base sm:text-lg">{aiChat?.header?.title}</h3>
+                      <p className="text-[11px] sm:text-xs opacity-90">{aiChat?.header?.subtitle}</p>
+                    </div>
+                  </div>
               <button
                 onClick={() => {
                   setIsOpen(false)
@@ -159,8 +133,8 @@ export default function AIChat() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-6">
-                    <h4 className="text-lg font-bold text-gray-800 mb-2">How can I help you today?</h4>
-                    <p className="text-sm text-gray-600">Click on a topic to get instant answers</p>
+                    <h4 className="text-lg font-bold text-gray-800 mb-2">{aiChat?.intro?.title}</h4>
+                    <p className="text-sm text-gray-600">{aiChat?.intro?.description}</p>
                   </div>
 
                   {quickAnswers.map((answer, index) => (
@@ -182,7 +156,7 @@ export default function AIChat() {
                           <h5 className="font-semibold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors">
                             {answer.question}
                           </h5>
-                          <p className="text-xs text-gray-500">Click to see answer</p>
+                          <p className="text-xs text-gray-500">{aiChat?.seeAnswer}</p>
                         </div>
                         <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
                       </div>
@@ -207,7 +181,7 @@ export default function AIChat() {
                           onClick={handleBack}
                           className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold mb-4"
                         >
-                          ← Back to topics
+                          ← {aiChat?.back}
                         </motion.button>
 
                         <div className={`bg-gradient-to-r ${topic.color} rounded-2xl p-6 text-white mb-4`}>
@@ -227,7 +201,7 @@ export default function AIChat() {
 
                         <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
                           <p className="text-sm text-blue-800">
-                            <strong>💡 Tip:</strong> Remember, every child is different. Trust your instincts and don't hesitate to consult healthcare professionals when needed.
+                            <strong>💡 {aiChat?.tipLabel}</strong> {aiChat?.tip}
                           </p>
                         </div>
                       </>
@@ -240,7 +214,7 @@ export default function AIChat() {
             {/* Footer */}
             <div className="px-4 py-3 bg-white/60 border-t border-gray-200">
               <p className="text-xs text-gray-500 text-center">
-                💙 Supporting parents through puberty education
+                {aiChat?.footer}
               </p>
             </div>
           </motion.div>

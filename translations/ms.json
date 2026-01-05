@@ -261,6 +261,47 @@
       "default": "Saya sedia membantu apa sahaja berkaitan akil baligh, kesejahteraan dan komunikasi keluarga. Tanyalah tentang rutin kebersihan, sokongan haid, kesihatan emosi, persahabatan, tekanan sekolah, pertimbangan budaya atau agama, atau cara mengekalkan perbualan dalam pelbagai bahasa. Jom hadapi bersama—apa yang bermain di fikiran anda?"
     }
   },
+  "aiChatWidget": {
+    "header": {
+      "title": "Pembantu Ibu Bapa",
+      "subtitle": "Jawapan pantas untuk ibu bapa"
+    },
+    "intro": {
+      "title": "Bagaimana saya boleh bantu hari ini?",
+      "description": "Klik pada topik untuk jawapan segera"
+    },
+    "seeAnswer": "Klik untuk lihat jawapan",
+    "back": "Kembali ke topik",
+    "tipLabel": "Tip:",
+    "tip": "Ingat setiap anak berbeza. Percaya naluri anda dan jangan segan berjumpa pakar kesihatan bila perlu.",
+    "footer": "💙 Menyokong ibu bapa melalui pendidikan akil baligh",
+    "quickAnswers": {
+      "communication": {
+        "question": "Bagaimana saya mulakan perbualan tentang akil baligh?",
+        "answer": "Mulakan awal dan jadikan perbualan santai. Gunakan situasi harian seperti rancangan TV atau buku untuk buka topik. Jujur, gunakan istilah yang betul, dan beritahu anak bahawa anda sentiasa sedia berbual. Wujudkan ruang selamat untuk soalan."
+      },
+      "emotions": {
+        "question": "Bagaimana saya tangani perubahan mood?",
+        "answer": "Perubahan mood adalah normal semasa akil baligh kerana hormon. Sabar, sahkan perasaan mereka, dan ingatkan bahawa ia sementara. Galakkan saluran sihat seperti bersukan, hobi, atau berbual. Tetapkan batas tetapi kekal memahami."
+      },
+      "physical": {
+        "question": "Perubahan fizikal apa perlu saya terangkan?",
+        "answer": "Terangkan lonjakan tumbesaran, bentuk badan yang berubah, perubahan kulit (jerawat), bau badan, dan pertumbuhan rambut. Sesuaikan mengikut jantina bila perlu. Tekankan setiap orang berkembang pada kadar berbeza dan tiada garis masa \"normal\". Gunakan bahasa yang sesuai umur."
+      },
+      "hygiene": {
+        "question": "Bagaimana ajar kebersihan diri?",
+        "answer": "Jadikan rutin kebersihan menyeronokkan dan konsisten. Ajar mandi harian, penggunaan deodoran, penjagaan gigi, dan penjagaan haid (untuk perempuan). Gunakan galakan positif, bukan memalukan. Tunjuk contoh dan pastikan keperluan mudah dicapai."
+      },
+      "confidence": {
+        "question": "Bagaimana membina keyakinan mereka?",
+        "answer": "Puji usaha, bukan hasil sahaja. Sokong minat dan hobi mereka. Bantu tetapkan matlamat yang boleh dicapai. Terangkan bahawa nilai diri tidak bergantung pada rupa. Jadi contoh positif dan raikan kemenangan kecil bersama."
+      },
+      "support": {
+        "question": "Bila perlu dapatkan bantuan profesional?",
+        "answer": "Dapatkan bantuan jika anda perasan kesedihan atau kebimbangan berpanjangan, menarik diri dari aktiviti, perubahan berat ketara, masalah tidur, atau cakap tentang menyakiti diri. Percaya naluri anda—berjumpa doktor atau kaunselor sentiasa pilihan selamat."
+      }
+    }
+  },
   "team": {
     "title": "Kenali Wira di Sebalik Parenting Hub",
     "subtitle": "Kami menggabungkan kreativiti, penyelidikan dan teknologi untuk mengangkat setiap keluarga dengan penuh belas kasihan.",

@@ -222,8 +222,8 @@ export default function ConfidencePage() {
               >
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">Current Focus</h3>
-                    <p className="text-gray-600">One habit at a time for better success! 💪</p>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{confidence?.currentFocus?.title}</h3>
+                    <p className="text-gray-600">{confidence?.currentFocus?.subtitle}</p>
                   </div>
                   <div className={`bg-gradient-to-r ${currentHabit.color} w-20 h-20 rounded-2xl flex items-center justify-center text-4xl`}>
                     {currentHabit.icon}
